@@ -1154,6 +1154,45 @@
         }
       ],
       "codegenVersion": "0.0.2"
+    },
+    {
+      "projectId": "o2dUnhjGJYmU8orBU3WQqQ",
+      "version": "latest",
+      "dependencies": {},
+      "lang": "js",
+      "fileLocks": [
+        {
+          "type": "globalVariant",
+          "assetId": "sV4txcd3FBEr",
+          "checksum": "2f6ac9e3d6d33e20f5d01b46339acd59"
+        },
+        {
+          "assetId": "o2dUnhjGJYmU8orBU3WQqQ",
+          "type": "projectCss",
+          "checksum": "b98f4b1e80fc7a9730c448063b2b24e0"
+        },
+        {
+          "assetId": "o2dUnhjGJYmU8orBU3WQqQ",
+          "checksum": "71c390b5deee388bfdbaaadffa907c41",
+          "type": "projectModule"
+        },
+        {
+          "assetId": "o2dUnhjGJYmU8orBU3WQqQ",
+          "checksum": "5ea75d03405384b93ba49a9a8bd5f6ea",
+          "type": "styleTokensProvider"
+        },
+        {
+          "type": "renderModule",
+          "assetId": "hL17V5L4GzKi",
+          "checksum": "51884034530f7edac7ca832d7668ba00"
+        },
+        {
+          "type": "cssRules",
+          "assetId": "hL17V5L4GzKi",
+          "checksum": "51884034530f7edac7ca832d7668ba00"
+        }
+      ],
+      "codegenVersion": "0.0.2"
     }
   ],
   "cliVersion": "0.1.343"
