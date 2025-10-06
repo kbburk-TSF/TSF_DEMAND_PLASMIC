@@ -1,0 +1,97 @@
+.ariaDialogTrigger:global(.__wab_instance) {
+  position: relative;
+}
+.svg__tv5Xq {
+  position: relative;
+  height: 1em;
+}
+.svg__jmZX {
+  position: relative;
+  height: 1em;
+}
+.ariaModal:global(.__wab_instance) {
+  background: var(--token-559-Sfg5QY95);
+  display: block;
+  color: var(--token-o_zFdGynpdlb);
+  font-family: var(--token-S8JOgfpeXBkN);
+  font-size: var(--token-9vXMSufqp0kw);
+  line-height: var(--token-EfiCG696q2FH);
+  outline-style: none;
+  box-shadow: 0px 24px 48px -12px #00000040;
+  border-radius: var(--token-2L1_o4JMbT-P);
+}
+.pcls_k_kBh1NgD6-I {
+  background: var(--token-3CV_vYXC5Tfr);
+  left: 0px;
+  top: 0px;
+  z-index: 10;
+  position: fixed;
+  right: 0px;
+  bottom: 0px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+  outline: none;
+}
+.ariaDialog:global(.__wab_instance) {
+  max-width: 90vw;
+  object-fit: cover;
+  max-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  outline-style: none;
+}
+.h3__aKkDr {
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  font-weight: 700;
+  font-size: var(--token-hV5qjHCcPqHJ);
+  min-width: 0;
+  padding: var(--token-bjgcHpD0tUod);
+}
+.scrollableContent {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  align-items: stretch;
+  justify-content: flex-start;
+  overflow: auto;
+  padding-left: var(--token-bjgcHpD0tUod);
+  padding-right: var(--token-bjgcHpD0tUod);
+}
+.freeBox__y23YB {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  align-items: flex-start;
+  justify-content: flex-start;
+  row-gap: var(--token-qHgSN0bAAEKR);
+}
+.text__iFuIb {
+  position: relative;
+}
+.freeBox__b9R9V {
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  align-items: center;
+  justify-content: flex-end;
+  width: 100%;
+  min-width: 0;
+  padding: var(--token-bjgcHpD0tUod);
+}
+.svg__onrZo {
+  position: relative;
+  height: 1em;
+}
+.text__uTczn {
+  padding-left: 0px;
+}
+.svg__dU8Xq {
+  position: relative;
+  height: 1em;
+}
