@@ -2,7 +2,7 @@
 // This file is owned by you, feel free to edit as you see fit.
 import * as React from "react";
 import { PageParamsProvider as PageParamsProvider__ } from "@plasmicapp/react-web/lib/host";
-import { PlasmicTheScience } from "../components/plasmic/tsf_demo_website/PlasmicTheScience";
+import { PlasmicTheScience } from "../components/plasmic/tsf_demand_website/PlasmicTheScience";
 import { useRouter } from "next/router";
 
 function TheScience() {
