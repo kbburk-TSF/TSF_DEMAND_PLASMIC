@@ -20,7 +20,7 @@ import {
 } from "@plasmicapp/react-web";
 import { useDataEnv } from "@plasmicapp/react-web/lib/host";
 import Header from "../../Header"; // plasmic-import: _SjLXPL93E_I/component
-import { Iframe } from "@plasmicpkgs/plasmic-basic-components";
+import IframeEmbed from "../../IframeEmbed"; // plasmic-import: nSE9S-d7qhfH/codeComponent
 import Button from "../../Button"; // plasmic-import: -U7nCsYlsFbS/component
 import HeroSection from "../../HeroSection"; // plasmic-import: JNdKyXMmIYn1/component
 import Footer from "../../Footer"; // plasmic-import: uEqGgNuRcZj8/component
@@ -176,13 +176,15 @@ function PlasmicTsfEngineDemo__RenderFunc(props) {
           </div>
           <div className={classNames(projectcss.all, sty.freeBox__iyJHm)}>
             <div className={classNames(projectcss.all, sty.freeBox__mgLkQ)}>
-              <Iframe
-                data-plasmic-name={"iframe"}
-                data-plasmic-override={overrides.iframe}
-                className={classNames("__wab_instance", sty.iframe)}
+              <IframeEmbed
+                data-plasmic-name={"iframeEmbed"}
+                data-plasmic-override={overrides.iframeEmbed}
+                allowFullscreen={true}
+                className={classNames("__wab_instance", sty.iframeEmbed)}
+                loading={"eager"}
+                minHeight={1200}
+                referrerPolicy={"no-referrer"}
                 src={"https://dev.tsfdemo.com/?tab=twocharts"}
-                srcDoc={"<div><h3>Heading</h3><p>Example text...</p></div>"}
-                useHtml={false}
               />
             </div>
             <section
@@ -564,7 +566,7 @@ const PlasmicDescendants = {
     "pageBanner",
     "columns",
     "h1",
-    "iframe",
+    "iframeEmbed",
     "section",
     "foreground",
     "copy",
@@ -580,7 +582,7 @@ const PlasmicDescendants = {
   pageBanner: ["pageBanner", "columns", "h1"],
   columns: ["columns", "h1"],
   h1: ["h1"],
-  iframe: ["iframe"],
+  iframeEmbed: ["iframeEmbed"],
   section: ["section", "foreground"],
   foreground: ["foreground"],
   copy: ["copy", "button"],
@@ -628,7 +630,7 @@ export const PlasmicTsfEngineDemo = Object.assign(
     pageBanner: makeNodeComponent("pageBanner"),
     columns: makeNodeComponent("columns"),
     h1: makeNodeComponent("h1"),
-    iframe: makeNodeComponent("iframe"),
+    iframeEmbed: makeNodeComponent("iframeEmbed"),
     section: makeNodeComponent("section"),
     foreground: makeNodeComponent("foreground"),
     copy: makeNodeComponent("copy"),
