@@ -129,7 +129,7 @@ function PlasmicHomepage__RenderFunc(props) {
                         )}
                       >
                         {
-                          "Welcome to the future of time series forecasting. \n\n\r\nPowered by a breakthrough in forecasting science, Targeted Seasonal Forecasts deliver daily predictions with month-long horizons \u2014 and quantified confidence in every single value. The proprietary library of irregular seasonal models reveals objective patterns in the historical data. Each forecast value is selected from up to 2,500 different forecast models, based on historical patterns of accuracy. \r\n"
+                          "ENTERPRISE-LEVEL SKU FORECASTS\n\n\r\nPowered by a breakthrough in forecasting science, Targeted Seasonal Forecasts deliver daily predictions with month-long horizons \u2014 and quantified confidence in every single value. The proprietary library of irregular seasonal models reveals objective patterns in the historical data. Each forecast value is selected from up to 2,500 different forecast models, based on historical patterns of accuracy. \r\n"
                         }
                       </div>
                       <Button
