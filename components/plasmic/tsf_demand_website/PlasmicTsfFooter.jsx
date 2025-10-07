@@ -257,6 +257,7 @@ function PlasmicTsfFooter__RenderFunc(props) {
                   sty.link__y5P
                 )}
                 component={Link}
+                href={`/demand-planning-roi`}
                 platform={"nextjs"}
               >
                 {"Demand Planning ROI"}
@@ -269,6 +270,7 @@ function PlasmicTsfFooter__RenderFunc(props) {
                   sty.link__nzYl
                 )}
                 component={Link}
+                href={`/microscope-for-time`}
                 platform={"nextjs"}
               >
                 {"A Microscope for Time"}

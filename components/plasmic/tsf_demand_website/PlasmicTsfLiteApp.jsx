@@ -123,7 +123,7 @@ function PlasmicTsfLiteApp__RenderFunc(props) {
                         sty.h1
                       )}
                     >
-                      {"Our Features "}
+                      {"TSF Lite App"}
                     </h1>
                     <div
                       className={classNames(

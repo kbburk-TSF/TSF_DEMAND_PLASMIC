@@ -25,7 +25,7 @@
   width: 100%;
   height: auto;
   max-width: 100%;
-  background: #0091ff;
+  background: var(--token-GVmg7yaE-Tp8);
   min-width: 0;
   padding: 0px;
 }
