@@ -17,9 +17,9 @@ import {
   deriveRenderOpts
 } from "@plasmicapp/react-web";
 import { useDataEnv } from "@plasmicapp/react-web/lib/host";
-import Header from "../../Header"; // plasmic-import: _SjLXPL93E_I/component
+import TsfDemandMainNavigation from "../../TsfDemandMainNavigation"; // plasmic-import: RS9jruOWtFtt/component
 import Button from "../../Button"; // plasmic-import: -U7nCsYlsFbS/component
-import Footer from "../../Footer"; // plasmic-import: uEqGgNuRcZj8/component
+import TsfFooter from "../../TsfFooter"; // plasmic-import: NmgYw5lHKANx/component
 import { _useStyleTokens } from "./PlasmicStyleTokensProvider"; // plasmic-import: 8yhBRaKsBf3R2wKMhT5dUU/styleTokensProvider
 import "@plasmicapp/react-web/lib/plasmic.css";
 import projectcss from "./plasmic.module.css"; // plasmic-import: 8yhBRaKsBf3R2wKMhT5dUU/projectcss
@@ -87,10 +87,13 @@ function PlasmicPricing__RenderFunc(props) {
             sty.root
           )}
         >
-          <Header
-            data-plasmic-name={"header"}
-            data-plasmic-override={overrides.header}
-            className={classNames("__wab_instance", sty.header)}
+          <TsfDemandMainNavigation
+            data-plasmic-name={"tsfDemandMainNavigation"}
+            data-plasmic-override={overrides.tsfDemandMainNavigation}
+            className={classNames(
+              "__wab_instance",
+              sty.tsfDemandMainNavigation
+            )}
           />
 
           <div className={classNames(projectcss.all, sty.freeBox__oNiMk)}>
@@ -1115,10 +1118,10 @@ function PlasmicPricing__RenderFunc(props) {
               </div>
             </div>
           </div>
-          <Footer
-            data-plasmic-name={"footer"}
-            data-plasmic-override={overrides.footer}
-            className={classNames("__wab_instance", sty.footer)}
+          <TsfFooter
+            data-plasmic-name={"tsfFooter"}
+            data-plasmic-override={overrides.tsfFooter}
+            className={classNames("__wab_instance", sty.tsfFooter)}
           />
         </div>
       </div>
@@ -1129,7 +1132,7 @@ function PlasmicPricing__RenderFunc(props) {
 const PlasmicDescendants = {
   root: [
     "root",
-    "header",
+    "tsfDemandMainNavigation",
     "foreground",
     "h1",
     "faQs",
@@ -1139,10 +1142,10 @@ const PlasmicDescendants = {
     "accordion8",
     "accordion9",
     "accordion10",
-    "footer"
+    "tsfFooter"
   ],
 
-  header: ["header"],
+  tsfDemandMainNavigation: ["tsfDemandMainNavigation"],
   foreground: ["foreground", "h1"],
   h1: ["h1"],
   faQs: [
@@ -1161,7 +1164,7 @@ const PlasmicDescendants = {
   accordion8: ["accordion8"],
   accordion9: ["accordion9"],
   accordion10: ["accordion10"],
-  footer: ["footer"]
+  tsfFooter: ["tsfFooter"]
 };
 
 function makeNodeComponent(nodeName) {
@@ -1196,7 +1199,7 @@ export const PlasmicPricing = Object.assign(
   makeNodeComponent("root"),
   {
     // Helper components rendering sub-elements
-    header: makeNodeComponent("header"),
+    tsfDemandMainNavigation: makeNodeComponent("tsfDemandMainNavigation"),
     foreground: makeNodeComponent("foreground"),
     h1: makeNodeComponent("h1"),
     faQs: makeNodeComponent("faQs"),
@@ -1206,7 +1209,7 @@ export const PlasmicPricing = Object.assign(
     accordion8: makeNodeComponent("accordion8"),
     accordion9: makeNodeComponent("accordion9"),
     accordion10: makeNodeComponent("accordion10"),
-    footer: makeNodeComponent("footer"),
+    tsfFooter: makeNodeComponent("tsfFooter"),
     // Metadata about props expected for PlasmicPricing
     internalVariantProps: PlasmicPricing__VariantProps,
     internalArgProps: PlasmicPricing__ArgProps,

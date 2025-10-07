@@ -19,11 +19,11 @@ import {
   hasVariant
 } from "@plasmicapp/react-web";
 import { useDataEnv } from "@plasmicapp/react-web/lib/host";
-import Header from "../../Header"; // plasmic-import: _SjLXPL93E_I/component
+import TsfDemandMainNavigation from "../../TsfDemandMainNavigation"; // plasmic-import: RS9jruOWtFtt/component
 import IframeEmbed from "../../IframeEmbed"; // plasmic-import: nSE9S-d7qhfH/codeComponent
 import Button from "../../Button"; // plasmic-import: -U7nCsYlsFbS/component
+import TsfFooter from "../../TsfFooter"; // plasmic-import: NmgYw5lHKANx/component
 import HeroSection from "../../HeroSection"; // plasmic-import: JNdKyXMmIYn1/component
-import Footer from "../../Footer"; // plasmic-import: uEqGgNuRcZj8/component
 import { _useGlobalVariants } from "./plasmic"; // plasmic-import: 8yhBRaKsBf3R2wKMhT5dUU/projectModule
 import { _useStyleTokens } from "./PlasmicStyleTokensProvider"; // plasmic-import: 8yhBRaKsBf3R2wKMhT5dUU/styleTokensProvider
 import "@plasmicapp/react-web/lib/plasmic.css";
@@ -93,10 +93,13 @@ function PlasmicTsfEngineDemo__RenderFunc(props) {
             sty.root
           )}
         >
-          <Header
-            data-plasmic-name={"header"}
-            data-plasmic-override={overrides.header}
-            className={classNames("__wab_instance", sty.header)}
+          <TsfDemandMainNavigation
+            data-plasmic-name={"tsfDemandMainNavigation"}
+            data-plasmic-override={overrides.tsfDemandMainNavigation}
+            className={classNames(
+              "__wab_instance",
+              sty.tsfDemandMainNavigation
+            )}
           />
 
           <div
@@ -430,6 +433,12 @@ function PlasmicTsfEngineDemo__RenderFunc(props) {
               </div>
             </div>
           </div>
+          <TsfFooter
+            data-plasmic-name={"tsfFooter"}
+            data-plasmic-override={overrides.tsfFooter}
+            className={classNames("__wab_instance", sty.tsfFooter)}
+          />
+
           <HeroSection
             data-plasmic-name={"heroSection"}
             data-plasmic-override={overrides.heroSection}
@@ -548,11 +557,6 @@ function PlasmicTsfEngineDemo__RenderFunc(props) {
               </div>
             </div>
           </div>
-          <Footer
-            data-plasmic-name={"footer"}
-            data-plasmic-override={overrides.footer}
-            className={classNames("__wab_instance", sty.footer)}
-          />
         </div>
       </div>
     </React.Fragment>
@@ -562,7 +566,7 @@ function PlasmicTsfEngineDemo__RenderFunc(props) {
 const PlasmicDescendants = {
   root: [
     "root",
-    "header",
+    "tsfDemandMainNavigation",
     "pageBanner",
     "columns",
     "h1",
@@ -572,13 +576,13 @@ const PlasmicDescendants = {
     "copy",
     "button",
     "art",
+    "tsfFooter",
     "heroSection",
     "mainSection2",
-    "container3",
-    "footer"
+    "container3"
   ],
 
-  header: ["header"],
+  tsfDemandMainNavigation: ["tsfDemandMainNavigation"],
   pageBanner: ["pageBanner", "columns", "h1"],
   columns: ["columns", "h1"],
   h1: ["h1"],
@@ -588,10 +592,10 @@ const PlasmicDescendants = {
   copy: ["copy", "button"],
   button: ["button"],
   art: ["art"],
+  tsfFooter: ["tsfFooter"],
   heroSection: ["heroSection"],
   mainSection2: ["mainSection2", "container3"],
-  container3: ["container3"],
-  footer: ["footer"]
+  container3: ["container3"]
 };
 
 function makeNodeComponent(nodeName) {
@@ -626,7 +630,7 @@ export const PlasmicTsfEngineDemo = Object.assign(
   makeNodeComponent("root"),
   {
     // Helper components rendering sub-elements
-    header: makeNodeComponent("header"),
+    tsfDemandMainNavigation: makeNodeComponent("tsfDemandMainNavigation"),
     pageBanner: makeNodeComponent("pageBanner"),
     columns: makeNodeComponent("columns"),
     h1: makeNodeComponent("h1"),
@@ -636,10 +640,10 @@ export const PlasmicTsfEngineDemo = Object.assign(
     copy: makeNodeComponent("copy"),
     button: makeNodeComponent("button"),
     art: makeNodeComponent("art"),
+    tsfFooter: makeNodeComponent("tsfFooter"),
     heroSection: makeNodeComponent("heroSection"),
     mainSection2: makeNodeComponent("mainSection2"),
     container3: makeNodeComponent("container3"),
-    footer: makeNodeComponent("footer"),
     // Metadata about props expected for PlasmicTsfEngineDemo
     internalVariantProps: PlasmicTsfEngineDemo__VariantProps,
     internalArgProps: PlasmicTsfEngineDemo__ArgProps,

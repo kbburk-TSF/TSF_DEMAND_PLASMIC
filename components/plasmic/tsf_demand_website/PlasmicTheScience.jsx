@@ -19,8 +19,8 @@ import {
   hasVariant
 } from "@plasmicapp/react-web";
 import { useDataEnv } from "@plasmicapp/react-web/lib/host";
-import Header from "../../Header"; // plasmic-import: _SjLXPL93E_I/component
-import Footer from "../../Footer"; // plasmic-import: uEqGgNuRcZj8/component
+import TsfDemandMainNavigation from "../../TsfDemandMainNavigation"; // plasmic-import: RS9jruOWtFtt/component
+import TsfFooter from "../../TsfFooter"; // plasmic-import: NmgYw5lHKANx/component
 import { _useGlobalVariants } from "./plasmic"; // plasmic-import: 8yhBRaKsBf3R2wKMhT5dUU/projectModule
 import { _useStyleTokens } from "./PlasmicStyleTokensProvider"; // plasmic-import: 8yhBRaKsBf3R2wKMhT5dUU/styleTokensProvider
 import "@plasmicapp/react-web/lib/plasmic.css";
@@ -89,10 +89,13 @@ function PlasmicTheScience__RenderFunc(props) {
             sty.root
           )}
         >
-          <Header
-            data-plasmic-name={"header"}
-            data-plasmic-override={overrides.header}
-            className={classNames("__wab_instance", sty.header)}
+          <TsfDemandMainNavigation
+            data-plasmic-name={"tsfDemandMainNavigation"}
+            data-plasmic-override={overrides.tsfDemandMainNavigation}
+            className={classNames(
+              "__wab_instance",
+              sty.tsfDemandMainNavigation
+            )}
           />
 
           <div
@@ -3296,10 +3299,10 @@ function PlasmicTheScience__RenderFunc(props) {
               </div>
             </div>
           </div>
-          <Footer
-            data-plasmic-name={"footer"}
-            data-plasmic-override={overrides.footer}
-            className={classNames("__wab_instance", sty.footer)}
+          <TsfFooter
+            data-plasmic-name={"tsfFooter"}
+            data-plasmic-override={overrides.tsfFooter}
+            className={classNames("__wab_instance", sty.tsfFooter)}
           />
         </div>
       </div>
@@ -3310,22 +3313,22 @@ function PlasmicTheScience__RenderFunc(props) {
 const PlasmicDescendants = {
   root: [
     "root",
-    "header",
+    "tsfDemandMainNavigation",
     "mainSection",
     "pageBanner",
     "columns",
     "mainSection2",
     "container3",
-    "footer"
+    "tsfFooter"
   ],
 
-  header: ["header"],
+  tsfDemandMainNavigation: ["tsfDemandMainNavigation"],
   mainSection: ["mainSection", "pageBanner", "columns"],
   pageBanner: ["pageBanner", "columns"],
   columns: ["columns"],
   mainSection2: ["mainSection2", "container3"],
   container3: ["container3"],
-  footer: ["footer"]
+  tsfFooter: ["tsfFooter"]
 };
 
 function makeNodeComponent(nodeName) {
@@ -3360,13 +3363,13 @@ export const PlasmicTheScience = Object.assign(
   makeNodeComponent("root"),
   {
     // Helper components rendering sub-elements
-    header: makeNodeComponent("header"),
+    tsfDemandMainNavigation: makeNodeComponent("tsfDemandMainNavigation"),
     mainSection: makeNodeComponent("mainSection"),
     pageBanner: makeNodeComponent("pageBanner"),
     columns: makeNodeComponent("columns"),
     mainSection2: makeNodeComponent("mainSection2"),
     container3: makeNodeComponent("container3"),
-    footer: makeNodeComponent("footer"),
+    tsfFooter: makeNodeComponent("tsfFooter"),
     // Metadata about props expected for PlasmicTheScience
     internalVariantProps: PlasmicTheScience__VariantProps,
     internalArgProps: PlasmicTheScience__ArgProps,
