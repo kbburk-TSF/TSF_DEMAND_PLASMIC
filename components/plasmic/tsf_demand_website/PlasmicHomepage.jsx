@@ -21,10 +21,10 @@ import {
 import { useDataEnv } from "@plasmicapp/react-web/lib/host";
 import TsfDemandMainNavigation from "../../TsfDemandMainNavigation"; // plasmic-import: RS9jruOWtFtt/component
 import Button from "../../Button"; // plasmic-import: -U7nCsYlsFbS/component
+import TsfFooter from "../../TsfFooter"; // plasmic-import: NmgYw5lHKANx/component
 import BlogPosts from "../../BlogPosts"; // plasmic-import: t8iMRGE7O8dB/component
 import CtaBlock from "../../CtaBlock"; // plasmic-import: qoTEPcEAYg5b/component
 import HeroSection from "../../HeroSection"; // plasmic-import: JNdKyXMmIYn1/component
-import Footer from "../../Footer"; // plasmic-import: uEqGgNuRcZj8/component
 import { _useGlobalVariants } from "./plasmic"; // plasmic-import: 8yhBRaKsBf3R2wKMhT5dUU/projectModule
 import { _useStyleTokens } from "./PlasmicStyleTokensProvider"; // plasmic-import: 8yhBRaKsBf3R2wKMhT5dUU/styleTokensProvider
 import "@plasmicapp/react-web/lib/plasmic.css";
@@ -552,6 +552,12 @@ function PlasmicHomepage__RenderFunc(props) {
               </div>
             </div>
           </section>
+          <TsfFooter
+            data-plasmic-name={"tsfFooter"}
+            data-plasmic-override={overrides.tsfFooter}
+            className={classNames("__wab_instance", sty.tsfFooter)}
+          />
+
           <BlogPosts
             data-plasmic-name={"blogPosts"}
             data-plasmic-override={overrides.blogPosts}
@@ -569,12 +575,6 @@ function PlasmicHomepage__RenderFunc(props) {
             data-plasmic-override={overrides.heroSection}
             className={classNames("__wab_instance", sty.heroSection)}
           />
-
-          <Footer
-            data-plasmic-name={"footer"}
-            data-plasmic-override={overrides.footer}
-            className={classNames("__wab_instance", sty.footer)}
-          />
         </div>
       </div>
     </React.Fragment>
@@ -587,19 +587,19 @@ const PlasmicDescendants = {
     "tsfDemandMainNavigation",
     "features",
     "columns",
+    "tsfFooter",
     "blogPosts",
     "ctaBlock",
-    "heroSection",
-    "footer"
+    "heroSection"
   ],
 
   tsfDemandMainNavigation: ["tsfDemandMainNavigation"],
   features: ["features", "columns"],
   columns: ["columns"],
+  tsfFooter: ["tsfFooter"],
   blogPosts: ["blogPosts"],
   ctaBlock: ["ctaBlock"],
-  heroSection: ["heroSection"],
-  footer: ["footer"]
+  heroSection: ["heroSection"]
 };
 
 function makeNodeComponent(nodeName) {
@@ -637,10 +637,10 @@ export const PlasmicHomepage = Object.assign(
     tsfDemandMainNavigation: makeNodeComponent("tsfDemandMainNavigation"),
     features: makeNodeComponent("features"),
     columns: makeNodeComponent("columns"),
+    tsfFooter: makeNodeComponent("tsfFooter"),
     blogPosts: makeNodeComponent("blogPosts"),
     ctaBlock: makeNodeComponent("ctaBlock"),
     heroSection: makeNodeComponent("heroSection"),
-    footer: makeNodeComponent("footer"),
     // Metadata about props expected for PlasmicHomepage
     internalVariantProps: PlasmicHomepage__VariantProps,
     internalArgProps: PlasmicHomepage__ArgProps,
