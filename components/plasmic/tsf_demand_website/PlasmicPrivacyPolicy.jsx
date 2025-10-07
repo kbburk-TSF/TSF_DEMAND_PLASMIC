@@ -123,7 +123,7 @@ function PlasmicPrivacyPolicy__RenderFunc(props) {
                         sty.h1
                       )}
                     >
-                      {"Privacy Policy"}
+                      {"Privacy & Legal Policy"}
                     </h1>
                     <div
                       className={classNames(
@@ -133,7 +133,7 @@ function PlasmicPrivacyPolicy__RenderFunc(props) {
                       )}
                     >
                       {
-                        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,"
+                        "Targeted Seasonal Forecasts (TSF) respect your privacy and are committed to safeguarding your personal and business data. This Privacy & Legal Policy explains how we collect, use, and protect the information shared through our websites, applications, and services. "
                       }
                     </div>
                   </div>
@@ -198,9 +198,34 @@ function PlasmicPrivacyPolicy__RenderFunc(props) {
                     sty.h4__bJvxy
                   )}
                 >
-                  {hasVariant(globalVariants, "screen", "mobileOnly")
-                    ? "Professional And\nDedicated Consulting Services..."
-                    : "Lorem Heading main privacy policy"}
+                  {hasVariant(globalVariants, "screen", "mobileOnly") ? (
+                    "Professional And\nDedicated Consulting Services..."
+                  ) : (
+                    <React.Fragment>
+                      <React.Fragment>{""}</React.Fragment>
+                      {
+                        <ol
+                          className={classNames(
+                            projectcss.all,
+                            projectcss.ol,
+                            sty.ol__nd2QG
+                          )}
+                        >
+                          <li
+                            className={classNames(
+                              projectcss.all,
+                              projectcss.li,
+                              projectcss.__wab_text,
+                              sty.li__oI5Bp
+                            )}
+                          >
+                            {"Our Compliance Goal"}
+                          </li>
+                        </ol>
+                      }
+                      <React.Fragment>{""}</React.Fragment>
+                    </React.Fragment>
+                  )}
                 </h4>
                 <div
                   className={classNames(
@@ -210,7 +235,7 @@ function PlasmicPrivacyPolicy__RenderFunc(props) {
                   )}
                 >
                   {
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam a metus quis lorem malesuada luctus. Cras lacinia, eros at dapibus molestie, risus tortor pretium ligula, eu malesuada tortor eros dapibus mi. Proin laoreet efficitur suscipit. Donec molestie volutpat euismod. Nulla gravida ligula in eros facilisis, sed dignissim tellus aliquam. Etiam convallis enim nisi, at suscipit tortor pulvinar at. "
+                    "TSF Demand is designed to meet Tier 1 compliance standards \u2014 equivalent to the requirements for SOC\u20112\rType II and ISO\u201127001 certification. Our infrastructure leverages Neon (PostgreSQL) and AWS hosting\renvironments, both of which maintain SOC\u20112, ISO\u201127001, and GDPR compliance certifications.\r\n\nOur objective is to achieve full SOC\u20112 certification for the TSF platform as the application matures and\rmerchant data begins active processing."
                   }
                 </div>
               </div>
@@ -225,7 +250,7 @@ function PlasmicPrivacyPolicy__RenderFunc(props) {
                 >
                   {hasVariant(globalVariants, "screen", "mobileOnly")
                     ? "Professional And\nDedicated Consulting Services..."
-                    : "Lorem Heading main privacy policy"}
+                    : "2. Hosting & Data Isolation"}
                 </h4>
                 <div
                   className={classNames(
@@ -234,9 +259,75 @@ function PlasmicPrivacyPolicy__RenderFunc(props) {
                     sty.text__rWvh6
                   )}
                 >
-                  {
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam a metus quis lorem malesuada luctus. Cras lacinia, eros at dapibus molestie, risus tortor pretium ligula, eu malesuada tortor eros dapibus mi. Proin laoreet efficitur suscipit. Donec molestie volutpat euismod. Nulla gravida ligula in eros facilisis, sed dignissim tellus aliquam. Etiam convallis enim nisi, at suscipit tortor pulvinar at. "
-                  }
+                  <React.Fragment>
+                    <React.Fragment>
+                      {
+                        "All client data is stored in dedicated Neon databases. Each client has an independent database cluster and\rschema, completely isolated from other clients\u2019 data.\r\n\n"
+                      }
+                    </React.Fragment>
+                    {
+                      <ul
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.ul,
+                          sty.ul__bAOeY
+                        )}
+                      >
+                        <li
+                          className={classNames(
+                            projectcss.all,
+                            projectcss.li,
+                            projectcss.__wab_text,
+                            sty.li__utmtu
+                          )}
+                        >
+                          <React.Fragment>
+                            <React.Fragment>{"There is "}</React.Fragment>
+                            <span
+                              className={
+                                "plasmic_default__all plasmic_default__span"
+                              }
+                              style={{ fontWeight: 700 }}
+                            >
+                              {"no shared database"}
+                            </span>
+                            <React.Fragment>
+                              {" between clients.\r"}
+                            </React.Fragment>
+                          </React.Fragment>
+                        </li>
+                        <li
+                          className={classNames(
+                            projectcss.all,
+                            projectcss.li,
+                            projectcss.__wab_text,
+                            sty.li__odXUc
+                          )}
+                        >
+                          {
+                            "No data from one merchant is ever used, queried, or compared with data from another merchant.\r"
+                          }
+                        </li>
+                        <li
+                          className={classNames(
+                            projectcss.all,
+                            projectcss.li,
+                            projectcss.__wab_text,
+                            sty.li__cuXcb
+                          )}
+                        >
+                          {
+                            "Forecasting operations are executed within each merchant\u2019s unique data environment.\r"
+                          }
+                        </li>
+                      </ul>
+                    }
+                    <React.Fragment>
+                      {
+                        "\nThis isolation prevents any chance of cross\u2011connection or data leakage between clients.\n\nAll services run on encrypted connections (SSL/TLS). Neon provides encrypted storage by default, and all\rtraffic between Neon and our application layer (hosted on Render/AWS) is encrypted in transit."
+                      }
+                    </React.Fragment>
+                  </React.Fragment>
                 </div>
               </div>
               <div className={classNames(projectcss.all, sty.freeBox__vUqxR)}>
@@ -250,8 +341,20 @@ function PlasmicPrivacyPolicy__RenderFunc(props) {
                 >
                   {hasVariant(globalVariants, "screen", "mobileOnly")
                     ? "Professional And\nDedicated Consulting Services..."
-                    : "Lorem Heading main privacy policy"}
+                    : "3. Data We Collect"}
                 </h4>
+                <h5
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.h5,
+                    projectcss.__wab_text,
+                    sty.h5__ocLwT
+                  )}
+                >
+                  {hasVariant(globalVariants, "screen", "mobileOnly")
+                    ? "Professional And\nDedicated Consulting Services..."
+                    : "a. Website & Form Data"}
+                </h5>
                 <div
                   className={classNames(
                     projectcss.all,
@@ -259,8 +362,103 @@ function PlasmicPrivacyPolicy__RenderFunc(props) {
                     sty.text__ky0Qa
                   )}
                 >
+                  <React.Fragment>
+                    <React.Fragment>
+                      {
+                        "When you interact with our site, we collect the information you voluntarily provide via Tally forms, such as:\n\n"
+                      }
+                    </React.Fragment>
+                    {
+                      <ul
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.ul,
+                          sty.ul__fn0W
+                        )}
+                      >
+                        <li
+                          className={classNames(
+                            projectcss.all,
+                            projectcss.li,
+                            projectcss.__wab_text,
+                            sty.li__nSD1
+                          )}
+                        >
+                          {" \rName, email address, and company/store name. "}
+                        </li>
+                        <li
+                          className={classNames(
+                            projectcss.all,
+                            projectcss.li,
+                            projectcss.__wab_text,
+                            sty.li__o4Xhp
+                          )}
+                        >
+                          {
+                            "Shopify store URL or other relevant e\u2011commerce details. "
+                          }
+                        </li>
+                        <li
+                          className={classNames(
+                            projectcss.all,
+                            projectcss.li,
+                            projectcss.__wab_text,
+                            sty.li__rSaJ
+                          )}
+                        >
+                          {
+                            "\rResponses to early access, interest, or case study application forms."
+                          }
+                        </li>
+                      </ul>
+                    }
+                    <React.Fragment>{""}</React.Fragment>
+                  </React.Fragment>
+                </div>
+                <h5
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.h5,
+                    projectcss.__wab_text,
+                    sty.h5__rc8UY
+                  )}
+                >
+                  {hasVariant(globalVariants, "screen", "mobileOnly")
+                    ? "Professional And\nDedicated Consulting Services..."
+                    : "b. Application Data (Forecast Clients)"}
+                </h5>
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text___022RX
+                  )}
+                >
                   {
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam a metus quis lorem malesuada luctus. Cras lacinia, eros at dapibus molestie, risus tortor pretium ligula, eu malesuada tortor eros dapibus mi. Proin laoreet efficitur suscipit. Donec molestie volutpat euismod. Nulla gravida ligula in eros facilisis, sed dignissim tellus aliquam. Etiam convallis enim nisi, at suscipit tortor pulvinar at. "
+                    "When the TSF Lite App launches, merchants connecting through Shopify or other platforms will transmit\rlimited sales and inventory history required to generate forecasts. This data is stored only in that\rmerchant\u2019s Neon database.\r\n\nWe do not access, aggregate, or sell this data to any third parties."
+                  }
+                </div>
+                <h5
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.h5,
+                    projectcss.__wab_text,
+                    sty.h5___4Uv5C
+                  )}
+                >
+                  {hasVariant(globalVariants, "screen", "mobileOnly")
+                    ? "Professional And\nDedicated Consulting Services..."
+                    : "c. Technical Logs"}
+                </h5>
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__xghps
+                  )}
+                >
+                  {
+                    "We may collect anonymized diagnostic and usage information (e.g., API timing, error logs, page\rinteractions) to improve performance and monitor uptime."
                   }
                 </div>
               </div>
@@ -275,7 +473,7 @@ function PlasmicPrivacyPolicy__RenderFunc(props) {
                 >
                   {hasVariant(globalVariants, "screen", "mobileOnly")
                     ? "Professional And\nDedicated Consulting Services..."
-                    : "The standard Lorem Ipsum passage heading"}
+                    : "4. How We Use Your Information"}
                 </h4>
                 <div
                   className={classNames(
@@ -284,9 +482,792 @@ function PlasmicPrivacyPolicy__RenderFunc(props) {
                     sty.text__sf7Hs
                   )}
                 >
+                  <React.Fragment>
+                    <React.Fragment>{""}</React.Fragment>
+                    {
+                      <ul
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.ul,
+                          sty.ul__lqCm
+                        )}
+                      >
+                        <li
+                          className={classNames(
+                            projectcss.all,
+                            projectcss.li,
+                            projectcss.__wab_text,
+                            sty.li___3D8Oo
+                          )}
+                        >
+                          {"To provide and improve forecasting services.\r"}
+                        </li>
+                        <li
+                          className={classNames(
+                            projectcss.all,
+                            projectcss.li,
+                            projectcss.__wab_text,
+                            sty.li__vJloA
+                          )}
+                        >
+                          {
+                            "To communicate regarding onboarding, updates, or support.\r"
+                          }
+                        </li>
+                        <li
+                          className={classNames(
+                            projectcss.all,
+                            projectcss.li,
+                            projectcss.__wab_text,
+                            sty.li__vrSf
+                          )}
+                        >
+                          {
+                            "To evaluate case study applicants and coordinate participation.\r"
+                          }
+                        </li>
+                        <li
+                          className={classNames(
+                            projectcss.all,
+                            projectcss.li,
+                            projectcss.__wab_text,
+                            sty.li__xByUv
+                          )}
+                        >
+                          {
+                            "To analyze usage trends in aggregate (never identifying individual merchants).\r"
+                          }
+                        </li>
+                      </ul>
+                    }
+                    <React.Fragment>
+                      {
+                        "\nWe will never sell or share identifying information with advertisers or unrelated third parties."
+                      }
+                    </React.Fragment>
+                  </React.Fragment>
+                </div>
+              </div>
+              <div className={classNames(projectcss.all, sty.freeBox__rXjun)}>
+                <h4
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.h4,
+                    projectcss.__wab_text,
+                    sty.h4___3Lggu
+                  )}
+                >
+                  {hasVariant(globalVariants, "screen", "mobileOnly")
+                    ? "Professional And\nDedicated Consulting Services..."
+                    : "5. Case Study Participation & Data Sharing"}
+                </h4>
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__gnFNj
+                  )}
+                >
+                  <React.Fragment>
+                    <React.Fragment>
+                      {
+                        "Participation in a TSF case study is Participation in a TSF case study is "
+                      }
+                    </React.Fragment>
+                    <span
+                      className={"plasmic_default__all plasmic_default__span"}
+                      style={{ fontWeight: 700 }}
+                    >
+                      {"voluntary"}
+                    </span>
+                    <React.Fragment>
+                      {
+                        " and requires explicit consent. By applying, you agree that we\r may: \n\n"
+                      }
+                    </React.Fragment>
+                    {
+                      <ul
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.ul,
+                          sty.ul__jYq4
+                        )}
+                      >
+                        <li
+                          className={classNames(
+                            projectcss.all,
+                            projectcss.li,
+                            projectcss.__wab_text,
+                            sty.li__hfM9
+                          )}
+                        >
+                          {
+                            "Review anonymized sales or forecast data for analytical and publication purposes. "
+                          }
+                        </li>
+                        <li
+                          className={classNames(
+                            projectcss.all,
+                            projectcss.li,
+                            projectcss.__wab_text,
+                            sty.li__g8Lv
+                          )}
+                        >
+                          <React.Fragment>
+                            <React.Fragment>{"Publish\r "}</React.Fragment>
+                            <span
+                              className={
+                                "plasmic_default__all plasmic_default__span"
+                              }
+                              style={{ fontWeight: 700 }}
+                            >
+                              {"aggregated or anonymized metrics"}
+                            </span>
+                            <React.Fragment>
+                              {
+                                " (e.g., accuracy rates, improvement percentages) that do not identify\ryour company or products. \n"
+                              }
+                            </React.Fragment>
+                          </React.Fragment>
+                        </li>
+                        <li
+                          className={classNames(
+                            projectcss.all,
+                            projectcss.li,
+                            projectcss.__wab_text,
+                            sty.li__pyAx1
+                          )}
+                        >
+                          <React.Fragment>
+                            <React.Fragment>
+                              {"Use screenshots or visuals of forecasts "}
+                            </React.Fragment>
+                            <span
+                              className={
+                                "plasmic_default__all plasmic_default__span"
+                              }
+                              style={{ fontWeight: 700 }}
+                            >
+                              {"only with written approval"}
+                            </span>
+                            <React.Fragment>
+                              {
+                                " if any\ridentifying information (store name, product names) is visible.\r"
+                              }
+                            </React.Fragment>
+                          </React.Fragment>
+                        </li>
+                      </ul>
+                    }
+                    <React.Fragment>
+                      {
+                        "\nParticipants retain full ownership of their underlying data. TSF will only publish data or visuals after explicit\rwritten consent."
+                      }
+                    </React.Fragment>
+                  </React.Fragment>
+                </div>
+              </div>
+              <div className={classNames(projectcss.all, sty.freeBox___9S3E)}>
+                <h4
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.h4,
+                    projectcss.__wab_text,
+                    sty.h4__yp7Xi
+                  )}
+                >
+                  {hasVariant(globalVariants, "screen", "mobileOnly")
+                    ? "Professional And\nDedicated Consulting Services..."
+                    : "6. Data Retention"}
+                </h4>
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__xxG
+                  )}
+                >
+                  <React.Fragment>
+                    <React.Fragment>{""}</React.Fragment>
+                    {
+                      <ul
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.ul,
+                          sty.ul__es8Qv
+                        )}
+                      >
+                        <li
+                          className={classNames(
+                            projectcss.all,
+                            projectcss.li,
+                            projectcss.__wab_text,
+                            sty.li__sPtlS
+                          )}
+                        >
+                          {
+                            "Website/form data: retained for communication purposes and removed upon request.\r"
+                          }
+                        </li>
+                        <li
+                          className={classNames(
+                            projectcss.all,
+                            projectcss.li,
+                            projectcss.__wab_text,
+                            sty.li__uSrCn
+                          )}
+                        >
+                          {
+                            "Merchant data (forecasts and history): retained for active subscriptions and deleted within 60 days of\rtermination or written request.\r"
+                          }
+                        </li>
+                        <li
+                          className={classNames(
+                            projectcss.all,
+                            projectcss.li,
+                            projectcss.__wab_text,
+                            sty.li__x2TQu
+                          )}
+                        >
+                          {
+                            "Case study data: retained only for the duration of the study and archived securely thereafter."
+                          }
+                        </li>
+                      </ul>
+                    }
+                    <React.Fragment>{""}</React.Fragment>
+                  </React.Fragment>
+                </div>
+              </div>
+              <div className={classNames(projectcss.all, sty.freeBox__buHqL)}>
+                <h4
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.h4,
+                    projectcss.__wab_text,
+                    sty.h4__p7D22
+                  )}
+                >
+                  {hasVariant(globalVariants, "screen", "mobileOnly")
+                    ? "Professional And\nDedicated Consulting Services..."
+                    : "7. Security & Access Controls"}
+                </h4>
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__c0Fnq
+                  )}
+                >
+                  <React.Fragment>
+                    <React.Fragment>{""}</React.Fragment>
+                    {
+                      <ul
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.ul,
+                          sty.ul__dpK9U
+                        )}
+                      >
+                        <li
+                          className={classNames(
+                            projectcss.all,
+                            projectcss.li,
+                            projectcss.__wab_text,
+                            sty.li__xOuF1
+                          )}
+                        >
+                          {
+                            "All data is stored in encrypted Neon clusters with access restricted to designated TSF operations\r personnel.\r"
+                          }
+                        </li>
+                        <li
+                          className={classNames(
+                            projectcss.all,
+                            projectcss.li,
+                            projectcss.__wab_text,
+                            sty.li__wJtDm
+                          )}
+                        >
+                          {
+                            "Access is logged, audited, and monitored under SOC\u20112 controls.\r"
+                          }
+                        </li>
+                        <li
+                          className={classNames(
+                            projectcss.all,
+                            projectcss.li,
+                            projectcss.__wab_text,
+                            sty.li__z9Tol
+                          )}
+                        >
+                          {
+                            "Forecast automation processes run under least\u2011privilege service roles.\r"
+                          }
+                        </li>
+                        <li
+                          className={classNames(
+                            projectcss.all,
+                            projectcss.li,
+                            projectcss.__wab_text,
+                            sty.li__lUcA
+                          )}
+                        >
+                          {
+                            "Credentials and API keys are managed via encrypted environment variables and AWS Secrets\rManager."
+                          }
+                        </li>
+                      </ul>
+                    }
+                    <React.Fragment>{""}</React.Fragment>
+                  </React.Fragment>
+                </div>
+              </div>
+              <div className={classNames(projectcss.all, sty.freeBox__vdJ)}>
+                <h4
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.h4,
+                    projectcss.__wab_text,
+                    sty.h4___9Or56
+                  )}
+                >
+                  {hasVariant(globalVariants, "screen", "mobileOnly")
+                    ? "Professional And\nDedicated Consulting Services..."
+                    : "8. Compliance Roadmap"}
+                </h4>
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__gbX4W
+                  )}
+                >
+                  <React.Fragment>
+                    <React.Fragment>{""}</React.Fragment>
+                    {
+                      <ol
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.ol,
+                          sty.ol__bZmRk
+                        )}
+                      >
+                        <li
+                          className={classNames(
+                            projectcss.all,
+                            projectcss.li,
+                            projectcss.__wab_text,
+                            sty.li__gA6PY
+                          )}
+                        >
+                          <React.Fragment>
+                            <span
+                              className={
+                                "plasmic_default__all plasmic_default__span"
+                              }
+                              style={{ fontWeight: 700 }}
+                            >
+                              {"SOC\u20112 Type I (2026)"}
+                            </span>
+                            <React.Fragment>
+                              {
+                                ": formalize internal control policies and external audit readiness.\r"
+                              }
+                            </React.Fragment>
+                          </React.Fragment>
+                        </li>
+                        <li
+                          className={classNames(
+                            projectcss.all,
+                            projectcss.li,
+                            projectcss.__wab_text,
+                            sty.li__c1Pdo
+                          )}
+                        >
+                          <React.Fragment>
+                            <span
+                              className={
+                                "plasmic_default__all plasmic_default__span"
+                              }
+                              style={{ fontWeight: 700 }}
+                            >
+                              {"SOC\u20112 Type II (2027)"}
+                            </span>
+                            <React.Fragment>
+                              {": ongoing compliance audit and monitoring.\r"}
+                            </React.Fragment>
+                          </React.Fragment>
+                        </li>
+                        <li
+                          className={classNames(
+                            projectcss.all,
+                            projectcss.li,
+                            projectcss.__wab_text,
+                            sty.li__mwhTt
+                          )}
+                        >
+                          <React.Fragment>
+                            <span
+                              className={
+                                "plasmic_default__all plasmic_default__span"
+                              }
+                              style={{ fontWeight: 700 }}
+                            >
+                              {"GDPR alignment (2026)"}
+                            </span>
+                            <React.Fragment>
+                              {
+                                ": ensure full portability and deletion rights for EU clients.\r"
+                              }
+                            </React.Fragment>
+                          </React.Fragment>
+                        </li>
+                        <li
+                          className={classNames(
+                            projectcss.all,
+                            projectcss.li,
+                            projectcss.__wab_text,
+                            sty.li__iOgX4
+                          )}
+                        >
+                          <React.Fragment>
+                            <span
+                              className={
+                                "plasmic_default__all plasmic_default__span"
+                              }
+                              style={{ fontWeight: 700 }}
+                            >
+                              {"Data Processing Agreements (DPAs)"}
+                            </span>
+                            <React.Fragment>
+                              {
+                                ": available upon request once client onboarding begins.\r"
+                              }
+                            </React.Fragment>
+                          </React.Fragment>
+                        </li>
+                        <li
+                          className={classNames(
+                            projectcss.all,
+                            projectcss.li,
+                            projectcss.__wab_text,
+                            sty.li__xslSe
+                          )}
+                        >
+                          <React.Fragment>
+                            <span
+                              className={
+                                "plasmic_default__all plasmic_default__span"
+                              }
+                              style={{ fontWeight: 700 }}
+                            >
+                              {"Penetration testing:"}
+                            </span>
+                            <React.Fragment>
+                              {
+                                " annual independent review of security posture."
+                              }
+                            </React.Fragment>
+                          </React.Fragment>
+                        </li>
+                      </ol>
+                    }
+                    <React.Fragment>{""}</React.Fragment>
+                  </React.Fragment>
+                </div>
+              </div>
+              <div className={classNames(projectcss.all, sty.freeBox__lzpKo)}>
+                <h4
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.h4,
+                    projectcss.__wab_text,
+                    sty.h4___92Ea7
+                  )}
+                >
+                  {hasVariant(globalVariants, "screen", "mobileOnly")
+                    ? "Professional And\nDedicated Consulting Services..."
+                    : "9. Third-Party Services"}
+                </h4>
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__um3C9
+                  )}
+                >
+                  <React.Fragment>
+                    <React.Fragment>
+                      {
+                        "We use a small number of verified, compliant vendors: \n\n"
+                      }
+                    </React.Fragment>
+                    {
+                      <ul
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.ul,
+                          sty.ul__svJ74
+                        )}
+                      >
+                        <li
+                          className={classNames(
+                            projectcss.all,
+                            projectcss.li,
+                            projectcss.__wab_text,
+                            sty.li__tygeN
+                          )}
+                        >
+                          <React.Fragment>
+                            <span
+                              className={
+                                "plasmic_default__all plasmic_default__span"
+                              }
+                              style={{ fontWeight: 700 }}
+                            >
+                              {"Neon"}
+                            </span>
+                            <React.Fragment>
+                              {
+                                " \u2013 data storage (SOC\u20112, ISO\u201127001, GDPR\rcompliant) "
+                              }
+                            </React.Fragment>
+                          </React.Fragment>
+                        </li>
+                        <li
+                          className={classNames(
+                            projectcss.all,
+                            projectcss.li,
+                            projectcss.__wab_text,
+                            sty.li___1FXWp
+                          )}
+                        >
+                          <React.Fragment>
+                            <span
+                              className={
+                                "plasmic_default__all plasmic_default__span"
+                              }
+                              style={{ fontWeight: 700 }}
+                            >
+                              {"AWS"}
+                            </span>
+                            <React.Fragment>
+                              {
+                                " \u2013 compute and backup (SOC\u20112, ISO\u201127001, GDPR compliant) "
+                              }
+                            </React.Fragment>
+                          </React.Fragment>
+                        </li>
+                        <li
+                          className={classNames(
+                            projectcss.all,
+                            projectcss.li,
+                            projectcss.__wab_text,
+                            sty.li__dC2Z8
+                          )}
+                        >
+                          <React.Fragment>
+                            <span
+                              className={
+                                "plasmic_default__all plasmic_default__span"
+                              }
+                              style={{ fontWeight: 700 }}
+                            >
+                              {"Render"}
+                            </span>
+                            <React.Fragment>
+                              {
+                                " \u2013 web hosting \r(ISO\u201127001, SOC\u20112 alignment) "
+                              }
+                            </React.Fragment>
+                          </React.Fragment>
+                        </li>
+                        <li
+                          className={classNames(
+                            projectcss.all,
+                            projectcss.li,
+                            projectcss.__wab_text,
+                            sty.li__ygSAw
+                          )}
+                        >
+                          <React.Fragment>
+                            <span
+                              className={
+                                "plasmic_default__all plasmic_default__span"
+                              }
+                              style={{ fontWeight: 700 }}
+                            >
+                              {"Tally.so "}
+                            </span>
+                            <React.Fragment>
+                              {
+                                "\u2013 form collection (GDPR compliant, EU data center).\r"
+                              }
+                            </React.Fragment>
+                          </React.Fragment>
+                        </li>
+                      </ul>
+                    }
+                    <React.Fragment>
+                      {
+                        "\nEach service is vetted for data protection and minimal retention."
+                      }
+                    </React.Fragment>
+                  </React.Fragment>
+                </div>
+              </div>
+              <div className={classNames(projectcss.all, sty.freeBox__jKt1K)}>
+                <h4
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.h4,
+                    projectcss.__wab_text,
+                    sty.h4__qjAyM
+                  )}
+                >
+                  {hasVariant(globalVariants, "screen", "mobileOnly")
+                    ? "Professional And\nDedicated Consulting Services..."
+                    : "10. Your Rights"}
+                </h4>
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__aLd3R
+                  )}
+                >
+                  <React.Fragment>
+                    <React.Fragment>
+                      {"You have the right to: \n\n"}
+                    </React.Fragment>
+                    {
+                      <ul
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.ul,
+                          sty.ul__n6WoL
+                        )}
+                      >
+                        <li
+                          className={classNames(
+                            projectcss.all,
+                            projectcss.li,
+                            projectcss.__wab_text,
+                            sty.li__ch2L5
+                          )}
+                        >
+                          {"Request a copy of your stored personal data. "}
+                        </li>
+                        <li
+                          className={classNames(
+                            projectcss.all,
+                            projectcss.li,
+                            projectcss.__wab_text,
+                            sty.li__sqJhB
+                          )}
+                        >
+                          {
+                            "Request correction or deletion of your\rinformation. "
+                          }
+                        </li>
+                        <li
+                          className={classNames(
+                            projectcss.all,
+                            projectcss.li,
+                            projectcss.__wab_text,
+                            sty.li__mlm3T
+                          )}
+                        >
+                          {
+                            "Withdraw consent for communications or participation at any time.\r"
+                          }
+                        </li>
+                      </ul>
+                    }
+                    <React.Fragment>
+                      {"\nRequests can be sent to privacy@tsfdemand.com."}
+                    </React.Fragment>
+                  </React.Fragment>
+                </div>
+              </div>
+              <div className={classNames(projectcss.all, sty.freeBox__lo4Sh)}>
+                <h4
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.h4,
+                    projectcss.__wab_text,
+                    sty.h4__eApZm
+                  )}
+                >
+                  {hasVariant(globalVariants, "screen", "mobileOnly")
+                    ? "Professional And\nDedicated Consulting Services..."
+                    : "11.\u00a0Updates to This Policy"}
+                </h4>
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__efsw6
+                  )}
+                >
                   {
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam a metus quis lorem malesuada luctus. Cras lacinia, eros at dapibus molestie, risus tortor pretium ligula, eu malesuada tortor eros dapibus mi. Proin laoreet efficitur suscipit. Donec molestie volutpat euismod. Nulla gravida ligula in eros facilisis, sed dignissim tellus aliquam. Etiam convallis enim nisi, at suscipit tortor pulvinar at. "
+                    "We may update this Privacy & Legal Policy as our compliance framework evolves. Any major revisions will be\rannounced via email to registered users and posted on tsfdemand.com/privacy.\r"
                   }
+                </div>
+              </div>
+              <div className={classNames(projectcss.all, sty.freeBox__vvhH0)}>
+                <h4
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.h4,
+                    projectcss.__wab_text,
+                    sty.h4__oum84
+                  )}
+                >
+                  {hasVariant(globalVariants, "screen", "mobileOnly")
+                    ? "Professional And\nDedicated Consulting Services..."
+                    : "12. Contact Information"}
+                </h4>
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text___7PmH
+                  )}
+                >
+                  <React.Fragment>
+                    <span
+                      className={"plasmic_default__all plasmic_default__span"}
+                      style={{ fontWeight: 700 }}
+                    >
+                      {"TSF / Targeted Seasonal Forecasts Incorporated"}
+                    </span>
+                    <React.Fragment>{"\n"}</React.Fragment>
+                    <span
+                      className={"plasmic_default__all plasmic_default__span"}
+                      style={{ fontWeight: 700 }}
+                    >
+                      {"254 Chapman Rd, Ste 208 #24609"}
+                    </span>
+                    <React.Fragment>{"\n"}</React.Fragment>
+                    <span
+                      className={"plasmic_default__all plasmic_default__span"}
+                      style={{ fontWeight: 700 }}
+                    >
+                      {"Newark, Delaware 19702"}
+                    </span>
+                    <React.Fragment>{"\n\nEmail: "}</React.Fragment>
+                    <span
+                      className={"plasmic_default__all plasmic_default__span"}
+                      style={{ fontWeight: 700 }}
+                    >
+                      {"privacy@tsfdemand.com"}
+                    </span>
+                    <React.Fragment>
+                      {"\nWebsite: https://TSFDemand.com\n"}
+                    </React.Fragment>
+                  </React.Fragment>
                 </div>
               </div>
             </div>
