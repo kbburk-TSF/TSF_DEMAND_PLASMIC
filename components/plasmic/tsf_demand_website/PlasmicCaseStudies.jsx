@@ -10,9 +10,11 @@
 // Component: B0YwF5yls5yO
 import * as React from "react";
 import Head from "next/head";
+import Link from "next/link";
 import { useRouter } from "next/router";
 import {
   PlasmicImg as PlasmicImg__,
+  PlasmicLink as PlasmicLink__,
   classNames,
   createPlasmicElementProxy,
   deriveRenderOpts,
@@ -21,6 +23,7 @@ import {
 import { useDataEnv } from "@plasmicapp/react-web/lib/host";
 import TsfDemandMainNavigation from "../../TsfDemandMainNavigation"; // plasmic-import: RS9jruOWtFtt/component
 import { BaseButton } from "@plasmicpkgs/react-aria/skinny/registerButton";
+import Button2 from "../../Button2"; // plasmic-import: IsImc8gJBadG/component
 import TsfFooter from "../../TsfFooter"; // plasmic-import: NmgYw5lHKANx/component
 import { _useGlobalVariants } from "./plasmic"; // plasmic-import: 8yhBRaKsBf3R2wKMhT5dUU/projectModule
 import { _useStyleTokens } from "./PlasmicStyleTokensProvider"; // plasmic-import: 8yhBRaKsBf3R2wKMhT5dUU/styleTokensProvider
@@ -30,6 +33,8 @@ import sty from "./PlasmicCaseStudies.module.css"; // plasmic-import: B0YwF5yls5
 import CircleIcon from "./icons/PlasmicIcon__Circle"; // plasmic-import: iCnGomX0kBnc/icon
 import ChevronDownIcon from "./icons/PlasmicIcon__ChevronDown"; // plasmic-import: psfpTc-XGOO7/icon
 import ArrowRightSvgIcon from "./icons/PlasmicIcon__ArrowRightSvg"; // plasmic-import: WXIx2uHDhf9R/icon
+import Icon4Icon from "./icons/PlasmicIcon__Icon4"; // plasmic-import: s0pSL1_dtWEm/icon
+import Icon16Icon from "./icons/PlasmicIcon__Icon16"; // plasmic-import: -9-04Eq-w1pK/icon
 
 createPlasmicElementProxy;
 
@@ -127,8 +132,42 @@ function PlasmicCaseStudies__RenderFunc(props) {
                       >
                         {hasVariant(globalVariants, "screen", "mobileOnly")
                           ? "Ready to accept or acquiesce willing."
-                          : "Hero for your SaaS landing page."}
+                          : "Run your business with foresight, not forecasts."}
                       </h1>
+                      <h3
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.h3,
+                          projectcss.__wab_text,
+                          sty.h3__ksHcI
+                        )}
+                      >
+                        {hasVariant(globalVariants, "screen", "mobileOnly") ? (
+                          "Ready to accept or acquiesce willing."
+                        ) : (
+                          <React.Fragment>
+                            <span
+                              className={
+                                "plasmic_default__all plasmic_default__span"
+                              }
+                              style={{ fontStyle: "italic" }}
+                            >
+                              {
+                                "Because knowing the month ahead is better than "
+                              }
+                            </span>
+                            <React.Fragment>{"\n"}</React.Fragment>
+                            <span
+                              className={
+                                "plasmic_default__all plasmic_default__span"
+                              }
+                              style={{ fontStyle: "italic" }}
+                            >
+                              {"reacting to it."}
+                            </span>
+                          </React.Fragment>
+                        )}
+                      </h3>
                       <div
                         className={classNames(
                           projectcss.all,
@@ -137,7 +176,7 @@ function PlasmicCaseStudies__RenderFunc(props) {
                         )}
                       >
                         {
-                          "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut ."
+                          "Traditional forecasts chase accuracy. TSF forecasts create clarity. Each month starts with a complete picture of what's likely ahead \u2014 a daily green zone that defines what \u201dnormal\u201d looks like. You dont analyze it. You use it \u2014 to play, to spend, to staff, to stay ahead. "
                         }
                       </div>
                       <BaseButton
@@ -145,6 +184,7 @@ function PlasmicCaseStudies__RenderFunc(props) {
                           "__wab_instance",
                           sty.ariaButton__wvxi5
                         )}
+                        href={`/interest`}
                         target={$props.openLinkInNewTab ? "_blank" : "_self"}
                       >
                         {false ? (
@@ -200,7 +240,7 @@ function PlasmicCaseStudies__RenderFunc(props) {
                               sty.text__uuqgH
                             )}
                           >
-                            {"Get started"}
+                            {"Apply to join a Case Study"}
                           </div>
                           <div
                             className={classNames(
@@ -224,1197 +264,33 @@ function PlasmicCaseStudies__RenderFunc(props) {
                     className={classNames(projectcss.all, sty.freeBox__naLnQ)}
                   >
                     <div
-                      className={classNames(projectcss.all, sty.freeBox__ctuHf)}
-                    />
+                      className={classNames(projectcss.all, sty.freeBox__gBdBp)}
+                    >
+                      <PlasmicImg__
+                        data-plasmic-name={"img"}
+                        data-plasmic-override={overrides.img}
+                        alt={""}
+                        className={classNames(sty.img)}
+                        displayHeight={"400px"}
+                        displayMaxHeight={"none"}
+                        displayMaxWidth={"none"}
+                        displayMinHeight={"0"}
+                        displayMinWidth={"0"}
+                        displayWidth={"400px"}
+                        loading={"lazy"}
+                        src={{
+                          src: "/plasmic/tsf_demand_website/images/financeReportWomanEconomistManagerMillennial20250225060407UtcJpg.jpg",
+                          fullWidth: 6000,
+                          fullHeight: 4000,
+                          aspectRatio: undefined
+                        }}
+                      />
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-          <section
-            data-plasmic-name={"features"}
-            data-plasmic-override={overrides.features}
-            className={classNames(projectcss.all, sty.features)}
-          >
-            <div className={classNames(projectcss.all, sty.column__ldW5O)}>
-              <h2
-                className={classNames(
-                  projectcss.all,
-                  projectcss.h2,
-                  projectcss.__wab_text,
-                  sty.h2__h4FzN
-                )}
-              >
-                {"Value propositions headline."}
-              </h2>
-              <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text__rRCcv
-                )}
-              >
-                {
-                  "Lorem Ipsum is simply dummy text of the printing and typesetting industry. \nLorem Ipsum has been the industry's standard dummy text ever since the 1500s"
-                }
-              </div>
-              <div
-                data-plasmic-name={"container4"}
-                data-plasmic-override={overrides.container4}
-                className={classNames(projectcss.all, sty.container4)}
-              >
-                <div
-                  data-plasmic-name={"outerRow2"}
-                  data-plasmic-override={overrides.outerRow2}
-                  className={classNames(projectcss.all, sty.outerRow2)}
-                >
-                  <div
-                    data-plasmic-name={"row2"}
-                    data-plasmic-override={overrides.row2}
-                    className={classNames(projectcss.all, sty.row2)}
-                  >
-                    <div
-                      className={classNames(projectcss.all, sty.column__knq28)}
-                    >
-                      <div
-                        className={classNames(
-                          projectcss.all,
-                          sty.freeBox___73Y86
-                        )}
-                      >
-                        <div
-                          className={classNames(
-                            projectcss.all,
-                            sty.freeBox__f3EPe
-                          )}
-                        />
-
-                        <h3
-                          className={classNames(
-                            projectcss.all,
-                            projectcss.h3,
-                            projectcss.__wab_text,
-                            sty.h3__yLxTp
-                          )}
-                        >
-                          {"Some value proposition of your service."}
-                        </h3>
-                        <div
-                          className={classNames(
-                            projectcss.all,
-                            projectcss.__wab_text,
-                            sty.text___3W8Hu
-                          )}
-                        >
-                          {
-                            "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
-                          }
-                        </div>
-                        <BaseButton
-                          className={classNames(
-                            "__wab_instance",
-                            sty.ariaButton___85SyA
-                          )}
-                          target={$props.openLinkInNewTab ? "_blank" : "_self"}
-                        >
-                          {false ? (
-                            <div
-                              data-plasmic-name={"softBackground4"}
-                              data-plasmic-override={overrides.softBackground4}
-                              className={classNames(
-                                projectcss.all,
-                                sty.softBackground4
-                              )}
-                            />
-                          ) : null}
-                          {false ? (
-                            <div
-                              data-plasmic-name={"border4"}
-                              data-plasmic-override={overrides.border4}
-                              className={classNames(
-                                projectcss.all,
-                                sty.border4
-                              )}
-                            />
-                          ) : null}
-                          <div
-                            data-plasmic-name={"interactionEffect4"}
-                            data-plasmic-override={overrides.interactionEffect4}
-                            className={classNames(
-                              projectcss.all,
-                              sty.interactionEffect4
-                            )}
-                          />
-
-                          <div
-                            className={classNames(
-                              projectcss.all,
-                              sty.freeBox__fgOFl
-                            )}
-                          >
-                            <div
-                              className={classNames(
-                                projectcss.all,
-                                sty.freeBox__wo4ME
-                              )}
-                            >
-                              <CircleIcon
-                                className={classNames(
-                                  projectcss.all,
-                                  sty.svg__xvjT
-                                )}
-                                role={"img"}
-                              />
-                            </div>
-                            <div
-                              className={classNames(
-                                projectcss.all,
-                                projectcss.__wab_text,
-                                sty.text__hnjVf
-                              )}
-                            >
-                              {"Learn more"}
-                            </div>
-                            <div
-                              className={classNames(
-                                projectcss.all,
-                                sty.freeBox__bj0Fb
-                              )}
-                            >
-                              <ArrowRightSvgIcon
-                                className={classNames(
-                                  projectcss.all,
-                                  sty.svg___31Zr7
-                                )}
-                                role={"img"}
-                              />
-                            </div>
-                          </div>
-                        </BaseButton>
-                      </div>
-                    </div>
-                    <div
-                      className={classNames(projectcss.all, sty.column__a8MJw)}
-                    >
-                      <div
-                        className={classNames(
-                          projectcss.all,
-                          sty.freeBox__t3GXn
-                        )}
-                      >
-                        <PlasmicImg__
-                          alt={""}
-                          className={classNames(sty.img__eil0C)}
-                          displayHeight={"400px"}
-                          displayMaxHeight={"none"}
-                          displayMaxWidth={"none"}
-                          displayMinHeight={"0"}
-                          displayMinWidth={"0"}
-                          displayWidth={"400px"}
-                          loading={"lazy"}
-                          src={{
-                            src: "/plasmic/tsf_demand_website/images/corinneKutzTMi2R5NfoUnsplashJpg.jpg",
-                            fullWidth: 1920,
-                            fullHeight: 1280,
-                            aspectRatio: undefined
-                          }}
-                        />
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div
-                data-plasmic-name={"container5"}
-                data-plasmic-override={overrides.container5}
-                className={classNames(projectcss.all, sty.container5)}
-              >
-                <div
-                  data-plasmic-name={"outerRow3"}
-                  data-plasmic-override={overrides.outerRow3}
-                  className={classNames(projectcss.all, sty.outerRow3)}
-                >
-                  <div
-                    data-plasmic-name={"row4"}
-                    data-plasmic-override={overrides.row4}
-                    className={classNames(projectcss.all, sty.row4)}
-                  >
-                    <div
-                      className={classNames(projectcss.all, sty.column__xINv)}
-                    >
-                      <PlasmicImg__
-                        alt={""}
-                        className={classNames(sty.img__l6PpR)}
-                        displayHeight={"400px"}
-                        displayMaxHeight={"none"}
-                        displayMaxWidth={"none"}
-                        displayMinHeight={"0"}
-                        displayMinWidth={"0"}
-                        displayWidth={"400px"}
-                        loading={"lazy"}
-                        src={{
-                          src: "/plasmic/tsf_demand_website/images/tiffanyTertipesNxcs8Wwj9J0UnsplashJpg.jpg",
-                          fullWidth: 1920,
-                          fullHeight: 1280,
-                          aspectRatio: undefined
-                        }}
-                      />
-                    </div>
-                    <div
-                      className={classNames(projectcss.all, sty.column__jP8Q)}
-                    >
-                      <div
-                        className={classNames(
-                          projectcss.all,
-                          sty.freeBox__kdmnX
-                        )}
-                      >
-                        <div
-                          className={classNames(
-                            projectcss.all,
-                            sty.freeBox__cEmEi
-                          )}
-                        />
-
-                        <h3
-                          className={classNames(
-                            projectcss.all,
-                            projectcss.h3,
-                            projectcss.__wab_text,
-                            sty.h3___7Dni7
-                          )}
-                        >
-                          {"Some value proposition of your service."}
-                        </h3>
-                        <div
-                          className={classNames(
-                            projectcss.all,
-                            projectcss.__wab_text,
-                            sty.text___9FvYz
-                          )}
-                        >
-                          {
-                            "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
-                          }
-                        </div>
-                        <BaseButton
-                          className={classNames(
-                            "__wab_instance",
-                            sty.ariaButton__gDik
-                          )}
-                          target={$props.openLinkInNewTab ? "_blank" : "_self"}
-                        >
-                          {false ? (
-                            <div
-                              data-plasmic-name={"softBackground5"}
-                              data-plasmic-override={overrides.softBackground5}
-                              className={classNames(
-                                projectcss.all,
-                                sty.softBackground5
-                              )}
-                            />
-                          ) : null}
-                          {false ? (
-                            <div
-                              data-plasmic-name={"border5"}
-                              data-plasmic-override={overrides.border5}
-                              className={classNames(
-                                projectcss.all,
-                                sty.border5
-                              )}
-                            />
-                          ) : null}
-                          <div
-                            data-plasmic-name={"interactionEffect5"}
-                            data-plasmic-override={overrides.interactionEffect5}
-                            className={classNames(
-                              projectcss.all,
-                              sty.interactionEffect5
-                            )}
-                          />
-
-                          <div
-                            className={classNames(
-                              projectcss.all,
-                              sty.freeBox___1Vd8I
-                            )}
-                          >
-                            <div
-                              className={classNames(
-                                projectcss.all,
-                                sty.freeBox__jly5J
-                              )}
-                            >
-                              <CircleIcon
-                                className={classNames(
-                                  projectcss.all,
-                                  sty.svg__bf1J4
-                                )}
-                                role={"img"}
-                              />
-                            </div>
-                            <div
-                              className={classNames(
-                                projectcss.all,
-                                projectcss.__wab_text,
-                                sty.text__xp6Pj
-                              )}
-                            >
-                              {"Learn more"}
-                            </div>
-                            <div
-                              className={classNames(
-                                projectcss.all,
-                                sty.freeBox__cpih9
-                              )}
-                            >
-                              <ArrowRightSvgIcon
-                                className={classNames(
-                                  projectcss.all,
-                                  sty.svg__l2NMn
-                                )}
-                                role={"img"}
-                              />
-                            </div>
-                          </div>
-                        </BaseButton>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div
-                data-plasmic-name={"container6"}
-                data-plasmic-override={overrides.container6}
-                className={classNames(projectcss.all, sty.container6)}
-              >
-                <div
-                  data-plasmic-name={"outerRow4"}
-                  data-plasmic-override={overrides.outerRow4}
-                  className={classNames(projectcss.all, sty.outerRow4)}
-                >
-                  <div
-                    data-plasmic-name={"row3"}
-                    data-plasmic-override={overrides.row3}
-                    className={classNames(projectcss.all, sty.row3)}
-                  >
-                    <div
-                      className={classNames(projectcss.all, sty.column__kU8B8)}
-                    >
-                      <div
-                        className={classNames(
-                          projectcss.all,
-                          sty.freeBox___8Xvom
-                        )}
-                      >
-                        <div
-                          className={classNames(
-                            projectcss.all,
-                            sty.freeBox__d4Rw
-                          )}
-                        />
-
-                        <h3
-                          className={classNames(
-                            projectcss.all,
-                            projectcss.h3,
-                            projectcss.__wab_text,
-                            sty.h3__c54P
-                          )}
-                        >
-                          {"Some value proposition of your service."}
-                        </h3>
-                        <div
-                          className={classNames(
-                            projectcss.all,
-                            projectcss.__wab_text,
-                            sty.text__alVh0
-                          )}
-                        >
-                          {
-                            "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
-                          }
-                        </div>
-                        <BaseButton
-                          className={classNames(
-                            "__wab_instance",
-                            sty.ariaButton__yw8R8
-                          )}
-                          target={$props.openLinkInNewTab ? "_blank" : "_self"}
-                        >
-                          {false ? (
-                            <div
-                              data-plasmic-name={"softBackground6"}
-                              data-plasmic-override={overrides.softBackground6}
-                              className={classNames(
-                                projectcss.all,
-                                sty.softBackground6
-                              )}
-                            />
-                          ) : null}
-                          {false ? (
-                            <div
-                              data-plasmic-name={"border6"}
-                              data-plasmic-override={overrides.border6}
-                              className={classNames(
-                                projectcss.all,
-                                sty.border6
-                              )}
-                            />
-                          ) : null}
-                          <div
-                            data-plasmic-name={"interactionEffect6"}
-                            data-plasmic-override={overrides.interactionEffect6}
-                            className={classNames(
-                              projectcss.all,
-                              sty.interactionEffect6
-                            )}
-                          />
-
-                          <div
-                            className={classNames(
-                              projectcss.all,
-                              sty.freeBox__pe7Nv
-                            )}
-                          >
-                            <div
-                              className={classNames(
-                                projectcss.all,
-                                sty.freeBox__kCYq
-                              )}
-                            >
-                              <CircleIcon
-                                className={classNames(
-                                  projectcss.all,
-                                  sty.svg__fg4Sq
-                                )}
-                                role={"img"}
-                              />
-                            </div>
-                            <div
-                              className={classNames(
-                                projectcss.all,
-                                projectcss.__wab_text,
-                                sty.text__lbht6
-                              )}
-                            >
-                              {"Learn more"}
-                            </div>
-                            <div
-                              className={classNames(
-                                projectcss.all,
-                                sty.freeBox__fSiqe
-                              )}
-                            >
-                              <ArrowRightSvgIcon
-                                className={classNames(
-                                  projectcss.all,
-                                  sty.svg__ybJe5
-                                )}
-                                role={"img"}
-                              />
-                            </div>
-                          </div>
-                        </BaseButton>
-                      </div>
-                    </div>
-                    <div
-                      className={classNames(projectcss.all, sty.column__bpOGq)}
-                    >
-                      <PlasmicImg__
-                        alt={""}
-                        className={classNames(sty.img__qr7Jj)}
-                        displayHeight={"400px"}
-                        displayMaxHeight={"none"}
-                        displayMaxWidth={"none"}
-                        displayMinHeight={"0"}
-                        displayMinWidth={"0"}
-                        displayWidth={"400px"}
-                        loading={"lazy"}
-                        src={{
-                          src: "/plasmic/tsf_demand_website/images/xpsOcAuPlfZxEcUnsplashJpg.jpg",
-                          fullWidth: 640,
-                          fullHeight: 360,
-                          aspectRatio: undefined
-                        }}
-                      />
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </section>
-          <section
-            data-plasmic-name={"testimonials"}
-            data-plasmic-override={overrides.testimonials}
-            className={classNames(projectcss.all, sty.testimonials)}
-          >
-            <div className={classNames(projectcss.all, sty.column__kn0L1)}>
-              <h2
-                className={classNames(
-                  projectcss.all,
-                  projectcss.h2,
-                  projectcss.__wab_text,
-                  sty.h2__kJmUd
-                )}
-              >
-                {"Testimonials"}
-              </h2>
-              <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text__dAavP
-                )}
-              >
-                {
-                  "Lorem Ipsum is simply dummy text of the printing and typesetting industry. \nLorem Ipsum has been the industry's standard dummy text ever since the 1500s"
-                }
-              </div>
-              <div className={classNames(projectcss.all, sty.columns__kEkFb)}>
-                <div className={classNames(projectcss.all, sty.column__mmYV)}>
-                  <div
-                    className={classNames(projectcss.all, sty.columns__uWlOn)}
-                  >
-                    <div
-                      className={classNames(projectcss.all, sty.column__gkf2C)}
-                    >
-                      <h2
-                        className={classNames(
-                          projectcss.all,
-                          projectcss.h2,
-                          projectcss.__wab_text,
-                          sty.h2__wTz3N
-                        )}
-                      >
-                        {"\u201c"}
-                      </h2>
-                      <div
-                        className={classNames(
-                          projectcss.all,
-                          projectcss.__wab_text,
-                          sty.text___6E4P
-                        )}
-                      >
-                        {
-                          "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
-                        }
-                      </div>
-                      <div
-                        className={classNames(
-                          projectcss.all,
-                          sty.columns__zk5Ob
-                        )}
-                      >
-                        <div
-                          className={classNames(
-                            projectcss.all,
-                            sty.column___4WUqH
-                          )}
-                        >
-                          <PlasmicImg__
-                            alt={""}
-                            className={classNames(sty.img__y9K5D)}
-                            displayHeight={"auto"}
-                            displayMaxHeight={"none"}
-                            displayMaxWidth={"100%"}
-                            displayMinHeight={"0"}
-                            displayMinWidth={"0"}
-                            displayWidth={"auto"}
-                            loading={"lazy"}
-                            src={{
-                              src: "/plasmic/tsf_demand_website/images/smallJpg.jpg",
-                              fullWidth: 160,
-                              fullHeight: 160,
-                              aspectRatio: undefined
-                            }}
-                          />
-                        </div>
-                        <div
-                          className={classNames(
-                            projectcss.all,
-                            sty.column___7Mowq
-                          )}
-                        >
-                          <h5
-                            className={classNames(
-                              projectcss.all,
-                              projectcss.h5,
-                              projectcss.__wab_text,
-                              sty.h5__hQ0MW
-                            )}
-                          >
-                            {"Lorem Ipsum"}
-                          </h5>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div className={classNames(projectcss.all, sty.column___2P8Dn)}>
-                  <div
-                    className={classNames(projectcss.all, sty.columns___4Ndr5)}
-                  >
-                    <div
-                      className={classNames(projectcss.all, sty.column__a6HKd)}
-                    >
-                      <PlasmicImg__
-                        alt={""}
-                        className={classNames(sty.img___3H9PS)}
-                        displayHeight={"auto"}
-                        displayMaxHeight={"none"}
-                        displayMaxWidth={"100%"}
-                        displayMinHeight={"0"}
-                        displayMinWidth={"0"}
-                        displayWidth={"auto"}
-                        loading={"lazy"}
-                        src={{
-                          src: "/plasmic/tsf_demand_website/images/mePng.png",
-                          fullWidth: 140,
-                          fullHeight: 140,
-                          aspectRatio: undefined
-                        }}
-                      />
-
-                      <h5
-                        className={classNames(
-                          projectcss.all,
-                          projectcss.h5,
-                          projectcss.__wab_text,
-                          sty.h5__djXnn
-                        )}
-                      >
-                        {"Zulia Maron Duo"}
-                      </h5>
-                      <div
-                        before={""}
-                        className={classNames(
-                          projectcss.all,
-                          projectcss.__wab_text,
-                          sty.text__vAHcG
-                        )}
-                      >
-                        {
-                          "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
-                        }
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div className={classNames(projectcss.all, sty.column__cmHbf)}>
-                  <div
-                    className={classNames(projectcss.all, sty.columns__jNru)}
-                  >
-                    <div
-                      className={classNames(projectcss.all, sty.column__j4C3U)}
-                    >
-                      <h2
-                        className={classNames(
-                          projectcss.all,
-                          projectcss.h2,
-                          projectcss.__wab_text,
-                          sty.h2__qcodq
-                        )}
-                      >
-                        {"\u201c"}
-                      </h2>
-                      <div
-                        className={classNames(
-                          projectcss.all,
-                          projectcss.__wab_text,
-                          sty.text__w7Jwa
-                        )}
-                      >
-                        {
-                          "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
-                        }
-                      </div>
-                      <div
-                        className={classNames(
-                          projectcss.all,
-                          sty.columns___8GDcv
-                        )}
-                      >
-                        <div
-                          className={classNames(
-                            projectcss.all,
-                            sty.column__vMjpa
-                          )}
-                        >
-                          <PlasmicImg__
-                            alt={""}
-                            className={classNames(sty.img__xGkwn)}
-                            displayHeight={"auto"}
-                            displayMaxHeight={"none"}
-                            displayMaxWidth={"100%"}
-                            displayMinHeight={"0"}
-                            displayMinWidth={"0"}
-                            displayWidth={"auto"}
-                            loading={"lazy"}
-                            src={{
-                              src: "/plasmic/tsf_demand_website/images/thumbAvatar1583758683Jpg.jpg",
-                              fullWidth: 160,
-                              fullHeight: 160,
-                              aspectRatio: undefined
-                            }}
-                          />
-                        </div>
-                        <div
-                          className={classNames(
-                            projectcss.all,
-                            sty.column__nRx6P
-                          )}
-                        >
-                          <h5
-                            className={classNames(
-                              projectcss.all,
-                              projectcss.h5,
-                              projectcss.__wab_text,
-                              sty.h5___0DLGt
-                            )}
-                          >
-                            {"Lorem Ipsum"}
-                          </h5>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </section>
-          <section className={classNames(projectcss.all, sty.columns__wop6X)}>
-            <div className={classNames(projectcss.all, sty.column__mYbK)}>
-              <h2
-                className={classNames(
-                  projectcss.all,
-                  projectcss.h2,
-                  projectcss.__wab_text,
-                  sty.h2__a74NE
-                )}
-              >
-                {"Blog"}
-              </h2>
-              <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text__akIbN
-                )}
-              >
-                {
-                  "Lorem Ipsum is simply dummy text of the printing and typesetting industry. \nLorem Ipsum has been the industry's standard dummy text ever since the 1500s"
-                }
-              </div>
-              <div className={classNames(projectcss.all, sty.columns__ekCOf)}>
-                <div className={classNames(projectcss.all, sty.column__vyhCz)}>
-                  <PlasmicImg__
-                    alt={""}
-                    className={classNames(sty.img___5Zhuj)}
-                    displayHeight={"230px"}
-                    displayMaxHeight={"none"}
-                    displayMaxWidth={"100%"}
-                    displayMinHeight={"0"}
-                    displayMinWidth={"0"}
-                    displayWidth={"auto"}
-                    loading={"lazy"}
-                    src={{
-                      src: "/plasmic/tsf_demand_website/images/fakurianDesignPPTwRTkvXqUnsplashJpg.jpg",
-                      fullWidth: 1920,
-                      fullHeight: 1280,
-                      aspectRatio: undefined
-                    }}
-                  />
-
-                  <div
-                    className={classNames(projectcss.all, sty.columns__igm4)}
-                  >
-                    <div
-                      className={classNames(projectcss.all, sty.column__kZloz)}
-                    >
-                      <div
-                        className={classNames(
-                          projectcss.all,
-                          projectcss.__wab_text,
-                          sty.text___7E5Bn
-                        )}
-                      >
-                        {"January 03, 2021"}
-                      </div>
-                      <h4
-                        className={classNames(
-                          projectcss.all,
-                          projectcss.h4,
-                          projectcss.__wab_text,
-                          sty.h4__gpOC
-                        )}
-                      >
-                        {"Convincing reasons you need to learn"}
-                      </h4>
-                      <div
-                        className={classNames(
-                          projectcss.all,
-                          projectcss.__wab_text,
-                          sty.text___13Hk2
-                        )}
-                      >
-                        {
-                          "Lorem Ipsum is simply dummy text of the printing and typesetting industry. ....\n"
-                        }
-                      </div>
-                      <BaseButton
-                        className={classNames(
-                          "__wab_instance",
-                          sty.ariaButton__edV8L
-                        )}
-                        target={$props.openLinkInNewTab ? "_blank" : "_self"}
-                      >
-                        <div
-                          data-plasmic-name={"softBackground7"}
-                          data-plasmic-override={overrides.softBackground7}
-                          className={classNames(
-                            projectcss.all,
-                            sty.softBackground7
-                          )}
-                        />
-
-                        {false ? (
-                          <div
-                            data-plasmic-name={"border7"}
-                            data-plasmic-override={overrides.border7}
-                            className={classNames(projectcss.all, sty.border7)}
-                          />
-                        ) : null}
-                        <div
-                          data-plasmic-name={"interactionEffect7"}
-                          data-plasmic-override={overrides.interactionEffect7}
-                          className={classNames(
-                            projectcss.all,
-                            sty.interactionEffect7
-                          )}
-                        />
-
-                        <div
-                          className={classNames(
-                            projectcss.all,
-                            sty.freeBox__lck3K
-                          )}
-                        >
-                          <div
-                            className={classNames(
-                              projectcss.all,
-                              sty.freeBox__b6Ok6
-                            )}
-                          >
-                            <CircleIcon
-                              className={classNames(
-                                projectcss.all,
-                                sty.svg__xjbUg
-                              )}
-                              role={"img"}
-                            />
-                          </div>
-                          <div
-                            className={classNames(
-                              projectcss.all,
-                              projectcss.__wab_text,
-                              sty.text__jByva
-                            )}
-                          >
-                            {"Read more"}
-                          </div>
-                          <div
-                            className={classNames(
-                              projectcss.all,
-                              sty.freeBox__kqbIj
-                            )}
-                          >
-                            <ChevronDownIcon
-                              className={classNames(
-                                projectcss.all,
-                                sty.svg__jAwMs
-                              )}
-                              role={"img"}
-                            />
-                          </div>
-                        </div>
-                      </BaseButton>
-                    </div>
-                  </div>
-                </div>
-                <div className={classNames(projectcss.all, sty.column___3Y5R)}>
-                  <PlasmicImg__
-                    alt={""}
-                    className={classNames(sty.img__y1QNh)}
-                    displayHeight={"230px"}
-                    displayMaxHeight={"none"}
-                    displayMaxWidth={"100%"}
-                    displayMinHeight={"0"}
-                    displayMinWidth={"0"}
-                    displayWidth={"100%"}
-                    loading={"lazy"}
-                    src={{
-                      src: "/plasmic/tsf_demand_website/images/fakurianDesignLfbhDph3QYUnsplashJpg.jpg",
-                      fullWidth: 1920,
-                      fullHeight: 1080,
-                      aspectRatio: undefined
-                    }}
-                  />
-
-                  <div
-                    className={classNames(projectcss.all, sty.columns__kzjI3)}
-                  >
-                    <div
-                      className={classNames(projectcss.all, sty.column___5AD0Q)}
-                    >
-                      <div
-                        className={classNames(
-                          projectcss.all,
-                          projectcss.__wab_text,
-                          sty.text__w5EIo
-                        )}
-                      >
-                        {"January 03, 2021"}
-                      </div>
-                      <h4
-                        className={classNames(
-                          projectcss.all,
-                          projectcss.h4,
-                          projectcss.__wab_text,
-                          sty.h4__dZuXu
-                        )}
-                      >
-                        {"The five devices you need to work anytime"}
-                      </h4>
-                      <div
-                        className={classNames(
-                          projectcss.all,
-                          projectcss.__wab_text,
-                          sty.text___9ZroG
-                        )}
-                      >
-                        {
-                          "Lorem Ipsum is simply dummy text of the printing and typesetting industry. ....\n"
-                        }
-                      </div>
-                      <BaseButton
-                        className={classNames(
-                          "__wab_instance",
-                          sty.ariaButton__adGmA
-                        )}
-                        target={$props.openLinkInNewTab ? "_blank" : "_self"}
-                      >
-                        <div
-                          data-plasmic-name={"softBackground8"}
-                          data-plasmic-override={overrides.softBackground8}
-                          className={classNames(
-                            projectcss.all,
-                            sty.softBackground8
-                          )}
-                        />
-
-                        {false ? (
-                          <div
-                            data-plasmic-name={"border8"}
-                            data-plasmic-override={overrides.border8}
-                            className={classNames(projectcss.all, sty.border8)}
-                          />
-                        ) : null}
-                        <div
-                          data-plasmic-name={"interactionEffect8"}
-                          data-plasmic-override={overrides.interactionEffect8}
-                          className={classNames(
-                            projectcss.all,
-                            sty.interactionEffect8
-                          )}
-                        />
-
-                        <div
-                          className={classNames(
-                            projectcss.all,
-                            sty.freeBox__sSrur
-                          )}
-                        >
-                          <div
-                            className={classNames(
-                              projectcss.all,
-                              sty.freeBox__sD4TS
-                            )}
-                          >
-                            <CircleIcon
-                              className={classNames(
-                                projectcss.all,
-                                sty.svg__v8VqT
-                              )}
-                              role={"img"}
-                            />
-                          </div>
-                          <div
-                            className={classNames(
-                              projectcss.all,
-                              projectcss.__wab_text,
-                              sty.text__tx4Qm
-                            )}
-                          >
-                            {"Read more"}
-                          </div>
-                          <div
-                            className={classNames(
-                              projectcss.all,
-                              sty.freeBox__wZgN
-                            )}
-                          >
-                            <ChevronDownIcon
-                              className={classNames(
-                                projectcss.all,
-                                sty.svg__dfTzQ
-                              )}
-                              role={"img"}
-                            />
-                          </div>
-                        </div>
-                      </BaseButton>
-                    </div>
-                  </div>
-                </div>
-                <div className={classNames(projectcss.all, sty.column__fBa1U)}>
-                  <PlasmicImg__
-                    alt={""}
-                    className={classNames(sty.img___5CPIb)}
-                    displayHeight={"230px"}
-                    displayMaxHeight={"none"}
-                    displayMaxWidth={"100%"}
-                    displayMinHeight={"0"}
-                    displayMinWidth={"0"}
-                    displayWidth={"100%"}
-                    loading={"lazy"}
-                    src={{
-                      src: "/plasmic/tsf_demand_website/images/blog2390X290Jpg.jpg",
-                      fullWidth: 390,
-                      fullHeight: 290,
-                      aspectRatio: undefined
-                    }}
-                  />
-
-                  <div
-                    className={classNames(projectcss.all, sty.columns__ohw2Q)}
-                  >
-                    <div
-                      className={classNames(projectcss.all, sty.column__lvk92)}
-                    >
-                      <div
-                        className={classNames(
-                          projectcss.all,
-                          projectcss.__wab_text,
-                          sty.text__xvaf0
-                        )}
-                      >
-                        {"January 03, 2021"}
-                      </div>
-                      <h4
-                        className={classNames(
-                          projectcss.all,
-                          projectcss.h4,
-                          projectcss.__wab_text,
-                          sty.h4__kywbU
-                        )}
-                      >
-                        {"Tiktok Illegally collecting data sharing"}
-                      </h4>
-                      <div
-                        className={classNames(
-                          projectcss.all,
-                          projectcss.__wab_text,
-                          sty.text__ombbw
-                        )}
-                      >
-                        {
-                          "Lorem Ipsum is simply dummy text of the printing and typesetting industry. ....\n"
-                        }
-                      </div>
-                      <BaseButton
-                        className={classNames(
-                          "__wab_instance",
-                          sty.ariaButton___7FUwr
-                        )}
-                        target={$props.openLinkInNewTab ? "_blank" : "_self"}
-                      >
-                        <div
-                          data-plasmic-name={"softBackground9"}
-                          data-plasmic-override={overrides.softBackground9}
-                          className={classNames(
-                            projectcss.all,
-                            sty.softBackground9
-                          )}
-                        />
-
-                        {false ? (
-                          <div
-                            data-plasmic-name={"border9"}
-                            data-plasmic-override={overrides.border9}
-                            className={classNames(projectcss.all, sty.border9)}
-                          />
-                        ) : null}
-                        <div
-                          data-plasmic-name={"interactionEffect9"}
-                          data-plasmic-override={overrides.interactionEffect9}
-                          className={classNames(
-                            projectcss.all,
-                            sty.interactionEffect9
-                          )}
-                        />
-
-                        <div
-                          className={classNames(
-                            projectcss.all,
-                            sty.freeBox___8ZU2F
-                          )}
-                        >
-                          <div
-                            className={classNames(
-                              projectcss.all,
-                              sty.freeBox__quJe
-                            )}
-                          >
-                            <CircleIcon
-                              className={classNames(
-                                projectcss.all,
-                                sty.svg__o9ABt
-                              )}
-                              role={"img"}
-                            />
-                          </div>
-                          <div
-                            className={classNames(
-                              projectcss.all,
-                              projectcss.__wab_text,
-                              sty.text__xkdoe
-                            )}
-                          >
-                            {"Read more"}
-                          </div>
-                          <div
-                            className={classNames(
-                              projectcss.all,
-                              sty.freeBox__herH0
-                            )}
-                          >
-                            <ChevronDownIcon
-                              className={classNames(
-                                projectcss.all,
-                                sty.svg__puaG
-                              )}
-                              role={"img"}
-                            />
-                          </div>
-                        </div>
-                      </BaseButton>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </section>
           <section className={classNames(projectcss.all, sty.columns__zqSBi)}>
             <div
               data-plasmic-name={"outer"}
@@ -1428,11 +304,13 @@ function PlasmicCaseStudies__RenderFunc(props) {
               >
                 <div className={classNames(projectcss.all, sty.column___2BETb)}>
                   <h2
+                    data-plasmic-name={"h2"}
+                    data-plasmic-override={overrides.h2}
                     className={classNames(
                       projectcss.all,
                       projectcss.h2,
                       projectcss.__wab_text,
-                      sty.h2__u1Cvk
+                      sty.h2
                     )}
                   >
                     {"Want more information?"}
@@ -1521,88 +399,1052 @@ function PlasmicCaseStudies__RenderFunc(props) {
               </div>
             </div>
           </section>
-          <div className={classNames(projectcss.all, sty.freeBox___9HIy)}>
-            <div className={classNames(projectcss.all, sty.columns__n78W8)}>
-              <div className={classNames(projectcss.all, sty.column__m5Ugr)}>
-                <h2
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.h2,
-                    projectcss.__wab_text,
-                    sty.h2__weXn1
-                  )}
-                >
-                  {"Make your call to action here."}
-                </h2>
+          <div className={classNames(projectcss.all, sty.freeBox__ypArW)}>
+            <div className={classNames(projectcss.all, sty.columns__e8Kqw)}>
+              <div className={classNames(projectcss.all, sty.column__aOf6A)}>
+                <div className={classNames(projectcss.all, sty.freeBox__sOacI)}>
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text__x10Qv
+                    )}
+                  >
+                    {"What we\u2019re proving"}
+                  </div>
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text__uj0Yy
+                    )}
+                  >
+                    <React.Fragment>
+                      <React.Fragment>
+                        {
+                          "A TSF case study isn\u2019t about statistical accuracy or chasing a perfect number. It\u2019s about "
+                        }
+                      </React.Fragment>
+                      <span
+                        className={"plasmic_default__all plasmic_default__span"}
+                        style={{ fontWeight: 700 }}
+                      >
+                        {"decision quality "}
+                      </span>
+                      <React.Fragment>
+                        {
+                          "\u2014\rhow having a full-month visibility band (the green zone) changes what a merchant can do day-to-day. With\rTSF, the goal isn\u2019t to analyze the forecast; it\u2019s to use it.\r"
+                        }
+                      </React.Fragment>
+                    </React.Fragment>
+                  </div>
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text__x1CHh
+                    )}
+                  >
+                    {
+                      "When you know what \u201cnormal\u201d looks like for the coming month, you can plan calmly, spend confidently, and\rrespond only when something truly breaks pattern. This is what control feels like."
+                    }
+                  </div>
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text__wDaS5
+                    )}
+                  >
+                    {
+                      "\u201dTSF isn\u2019t about numbers. It\u2019s about knowing what comes next.\u201d"
+                    }
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className={classNames(projectcss.all, sty.freeBox__e78Q)}>
+            <div className={classNames(projectcss.all, sty.freeBox__ox7U1)}>
+              <div
+                className={classNames(
+                  projectcss.all,
+                  projectcss.__wab_text,
+                  sty.text__vQs3H
+                )}
+              >
+                {"How the case study runs"}
+              </div>
+              <div
+                className={classNames(
+                  projectcss.all,
+                  projectcss.__wab_text,
+                  sty.text__gq4DL
+                )}
+              >
+                <React.Fragment>
+                  <React.Fragment>{"Before Month 1: "}</React.Fragment>
+                  <span
+                    className={"plasmic_default__all plasmic_default__span"}
+                    style={{ color: "var(--token-zrH0XRQElDBe)" }}
+                  >
+                    {"Instant Historical View"}
+                  </span>
+                </React.Fragment>
+              </div>
+              <div
+                className={classNames(
+                  projectcss.all,
+                  projectcss.__wab_text,
+                  sty.text__dU8XZ
+                )}
+              >
+                <React.Fragment>
+                  <React.Fragment>
+                    {
+                      "As soon as your data connects, TSF generates up to six months of historical forecasts \u2014 "
+                    }
+                  </React.Fragment>
+                  <span
+                    className={"plasmic_default__all plasmic_default__span"}
+                    style={{ fontStyle: "italic" }}
+                  >
+                    {"what TSF would have predicted"}
+                  </span>
+                  <React.Fragment>
+                    {
+                      " \u2014 side by side wity your actual results. This backfill gives you an immediate benchmark of how accurate and consistent TSF already is. You start the trial by seeing what the past six months would have looked like inside TSF\u2019s green zone forecasts. That visibility sets the expectation: you know from day one what \u201dnormal\u201d looks like and how reliably the forecasts perform."
+                    }
+                  </React.Fragment>
+                </React.Fragment>
+              </div>
+              <div
+                className={classNames(
+                  projectcss.all,
+                  projectcss.__wab_text,
+                  sty.text__vCqc5
+                )}
+              >
+                <React.Fragment>
+                  <React.Fragment>{"Each forecast is "}</React.Fragment>
+                  <span
+                    className={"plasmic_default__all plasmic_default__span"}
+                    style={{ fontWeight: 700 }}
+                  >
+                    {"SKU-based, not store-based"}
+                  </span>
+                  <React.Fragment>
+                    {". TSF identifies and tracks the "}
+                  </React.Fragment>
+                  <span
+                    className={"plasmic_default__all plasmic_default__span"}
+                    style={{ fontWeight: 700 }}
+                  >
+                    {"daily variability"}
+                  </span>
+                  <React.Fragment>
+                    {
+                      " of every individual product, giving you a distinct forecast band for each one. The green zone isn\u2019t an average \u2014 it\u2019s a map of how each SKU behaves day by day, showing where stability holds and where real movement begins. "
+                    }
+                  </React.Fragment>
+                </React.Fragment>
+              </div>
+              <div className={classNames(projectcss.all, sty.freeBox__uYCn2)}>
                 <div
                   className={classNames(
                     projectcss.all,
                     projectcss.__wab_text,
-                    sty.text__nOIc
+                    sty.text__acvFu
                   )}
                 >
-                  {"Lorem ipsum dolor sit amet, consectetur adipiscing elit."}
+                  <React.Fragment>
+                    <React.Fragment>{"Month 1: "}</React.Fragment>
+                    <span
+                      className={"plasmic_default__all plasmic_default__span"}
+                      style={{ color: "var(--token-zrH0XRQElDBe)" }}
+                    >
+                      {"Orientation"}
+                    </span>
+                  </React.Fragment>
                 </div>
-                <BaseButton
+                <div
                   className={classNames(
-                    "__wab_instance",
-                    sty.ariaButton__tf8Jj
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__xkBqa
                   )}
-                  target={$props.openLinkInNewTab ? "_blank" : "_self"}
                 >
-                  {false ? (
-                    <div
-                      data-plasmic-name={"softBackground"}
-                      data-plasmic-override={overrides.softBackground}
-                      className={classNames(projectcss.all, sty.softBackground)}
-                    />
-                  ) : null}
-                  {false ? (
-                    <div
-                      data-plasmic-name={"border"}
-                      data-plasmic-override={overrides.border}
-                      className={classNames(projectcss.all, sty.border)}
-                    />
-                  ) : null}
+                  {
+                    "You receive your first full-month forecast on the 1st, complete with the daily gold line forecast values and the green zone confidence bands that define the best- and worst-case scenarios. During this month, you learn how to read the band and see how your real results fall within it. Most merchants quickly realize how much calmer operations feel once the month\u2019s shape is visible from the start. "
+                  }
+                </div>
+              </div>
+              <div className={classNames(projectcss.all, sty.freeBox__xdc6)}>
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__mnXxi
+                  )}
+                >
+                  <React.Fragment>
+                    <React.Fragment>{"Month 2: "}</React.Fragment>
+                    <span
+                      className={"plasmic_default__all plasmic_default__span"}
+                      style={{ color: "var(--token-zrH0XRQElDBe)" }}
+                    >
+                      {"Application"}
+                    </span>
+                  </React.Fragment>
+                </div>
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__tCnYa
+                  )}
+                >
+                  {
+                    "With the forecast now familiar, kyou begin using it to plan orders, ad pacing, and staffing. The TSF team tracks examples of how your decisions shift when foresight replaces guesswork. The impact starts to show immediately \u2014 fewer surprises, better timing, smoother weeks. "
+                  }
+                </div>
+              </div>
+              <div className={classNames(projectcss.all, sty.freeBox__akKeU)}>
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__yI0Ux
+                  )}
+                >
+                  <React.Fragment>
+                    <React.Fragment>{"Month 3: "}</React.Fragment>
+                    <span
+                      className={"plasmic_default__all plasmic_default__span"}
+                      style={{ color: "var(--token-zrH0XRQElDBe)" }}
+                    >
+                      {"Results"}
+                    </span>
+                  </React.Fragment>
+                </div>
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__mh9Pj
+                  )}
+                >
+                  {
+                    "By the third month, you\u2019re operating fluently with TSF. You\u2019ve experienced two full months of forecasts against real outcomes, and the changes in planning and control are tangible. TSF compiles your ROI summary and visuals for review, and you approve the final case study for publication."
+                  }
+                </div>
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__oWwto
+                  )}
+                >
+                  <React.Fragment>
+                    <span
+                      className={"plasmic_default__all plasmic_default__span"}
+                      style={{ fontStyle: "italic" }}
+                    >
+                      {
+                        "NOTE: TSF Lite delivers the forecasts; the case study measures how foresight improves real decisions. "
+                      }
+                    </span>
+                  </React.Fragment>
+                </div>
+              </div>
+            </div>
+            <div className={classNames(projectcss.all, sty.freeBox__mEs0)}>
+              <div className={classNames(projectcss.all, sty.columns__qrL6D)}>
+                <div className={classNames(projectcss.all, sty.column___7Gj7Z)}>
                   <div
-                    data-plasmic-name={"interactionEffect"}
-                    data-plasmic-override={overrides.interactionEffect}
-                    className={classNames(
-                      projectcss.all,
-                      sty.interactionEffect
-                    )}
-                  />
-
-                  <div
-                    className={classNames(projectcss.all, sty.freeBox__t445P)}
+                    className={classNames(projectcss.all, sty.freeBox__bhG6K)}
                   >
                     <div
-                      className={classNames(projectcss.all, sty.freeBox__vkf7C)}
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.__wab_text,
+                        sty.text__i8RqO
+                      )}
                     >
-                      <CircleIcon
-                        className={classNames(projectcss.all, sty.svg__cz3C5)}
-                        role={"img"}
-                      />
+                      {"TSF Lite Case Studies"}
                     </div>
                     <div
                       className={classNames(
                         projectcss.all,
                         projectcss.__wab_text,
-                        sty.text__u0Gdf
+                        sty.text__iRxin
                       )}
                     >
-                      {"Start Now"}
+                      {"(Direct Merchant Program)"}
                     </div>
                     <div
-                      className={classNames(projectcss.all, sty.freeBox__s9Xrj)}
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.__wab_text,
+                        sty.text__gmgk1
+                      )}
                     >
-                      <ChevronDownIcon
-                        className={classNames(projectcss.all, sty.svg__fhmM3)}
+                      <React.Fragment>
+                        <React.Fragment>
+                          {
+                            "TSF Lite case studies are designed for individual merchants who want to experience how SKU-level foresight\rchanges the way they plan and operate. Each study focuses on a small, curated product set \u2014 typically\r around "
+                          }
+                        </React.Fragment>
+                        <span
+                          className={
+                            "plasmic_default__all plasmic_default__span"
+                          }
+                          style={{ fontWeight: 700 }}
+                        >
+                          {"10 SKUs"}
+                        </span>
+                        <React.Fragment>
+                          {
+                            " \u2014 to show how TSF performs in real conditions."
+                          }
+                        </React.Fragment>
+                      </React.Fragment>
+                    </div>
+                    <div
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.__wab_text,
+                        sty.text___4O99K
+                      )}
+                    >
+                      <React.Fragment>
+                        <React.Fragment>{""}</React.Fragment>
+                        {
+                          <h3
+                            className={classNames(
+                              projectcss.all,
+                              projectcss.h3,
+                              projectcss.__wab_text,
+                              sty.h3__xXzG
+                            )}
+                          >
+                            {"Who qualifies:"}
+                          </h3>
+                        }
+                        <React.Fragment>{""}</React.Fragment>
+                      </React.Fragment>
+                    </div>
+                    <div
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.__wab_text,
+                        sty.text__czrYq
+                      )}
+                    >
+                      <React.Fragment>
+                        <React.Fragment>{""}</React.Fragment>
+                        {
+                          <ul
+                            className={classNames(
+                              projectcss.all,
+                              projectcss.ul,
+                              sty.ul__jc50Z
+                            )}
+                          >
+                            <li
+                              className={classNames(
+                                projectcss.all,
+                                projectcss.li,
+                                projectcss.__wab_text,
+                                sty.li__deJs6
+                              )}
+                            >
+                              <React.Fragment>
+                                <React.Fragment>{"Minimum of "}</React.Fragment>
+                                <span
+                                  className={
+                                    "plasmic_default__all plasmic_default__span"
+                                  }
+                                  style={{ fontWeight: 700 }}
+                                >
+                                  {
+                                    "2\u20133 years of continuous daily sales data per SKU."
+                                  }
+                                </span>
+                              </React.Fragment>
+                            </li>
+                          </ul>
+                        }
+                        <React.Fragment>{""}</React.Fragment>
+                        {
+                          <ul
+                            className={classNames(
+                              projectcss.all,
+                              projectcss.ul,
+                              sty.ul__u3CA
+                            )}
+                          >
+                            <li
+                              className={classNames(
+                                projectcss.all,
+                                projectcss.li,
+                                projectcss.__wab_text,
+                                sty.li__hvQy6
+                              )}
+                            >
+                              {
+                                "Data must reflect regular, uninterrupted selling patterns."
+                              }
+                            </li>
+                            <li
+                              className={classNames(
+                                projectcss.all,
+                                projectcss.li,
+                                projectcss.__wab_text,
+                                sty.li__zYga2
+                              )}
+                            >
+                              {
+                                "Ideal for active Shopify or ecommerce stores looking for clear, operational proof. "
+                              }
+                            </li>
+                          </ul>
+                        }
+                        <React.Fragment>{""}</React.Fragment>
+                      </React.Fragment>
+                    </div>
+                    <div
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.__wab_text,
+                        sty.text___1WAa
+                      )}
+                    >
+                      {
+                        "Participants receive three months of TSF Lite forecasts, including instant historical backfill and monthly updates. "
+                      }
+                    </div>
+                    <Button2
+                      className={classNames(
+                        "__wab_instance",
+                        sty.button2___4ZftL
+                      )}
+                      color={"tsfDark"}
+                      end={
+                        <Icon4Icon
+                          className={classNames(projectcss.all, sty.svg__uWsKt)}
+                          role={"img"}
+                        />
+                      }
+                      iconEnd={true}
+                      label={
+                        <div
+                          className={classNames(
+                            projectcss.all,
+                            projectcss.__wab_text,
+                            sty.text___8GAdk
+                          )}
+                        >
+                          {"Apply to join a TSF Lite Case Study"}
+                        </div>
+                      }
+                      linkTo={`/interest`}
+                      start={
+                        <CircleIcon
+                          className={classNames(
+                            projectcss.all,
+                            sty.svg___6EvSu
+                          )}
+                          role={"img"}
+                        />
+                      }
+                    />
+                  </div>
+                </div>
+                <div className={classNames(projectcss.all, sty.column__zXxGj)}>
+                  <div
+                    className={classNames(projectcss.all, sty.freeBox__lIjK)}
+                  >
+                    <div
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.__wab_text,
+                        sty.text__an66
+                      )}
+                    >
+                      {"Partner-Led Case Studies"}
+                    </div>
+                    <div
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.__wab_text,
+                        sty.text__vntgB
+                      )}
+                    >
+                      {"(Co-Branded Program)"}
+                    </div>
+                    <div
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.__wab_text,
+                        sty.text__iOxvt
+                      )}
+                    >
+                      <React.Fragment>
+                        <React.Fragment>
+                          {
+                            "Partner-led case studies are created in collaboration with ecommerce agencies, analytics partners, or platform integrators who manage multiple merchants. These studies highlight how TSF performs across larger product sets \u2014 up to "
+                          }
+                        </React.Fragment>
+                        <span
+                          className={
+                            "plasmic_default__all plasmic_default__span"
+                          }
+                          style={{ fontWeight: 700 }}
+                        >
+                          {"50 SKUs per merchant"}
+                        </span>
+                        <React.Fragment>
+                          {
+                            " \u2014 and how foresight scales across teams or stores. "
+                          }
+                        </React.Fragment>
+                      </React.Fragment>
+                    </div>
+                    <div
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.__wab_text,
+                        sty.text___503Ua
+                      )}
+                    >
+                      <React.Fragment>
+                        <React.Fragment>{""}</React.Fragment>
+                        {
+                          <h3
+                            className={classNames(
+                              projectcss.all,
+                              projectcss.h3,
+                              projectcss.__wab_text,
+                              sty.h3__yxg1J
+                            )}
+                          >
+                            {"Who qualifies:"}
+                          </h3>
+                        }
+                        <React.Fragment>{""}</React.Fragment>
+                      </React.Fragment>
+                    </div>
+                    <div
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.__wab_text,
+                        sty.text__ga7XG
+                      )}
+                    >
+                      <React.Fragment>
+                        <React.Fragment>{""}</React.Fragment>
+                        {
+                          <ul
+                            className={classNames(
+                              projectcss.all,
+                              projectcss.ul,
+                              sty.ul__xHm3Q
+                            )}
+                          >
+                            <li
+                              className={classNames(
+                                projectcss.all,
+                                projectcss.li,
+                                projectcss.__wab_text,
+                                sty.li__bNVmw
+                              )}
+                            >
+                              <React.Fragment>
+                                <React.Fragment>{"Minimum of "}</React.Fragment>
+                                <span
+                                  className={
+                                    "plasmic_default__all plasmic_default__span"
+                                  }
+                                  style={{ fontWeight: 700 }}
+                                >
+                                  {
+                                    "5 years of continuous daily sales data per SKU."
+                                  }
+                                </span>
+                              </React.Fragment>
+                            </li>
+                          </ul>
+                        }
+                        <React.Fragment>{""}</React.Fragment>
+                        {
+                          <ul
+                            className={classNames(
+                              projectcss.all,
+                              projectcss.ul,
+                              sty.ul___5GgMn
+                            )}
+                          >
+                            <li
+                              className={classNames(
+                                projectcss.all,
+                                projectcss.li,
+                                projectcss.__wab_text,
+                                sty.li__oJhEs
+                              )}
+                            >
+                              {
+                                "Partners must have data access and merchant approval."
+                              }
+                            </li>
+                            <li
+                              className={classNames(
+                                projectcss.all,
+                                projectcss.li,
+                                projectcss.__wab_text,
+                                sty.li__vpqB
+                              )}
+                            >
+                              {
+                                "Designed for experienced partners, ready to co-brand results and share in the visibility. "
+                              }
+                            </li>
+                          </ul>
+                        }
+                        <React.Fragment>{""}</React.Fragment>
+                      </React.Fragment>
+                    </div>
+                    <div
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.__wab_text,
+                        sty.text__wKbzc
+                      )}
+                    >
+                      {
+                        "Partners work directly with the TSF team on study design, publication, and shared promotion."
+                      }
+                    </div>
+                    <Button2
+                      className={classNames(
+                        "__wab_instance",
+                        sty.button2__jgxIz
+                      )}
+                      color={"tsfDark"}
+                      end={
+                        <Icon4Icon
+                          className={classNames(projectcss.all, sty.svg__piXzp)}
+                          role={"img"}
+                        />
+                      }
+                      iconEnd={true}
+                      label={
+                        <div
+                          className={classNames(
+                            projectcss.all,
+                            projectcss.__wab_text,
+                            sty.text__o7Pgu
+                          )}
+                        >
+                          {"Apply as a Partner"}
+                        </div>
+                      }
+                      linkTo={`/contact`}
+                      start={
+                        <CircleIcon
+                          className={classNames(projectcss.all, sty.svg__c96P1)}
+                          role={"img"}
+                        />
+                      }
+                    />
+                  </div>
+                </div>
+              </div>
+              <section
+                data-plasmic-name={"section"}
+                data-plasmic-override={overrides.section}
+                className={classNames(projectcss.all, sty.section)}
+              >
+                <div
+                  data-plasmic-name={"foreground"}
+                  data-plasmic-override={overrides.foreground}
+                  className={classNames(projectcss.all, sty.foreground)}
+                >
+                  <div
+                    className={classNames(projectcss.all, sty.freeBox__qMde3)}
+                  >
+                    <div
+                      className={classNames(projectcss.all, sty.freeBox__yMa4)}
+                    >
+                      <Icon16Icon
+                        className={classNames(projectcss.all, sty.svg__oTqP)}
                         role={"img"}
                       />
+
+                      <h3
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.h3,
+                          projectcss.__wab_text,
+                          sty.h3__qGm5H
+                        )}
+                      >
+                        <React.Fragment>
+                          <span
+                            className={
+                              "plasmic_default__all plasmic_default__span"
+                            }
+                            style={{ fontWeight: 700 }}
+                          >
+                            {"Monthly foresight: "}
+                          </span>
+                          <React.Fragment>
+                            {
+                              "a complete, month-ahead view, delivered on the 1st."
+                            }
+                          </React.Fragment>
+                        </React.Fragment>
+                      </h3>
+                    </div>
+                    <div
+                      className={classNames(projectcss.all, sty.freeBox__r7C9G)}
+                    >
+                      <Icon16Icon
+                        className={classNames(projectcss.all, sty.svg__yMoP7)}
+                        role={"img"}
+                      />
+
+                      <h3
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.h3,
+                          projectcss.__wab_text,
+                          sty.h3__foCj5
+                        )}
+                      >
+                        <React.Fragment>
+                          <span
+                            className={
+                              "plasmic_default__all plasmic_default__span"
+                            }
+                            style={{ fontWeight: 700 }}
+                          >
+                            {"Confidence band (green zone): "}
+                          </span>
+                          <React.Fragment>
+                            {
+                              "a practical range for planning, not a stastic to decipher."
+                            }
+                          </React.Fragment>
+                        </React.Fragment>
+                      </h3>
+                    </div>
+                    <div
+                      className={classNames(projectcss.all, sty.freeBox__hIOnA)}
+                    >
+                      <Icon16Icon
+                        className={classNames(projectcss.all, sty.svg__xDXtR)}
+                        role={"img"}
+                      />
+
+                      <h3
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.h3,
+                          projectcss.__wab_text,
+                          sty.h3__rAaF
+                        )}
+                      >
+                        <React.Fragment>
+                          <span
+                            className={
+                              "plasmic_default__all plasmic_default__span"
+                            }
+                            style={{ fontWeight: 700 }}
+                          >
+                            {"SKU-level precision: "}
+                          </span>
+                          <React.Fragment>
+                            {
+                              "every forecast is built at the product level, reflecting each item\u2019s own day-by-day variability and unique demand pattern."
+                            }
+                          </React.Fragment>
+                        </React.Fragment>
+                      </h3>
+                    </div>
+                    <div
+                      className={classNames(projectcss.all, sty.freeBox__rb7Cc)}
+                    >
+                      <Icon16Icon
+                        className={classNames(projectcss.all, sty.svg__kgAQy)}
+                        role={"img"}
+                      />
+
+                      <h3
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.h3,
+                          projectcss.__wab_text,
+                          sty.h3___8Ydc
+                        )}
+                      >
+                        <React.Fragment>
+                          <span
+                            className={
+                              "plasmic_default__all plasmic_default__span"
+                            }
+                            style={{ fontWeight: 700 }}
+                          >
+                            {"Operational guidance: "}
+                          </span>
+                          <React.Fragment>
+                            {
+                              "apply the band to ordering, ad timing, and staffing."
+                            }
+                          </React.Fragment>
+                        </React.Fragment>
+                      </h3>
+                    </div>
+                    <div
+                      className={classNames(projectcss.all, sty.freeBox__omePd)}
+                    >
+                      <Icon16Icon
+                        className={classNames(projectcss.all, sty.svg__lHwg7)}
+                        role={"img"}
+                      />
+
+                      <h3
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.h3,
+                          projectcss.__wab_text,
+                          sty.h3__gZg7X
+                        )}
+                      >
+                        <React.Fragment>
+                          <span
+                            className={
+                              "plasmic_default__all plasmic_default__span"
+                            }
+                            style={{ fontWeight: 700 }}
+                          >
+                            {"Final case study: "}
+                          </span>
+                          <React.Fragment>
+                            {
+                              "a clear, approved story of how visibility changed your outcomes."
+                            }
+                          </React.Fragment>
+                        </React.Fragment>
+                      </h3>
                     </div>
                   </div>
-                </BaseButton>
+                </div>
+              </section>
+            </div>
+            <div className={classNames(projectcss.all, sty.freeBox__hr0Nv)}>
+              <div className={classNames(projectcss.all, sty.columns__dlLju)}>
+                <div className={classNames(projectcss.all, sty.column__cfwv1)}>
+                  <div
+                    className={classNames(projectcss.all, sty.freeBox__v2Idr)}
+                  >
+                    <div
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.__wab_text,
+                        sty.text__z1FeD
+                      )}
+                    >
+                      {
+                        "TSF doesn\u2019t just predict. It puts you in control. "
+                      }
+                    </div>
+                    <div
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.__wab_text,
+                        sty.text__mWyvp
+                      )}
+                    >
+                      {
+                        "Traditional forecasting tools are designed for analysts. TSF is designed for operators \u2014 people who need to make fast, confident decisions without digging through dashboards or formulas. "
+                      }
+                    </div>
+                    <div
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.__wab_text,
+                        sty.text__nFhJy
+                      )}
+                    >
+                      <React.Fragment>
+                        <React.Fragment>
+                          {"Every TSF forecast works at the "}
+                        </React.Fragment>
+                        <span
+                          className={
+                            "plasmic_default__all plasmic_default__span"
+                          }
+                          style={{ fontWeight: 700 }}
+                        >
+                          {"SKU level,"}
+                        </span>
+                        <React.Fragment>
+                          {" capturing each product's"}
+                        </React.Fragment>
+                        <span
+                          className={
+                            "plasmic_default__all plasmic_default__span"
+                          }
+                          style={{ fontWeight: 700 }}
+                        >
+                          {" individual"}
+                        </span>
+                        <React.Fragment>{""}</React.Fragment>
+                        <span
+                          className={
+                            "plasmic_default__all plasmic_default__span"
+                          }
+                          style={{ fontWeight: 700 }}
+                        >
+                          {" daily pattern "}
+                        </span>
+                        <React.Fragment>
+                          {
+                            "instead of flattening everything into a store average. The result is a clear, usable signal: a daily range that shows when to act, when to hold steady, and when something truly unexpected is happening. "
+                          }
+                        </React.Fragment>
+                      </React.Fragment>
+                    </div>
+                    <div
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.__wab_text,
+                        sty.text__iaChx
+                      )}
+                    >
+                      {
+                        "There\u2019s no model tuning, no technical setup, and no need to interpret metrics. The system delivers foresight you can use immediately \u2014\u00a0a full month view that keeps you ahead of demand rather than chasing it. "
+                      }
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className={classNames(projectcss.all, sty.freeBox___4ZJ2)}>
+              <div className={classNames(projectcss.all, sty.columns___44PCx)}>
+                <div className={classNames(projectcss.all, sty.column__asOv)}>
+                  <div
+                    className={classNames(projectcss.all, sty.freeBox__mQv3F)}
+                  >
+                    <div
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.__wab_text,
+                        sty.text__pmw9M
+                      )}
+                    >
+                      {
+                        "Your data, your story \u2014\u00a0always under your control."
+                      }
+                    </div>
+                    <div
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.__wab_text,
+                        sty.text__rekYk
+                      )}
+                    >
+                      {
+                        "Your data always stays yours. Every TSF case study operates under strict isolation \u2014 each merchant\u2019s data lives in its own encrypted database, completely separate from every other client."
+                      }
+                    </div>
+                    <div
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.__wab_text,
+                        sty.text__tC2Xe
+                      )}
+                    >
+                      <React.Fragment>
+                        <React.Fragment>
+                          {
+                            "Participation in a case study is voluntary and requires written consent. When you apply, you agree that TSF may review "
+                          }
+                        </React.Fragment>
+                        <span
+                          className={
+                            "plasmic_default__all plasmic_default__span"
+                          }
+                          style={{ fontWeight: 700 }}
+                        >
+                          {"anonymized"}
+                        </span>
+                        <React.Fragment>
+                          {
+                            " forecast and performance data strictly for analysis and publication. No identifiable company names, products, or visuals are ever shared without your explicit approval. "
+                          }
+                        </React.Fragment>
+                      </React.Fragment>
+                    </div>
+                    <div
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.__wab_text,
+                        sty.text__mgcVf
+                      )}
+                    >
+                      {
+                        "At the end of each study, all materials are reviewed with you before release. You decide what gets published and whether your brand is named or kept anonymous. "
+                      }
+                    </div>
+                    <div
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.__wab_text,
+                        sty.text__eDhz0
+                      )}
+                    >
+                      {
+                        "Case study data is retained for the duration of the trial and securely archived afterward. Active forecast data for TSF Lite users remains private, encrypted, and deleted within 60 days of account closure or written request. "
+                      }
+                    </div>
+                    <div
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.__wab_text,
+                        sty.text__ikJbh
+                      )}
+                    >
+                      <React.Fragment>
+                        <React.Fragment>
+                          {"For complete details, see the "}
+                        </React.Fragment>
+                        {
+                          <PlasmicLink__
+                            data-plasmic-name={"link"}
+                            data-plasmic-override={overrides.link}
+                            className={classNames(
+                              projectcss.all,
+                              projectcss.a,
+                              projectcss.__wab_text,
+                              projectcss.plasmic_default__inline,
+                              sty.link
+                            )}
+                            component={Link}
+                            href={`/privacy-policy`}
+                            platform={"nextjs"}
+                          >
+                            {"TSF Privacy & Legal Policy"}
+                          </PlasmicLink__>
+                        }
+                        <React.Fragment>
+                          {" or contact us directly at privacy@tsfdemand.com"}
+                        </React.Fragment>
+                      </React.Fragment>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -1625,43 +1467,16 @@ const PlasmicDescendants = {
     "softBackground3",
     "border3",
     "interactionEffect3",
-    "features",
-    "container4",
-    "outerRow2",
-    "row2",
-    "softBackground4",
-    "border4",
-    "interactionEffect4",
-    "container5",
-    "outerRow3",
-    "row4",
-    "softBackground5",
-    "border5",
-    "interactionEffect5",
-    "container6",
-    "outerRow4",
-    "row3",
-    "softBackground6",
-    "border6",
-    "interactionEffect6",
-    "testimonials",
-    "softBackground7",
-    "border7",
-    "interactionEffect7",
-    "softBackground8",
-    "border8",
-    "interactionEffect8",
-    "softBackground9",
-    "border9",
-    "interactionEffect9",
+    "img",
     "outer",
     "container3",
+    "h2",
     "softBackground10",
     "border10",
     "interactionEffect10",
-    "softBackground",
-    "border",
-    "interactionEffect",
+    "section",
+    "foreground",
+    "link",
     "tsfFooter"
   ],
 
@@ -1670,104 +1485,11 @@ const PlasmicDescendants = {
   softBackground3: ["softBackground3"],
   border3: ["border3"],
   interactionEffect3: ["interactionEffect3"],
-  features: [
-    "features",
-    "container4",
-    "outerRow2",
-    "row2",
-    "softBackground4",
-    "border4",
-    "interactionEffect4",
-    "container5",
-    "outerRow3",
-    "row4",
-    "softBackground5",
-    "border5",
-    "interactionEffect5",
-    "container6",
-    "outerRow4",
-    "row3",
-    "softBackground6",
-    "border6",
-    "interactionEffect6"
-  ],
-
-  container4: [
-    "container4",
-    "outerRow2",
-    "row2",
-    "softBackground4",
-    "border4",
-    "interactionEffect4"
-  ],
-
-  outerRow2: [
-    "outerRow2",
-    "row2",
-    "softBackground4",
-    "border4",
-    "interactionEffect4"
-  ],
-
-  row2: ["row2", "softBackground4", "border4", "interactionEffect4"],
-  softBackground4: ["softBackground4"],
-  border4: ["border4"],
-  interactionEffect4: ["interactionEffect4"],
-  container5: [
-    "container5",
-    "outerRow3",
-    "row4",
-    "softBackground5",
-    "border5",
-    "interactionEffect5"
-  ],
-
-  outerRow3: [
-    "outerRow3",
-    "row4",
-    "softBackground5",
-    "border5",
-    "interactionEffect5"
-  ],
-
-  row4: ["row4", "softBackground5", "border5", "interactionEffect5"],
-  softBackground5: ["softBackground5"],
-  border5: ["border5"],
-  interactionEffect5: ["interactionEffect5"],
-  container6: [
-    "container6",
-    "outerRow4",
-    "row3",
-    "softBackground6",
-    "border6",
-    "interactionEffect6"
-  ],
-
-  outerRow4: [
-    "outerRow4",
-    "row3",
-    "softBackground6",
-    "border6",
-    "interactionEffect6"
-  ],
-
-  row3: ["row3", "softBackground6", "border6", "interactionEffect6"],
-  softBackground6: ["softBackground6"],
-  border6: ["border6"],
-  interactionEffect6: ["interactionEffect6"],
-  testimonials: ["testimonials"],
-  softBackground7: ["softBackground7"],
-  border7: ["border7"],
-  interactionEffect7: ["interactionEffect7"],
-  softBackground8: ["softBackground8"],
-  border8: ["border8"],
-  interactionEffect8: ["interactionEffect8"],
-  softBackground9: ["softBackground9"],
-  border9: ["border9"],
-  interactionEffect9: ["interactionEffect9"],
+  img: ["img"],
   outer: [
     "outer",
     "container3",
+    "h2",
     "softBackground10",
     "border10",
     "interactionEffect10"
@@ -1775,17 +1497,19 @@ const PlasmicDescendants = {
 
   container3: [
     "container3",
+    "h2",
     "softBackground10",
     "border10",
     "interactionEffect10"
   ],
 
+  h2: ["h2"],
   softBackground10: ["softBackground10"],
   border10: ["border10"],
   interactionEffect10: ["interactionEffect10"],
-  softBackground: ["softBackground"],
-  border: ["border"],
-  interactionEffect: ["interactionEffect"],
+  section: ["section", "foreground"],
+  foreground: ["foreground"],
+  link: ["link"],
   tsfFooter: ["tsfFooter"]
 };
 
@@ -1826,43 +1550,16 @@ export const PlasmicCaseStudies = Object.assign(
     softBackground3: makeNodeComponent("softBackground3"),
     border3: makeNodeComponent("border3"),
     interactionEffect3: makeNodeComponent("interactionEffect3"),
-    features: makeNodeComponent("features"),
-    container4: makeNodeComponent("container4"),
-    outerRow2: makeNodeComponent("outerRow2"),
-    row2: makeNodeComponent("row2"),
-    softBackground4: makeNodeComponent("softBackground4"),
-    border4: makeNodeComponent("border4"),
-    interactionEffect4: makeNodeComponent("interactionEffect4"),
-    container5: makeNodeComponent("container5"),
-    outerRow3: makeNodeComponent("outerRow3"),
-    row4: makeNodeComponent("row4"),
-    softBackground5: makeNodeComponent("softBackground5"),
-    border5: makeNodeComponent("border5"),
-    interactionEffect5: makeNodeComponent("interactionEffect5"),
-    container6: makeNodeComponent("container6"),
-    outerRow4: makeNodeComponent("outerRow4"),
-    row3: makeNodeComponent("row3"),
-    softBackground6: makeNodeComponent("softBackground6"),
-    border6: makeNodeComponent("border6"),
-    interactionEffect6: makeNodeComponent("interactionEffect6"),
-    testimonials: makeNodeComponent("testimonials"),
-    softBackground7: makeNodeComponent("softBackground7"),
-    border7: makeNodeComponent("border7"),
-    interactionEffect7: makeNodeComponent("interactionEffect7"),
-    softBackground8: makeNodeComponent("softBackground8"),
-    border8: makeNodeComponent("border8"),
-    interactionEffect8: makeNodeComponent("interactionEffect8"),
-    softBackground9: makeNodeComponent("softBackground9"),
-    border9: makeNodeComponent("border9"),
-    interactionEffect9: makeNodeComponent("interactionEffect9"),
+    img: makeNodeComponent("img"),
     outer: makeNodeComponent("outer"),
     container3: makeNodeComponent("container3"),
+    h2: makeNodeComponent("h2"),
     softBackground10: makeNodeComponent("softBackground10"),
     border10: makeNodeComponent("border10"),
     interactionEffect10: makeNodeComponent("interactionEffect10"),
-    softBackground: makeNodeComponent("softBackground"),
-    border: makeNodeComponent("border"),
-    interactionEffect: makeNodeComponent("interactionEffect"),
+    section: makeNodeComponent("section"),
+    foreground: makeNodeComponent("foreground"),
+    link: makeNodeComponent("link"),
     tsfFooter: makeNodeComponent("tsfFooter"),
     // Metadata about props expected for PlasmicCaseStudies
     internalVariantProps: PlasmicCaseStudies__VariantProps,

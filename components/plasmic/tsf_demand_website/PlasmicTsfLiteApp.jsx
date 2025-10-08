@@ -1662,8 +1662,22 @@ function PlasmicTsfLiteApp__RenderFunc(props) {
                   <div
                     className={classNames(projectcss.all, sty.freeBox___9Sxhl)}
                   >
-                    <div
-                      className={classNames(projectcss.all, sty.freeBox__esXpe)}
+                    <PlasmicImg__
+                      alt={""}
+                      className={classNames(sty.img__iNsFe)}
+                      displayHeight={"auto"}
+                      displayMaxHeight={"none"}
+                      displayMaxWidth={"100%"}
+                      displayMinHeight={"0"}
+                      displayMinWidth={"0"}
+                      displayWidth={"624px"}
+                      loading={"lazy"}
+                      src={{
+                        src: "/plasmic/tsf_demand_website/images/financeReportWomanEconomistManagerMillennial20250225060407UtcJpg.jpg",
+                        fullWidth: 6000,
+                        fullHeight: 4000,
+                        aspectRatio: undefined
+                      }}
                     />
                   </div>
                 </div>

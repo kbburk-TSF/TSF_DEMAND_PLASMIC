@@ -1931,13 +1931,15 @@
   height: 400px;
   justify-content: space-evenly;
 }
-.freeBox__esXpe {
-  display: block;
-  width: 600px;
-  height: 600px;
-  background: url("/plasmic/tsf_demand_website/images/colleaguesWorkingTogetherInModernOfficeUsing20241018042111UtcJpg.jpg") left 50% top 50% / cover;
+.img__iNsFe {
+  object-fit: cover;
+  max-width: 100%;
+  width: 624px;
+  margin-right: 0px;
   flex-shrink: 0;
-  border-radius: 50%;
+}
+.img__iNsFe > picture > img {
+  object-fit: cover;
 }
 .tsfPricingTable1:global(.__wab_instance) {
   position: relative;
