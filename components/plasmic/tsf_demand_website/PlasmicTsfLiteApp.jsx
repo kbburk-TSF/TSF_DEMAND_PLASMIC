@@ -503,9 +503,7 @@ function PlasmicTsfLiteApp__RenderFunc(props) {
                           }
                           style={{ color: "var(--token-Ry9eGMy91QvA)" }}
                         >
-                          {
-                            "TSF Lite works differently. For each date, TSF Lite evaluates "
-                          }
+                          {"For each date, TSF Lite evaluates "}
                         </span>
                         <React.Fragment>{""}</React.Fragment>
                         <span
