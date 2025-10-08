@@ -26,6 +26,7 @@ import projectcss from "./plasmic.module.css"; // plasmic-import: 8yhBRaKsBf3R2w
 import sty from "./PlasmicButton.module.css"; // plasmic-import: -U7nCsYlsFbS/css
 import CircleIcon from "./icons/PlasmicIcon__Circle"; // plasmic-import: iCnGomX0kBnc/icon
 import ChevronDownIcon from "./icons/PlasmicIcon__ChevronDown"; // plasmic-import: psfpTc-XGOO7/icon
+import ArrowRightSvgIcon from "./icons/PlasmicIcon__ArrowRightSvg"; // plasmic-import: WXIx2uHDhf9R/icon
 
 createPlasmicElementProxy;
 
@@ -821,16 +822,23 @@ function PlasmicButton__RenderFunc(props) {
             })
           })}
         </div>
+        <ArrowRightSvgIcon
+          data-plasmic-name={"svg"}
+          data-plasmic-override={overrides.svg}
+          className={classNames(projectcss.all, sty.svg)}
+          role={"img"}
+        />
       </div>
     </BaseButton>
   );
 }
 
 const PlasmicDescendants = {
-  root: ["root", "softBackground", "border", "interactionEffect"],
+  root: ["root", "softBackground", "border", "interactionEffect", "svg"],
   softBackground: ["softBackground"],
   border: ["border"],
-  interactionEffect: ["interactionEffect"]
+  interactionEffect: ["interactionEffect"],
+  svg: ["svg"]
 };
 
 function makeNodeComponent(nodeName) {
@@ -868,6 +876,7 @@ export const PlasmicButton = Object.assign(
     softBackground: makeNodeComponent("softBackground"),
     border: makeNodeComponent("border"),
     interactionEffect: makeNodeComponent("interactionEffect"),
+    svg: makeNodeComponent("svg"),
     // Metadata about props expected for PlasmicButton
     internalVariantProps: PlasmicButton__VariantProps,
     internalArgProps: PlasmicButton__ArgProps
