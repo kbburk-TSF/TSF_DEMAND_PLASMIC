@@ -141,7 +141,7 @@ function PlasmicTsfEngineDemo__RenderFunc(props) {
                     )}
                   >
                     {
-                      "Pick a forecast, choose a month, and watch the gold line (daily forecast) and the green zone (confidence bands) guide your decisions."
+                      "Pick a forecast, choose a month, and let the gold line (daily forecast) and the green zone (confidence bands) guide your decisions."
                     }
                   </div>
                   <div
