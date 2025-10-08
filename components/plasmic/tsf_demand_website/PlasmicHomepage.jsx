@@ -10,9 +10,11 @@
 // Component: pPnx7cCl0iri
 import * as React from "react";
 import Head from "next/head";
+import Link from "next/link";
 import { useRouter } from "next/router";
 import {
   PlasmicImg as PlasmicImg__,
+  PlasmicLink as PlasmicLink__,
   classNames,
   createPlasmicElementProxy,
   deriveRenderOpts,
@@ -37,6 +39,7 @@ import Icon11Icon from "./icons/PlasmicIcon__Icon11"; // plasmic-import: e15IDcl
 import Icon8Icon from "./icons/PlasmicIcon__Icon8"; // plasmic-import: FGJcG_uIECwR/icon
 import Icon10Icon from "./icons/PlasmicIcon__Icon10"; // plasmic-import: WKmUSY2JMrqE/icon
 import Icon13Icon from "./icons/PlasmicIcon__Icon13"; // plasmic-import: jJJqFQNMqxtj/icon
+import ShopifySvg2Icon from "./icons/PlasmicIcon__ShopifySvg2"; // plasmic-import: ZY2ILszd07ta/icon
 
 createPlasmicElementProxy;
 
@@ -446,9 +449,10 @@ function PlasmicHomepage__RenderFunc(props) {
                           </React.Fragment>
                         </div>
                         <Button2
-                          data-plasmic-name={"button2"}
-                          data-plasmic-override={overrides.button2}
-                          className={classNames("__wab_instance", sty.button2)}
+                          className={classNames(
+                            "__wab_instance",
+                            sty.button2__e0V5Y
+                          )}
                           color={"tsfDark"}
                           end={
                             <Icon4Icon
@@ -497,13 +501,11 @@ function PlasmicHomepage__RenderFunc(props) {
                         className={classNames(projectcss.all, sty.foreground3)}
                       >
                         <h2
-                          data-plasmic-name={"h2"}
-                          data-plasmic-override={overrides.h2}
                           className={classNames(
                             projectcss.all,
                             projectcss.h2,
                             projectcss.__wab_text,
-                            sty.h2
+                            sty.h2__kfV2L
                           )}
                         >
                           {"Fewer Stockouts. Less Overstock. No Guessing. "}
@@ -788,6 +790,114 @@ function PlasmicHomepage__RenderFunc(props) {
                         </div>
                       </div>
                     </div>
+                    <div
+                      className={classNames(projectcss.all, sty.freeBox__irFxI)}
+                    >
+                      <div
+                        className={classNames(
+                          projectcss.all,
+                          sty.freeBox__n12L
+                        )}
+                      >
+                        <div
+                          className={classNames(
+                            projectcss.all,
+                            sty.freeBox__t5Ja
+                          )}
+                        >
+                          <ShopifySvg2Icon
+                            className={classNames(
+                              projectcss.all,
+                              sty.svg__eem1V
+                            )}
+                            role={"img"}
+                          />
+                        </div>
+                        {false ? (
+                          <div
+                            className={classNames(
+                              projectcss.all,
+                              sty.freeBox__c77Bt
+                            )}
+                          >
+                            <Icon8Icon
+                              className={classNames(
+                                projectcss.all,
+                                sty.svg__nlndn
+                              )}
+                              role={"img"}
+                            />
+                          </div>
+                        ) : null}
+                        <div
+                          className={classNames(
+                            projectcss.all,
+                            sty.freeBox__xOEz4
+                          )}
+                        >
+                          <div
+                            className={classNames(
+                              projectcss.all,
+                              projectcss.__wab_text,
+                              sty.text__gLtHu
+                            )}
+                          >
+                            {"Built for Shopify Merchants"}
+                          </div>
+                          <div
+                            className={classNames(
+                              projectcss.all,
+                              projectcss.__wab_text,
+                              sty.text__hrlA6
+                            )}
+                          >
+                            <React.Fragment>
+                              <span
+                                className={
+                                  "plasmic_default__all plasmic_default__span"
+                                }
+                                style={{ fontWeight: 700 }}
+                              >
+                                {"Set up once. Forecast forever. "}
+                              </span>
+                            </React.Fragment>
+                          </div>
+                          <div
+                            className={classNames(
+                              projectcss.all,
+                              projectcss.__wab_text,
+                              sty.text__eeB1H
+                            )}
+                          >
+                            {
+                              "Connect your Shopify store, pick your products, and TSF Lite does the rest. Forecasts run automatically, uploaded and delivered straight to your dashboard each month. "
+                            }
+                          </div>
+                          <Button
+                            className={classNames(
+                              "__wab_instance",
+                              sty.button__tcey7
+                            )}
+                            color={"tsfDark"}
+                            label={
+                              <div
+                                className={classNames(
+                                  projectcss.all,
+                                  projectcss.__wab_text,
+                                  sty.text__laxy
+                                )}
+                              >
+                                {"TSF Lite App"}
+                              </div>
+                            }
+                            linkTo={`/tsf-lite`}
+                            onClick={async event => {
+                              const $steps = {};
+                            }}
+                          />
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 </div>
                 <div className={classNames(projectcss.all, sty.columns__oxRvY)}>
@@ -978,6 +1088,148 @@ function PlasmicHomepage__RenderFunc(props) {
               </div>
             </div>
           </section>
+          <div className={classNames(projectcss.all, sty.freeBox__bssI3)}>
+            <div className={classNames(projectcss.all, sty.columns__lmBz)}>
+              <div className={classNames(projectcss.all, sty.column__l8Gaa)}>
+                <h2
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.h2,
+                    projectcss.__wab_text,
+                    sty.h2___8XC4
+                  )}
+                >
+                  {"Stop guessing. Start forecasting. "}
+                </h2>
+                <h2
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.h2,
+                    projectcss.__wab_text,
+                    sty.h2__iVxUq
+                  )}
+                >
+                  {
+                    "Join the early access list and get your first forecasts the moment TSF Lite launches. "
+                  }
+                </h2>
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__aTtg
+                  )}
+                >
+                  <React.Fragment>
+                    <React.Fragment>
+                      {
+                        "TSF Lite is currently in pre-release. Early access merchants receive:\n"
+                      }
+                    </React.Fragment>
+                    {
+                      <ul
+                        data-plasmic-name={"ul"}
+                        data-plasmic-override={overrides.ul}
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.ul,
+                          sty.ul
+                        )}
+                      >
+                        <li
+                          className={classNames(
+                            projectcss.all,
+                            projectcss.li,
+                            projectcss.__wab_text,
+                            sty.li__sajdi
+                          )}
+                        >
+                          {"First access to the app at launch (early 2026)"}
+                        </li>
+                        <li
+                          className={classNames(
+                            projectcss.all,
+                            projectcss.li,
+                            projectcss.__wab_text,
+                            sty.li__wqwAb
+                          )}
+                        >
+                          {"Locked-in beta pricing"}
+                        </li>
+                        <li
+                          className={classNames(
+                            projectcss.all,
+                            projectcss.li,
+                            projectcss.__wab_text,
+                            sty.li__qbksH
+                          )}
+                        >
+                          {
+                            "Priority consideration for Shopify case-sudy selection"
+                          }
+                        </li>
+                      </ul>
+                    }
+                    <React.Fragment>{""}</React.Fragment>
+                  </React.Fragment>
+                </div>
+                <div className={classNames(projectcss.all, sty.freeBox__npY46)}>
+                  <Button2
+                    className={classNames(
+                      "__wab_instance",
+                      sty.button2___7NPxv
+                    )}
+                    color={"trueGold"}
+                    end={
+                      <Icon4Icon
+                        className={classNames(projectcss.all, sty.svg__odeP3)}
+                        role={"img"}
+                      />
+                    }
+                    iconEnd={true}
+                    label={
+                      <div
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.__wab_text,
+                          sty.text___19F1T
+                        )}
+                      >
+                        {"Join the Beta"}
+                      </div>
+                    }
+                    linkTo={`/interest`}
+                    start={
+                      <CircleIcon
+                        className={classNames(projectcss.all, sty.svg__lCYxN)}
+                        role={"img"}
+                      />
+                    }
+                  />
+
+                  <PlasmicLink__
+                    data-plasmic-name={"link"}
+                    data-plasmic-override={overrides.link}
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.a,
+                      projectcss.__wab_text,
+                      sty.link
+                    )}
+                    component={Link}
+                    href={`/demo`}
+                    platform={"nextjs"}
+                  >
+                    {"See Real Forecasts   "}
+                  </PlasmicLink__>
+                  <Icon4Icon
+                    className={classNames(projectcss.all, sty.svg__imgUa)}
+                    role={"img"}
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
           <TsfFooter
             data-plasmic-name={"tsfFooter"}
             data-plasmic-override={overrides.tsfFooter}
@@ -1012,10 +1264,10 @@ const PlasmicDescendants = {
     "root",
     "tsfDemandMainNavigation",
     "features",
-    "button2",
     "foreground3",
-    "h2",
     "foreground2",
+    "ul",
+    "link",
     "tsfFooter",
     "blogPosts",
     "ctaBlock",
@@ -1023,11 +1275,11 @@ const PlasmicDescendants = {
   ],
 
   tsfDemandMainNavigation: ["tsfDemandMainNavigation"],
-  features: ["features", "button2", "foreground3", "h2", "foreground2"],
-  button2: ["button2"],
-  foreground3: ["foreground3", "h2"],
-  h2: ["h2"],
+  features: ["features", "foreground3", "foreground2"],
+  foreground3: ["foreground3"],
   foreground2: ["foreground2"],
+  ul: ["ul"],
+  link: ["link"],
   tsfFooter: ["tsfFooter"],
   blogPosts: ["blogPosts"],
   ctaBlock: ["ctaBlock"],
@@ -1068,10 +1320,10 @@ export const PlasmicHomepage = Object.assign(
     // Helper components rendering sub-elements
     tsfDemandMainNavigation: makeNodeComponent("tsfDemandMainNavigation"),
     features: makeNodeComponent("features"),
-    button2: makeNodeComponent("button2"),
     foreground3: makeNodeComponent("foreground3"),
-    h2: makeNodeComponent("h2"),
     foreground2: makeNodeComponent("foreground2"),
+    ul: makeNodeComponent("ul"),
+    link: makeNodeComponent("link"),
     tsfFooter: makeNodeComponent("tsfFooter"),
     blogPosts: makeNodeComponent("blogPosts"),
     ctaBlock: makeNodeComponent("ctaBlock"),

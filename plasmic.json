@@ -2397,6 +2397,11 @@
           "id": "s0pSL1_dtWEm",
           "name": "Icon4Icon",
           "moduleFilePath": "plasmic/tsf_demand_website/icons/PlasmicIcon__Icon4.jsx"
+        },
+        {
+          "id": "ZY2ILszd07ta",
+          "name": "ShopifySvg2Icon",
+          "moduleFilePath": "plasmic/tsf_demand_website/icons/PlasmicIcon__ShopifySvg2.jsx"
         }
       ],
       "images": [
