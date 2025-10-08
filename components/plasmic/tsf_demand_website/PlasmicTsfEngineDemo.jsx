@@ -22,6 +22,7 @@ import { useDataEnv } from "@plasmicapp/react-web/lib/host";
 import TsfDemandMainNavigation from "../../TsfDemandMainNavigation"; // plasmic-import: RS9jruOWtFtt/component
 import IframeEmbed from "../../IframeEmbed"; // plasmic-import: nSE9S-d7qhfH/codeComponent
 import Button from "../../Button"; // plasmic-import: -U7nCsYlsFbS/component
+import Button2 from "../../Button2"; // plasmic-import: IsImc8gJBadG/component
 import TsfFooter from "../../TsfFooter"; // plasmic-import: NmgYw5lHKANx/component
 import HeroSection from "../../HeroSection"; // plasmic-import: JNdKyXMmIYn1/component
 import { _useGlobalVariants } from "./plasmic"; // plasmic-import: 8yhBRaKsBf3R2wKMhT5dUU/projectModule
@@ -30,6 +31,8 @@ import "@plasmicapp/react-web/lib/plasmic.css";
 import projectcss from "./plasmic.module.css"; // plasmic-import: 8yhBRaKsBf3R2wKMhT5dUU/projectcss
 import sty from "./PlasmicTsfEngineDemo.module.css"; // plasmic-import: 2enLHPUU2N23/css
 import Icon16Icon from "./icons/PlasmicIcon__Icon16"; // plasmic-import: -9-04Eq-w1pK/icon
+import CircleIcon from "./icons/PlasmicIcon__Circle"; // plasmic-import: iCnGomX0kBnc/icon
+import Icon4Icon from "./icons/PlasmicIcon__Icon4"; // plasmic-import: s0pSL1_dtWEm/icon
 
 createPlasmicElementProxy;
 
@@ -108,23 +111,27 @@ function PlasmicTsfEngineDemo__RenderFunc(props) {
             className={classNames(projectcss.all, sty.pageBanner)}
           >
             <div className={classNames(projectcss.all, sty.freeBox__zb0J4)}>
-              <div
-                data-plasmic-name={"columns"}
-                data-plasmic-override={overrides.columns}
-                className={classNames(projectcss.all, sty.columns)}
-              >
+              <div className={classNames(projectcss.all, sty.columns__m5EDh)}>
                 <div className={classNames(projectcss.all, sty.column__a1Fi)}>
                   <h1
-                    data-plasmic-name={"h1"}
-                    data-plasmic-override={overrides.h1}
                     className={classNames(
                       projectcss.all,
                       projectcss.h1,
                       projectcss.__wab_text,
-                      sty.h1
+                      sty.h1__sm4Y8
                     )}
                   >
                     {"TSF Engine Demo"}
+                  </h1>
+                  <h1
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.h1,
+                      projectcss.__wab_text,
+                      sty.h1___1GlBg
+                    )}
+                  >
+                    {"Real forecasts on real data."}
                   </h1>
                   <div
                     className={classNames(
@@ -134,8 +141,90 @@ function PlasmicTsfEngineDemo__RenderFunc(props) {
                     )}
                   >
                     {
-                      "Explore live demos with car crash data, air quality measures, and even stock market forecasts. See how the Gold Line and Green Zone adapt in real time. \n\n\nThe datasets included in this demo are a small sample of the data used in the ongoing research. These forecasts are presented as illustrations only. \n\nThe TSF Engine Demo is being upgraded! Pardon our dust while we implement improvements and add new data sets!\n\r\n\r\n"
+                      "Pick a forecast, choose a month, and watch the gold line (daily forecast) and the green zone (confidence bands) guide your decisions."
                     }
+                  </div>
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text___4Qcnz
+                    )}
+                  >
+                    <React.Fragment>
+                      <React.Fragment>{""}</React.Fragment>
+                      {
+                        <ul
+                          data-plasmic-name={"ul"}
+                          data-plasmic-override={overrides.ul}
+                          className={classNames(
+                            projectcss.all,
+                            projectcss.ul,
+                            sty.ul
+                          )}
+                        >
+                          <li
+                            className={classNames(
+                              projectcss.all,
+                              projectcss.li,
+                              projectcss.__wab_text,
+                              sty.li__r4DWf
+                            )}
+                          >
+                            {
+                              "AQI Data Sets: Air Quality Index data from the EPA website for selected states.  "
+                            }
+                          </li>
+                          <li
+                            className={classNames(
+                              projectcss.all,
+                              projectcss.li,
+                              projectcss.__wab_text,
+                              sty.li__fyg9B
+                            )}
+                          >
+                            {
+                              "Crash Data Sets: Daily car crash data from selected states and from the U.S. Fatality Analysis Reporting System (FARS)."
+                            }
+                          </li>
+                          <li
+                            className={classNames(
+                              projectcss.all,
+                              projectcss.li,
+                              projectcss.__wab_text,
+                              sty.li__rrHq
+                            )}
+                          >
+                            {
+                              "Dep_Del15 Data Sets: Commercial airline late departures (15 minutes or more) for selected states. "
+                            }
+                          </li>
+                          <li
+                            className={classNames(
+                              projectcss.all,
+                              projectcss.li,
+                              projectcss.__wab_text,
+                              sty.li__kLOnw
+                            )}
+                          >
+                            {
+                              "Max_Temp_F Data Sets: Daily high temperature (\u00b0F) recorded at selected airport stations.\n"
+                            }
+                          </li>
+                          <li
+                            className={classNames(
+                              projectcss.all,
+                              projectcss.li,
+                              projectcss.__wab_text,
+                              sty.li___5MCws
+                            )}
+                          >
+                            {"Stock Data Sets: For illustration only!"}
+                          </li>
+                        </ul>
+                      }
+                      <React.Fragment>{""}</React.Fragment>
+                    </React.Fragment>
                   </div>
                 </div>
                 <div className={classNames(projectcss.all, sty.column__krZzE)}>
@@ -166,9 +255,9 @@ function PlasmicTsfEngineDemo__RenderFunc(props) {
                             aspectRatio: undefined
                           }
                         : {
-                            src: "/plasmic/tsf_demand_website/images/miCrashPng.png",
-                            fullWidth: 1123,
-                            fullHeight: 1097,
+                            src: "/plasmic/tsf_demand_website/images/aqiFloridaClassicalTsfPng.png",
+                            fullWidth: 1200,
+                            fullHeight: 876,
                             aspectRatio: undefined
                           }
                     }
@@ -433,6 +522,80 @@ function PlasmicTsfEngineDemo__RenderFunc(props) {
               </div>
             </div>
           </div>
+          <div className={classNames(projectcss.all, sty.freeBox__kot0Q)}>
+            <div className={classNames(projectcss.all, sty.columns__nbj4M)}>
+              <div className={classNames(projectcss.all, sty.column__sku0L)}>
+                <div className={classNames(projectcss.all, sty.freeBox__d0XEa)}>
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text__fk3JU
+                    )}
+                  >
+                    {"How to read this forecast."}
+                  </div>
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text__tFqDe
+                    )}
+                  >
+                    <React.Fragment>
+                      <React.Fragment>
+                        {
+                          "Each forecast gives you more than a single number \u2014 "
+                        }
+                      </React.Fragment>
+                      <span
+                        className={"plasmic_default__all plasmic_default__span"}
+                        style={{ fontWeight: 700 }}
+                      >
+                        {"it gives you a map of what\u2019s normal."}
+                      </span>
+                      <React.Fragment>
+                        {
+                          "\nThe gold line shows TSF\u2019s best daily forecast. The green zone defines the safe range of outcomes \u2014 the highest and lowest values your results are likely to reach each day based on historical patterns and model accuracy.\n\nThe shape and width of that band are the key: narrow sections mean stability; wide sections mean volatility or risk. You can see where uncertainty lives before the month begins. That lets you plan with confidence \u2014 ordering inventory, setting ad budgets, and scheduling staff with full visibility into how much variation is likely.\n\nYou don\u2019t use this chart to react in real time; you use it to plan calmly.\nIf your actuals stay inside the green zone, you\u2019re operating within expected variation. Consistent movement above or below it means conditions have genuinely changed \u2014 a valuable signal for future planning.\n\nTSF turns uncertainty into structure. The green zone doesn\u2019t just show what might happen; it shows how much room you have to act without overreacting."
+                        }
+                      </React.Fragment>
+                    </React.Fragment>
+                  </div>
+                  <Button2
+                    data-plasmic-name={"button2"}
+                    data-plasmic-override={overrides.button2}
+                    className={classNames("__wab_instance", sty.button2)}
+                    color={"tsfDark"}
+                    end={
+                      <Icon4Icon
+                        className={classNames(projectcss.all, sty.svg__zRSnM)}
+                        role={"img"}
+                      />
+                    }
+                    iconEnd={true}
+                    label={
+                      <div
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.__wab_text,
+                          sty.text__uu7SB
+                        )}
+                      >
+                        {"Join the Beta"}
+                      </div>
+                    }
+                    linkTo={`/interest`}
+                    start={
+                      <CircleIcon
+                        className={classNames(projectcss.all, sty.svg__wOKd)}
+                        role={"img"}
+                      />
+                    }
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
           <TsfFooter
             data-plasmic-name={"tsfFooter"}
             data-plasmic-override={overrides.tsfFooter}
@@ -568,14 +731,14 @@ const PlasmicDescendants = {
     "root",
     "tsfDemandMainNavigation",
     "pageBanner",
-    "columns",
-    "h1",
+    "ul",
     "iframeEmbed",
     "section",
     "foreground",
     "copy",
     "button",
     "art",
+    "button2",
     "tsfFooter",
     "heroSection",
     "mainSection2",
@@ -583,15 +746,15 @@ const PlasmicDescendants = {
   ],
 
   tsfDemandMainNavigation: ["tsfDemandMainNavigation"],
-  pageBanner: ["pageBanner", "columns", "h1"],
-  columns: ["columns", "h1"],
-  h1: ["h1"],
+  pageBanner: ["pageBanner", "ul"],
+  ul: ["ul"],
   iframeEmbed: ["iframeEmbed"],
   section: ["section", "foreground"],
   foreground: ["foreground"],
   copy: ["copy", "button"],
   button: ["button"],
   art: ["art"],
+  button2: ["button2"],
   tsfFooter: ["tsfFooter"],
   heroSection: ["heroSection"],
   mainSection2: ["mainSection2", "container3"],
@@ -632,14 +795,14 @@ export const PlasmicTsfEngineDemo = Object.assign(
     // Helper components rendering sub-elements
     tsfDemandMainNavigation: makeNodeComponent("tsfDemandMainNavigation"),
     pageBanner: makeNodeComponent("pageBanner"),
-    columns: makeNodeComponent("columns"),
-    h1: makeNodeComponent("h1"),
+    ul: makeNodeComponent("ul"),
     iframeEmbed: makeNodeComponent("iframeEmbed"),
     section: makeNodeComponent("section"),
     foreground: makeNodeComponent("foreground"),
     copy: makeNodeComponent("copy"),
     button: makeNodeComponent("button"),
     art: makeNodeComponent("art"),
+    button2: makeNodeComponent("button2"),
     tsfFooter: makeNodeComponent("tsfFooter"),
     heroSection: makeNodeComponent("heroSection"),
     mainSection2: makeNodeComponent("mainSection2"),
