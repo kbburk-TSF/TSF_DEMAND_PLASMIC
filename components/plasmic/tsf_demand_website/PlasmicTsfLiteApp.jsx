@@ -141,7 +141,7 @@ function PlasmicTsfLiteApp__RenderFunc(props) {
                     <React.Fragment>
                       <React.Fragment>
                         {
-                          "TSF Lite delivers updated, ready-to-use forecasts every month \u2014 automatically. Get a clean, visual forecast for every SKU, complete with safe gree-zone confidence bands and easy-to-read data tables. \n\nLaunching early 2026 \u2014 "
+                          "TSF Lite delivers updated, ready-to-use forecasts every month \u2014 automatically. Get a clean, visual forecast for every SKU, complete with safe green-zone confidence bands and easy-to-read data tables. \n\nLaunching early 2026 \u2014 "
                         }
                       </React.Fragment>
                       {
@@ -503,7 +503,9 @@ function PlasmicTsfLiteApp__RenderFunc(props) {
                           }
                           style={{ color: "var(--token-Ry9eGMy91QvA)" }}
                         >
-                          {"TSF Lite works differently. "}
+                          {
+                            "TSF Lite works differently. For each date, TSF Lite evaluates "
+                          }
                         </span>
                         <React.Fragment>{""}</React.Fragment>
                         <span
@@ -515,7 +517,7 @@ function PlasmicTsfLiteApp__RenderFunc(props) {
                             fontWeight: 700
                           }}
                         >
-                          {"It treats each day as its own forecast "}
+                          {"up to 800 forecast models "}
                         </span>
                         <React.Fragment>{""}</React.Fragment>
                         <span
@@ -525,7 +527,7 @@ function PlasmicTsfLiteApp__RenderFunc(props) {
                           style={{ color: "var(--token-Ry9eGMy91QvA)" }}
                         >
                           {
-                            "\u2014 evaluating hundreds of candidate models and selecting the one that has historically performed best for that specific date. This independence allows the forecast to adjust immediately when real conditions change, without being chained to yesterday\u2019s trend."
+                            "(10 seasonal models x 2 series x 40 forecasts each) and selects the one with the best historical accuracy for that day. This independence allows the forecast to adjust immediately when real conditions change, without being chained to yesterday\u2019s trend."
                           }
                         </span>
                       </React.Fragment>
@@ -1540,7 +1542,7 @@ function PlasmicTsfLiteApp__RenderFunc(props) {
                       )}
                     >
                       {
-                        "That independence is what makes TSF capable of producing 30-, 60-, and 90-day forecasts with measured confidence and real-time adaptability \u2014 something traditional forecasting simply can\u2019t do."
+                        "That independence is what makes TSF capable of producing 30-, 60-, and 90-day forecasts with measured confidence and within-period adaptability \u2014 something traditional forecasting simply can\u2019t do."
                       }
                     </div>
                     <Button2

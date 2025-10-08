@@ -408,7 +408,7 @@ function PlasmicTsfPricingTable1__RenderFunc(props) {
                         sty.text__tb4J6
                       )}
                     >
-                      {"Up to 50 SKUs"}
+                      {"Up to 250 SKUs"}
                     </div>
                   </div>
                 </div>
