@@ -104,80 +104,99 @@ function PlasmicInterest__RenderFunc(props) {
             data-plasmic-override={overrides.pageBanner}
             className={classNames(projectcss.all, sty.pageBanner)}
           >
-            <div className={classNames(projectcss.all, sty.freeBox__dAbI)}>
-              <div
-                data-plasmic-name={"columns"}
-                data-plasmic-override={overrides.columns}
-                className={classNames(projectcss.all, sty.columns)}
-              >
-                <div className={classNames(projectcss.all, sty.column__pv9G9)}>
+            <div
+              data-plasmic-name={"pageBanner2"}
+              data-plasmic-override={overrides.pageBanner2}
+              className={classNames(projectcss.all, sty.pageBanner2)}
+            >
+              <div className={classNames(projectcss.all, sty.freeBox__hVwHj)}>
+                <div
+                  data-plasmic-name={"columns"}
+                  data-plasmic-override={overrides.columns}
+                  className={classNames(projectcss.all, sty.columns)}
+                >
                   <div
-                    className={classNames(projectcss.all, sty.freeBox__ogUfF)}
+                    className={classNames(projectcss.all, sty.column__mCkyV)}
                   >
-                    <h1
-                      data-plasmic-name={"h1"}
-                      data-plasmic-override={overrides.h1}
-                      className={classNames(
-                        projectcss.all,
-                        projectcss.h1,
-                        projectcss.__wab_text,
-                        sty.h1
-                      )}
-                    >
-                      {"Contact Us"}
-                    </h1>
                     <div
-                      data-plasmic-name={"text"}
-                      data-plasmic-override={overrides.text}
-                      className={classNames(
-                        projectcss.all,
-                        projectcss.__wab_text,
-                        sty.text
-                      )}
+                      className={classNames(projectcss.all, sty.freeBox__iLn0)}
                     >
-                      {
-                        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,"
-                      }
+                      <h1
+                        data-plasmic-name={"h1"}
+                        data-plasmic-override={overrides.h1}
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.h1,
+                          projectcss.__wab_text,
+                          sty.h1
+                        )}
+                      >
+                        {"Join the TSF Beta"}
+                      </h1>
+                      <div
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.__wab_text,
+                          sty.text__iy6Do
+                        )}
+                      >
+                        {
+                          "Complete the form below to stay in the loop. You'll receive periodic app updates, early acces to the TSF Lite Beta when it launches, and you'll lock in pre-release pricing on your subscription. "
+                        }
+                      </div>
+                      <div
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.__wab_text,
+                          sty.text__k1Uub
+                        )}
+                      >
+                        {
+                          "If you would also like to be considered for the TSF Lite Case Study program, just check that option and answer a few more questions. "
+                        }
+                      </div>
                     </div>
                   </div>
-                </div>
-                <div className={classNames(projectcss.all, sty.column__usHde)}>
-                  <PlasmicImg__
-                    data-plasmic-name={"img"}
-                    data-plasmic-override={overrides.img}
-                    alt={""}
-                    className={classNames(sty.img)}
-                    displayHeight={"auto"}
-                    displayMaxHeight={"none"}
-                    displayMaxWidth={
-                      hasVariant(globalVariants, "screen", "mobileOnly")
-                        ? "100%"
-                        : "100%"
-                    }
-                    displayMinHeight={"0"}
-                    displayMinWidth={"0"}
-                    displayWidth={"auto"}
-                    loading={
-                      hasVariant(globalVariants, "screen", "mobileOnly")
-                        ? "lazy"
-                        : "lazy"
-                    }
-                    src={
-                      hasVariant(globalVariants, "screen", "mobileOnly")
-                        ? {
-                            src: "/plasmic/tsf_demand_website/images/stephenPhillipsHostreviewsCoUk3Mhgvrk4TjMUnsplashJpg.jpg",
-                            fullWidth: 1920,
-                            fullHeight: 1280,
-                            aspectRatio: undefined
-                          }
-                        : {
-                            src: "/plasmic/tsf_demand_website/images/stephenPhillipsHostreviewsCoUk3Mhgvrk4TjMUnsplashJpg.jpg",
-                            fullWidth: 1920,
-                            fullHeight: 1280,
-                            aspectRatio: undefined
-                          }
-                    }
-                  />
+                  <div
+                    className={classNames(projectcss.all, sty.column__qhOxJ)}
+                  >
+                    <PlasmicImg__
+                      data-plasmic-name={"img"}
+                      data-plasmic-override={overrides.img}
+                      alt={""}
+                      className={classNames(sty.img)}
+                      displayHeight={"auto"}
+                      displayMaxHeight={"none"}
+                      displayMaxWidth={
+                        hasVariant(globalVariants, "screen", "mobileOnly")
+                          ? "100%"
+                          : "100%"
+                      }
+                      displayMinHeight={"0"}
+                      displayMinWidth={"0"}
+                      displayWidth={"auto"}
+                      loading={
+                        hasVariant(globalVariants, "screen", "mobileOnly")
+                          ? "lazy"
+                          : "lazy"
+                      }
+                      src={
+                        hasVariant(globalVariants, "screen", "mobileOnly")
+                          ? {
+                              src: "/plasmic/tsf_demand_website/images/stephenPhillipsHostreviewsCoUk3Mhgvrk4TjMUnsplashJpg.jpg",
+                              fullWidth: 1920,
+                              fullHeight: 1280,
+                              aspectRatio: undefined
+                            }
+                          : {
+                              src: "/plasmic/tsf_demand_website/images/stephenPhillipsHostreviewsCoUk3Mhgvrk4TjMUnsplashJpg.jpg",
+                              fullWidth: 1920,
+                              fullHeight: 1280,
+                              aspectRatio: undefined
+                            }
+                      }
+                    />
+                  </div>
                 </div>
               </div>
             </div>
@@ -193,7 +212,7 @@ function PlasmicInterest__RenderFunc(props) {
               className={classNames("__wab_instance", sty.iframe)}
               preview={true}
               src={
-                "https://tally.so/embed/3xOodd?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1"
+                "https://tally.so/embed/3xOodd?alignLeft=1&hideTitle=1&dynamicHeight=1"
               }
               srcDoc={"<div><h3>Heading</h3><p>Example text...</p></div>"}
               useHtml={false}
@@ -215,9 +234,9 @@ const PlasmicDescendants = {
     "root",
     "tsfDemandMainNavigation",
     "pageBanner",
+    "pageBanner2",
     "columns",
     "h1",
-    "text",
     "img",
     "mainSection",
     "iframe",
@@ -225,10 +244,10 @@ const PlasmicDescendants = {
   ],
 
   tsfDemandMainNavigation: ["tsfDemandMainNavigation"],
-  pageBanner: ["pageBanner", "columns", "h1", "text", "img"],
-  columns: ["columns", "h1", "text", "img"],
+  pageBanner: ["pageBanner", "pageBanner2", "columns", "h1", "img"],
+  pageBanner2: ["pageBanner2", "columns", "h1", "img"],
+  columns: ["columns", "h1", "img"],
   h1: ["h1"],
-  text: ["text"],
   img: ["img"],
   mainSection: ["mainSection", "iframe"],
   iframe: ["iframe"],
@@ -269,9 +288,9 @@ export const PlasmicInterest = Object.assign(
     // Helper components rendering sub-elements
     tsfDemandMainNavigation: makeNodeComponent("tsfDemandMainNavigation"),
     pageBanner: makeNodeComponent("pageBanner"),
+    pageBanner2: makeNodeComponent("pageBanner2"),
     columns: makeNodeComponent("columns"),
     h1: makeNodeComponent("h1"),
-    text: makeNodeComponent("text"),
     img: makeNodeComponent("img"),
     mainSection: makeNodeComponent("mainSection"),
     iframe: makeNodeComponent("iframe"),
