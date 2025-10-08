@@ -171,6 +171,16 @@
   --plasmic-token-24-px: var(--token-bo-deu05BFWT);
   --token-kJRtS87BK95r: 32px;
   --plasmic-token-32-px: var(--token-kJRtS87BK95r);
+  --token-X6S7wuaXEnnZ: #c97224;
+  --plasmic-token-tsf-device-1: var(--token-X6S7wuaXEnnZ);
+  --token-QhTIx_NeceRV: #f49425;
+  --plasmic-token-tsf-device-2: var(--token-QhTIx_NeceRV);
+  --token-pmqmA9YFvxV-: #fcb02c;
+  --plasmic-token-tsf-device-3: var(--token-pmqmA9YFvxV-);
+  --token-RmulV7EJkQqI: #e29d64;
+  --plasmic-token-tsf-sub-text: var(--token-RmulV7EJkQqI);
+  --token-V3B9wE7hI-6x: #d46807;
+  --plasmic-token-tsf-mid-orange: var(--token-V3B9wE7hI-6x);
 }
 
 .plasmic_tokens {

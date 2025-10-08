@@ -2242,6 +2242,19 @@
           "cssFilePath": "plasmic/tsf_demand_website/PlasmicTsfPricingTable1.module.css",
           "scheme": "blackbox",
           "componentType": "component"
+        },
+        {
+          "id": "udcHmc-MXrK7",
+          "name": "HowToUseYourForecast",
+          "type": "managed",
+          "projectId": "8yhBRaKsBf3R2wKMhT5dUU",
+          "renderModuleFilePath": "plasmic/tsf_demand_website/PlasmicHowToUseYourForecast.jsx",
+          "importSpec": {
+            "modulePath": "HowToUseYourForecast.jsx"
+          },
+          "cssFilePath": "plasmic/tsf_demand_website/PlasmicHowToUseYourForecast.module.css",
+          "scheme": "blackbox",
+          "componentType": "component"
         }
       ],
       "icons": [
@@ -2971,6 +2984,21 @@
           "id": "NFNGYDv2aC_M",
           "name": "KevinBBurk-Headshot.jpg",
           "filePath": "../public/plasmic/tsf_demand_website/images/kevinBBurkHeadshotJpg.jpg"
+        },
+        {
+          "id": "rYFD97yArQiQ",
+          "name": "AQI_Florida_02-2023.png",
+          "filePath": "../public/plasmic/tsf_demand_website/images/aqiFlorida022023Png.png"
+        },
+        {
+          "id": "HMaRGZ61xxBv",
+          "name": "AQI_Florida_02-2023-CLASSICAL.png",
+          "filePath": "../public/plasmic/tsf_demand_website/images/aqiFlorida022023ClassicalPng.png"
+        },
+        {
+          "id": "dgX-OdHqhg_6",
+          "name": "AQI_Florida_02-2023_TSF.png",
+          "filePath": "../public/plasmic/tsf_demand_website/images/aqiFlorida022023TsfPng.png"
         }
       ],
       "indirect": false,

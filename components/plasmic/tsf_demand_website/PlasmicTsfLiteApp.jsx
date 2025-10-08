@@ -24,6 +24,7 @@ import { useDataEnv } from "@plasmicapp/react-web/lib/host";
 import TsfDemandMainNavigation from "../../TsfDemandMainNavigation"; // plasmic-import: RS9jruOWtFtt/component
 import Button from "../../Button"; // plasmic-import: -U7nCsYlsFbS/component
 import Button2 from "../../Button2"; // plasmic-import: IsImc8gJBadG/component
+import HowToUseYourForecast from "../../HowToUseYourForecast"; // plasmic-import: udcHmc-MXrK7/component
 import TsfPricingTable1 from "../../TsfPricingTable1"; // plasmic-import: TTJcVgBRi8By/component
 import TsfFooter from "../../TsfFooter"; // plasmic-import: NmgYw5lHKANx/component
 import { _useGlobalVariants } from "./plasmic"; // plasmic-import: 8yhBRaKsBf3R2wKMhT5dUU/projectModule
@@ -34,10 +35,6 @@ import sty from "./PlasmicTsfLiteApp.module.css"; // plasmic-import: EIhFDa_YpuB
 import CircleIcon from "./icons/PlasmicIcon__Circle"; // plasmic-import: iCnGomX0kBnc/icon
 import Icon4Icon from "./icons/PlasmicIcon__Icon4"; // plasmic-import: s0pSL1_dtWEm/icon
 import Icon16Icon from "./icons/PlasmicIcon__Icon16"; // plasmic-import: -9-04Eq-w1pK/icon
-import Icon11Icon from "./icons/PlasmicIcon__Icon11"; // plasmic-import: e15IDclT0vTC/icon
-import Icon8Icon from "./icons/PlasmicIcon__Icon8"; // plasmic-import: FGJcG_uIECwR/icon
-import Icon10Icon from "./icons/PlasmicIcon__Icon10"; // plasmic-import: WKmUSY2JMrqE/icon
-import Icon13Icon from "./icons/PlasmicIcon__Icon13"; // plasmic-import: jJJqFQNMqxtj/icon
 
 createPlasmicElementProxy;
 
@@ -1016,280 +1013,15 @@ function PlasmicTsfLiteApp__RenderFunc(props) {
                 </div>
               </div>
             </div>
-            <div className={classNames(projectcss.all, sty.freeBox__gam9R)}>
-              <div className={classNames(projectcss.all, sty.freeBox__tBoaa)}>
-                <div
-                  data-plasmic-name={"foreground3"}
-                  data-plasmic-override={overrides.foreground3}
-                  className={classNames(projectcss.all, sty.foreground3)}
-                >
-                  <h2
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.h2,
-                      projectcss.__wab_text,
-                      sty.h2__za1Jg
-                    )}
-                  >
-                    {"How to Use Your Forecast"}
-                  </h2>
-                </div>
-                <div
-                  data-plasmic-name={"foreground2"}
-                  data-plasmic-override={overrides.foreground2}
-                  className={classNames(projectcss.all, sty.foreground2)}
-                >
-                  <div
-                    className={classNames(projectcss.all, sty.freeBox__nkCuh)}
-                  >
-                    <div
-                      className={classNames(
-                        projectcss.all,
-                        sty.freeBox___7BvKo
-                      )}
-                    >
-                      <div
-                        className={classNames(
-                          projectcss.all,
-                          sty.freeBox__fznzV
-                        )}
-                      >
-                        <Icon11Icon
-                          className={classNames(
-                            projectcss.all,
-                            sty.svg___4VgDs
-                          )}
-                          role={"img"}
-                        />
-                      </div>
-                      {false ? (
-                        <div
-                          className={classNames(
-                            projectcss.all,
-                            sty.freeBox__cDbpo
-                          )}
-                        >
-                          <Icon8Icon
-                            className={classNames(
-                              projectcss.all,
-                              sty.svg__cLaoH
-                            )}
-                            role={"img"}
-                          />
-                        </div>
-                      ) : null}
-                      <div
-                        className={classNames(
-                          projectcss.all,
-                          sty.freeBox__mAjk
-                        )}
-                      >
-                        <div
-                          className={classNames(
-                            projectcss.all,
-                            projectcss.__wab_text,
-                            sty.text__d2GqJ
-                          )}
-                        >
-                          {"Start each month with clarity."}
-                        </div>
-                        <div
-                          className={classNames(
-                            projectcss.all,
-                            projectcss.__wab_text,
-                            sty.text__sB7OX
-                          )}
-                        >
-                          {
-                            "The green zone defines your safe operating range for each day \u2014 your best- and worst-case expectations based on real data. "
-                          }
-                        </div>
-                      </div>
-                    </div>
-                    <div
-                      className={classNames(projectcss.all, sty.freeBox__wlYgk)}
-                    >
-                      <div
-                        className={classNames(
-                          projectcss.all,
-                          sty.freeBox___4R3F5
-                        )}
-                      >
-                        <Icon10Icon
-                          className={classNames(projectcss.all, sty.svg__oxVrM)}
-                          role={"img"}
-                        />
-                      </div>
-                      {false ? (
-                        <div
-                          className={classNames(
-                            projectcss.all,
-                            sty.freeBox__wj1Rz
-                          )}
-                        >
-                          <Icon8Icon
-                            className={classNames(
-                              projectcss.all,
-                              sty.svg__d2Bx
-                            )}
-                            role={"img"}
-                          />
-                        </div>
-                      ) : null}
-                      <div
-                        className={classNames(
-                          projectcss.all,
-                          sty.freeBox__b1GSd
-                        )}
-                      >
-                        <div
-                          className={classNames(
-                            projectcss.all,
-                            projectcss.__wab_text,
-                            sty.text__l15Ik
-                          )}
-                        >
-                          {"Watch volatility, not just direction."}
-                        </div>
-                        <div
-                          className={classNames(
-                            projectcss.all,
-                            projectcss.__wab_text,
-                            sty.text__pjJsw
-                          )}
-                        >
-                          {
-                            "When the band widens, expect more variability \u2014\u00a0it's your signal to build flexibility into cash flow or supply. "
-                          }
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div
-                    className={classNames(projectcss.all, sty.freeBox___3KKOp)}
-                  >
-                    <div
-                      className={classNames(projectcss.all, sty.freeBox__tccn4)}
-                    >
-                      <div
-                        className={classNames(
-                          projectcss.all,
-                          sty.freeBox___1UmE1
-                        )}
-                      >
-                        <Icon8Icon
-                          className={classNames(projectcss.all, sty.svg__sv1Wi)}
-                          role={"img"}
-                        />
-                      </div>
-                      {false ? (
-                        <div
-                          className={classNames(
-                            projectcss.all,
-                            sty.freeBox__pJq0I
-                          )}
-                        >
-                          <Icon8Icon
-                            className={classNames(
-                              projectcss.all,
-                              sty.svg__np6Tb
-                            )}
-                            role={"img"}
-                          />
-                        </div>
-                      ) : null}
-                      <div
-                        className={classNames(
-                          projectcss.all,
-                          sty.freeBox___0J5E8
-                        )}
-                      >
-                        <div
-                          className={classNames(
-                            projectcss.all,
-                            projectcss.__wab_text,
-                            sty.text__ef1V2
-                          )}
-                        >
-                          {
-                            "Plan inventory, ads, and staffing within the band. "
-                          }
-                        </div>
-                        <div
-                          className={classNames(
-                            projectcss.all,
-                            projectcss.__wab_text,
-                            sty.text__yrAiN
-                          )}
-                        >
-                          {
-                            "The top of the band is the strong demand scenario. The bottom of the band is the conservative scenario. Plan your orders and budgets around the range that fits your risk tolerance. "
-                          }
-                        </div>
-                      </div>
-                    </div>
-                    <div
-                      className={classNames(projectcss.all, sty.freeBox__w8Axd)}
-                    >
-                      <div
-                        className={classNames(
-                          projectcss.all,
-                          sty.freeBox__nCgOj
-                        )}
-                      >
-                        <Icon13Icon
-                          className={classNames(projectcss.all, sty.svg__sMf1O)}
-                          role={"img"}
-                        />
-                      </div>
-                      {false ? (
-                        <div
-                          className={classNames(
-                            projectcss.all,
-                            sty.freeBox__raGa
-                          )}
-                        >
-                          <Icon8Icon
-                            className={classNames(
-                              projectcss.all,
-                              sty.svg__iknla
-                            )}
-                            role={"img"}
-                          />
-                        </div>
-                      ) : null}
-                      <div
-                        className={classNames(
-                          projectcss.all,
-                          sty.freeBox__ng3Ic
-                        )}
-                      >
-                        <div
-                          className={classNames(
-                            projectcss.all,
-                            projectcss.__wab_text,
-                            sty.text__r5OkU
-                          )}
-                        >
-                          {"Measure signal vs. noise."}
-                        </div>
-                        <div
-                          className={classNames(
-                            projectcss.all,
-                            projectcss.__wab_text,
-                            sty.text__dWxO
-                          )}
-                        >
-                          {
-                            "If actual results stay inside the band, you're fine. If they consistently move above or below it, something has genuinely changed \u2014 that's a planning insight for next month, not a daily fire drill."
-                          }
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
+            <HowToUseYourForecast
+              data-plasmic-name={"tsfLiteFewerStockouts"}
+              data-plasmic-override={overrides.tsfLiteFewerStockouts}
+              className={classNames(
+                "__wab_instance",
+                sty.tsfLiteFewerStockouts
+              )}
+            />
+
             <div className={classNames(projectcss.all, sty.freeBox__ha75O)}>
               <div className={classNames(projectcss.all, sty.columns__m3707)}>
                 <div className={classNames(projectcss.all, sty.column__ymKqd)}>
@@ -1844,8 +1576,7 @@ const PlasmicDescendants = {
     "button",
     "section",
     "foreground",
-    "foreground3",
-    "foreground2",
+    "tsfLiteFewerStockouts",
     "tsfPricingTable1",
     "tsfFooter"
   ],
@@ -1856,8 +1587,7 @@ const PlasmicDescendants = {
   button: ["button"],
   section: ["section", "foreground"],
   foreground: ["foreground"],
-  foreground3: ["foreground3"],
-  foreground2: ["foreground2"],
+  tsfLiteFewerStockouts: ["tsfLiteFewerStockouts"],
   tsfPricingTable1: ["tsfPricingTable1"],
   tsfFooter: ["tsfFooter"]
 };
@@ -1900,8 +1630,7 @@ export const PlasmicTsfLiteApp = Object.assign(
     button: makeNodeComponent("button"),
     section: makeNodeComponent("section"),
     foreground: makeNodeComponent("foreground"),
-    foreground3: makeNodeComponent("foreground3"),
-    foreground2: makeNodeComponent("foreground2"),
+    tsfLiteFewerStockouts: makeNodeComponent("tsfLiteFewerStockouts"),
     tsfPricingTable1: makeNodeComponent("tsfPricingTable1"),
     tsfFooter: makeNodeComponent("tsfFooter"),
     // Metadata about props expected for PlasmicTsfLiteApp

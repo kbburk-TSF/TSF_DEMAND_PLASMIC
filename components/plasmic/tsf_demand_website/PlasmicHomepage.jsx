@@ -21,6 +21,7 @@ import {
 import { useDataEnv } from "@plasmicapp/react-web/lib/host";
 import TsfDemandMainNavigation from "../../TsfDemandMainNavigation"; // plasmic-import: RS9jruOWtFtt/component
 import Button from "../../Button"; // plasmic-import: -U7nCsYlsFbS/component
+import Button2 from "../../Button2"; // plasmic-import: IsImc8gJBadG/component
 import TsfFooter from "../../TsfFooter"; // plasmic-import: NmgYw5lHKANx/component
 import BlogPosts from "../../BlogPosts"; // plasmic-import: t8iMRGE7O8dB/component
 import CtaBlock from "../../CtaBlock"; // plasmic-import: qoTEPcEAYg5b/component
@@ -30,6 +31,12 @@ import { _useStyleTokens } from "./PlasmicStyleTokensProvider"; // plasmic-impor
 import "@plasmicapp/react-web/lib/plasmic.css";
 import projectcss from "./plasmic.module.css"; // plasmic-import: 8yhBRaKsBf3R2wKMhT5dUU/projectcss
 import sty from "./PlasmicHomepage.module.css"; // plasmic-import: pPnx7cCl0iri/css
+import CircleIcon from "./icons/PlasmicIcon__Circle"; // plasmic-import: iCnGomX0kBnc/icon
+import Icon4Icon from "./icons/PlasmicIcon__Icon4"; // plasmic-import: s0pSL1_dtWEm/icon
+import Icon11Icon from "./icons/PlasmicIcon__Icon11"; // plasmic-import: e15IDclT0vTC/icon
+import Icon8Icon from "./icons/PlasmicIcon__Icon8"; // plasmic-import: FGJcG_uIECwR/icon
+import Icon10Icon from "./icons/PlasmicIcon__Icon10"; // plasmic-import: WKmUSY2JMrqE/icon
+import Icon13Icon from "./icons/PlasmicIcon__Icon13"; // plasmic-import: jJJqFQNMqxtj/icon
 
 createPlasmicElementProxy;
 
@@ -132,7 +139,7 @@ function PlasmicHomepage__RenderFunc(props) {
                         )}
                       >
                         {
-                          "ENTERPRISE-LEVEL SKU FORECASTS\n\n\r\nPowered by a breakthrough in forecasting science, Targeted Seasonal Forecasts deliver daily predictions with month-long horizons \u2014 and quantified confidence in every single value. The proprietary library of irregular seasonal models reveals objective patterns in the historical data. Each forecast value is selected from up to 2,500 different forecast models, based on historical patterns of accuracy. \r\n"
+                          "\r\nPowered by a breakthrough in forecasting science, Targeted Seasonal Forecasts deliver daily predictions with month-long horizons \u2014 and quantified confidence in every single value. The proprietary library of irregular seasonal models reveals objective patterns in the historical data. Each forecast value is selected from at least 800 different forecast models, based on historical patterns of accuracy. \r\n"
                         }
                       </div>
                       <Button
@@ -216,338 +223,757 @@ function PlasmicHomepage__RenderFunc(props) {
             className={classNames(projectcss.all, sty.features)}
           >
             <div className={classNames(projectcss.all, sty.column__kyp0L)}>
-              <h1
-                className={classNames(
-                  projectcss.all,
-                  projectcss.h1,
-                  projectcss.__wab_text,
-                  sty.h1__ijNCc
-                )}
-              >
-                {"Targeted Seasonal Forecasts vs. \nTraditional Forecasts"}
-              </h1>
-              <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text__vqkGs
-                )}
-              >
-                {
-                  "Traditional models like ARIMA, SES, HWES, Prophet, and other ML approaches smooth out volatility, missing critical intra-month and intra-quarter changes. A monthly or quarterly forecast horizon usually resolves to a trend line with no guarantee of reliability. Targeted Seasonal Forecasts test thousands of models against history to choose the most accurate forecast, date by date.\n\n\r\nHere\u2019s what a classical forecast looks like when forecasting daily car crashes in California for the month of October, 2016. The actual crashes for October 2016 are shown for comparison as the dotted line. "
-                }
-              </div>
-              <PlasmicImg__
-                alt={""}
-                className={classNames(sty.img__nv1A)}
-                displayHeight={"auto"}
-                displayMaxHeight={"none"}
-                displayMaxWidth={"100%"}
-                displayMinHeight={"0"}
-                displayMinWidth={"0"}
-                displayWidth={"auto"}
-                loading={"lazy"}
-                src={{
-                  src: "/plasmic/tsf_demand_website/images/classicalForecastsPng.png",
-                  fullWidth: 1200,
-                  fullHeight: 481,
-                  aspectRatio: undefined
-                }}
-              />
-
-              <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text__jUXzY
-                )}
-              >
-                <React.Fragment>
-                  <React.Fragment>{"Here's the "}</React.Fragment>
-                  <span
-                    className={"plasmic_default__all plasmic_default__span"}
-                    style={{ fontWeight: 700 }}
-                  >
-                    {"Targeted Seasonal Forecast "}
-                  </span>
-                  <React.Fragment>
-                    {
-                      "for the same data. Because each forecast value for each date is forecast independently, the Targeted Seasonal Forecast is able to anticipate changes within the forecast period. And because the forecast value of each date is selected based on objective historical patterns of accuracy of more than 2,500 forecast models, you can be confident in the forecast values. "
-                    }
-                  </React.Fragment>
-                </React.Fragment>
-              </div>
-              <PlasmicImg__
-                alt={""}
-                className={classNames(sty.img__l4Ou7)}
-                displayHeight={"auto"}
-                displayMaxHeight={"none"}
-                displayMaxWidth={"100%"}
-                displayMinHeight={"0"}
-                displayMinWidth={"0"}
-                displayWidth={"auto"}
-                loading={"lazy"}
-                src={{
-                  src: "/plasmic/tsf_demand_website/images/targetedGoldPng.png",
-                  fullWidth: 1200,
-                  fullHeight: 481,
-                  aspectRatio: undefined
-                }}
-              />
-
-              <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text__yxZtq
-                )}
-              >
-                <React.Fragment>
-                  <React.Fragment>{"The "}</React.Fragment>
-                  <span
-                    className={"plasmic_default__all plasmic_default__span"}
-                    style={{ fontWeight: 700 }}
-                  >
-                    {"Gold Line"}
-                  </span>
-                  <React.Fragment>
-                    {" is the bulls-eye forecast. The "}
-                  </React.Fragment>
-                  <span
-                    className={"plasmic_default__all plasmic_default__span"}
-                    style={{ fontWeight: 700 }}
-                  >
-                    {"Green Zone"}
-                  </span>
-                  <React.Fragment>
-                    {
-                      " is your target range \u2014 an accuracy band built from real historical performance. Together, they give you clarity: where the future is most likely to land."
-                    }
-                  </React.Fragment>
-                </React.Fragment>
-              </div>
-              <PlasmicImg__
-                alt={""}
-                className={classNames(sty.img__xbEmb)}
-                displayHeight={"auto"}
-                displayMaxHeight={"none"}
-                displayMaxWidth={"100%"}
-                displayMinHeight={"0"}
-                displayMinWidth={"0"}
-                displayWidth={"auto"}
-                loading={"lazy"}
-                src={{
-                  src: "/plasmic/tsf_demand_website/images/targetedGreenGoldPng2.png",
-                  fullWidth: 1200,
-                  fullHeight: 481,
-                  aspectRatio: undefined
-                }}
-              />
-
-              <div
-                data-plasmic-name={"columns"}
-                data-plasmic-override={overrides.columns}
-                className={classNames(projectcss.all, sty.columns)}
-              >
-                <div className={classNames(projectcss.all, sty.column__ykNg)}>
-                  <h1
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.h1,
-                      projectcss.__wab_text,
-                      sty.h1__iDk7X
-                    )}
-                  >
-                    {"Try it yourself."}
-                  </h1>
+              <div className={classNames(projectcss.all, sty.freeBox__wkgCl)}>
+                <div className={classNames(projectcss.all, sty.freeBox__xLiy7)}>
                   <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__zXfL
-                    )}
+                    className={classNames(projectcss.all, sty.columns__pilBw)}
                   >
-                    {
-                      "Explore live demos with car crash data, air quality measures, and even stock market forecasts. See how the Gold Line and Green Zone adapt in real time."
-                    }
-                  </div>
-                  <Button
-                    className={classNames("__wab_instance", sty.button__fNxeo)}
-                    color={"muted"}
-                    label={
+                    <div
+                      className={classNames(projectcss.all, sty.column__lal1L)}
+                    >
                       <div
                         className={classNames(
                           projectcss.all,
-                          projectcss.__wab_text,
-                          sty.text__nVf2L
+                          sty.freeBox__vKCmP
                         )}
                       >
-                        {"TSF Engine Demo"}
-                      </div>
-                    }
-                    onClick={async event => {
-                      const $steps = {};
-                      $steps["goToTsfEngineDemo"] = true
-                        ? (() => {
-                            const actionArgs = { destination: `/demo` };
-                            return (({ destination }) => {
-                              if (
-                                typeof destination === "string" &&
-                                destination.startsWith("#")
-                              ) {
-                                document
-                                  .getElementById(destination.substr(1))
-                                  .scrollIntoView({ behavior: "smooth" });
-                              } else {
-                                __nextRouter?.push(destination);
+                        <div
+                          className={classNames(
+                            projectcss.all,
+                            projectcss.__wab_text,
+                            sty.text__ymhv5
+                          )}
+                        >
+                          {"Run your business with foresight, not forecasts. "}
+                        </div>
+                        <div
+                          className={classNames(
+                            projectcss.all,
+                            projectcss.__wab_text,
+                            sty.text__xuoZq
+                          )}
+                        >
+                          <React.Fragment>
+                            <span
+                              className={
+                                "plasmic_default__all plasmic_default__span"
                               }
-                            })?.apply(null, [actionArgs]);
-                          })()
-                        : undefined;
-                      if (
-                        $steps["goToTsfEngineDemo"] != null &&
-                        typeof $steps["goToTsfEngineDemo"] === "object" &&
-                        typeof $steps["goToTsfEngineDemo"].then === "function"
-                      ) {
-                        $steps["goToTsfEngineDemo"] =
-                          await $steps["goToTsfEngineDemo"];
-                      }
-                    }}
-                  />
+                              style={{ fontStyle: "italic" }}
+                            >
+                              {
+                                "Because knowing the month ahead is better than reacting to it."
+                              }
+                            </span>
+                          </React.Fragment>
+                        </div>
+                        <div
+                          className={classNames(
+                            projectcss.all,
+                            projectcss.__wab_text,
+                            sty.text__x5L2E
+                          )}
+                        >
+                          <React.Fragment>
+                            <span
+                              className={
+                                "plasmic_default__all plasmic_default__span"
+                              }
+                              style={{ color: "var(--token-Ry9eGMy91QvA)" }}
+                            >
+                              {
+                                "Traditional models like ARIMA, SES, HWES, Prophet, and other ML approaches smooth out volatility, missing critical intra-month and intra-quarter changes. A monthly or quarterly forecast horizon usually resolves to a trend line with no guarantee of reliability."
+                              }
+                            </span>
+                          </React.Fragment>
+                        </div>
+                        <div
+                          className={classNames(
+                            projectcss.all,
+                            projectcss.__wab_text,
+                            sty.text__u7Y3G
+                          )}
+                        >
+                          <React.Fragment>
+                            <span
+                              className={
+                                "plasmic_default__all plasmic_default__span"
+                              }
+                              style={{ color: "var(--token-Ry9eGMy91QvA)" }}
+                            >
+                              {
+                                "As you can see below, the traditional forecast values can't adjust to the real-world changes within the forecast period. "
+                              }
+                            </span>
+                          </React.Fragment>
+                        </div>
+                        <PlasmicImg__
+                          alt={""}
+                          className={classNames(sty.img__eQu9)}
+                          displayHeight={"auto"}
+                          displayMaxHeight={"none"}
+                          displayMaxWidth={"100%"}
+                          displayMinHeight={"0"}
+                          displayMinWidth={"0"}
+                          displayWidth={"auto"}
+                          loading={"lazy"}
+                          src={{
+                            src: "/plasmic/tsf_demand_website/images/aqiFlorida022023ClassicalPng.png",
+                            fullWidth: 1200,
+                            fullHeight: 437,
+                            aspectRatio: undefined
+                          }}
+                        />
+
+                        <div
+                          className={classNames(
+                            projectcss.all,
+                            projectcss.__wab_text,
+                            sty.text__snCAq
+                          )}
+                        >
+                          <React.Fragment>
+                            <span
+                              className={
+                                "plasmic_default__all plasmic_default__span"
+                              }
+                              style={{ color: "var(--token-Ry9eGMy91QvA)" }}
+                            >
+                              {"For each date, TSF Lite evaluates up to "}
+                            </span>
+                            <React.Fragment>{""}</React.Fragment>
+                            <span
+                              className={
+                                "plasmic_default__all plasmic_default__span"
+                              }
+                              style={{
+                                color: "var(--token-Ry9eGMy91QvA)",
+                                fontWeight: 700
+                              }}
+                            >
+                              {"800 forecast models"}
+                            </span>
+                            <React.Fragment>{""}</React.Fragment>
+                            <span
+                              className={
+                                "plasmic_default__all plasmic_default__span"
+                              }
+                              style={{ color: "var(--token-Ry9eGMy91QvA)" }}
+                            >
+                              {
+                                " (10 seasonal models x 2 series x 40 forecasts each) and selects the one with the best historical accuracy for that day. This independence allows the forecast to adjust immediately when real conditions change, without being chained to yesterday\u2019s trend."
+                              }
+                            </span>
+                          </React.Fragment>
+                        </div>
+                        <PlasmicImg__
+                          alt={""}
+                          className={classNames(sty.img__jI2Rb)}
+                          displayHeight={"auto"}
+                          displayMaxHeight={"none"}
+                          displayMaxWidth={"100%"}
+                          displayMinHeight={"0"}
+                          displayMinWidth={"0"}
+                          displayWidth={"auto"}
+                          loading={"lazy"}
+                          src={{
+                            src: "/plasmic/tsf_demand_website/images/aqiFlorida022023TsfPng.png",
+                            fullWidth: 1200,
+                            fullHeight: 437,
+                            aspectRatio: undefined
+                          }}
+                        />
+
+                        <div
+                          className={classNames(
+                            projectcss.all,
+                            projectcss.__wab_text,
+                            sty.text__igkuR
+                          )}
+                        >
+                          <React.Fragment>
+                            <span
+                              className={
+                                "plasmic_default__all plasmic_default__span"
+                              }
+                              style={{ color: "var(--token-Ry9eGMy91QvA)" }}
+                            >
+                              {"The "}
+                            </span>
+                            <React.Fragment>{""}</React.Fragment>
+                            <span
+                              className={
+                                "plasmic_default__all plasmic_default__span"
+                              }
+                              style={{
+                                color: "var(--token-Ry9eGMy91QvA)",
+                                fontWeight: 700
+                              }}
+                            >
+                              {"gold line"}
+                            </span>
+                            <React.Fragment>{""}</React.Fragment>
+                            <span
+                              className={
+                                "plasmic_default__all plasmic_default__span"
+                              }
+                              style={{ color: "var(--token-Ry9eGMy91QvA)" }}
+                            >
+                              {" is the bulls-eye forecast. The "}
+                            </span>
+                            <React.Fragment>{""}</React.Fragment>
+                            <span
+                              className={
+                                "plasmic_default__all plasmic_default__span"
+                              }
+                              style={{
+                                color: "var(--token-Ry9eGMy91QvA)",
+                                fontWeight: 700
+                              }}
+                            >
+                              {"green zone"}
+                            </span>
+                            <React.Fragment>{""}</React.Fragment>
+                            <span
+                              className={
+                                "plasmic_default__all plasmic_default__span"
+                              }
+                              style={{ color: "var(--token-Ry9eGMy91QvA)" }}
+                            >
+                              {
+                                " is your target range \u2014 an accuracy band built from real historical performance. Together, they give you clarity: where the future is most likely to land. "
+                              }
+                            </span>
+                          </React.Fragment>
+                        </div>
+                        <Button2
+                          data-plasmic-name={"button2"}
+                          data-plasmic-override={overrides.button2}
+                          className={classNames("__wab_instance", sty.button2)}
+                          color={"tsfDark"}
+                          end={
+                            <Icon4Icon
+                              className={classNames(
+                                projectcss.all,
+                                sty.svg__hoUbu
+                              )}
+                              role={"img"}
+                            />
+                          }
+                          iconEnd={true}
+                          label={
+                            <div
+                              className={classNames(
+                                projectcss.all,
+                                projectcss.__wab_text,
+                                sty.text__jYvrq
+                              )}
+                            >
+                              {"See how it on real data "}
+                            </div>
+                          }
+                          linkTo={`/demo`}
+                          start={
+                            <CircleIcon
+                              className={classNames(
+                                projectcss.all,
+                                sty.svg__sijhA
+                              )}
+                              role={"img"}
+                            />
+                          }
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    className={classNames(projectcss.all, sty.freeBox__dRzR7)}
+                  >
+                    <div
+                      className={classNames(projectcss.all, sty.freeBox__w3LN)}
+                    >
+                      <div
+                        data-plasmic-name={"foreground3"}
+                        data-plasmic-override={overrides.foreground3}
+                        className={classNames(projectcss.all, sty.foreground3)}
+                      >
+                        <h2
+                          data-plasmic-name={"h2"}
+                          data-plasmic-override={overrides.h2}
+                          className={classNames(
+                            projectcss.all,
+                            projectcss.h2,
+                            projectcss.__wab_text,
+                            sty.h2
+                          )}
+                        >
+                          {"Fewer Stockouts. Less Overstock. No Guessing. "}
+                        </h2>
+                      </div>
+                      <div
+                        data-plasmic-name={"foreground2"}
+                        data-plasmic-override={overrides.foreground2}
+                        className={classNames(projectcss.all, sty.foreground2)}
+                      >
+                        <div
+                          className={classNames(
+                            projectcss.all,
+                            sty.freeBox__zqeJm
+                          )}
+                        >
+                          <div
+                            className={classNames(
+                              projectcss.all,
+                              sty.freeBox__ipvVr
+                            )}
+                          >
+                            <div
+                              className={classNames(
+                                projectcss.all,
+                                sty.freeBox__gKrE5
+                              )}
+                            >
+                              <Icon11Icon
+                                className={classNames(
+                                  projectcss.all,
+                                  sty.svg__cF0D
+                                )}
+                                role={"img"}
+                              />
+                            </div>
+                            {false ? (
+                              <div
+                                className={classNames(
+                                  projectcss.all,
+                                  sty.freeBox__mDkWx
+                                )}
+                              >
+                                <Icon8Icon
+                                  className={classNames(
+                                    projectcss.all,
+                                    sty.svg__k9Emh
+                                  )}
+                                  role={"img"}
+                                />
+                              </div>
+                            ) : null}
+                            <div
+                              className={classNames(
+                                projectcss.all,
+                                sty.freeBox__uuD3S
+                              )}
+                            >
+                              <div
+                                className={classNames(
+                                  projectcss.all,
+                                  projectcss.__wab_text,
+                                  sty.text__lB89N
+                                )}
+                              >
+                                {"Start each month with clarity."}
+                              </div>
+                              <div
+                                className={classNames(
+                                  projectcss.all,
+                                  projectcss.__wab_text,
+                                  sty.text___19U5Z
+                                )}
+                              >
+                                {
+                                  "The green zone defines your safe operating range for each day \u2014 your best- and worst-case expectations based on real data. "
+                                }
+                              </div>
+                            </div>
+                          </div>
+                          <div
+                            className={classNames(
+                              projectcss.all,
+                              sty.freeBox__p4Bp
+                            )}
+                          >
+                            <div
+                              className={classNames(
+                                projectcss.all,
+                                sty.freeBox__wnsAu
+                              )}
+                            >
+                              <Icon10Icon
+                                className={classNames(
+                                  projectcss.all,
+                                  sty.svg___1AUc5
+                                )}
+                                role={"img"}
+                              />
+                            </div>
+                            {false ? (
+                              <div
+                                className={classNames(
+                                  projectcss.all,
+                                  sty.freeBox__qrP5I
+                                )}
+                              >
+                                <Icon8Icon
+                                  className={classNames(
+                                    projectcss.all,
+                                    sty.svg__h7Kza
+                                  )}
+                                  role={"img"}
+                                />
+                              </div>
+                            ) : null}
+                            <div
+                              className={classNames(
+                                projectcss.all,
+                                sty.freeBox__lTPre
+                              )}
+                            >
+                              <div
+                                className={classNames(
+                                  projectcss.all,
+                                  projectcss.__wab_text,
+                                  sty.text__feh6
+                                )}
+                              >
+                                {"Watch volatility, not just direction."}
+                              </div>
+                              <div
+                                className={classNames(
+                                  projectcss.all,
+                                  projectcss.__wab_text,
+                                  sty.text__uqEnl
+                                )}
+                              >
+                                {
+                                  "When the band widens, expect more variability \u2014\u00a0it's your signal to build flexibility into cash flow or supply. "
+                                }
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div
+                          className={classNames(
+                            projectcss.all,
+                            sty.freeBox__pnKIm
+                          )}
+                        >
+                          <div
+                            className={classNames(
+                              projectcss.all,
+                              sty.freeBox__vb3P7
+                            )}
+                          >
+                            <div
+                              className={classNames(
+                                projectcss.all,
+                                sty.freeBox__ghRie
+                              )}
+                            >
+                              <Icon8Icon
+                                className={classNames(
+                                  projectcss.all,
+                                  sty.svg___1Hz1S
+                                )}
+                                role={"img"}
+                              />
+                            </div>
+                            {false ? (
+                              <div
+                                className={classNames(
+                                  projectcss.all,
+                                  sty.freeBox__poUlg
+                                )}
+                              >
+                                <Icon8Icon
+                                  className={classNames(
+                                    projectcss.all,
+                                    sty.svg__uoqWc
+                                  )}
+                                  role={"img"}
+                                />
+                              </div>
+                            ) : null}
+                            <div
+                              className={classNames(
+                                projectcss.all,
+                                sty.freeBox___7L319
+                              )}
+                            >
+                              <div
+                                className={classNames(
+                                  projectcss.all,
+                                  projectcss.__wab_text,
+                                  sty.text__ht21K
+                                )}
+                              >
+                                {
+                                  "Plan inventory, ads, and staffing within the band. "
+                                }
+                              </div>
+                              <div
+                                className={classNames(
+                                  projectcss.all,
+                                  projectcss.__wab_text,
+                                  sty.text__tDctR
+                                )}
+                              >
+                                {
+                                  "The top of the band is the strong demand scenario. The bottom of the band is the conservative scenario. Plan your orders and budgets around the range that fits your risk tolerance. "
+                                }
+                              </div>
+                            </div>
+                          </div>
+                          <div
+                            className={classNames(
+                              projectcss.all,
+                              sty.freeBox__svIu5
+                            )}
+                          >
+                            <div
+                              className={classNames(
+                                projectcss.all,
+                                sty.freeBox__cxlR
+                              )}
+                            >
+                              <Icon13Icon
+                                className={classNames(
+                                  projectcss.all,
+                                  sty.svg__ww61S
+                                )}
+                                role={"img"}
+                              />
+                            </div>
+                            {false ? (
+                              <div
+                                className={classNames(
+                                  projectcss.all,
+                                  sty.freeBox__exUtm
+                                )}
+                              >
+                                <Icon8Icon
+                                  className={classNames(
+                                    projectcss.all,
+                                    sty.svg___1R2Yj
+                                  )}
+                                  role={"img"}
+                                />
+                              </div>
+                            ) : null}
+                            <div
+                              className={classNames(
+                                projectcss.all,
+                                sty.freeBox__aZmNv
+                              )}
+                            >
+                              <div
+                                className={classNames(
+                                  projectcss.all,
+                                  projectcss.__wab_text,
+                                  sty.text___2FrMg
+                                )}
+                              >
+                                {"Measure signal vs. noise."}
+                              </div>
+                              <div
+                                className={classNames(
+                                  projectcss.all,
+                                  projectcss.__wab_text,
+                                  sty.text__xINlD
+                                )}
+                              >
+                                {
+                                  "If actual results stay inside the band, you're fine. If they consistently move above or below it, something has genuinely changed \u2014 that's a planning insight for next month, not a daily fire drill."
+                                }
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
-                <div className={classNames(projectcss.all, sty.column__duJlc)}>
-                  <h1
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.h1,
-                      projectcss.__wab_text,
-                      sty.h1__jx3FS
-                    )}
-                  >
-                    {"Check out the science. "}
-                  </h1>
+                <div className={classNames(projectcss.all, sty.columns__oxRvY)}>
                   <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text___1SDdj
-                    )}
+                    className={classNames(projectcss.all, sty.column__ddl3J)}
                   >
-                    {
-                      "The Model of Temporal Inertia redefines how we forecast change over time \u2014 and challenges how human beings perceive time. "
-                    }
-                  </div>
-                  <Button
-                    className={classNames("__wab_instance", sty.button__qGdVm)}
-                    color={"muted"}
-                    label={
-                      <div
-                        className={classNames(
-                          projectcss.all,
-                          projectcss.__wab_text,
-                          sty.text__u0Np5
-                        )}
-                      >
-                        {"The Model of Temporal Inertia"}
-                      </div>
-                    }
-                    onClick={async event => {
-                      const $steps = {};
-                      $steps["goToTheScience"] = true
-                        ? (() => {
-                            const actionArgs = { destination: `/science` };
-                            return (({ destination }) => {
-                              if (
-                                typeof destination === "string" &&
-                                destination.startsWith("#")
-                              ) {
-                                document
-                                  .getElementById(destination.substr(1))
-                                  .scrollIntoView({ behavior: "smooth" });
-                              } else {
-                                __nextRouter?.push(destination);
-                              }
-                            })?.apply(null, [actionArgs]);
-                          })()
-                        : undefined;
-                      if (
-                        $steps["goToTheScience"] != null &&
-                        typeof $steps["goToTheScience"] === "object" &&
-                        typeof $steps["goToTheScience"].then === "function"
-                      ) {
-                        $steps["goToTheScience"] =
-                          await $steps["goToTheScience"];
+                    <h1
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.h1,
+                        projectcss.__wab_text,
+                        sty.h1__k7FYk
+                      )}
+                    >
+                      {"TSF Lite App"}
+                    </h1>
+                    <div
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.__wab_text,
+                        sty.text__ljGy
+                      )}
+                    >
+                      {
+                        "Forecast inside Shopify. No setup, no spreadsheets, and no effort. "
                       }
-                    }}
-                  />
-                </div>
-                <div className={classNames(projectcss.all, sty.column__aXxzO)}>
-                  <h1
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.h1,
-                      projectcss.__wab_text,
-                      sty.h1__po5Rq
-                    )}
-                  >
-                    {"Be a part of TSF."}
-                  </h1>
+                    </div>
+                    <Button
+                      className={classNames(
+                        "__wab_instance",
+                        sty.button__isXIr
+                      )}
+                      color={"neutral"}
+                      label={
+                        <div
+                          className={classNames(
+                            projectcss.all,
+                            projectcss.__wab_text,
+                            sty.text__rFsgt
+                          )}
+                        >
+                          {"TSF Lite App"}
+                        </div>
+                      }
+                      linkTo={`/tsf-lite`}
+                      onClick={async event => {
+                        const $steps = {};
+                      }}
+                    />
+                  </div>
                   <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__aNzF2
-                    )}
+                    className={classNames(projectcss.all, sty.column__ik2Xz)}
                   >
-                    {
-                      "Our first application: SKU-level monthly forecasts for Shopify merchants. We\u2019re now seeking seed investors to bring this breakthrough to market."
-                    }
-                  </div>
-                  <Button
-                    className={classNames("__wab_instance", sty.button___9E7RT)}
-                    color={"muted"}
-                    label={
-                      <div
-                        className={classNames(
-                          projectcss.all,
-                          projectcss.__wab_text,
-                          sty.text__af40M
-                        )}
-                      >
-                        {"Investment Opportunity"}
-                      </div>
-                    }
-                    onClick={async event => {
-                      const $steps = {};
-                      $steps["goToInvestmentOpportunity"] = true
-                        ? (() => {
-                            const actionArgs = { destination: `/investment` };
-                            return (({ destination }) => {
-                              if (
-                                typeof destination === "string" &&
-                                destination.startsWith("#")
-                              ) {
-                                document
-                                  .getElementById(destination.substr(1))
-                                  .scrollIntoView({ behavior: "smooth" });
-                              } else {
-                                __nextRouter?.push(destination);
-                              }
-                            })?.apply(null, [actionArgs]);
-                          })()
-                        : undefined;
-                      if (
-                        $steps["goToInvestmentOpportunity"] != null &&
-                        typeof $steps["goToInvestmentOpportunity"] ===
-                          "object" &&
-                        typeof $steps["goToInvestmentOpportunity"].then ===
-                          "function"
-                      ) {
-                        $steps["goToInvestmentOpportunity"] =
-                          await $steps["goToInvestmentOpportunity"];
+                    <h1
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.h1,
+                        projectcss.__wab_text,
+                        sty.h1___83SDs
+                      )}
+                    >
+                      {"Case Study Program"}
+                    </h1>
+                    <div
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.__wab_text,
+                        sty.text__uEoG
+                      )}
+                    >
+                      {
+                        "Run your business with foresight, not forecasts. Join the TSF Lite Case Study Program. "
                       }
-                    }}
-                  />
+                    </div>
+                    <Button
+                      className={classNames("__wab_instance", sty.button__iM1X)}
+                      color={"neutral"}
+                      label={
+                        <div
+                          className={classNames(
+                            projectcss.all,
+                            projectcss.__wab_text,
+                            sty.text__wMxo5
+                          )}
+                        >
+                          {"Apply to Join the Case Study Program"}
+                        </div>
+                      }
+                      linkTo={`/case-studies`}
+                      onClick={async event => {
+                        const $steps = {};
+                      }}
+                    />
+                  </div>
+                  <div
+                    className={classNames(projectcss.all, sty.column__jlzoJ)}
+                  >
+                    <h1
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.h1,
+                        projectcss.__wab_text,
+                        sty.h1__vCxpA
+                      )}
+                    >
+                      {"Discover the Science"}
+                    </h1>
+                    <div
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.__wab_text,
+                        sty.text__qyzbX
+                      )}
+                    >
+                      {
+                        "TSF forecasts use the Model of Temporal Inertia to achieve what traditional forecasts can\u2019t. "
+                      }
+                    </div>
+                    <Button
+                      className={classNames(
+                        "__wab_instance",
+                        sty.button__b1Igq
+                      )}
+                      color={"neutral"}
+                      label={
+                        <div
+                          className={classNames(
+                            projectcss.all,
+                            projectcss.__wab_text,
+                            sty.text__oejpO
+                          )}
+                        >
+                          {"Explore the Science "}
+                        </div>
+                      }
+                      linkTo={`/science`}
+                      onClick={async event => {
+                        const $steps = {};
+                      }}
+                    />
+                  </div>
+                  <div className={classNames(projectcss.all, sty.column__fGkB)}>
+                    <h1
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.h1,
+                        projectcss.__wab_text,
+                        sty.h1__hb1Qy
+                      )}
+                    >
+                      {"Invest in the Future"}
+                    </h1>
+                    <div
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.__wab_text,
+                        sty.text__lzxV
+                      )}
+                    >
+                      {
+                        "Partner with TSF to bring next-generation forecasting to every data-driven business."
+                      }
+                    </div>
+                    <Button
+                      className={classNames(
+                        "__wab_instance",
+                        sty.button__c8EMf
+                      )}
+                      color={"neutral"}
+                      label={
+                        <div
+                          className={classNames(
+                            projectcss.all,
+                            projectcss.__wab_text,
+                            sty.text___5RfiT
+                          )}
+                        >
+                          {"Investment Opportunity"}
+                        </div>
+                      }
+                      linkTo={`/investment`}
+                      onClick={async event => {
+                        const $steps = {};
+                      }}
+                    />
+                  </div>
                 </div>
               </div>
             </div>
@@ -586,7 +1012,10 @@ const PlasmicDescendants = {
     "root",
     "tsfDemandMainNavigation",
     "features",
-    "columns",
+    "button2",
+    "foreground3",
+    "h2",
+    "foreground2",
     "tsfFooter",
     "blogPosts",
     "ctaBlock",
@@ -594,8 +1023,11 @@ const PlasmicDescendants = {
   ],
 
   tsfDemandMainNavigation: ["tsfDemandMainNavigation"],
-  features: ["features", "columns"],
-  columns: ["columns"],
+  features: ["features", "button2", "foreground3", "h2", "foreground2"],
+  button2: ["button2"],
+  foreground3: ["foreground3", "h2"],
+  h2: ["h2"],
+  foreground2: ["foreground2"],
   tsfFooter: ["tsfFooter"],
   blogPosts: ["blogPosts"],
   ctaBlock: ["ctaBlock"],
@@ -636,7 +1068,10 @@ export const PlasmicHomepage = Object.assign(
     // Helper components rendering sub-elements
     tsfDemandMainNavigation: makeNodeComponent("tsfDemandMainNavigation"),
     features: makeNodeComponent("features"),
-    columns: makeNodeComponent("columns"),
+    button2: makeNodeComponent("button2"),
+    foreground3: makeNodeComponent("foreground3"),
+    h2: makeNodeComponent("h2"),
+    foreground2: makeNodeComponent("foreground2"),
     tsfFooter: makeNodeComponent("tsfFooter"),
     blogPosts: makeNodeComponent("blogPosts"),
     ctaBlock: makeNodeComponent("ctaBlock"),

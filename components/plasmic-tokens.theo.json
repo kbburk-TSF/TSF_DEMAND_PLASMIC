@@ -1261,6 +1261,36 @@
       }
     },
     {
+      "name": "TSF DEVICE 1",
+      "type": "color",
+      "value": "#C97224",
+      "category": "color",
+      "meta": {
+        "projectId": "8yhBRaKsBf3R2wKMhT5dUU",
+        "id": "X6S7wuaXEnnZ"
+      }
+    },
+    {
+      "name": "TSF DEVICE 2",
+      "type": "color",
+      "value": "#F49425",
+      "category": "color",
+      "meta": {
+        "projectId": "8yhBRaKsBf3R2wKMhT5dUU",
+        "id": "QhTIx_NeceRV"
+      }
+    },
+    {
+      "name": "TSF Device 3",
+      "type": "color",
+      "value": "#FCB02C",
+      "category": "color",
+      "meta": {
+        "projectId": "8yhBRaKsBf3R2wKMhT5dUU",
+        "id": "pmqmA9YFvxV-"
+      }
+    },
+    {
       "name": "TSF GOLD",
       "type": "color",
       "value": "#FCB02C",
@@ -1301,6 +1331,16 @@
       }
     },
     {
+      "name": "TSF MID ORANGE",
+      "type": "color",
+      "value": "#D46807",
+      "category": "color",
+      "meta": {
+        "projectId": "8yhBRaKsBf3R2wKMhT5dUU",
+        "id": "V3B9wE7hI-6x"
+      }
+    },
+    {
       "name": "TSF ORANGE",
       "type": "color",
       "value": "#820A02",
@@ -1318,6 +1358,16 @@
       "meta": {
         "projectId": "8yhBRaKsBf3R2wKMhT5dUU",
         "id": "zrH0XRQElDBe"
+      }
+    },
+    {
+      "name": "TSF SUB TEXT",
+      "type": "color",
+      "value": "#E29D64",
+      "category": "color",
+      "meta": {
+        "projectId": "8yhBRaKsBf3R2wKMhT5dUU",
+        "id": "RmulV7EJkQqI"
       }
     },
     {
