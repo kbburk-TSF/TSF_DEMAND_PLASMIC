@@ -198,34 +198,21 @@ function PlasmicPrivacyPolicy__RenderFunc(props) {
                     sty.h4__bJvxy
                   )}
                 >
-                  {hasVariant(globalVariants, "screen", "mobileOnly") ? (
-                    "Professional And\nDedicated Consulting Services..."
-                  ) : (
-                    <React.Fragment>
-                      <React.Fragment>{""}</React.Fragment>
-                      {
-                        <ol
-                          className={classNames(
-                            projectcss.all,
-                            projectcss.ol,
-                            sty.ol__nd2QG
-                          )}
-                        >
-                          <li
-                            className={classNames(
-                              projectcss.all,
-                              projectcss.li,
-                              projectcss.__wab_text,
-                              sty.li__oI5Bp
-                            )}
-                          >
-                            {"Our Compliance Goal"}
-                          </li>
-                        </ol>
-                      }
-                      <React.Fragment>{""}</React.Fragment>
-                    </React.Fragment>
+                  {hasVariant(globalVariants, "screen", "mobileOnly")
+                    ? "Professional And\nDedicated Consulting Services..."
+                    : ""}
+                </h4>
+                <h4
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.h4,
+                    projectcss.__wab_text,
+                    sty.h4___7OuOt
                   )}
+                >
+                  {hasVariant(globalVariants, "screen", "mobileOnly")
+                    ? "Professional And\nDedicated Consulting Services..."
+                    : "1. Our Compliance Goal"}
                 </h4>
                 <div
                   className={classNames(
@@ -847,10 +834,12 @@ function PlasmicPrivacyPolicy__RenderFunc(props) {
                     <React.Fragment>{""}</React.Fragment>
                     {
                       <ol
+                        data-plasmic-name={"ol"}
+                        data-plasmic-override={overrides.ol}
                         className={classNames(
                           projectcss.all,
                           projectcss.ol,
-                          sty.ol__bZmRk
+                          sty.ol
                         )}
                       >
                         <li
@@ -1293,6 +1282,7 @@ const PlasmicDescendants = {
     "img",
     "mainSection",
     "container3",
+    "ol",
     "tsfFooter"
   ],
 
@@ -1301,8 +1291,9 @@ const PlasmicDescendants = {
   columns: ["columns", "h1", "img"],
   h1: ["h1"],
   img: ["img"],
-  mainSection: ["mainSection", "container3"],
-  container3: ["container3"],
+  mainSection: ["mainSection", "container3", "ol"],
+  container3: ["container3", "ol"],
+  ol: ["ol"],
   tsfFooter: ["tsfFooter"]
 };
 
@@ -1345,6 +1336,7 @@ export const PlasmicPrivacyPolicy = Object.assign(
     img: makeNodeComponent("img"),
     mainSection: makeNodeComponent("mainSection"),
     container3: makeNodeComponent("container3"),
+    ol: makeNodeComponent("ol"),
     tsfFooter: makeNodeComponent("tsfFooter"),
     // Metadata about props expected for PlasmicPrivacyPolicy
     internalVariantProps: PlasmicPrivacyPolicy__VariantProps,

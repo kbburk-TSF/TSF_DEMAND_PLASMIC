@@ -304,13 +304,11 @@ function PlasmicCaseStudies__RenderFunc(props) {
               >
                 <div className={classNames(projectcss.all, sty.column___2BETb)}>
                   <h2
-                    data-plasmic-name={"h2"}
-                    data-plasmic-override={overrides.h2}
                     className={classNames(
                       projectcss.all,
                       projectcss.h2,
                       projectcss.__wab_text,
-                      sty.h2
+                      sty.h2__u1Cvk
                     )}
                   >
                     {"Want more information?"}
@@ -1422,14 +1420,12 @@ function PlasmicCaseStudies__RenderFunc(props) {
                         </React.Fragment>
                         {
                           <PlasmicLink__
-                            data-plasmic-name={"link"}
-                            data-plasmic-override={overrides.link}
                             className={classNames(
                               projectcss.all,
                               projectcss.a,
                               projectcss.__wab_text,
                               projectcss.plasmic_default__inline,
-                              sty.link
+                              sty.link__dDimg
                             )}
                             component={Link}
                             href={`/privacy-policy`}
@@ -1444,6 +1440,269 @@ function PlasmicCaseStudies__RenderFunc(props) {
                       </React.Fragment>
                     </div>
                   </div>
+                </div>
+              </div>
+            </div>
+            <div
+              data-plasmic-name={"mainSection"}
+              data-plasmic-override={overrides.mainSection}
+              className={classNames(projectcss.all, sty.mainSection)}
+            >
+              <div
+                data-plasmic-name={"container4"}
+                data-plasmic-override={overrides.container4}
+                className={classNames(projectcss.all, sty.container4)}
+              >
+                <div className={classNames(projectcss.all, sty.freeBox__rX4Z)}>
+                  <h2
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.h2,
+                      projectcss.__wab_text,
+                      sty.h2__ygagy
+                    )}
+                  >
+                    {hasVariant(globalVariants, "screen", "mobileOnly")
+                      ? "Professional And\nDedicated Consulting Services..."
+                      : "Frequently Asked Questions"}
+                  </h2>
+                  <h4
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.h4,
+                      projectcss.__wab_text,
+                      sty.h4__bawS4
+                    )}
+                  >
+                    {hasVariant(globalVariants, "screen", "mobileOnly")
+                      ? "Professional And\nDedicated Consulting Services..."
+                      : "Do I need a data team?"}
+                  </h4>
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text__da1Ww
+                    )}
+                  >
+                    {
+                      "No. TSF Lite plugs directly into your store data. You don't need analysts or setup; it just works. "
+                    }
+                  </div>
+                </div>
+                <div className={classNames(projectcss.all, sty.freeBox__r14S)}>
+                  <h4
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.h4,
+                      projectcss.__wab_text,
+                      sty.h4__zLzgo
+                    )}
+                  >
+                    {hasVariant(globalVariants, "screen", "mobileOnly")
+                      ? "Professional And\nDedicated Consulting Services..."
+                      : "Is this about \u201daccuracy\u201d?"}
+                  </h4>
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text__wvOb
+                    )}
+                  >
+                    {
+                      "No \u2014 it\u2019s about control. We focus on what the green zone enables you to do, not on chasing stastical precision."
+                    }
+                  </div>
+                </div>
+                <div
+                  className={classNames(projectcss.all, sty.freeBox___9Z5QP)}
+                >
+                  <h4
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.h4,
+                      projectcss.__wab_text,
+                      sty.h4__lew9U
+                    )}
+                  >
+                    {hasVariant(globalVariants, "screen", "mobileOnly")
+                      ? "Professional And\nDedicated Consulting Services..."
+                      : "What\u2019s the time commitment?"}
+                  </h4>
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text__lpGp6
+                    )}
+                  >
+                    {
+                      "Brief monthly check-ins. We handle the forecasting, analytics, and reporting. "
+                    }
+                  </div>
+                </div>
+                <div className={classNames(projectcss.all, sty.freeBox__ob3Sd)}>
+                  <h4
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.h4,
+                      projectcss.__wab_text,
+                      sty.h4__unrcd
+                    )}
+                  >
+                    {hasVariant(globalVariants, "screen", "mobileOnly")
+                      ? "Professional And\nDedicated Consulting Services..."
+                      : "How many products can I include in the trial?"}
+                  </h4>
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text__kGNft
+                    )}
+                  >
+                    <React.Fragment>
+                      <React.Fragment>
+                        {"Each case study covers up to "}
+                      </React.Fragment>
+                      <span
+                        className={"plasmic_default__all plasmic_default__span"}
+                        style={{ fontWeight: 700 }}
+                      >
+                        {"10 SKUs."}
+                      </span>
+                      <React.Fragment>
+                        {
+                          " That\u2019s enough to prove performance and show the power of SKU-level foresight. "
+                        }
+                      </React.Fragment>
+                    </React.Fragment>
+                  </div>
+                </div>
+                <div className={classNames(projectcss.all, sty.freeBox__r1X0P)}>
+                  <h4
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.h4,
+                      projectcss.__wab_text,
+                      sty.h4___4Ja94
+                    )}
+                  >
+                    {hasVariant(globalVariants, "screen", "mobileOnly")
+                      ? "Professional And\nDedicated Consulting Services..."
+                      : "What happens after the trial?"}
+                  </h4>
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text__l2Apt
+                    )}
+                  >
+                    <React.Fragment>
+                      <React.Fragment>
+                        {
+                          "If you want to keep receiving forecasts, you can continue with a paid TSF Lite subscription. Pricing is based on SKU count \u2014 starting with the "
+                        }
+                      </React.Fragment>
+                      <span
+                        className={"plasmic_default__all plasmic_default__span"}
+                        style={{ fontWeight: 700 }}
+                      >
+                        {"Starter 50 Pack (up to 50 SKUs)"}
+                      </span>
+                      <React.Fragment>
+                        {
+                          " \u2014\u00a0and scales from there. You'll find full details on the "
+                        }
+                      </React.Fragment>
+                      {
+                        <PlasmicLink__
+                          className={classNames(
+                            projectcss.all,
+                            projectcss.a,
+                            projectcss.__wab_text,
+                            projectcss.plasmic_default__inline,
+                            sty.link__qzQ3D
+                          )}
+                          component={Link}
+                          href={`/pricing`}
+                          platform={"nextjs"}
+                        >
+                          {"TSF Lite Pricing Page"}
+                        </PlasmicLink__>
+                      }
+                      <React.Fragment>{". "}</React.Fragment>
+                    </React.Fragment>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className={classNames(projectcss.all, sty.freeBox___4LxW)}>
+            <div className={classNames(projectcss.all, sty.columns__oo7Bu)}>
+              <div className={classNames(projectcss.all, sty.column__y7Rgx)}>
+                <h2
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.h2,
+                    projectcss.__wab_text,
+                    sty.h2__tp52Y
+                  )}
+                >
+                  {"Stop guessing. Start forecasting. "}
+                </h2>
+                <div
+                  className={classNames(projectcss.all, sty.freeBox___30Rkq)}
+                >
+                  <Button2
+                    className={classNames("__wab_instance", sty.button2__yHaOr)}
+                    color={"trueGold"}
+                    end={
+                      <Icon4Icon
+                        className={classNames(projectcss.all, sty.svg__lD2U)}
+                        role={"img"}
+                      />
+                    }
+                    iconEnd={true}
+                    label={
+                      <div
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.__wab_text,
+                          sty.text__kRn20
+                        )}
+                      >
+                        {"Apply to Join a Case Study"}
+                      </div>
+                    }
+                    linkTo={`/interest`}
+                    start={
+                      <CircleIcon
+                        className={classNames(projectcss.all, sty.svg__hHikA)}
+                        role={"img"}
+                      />
+                    }
+                  />
+
+                  <PlasmicLink__
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.a,
+                      projectcss.__wab_text,
+                      sty.link__nzyLj
+                    )}
+                    component={Link}
+                    href={`/contact`}
+                    platform={"nextjs"}
+                  >
+                    {"Partner with TSF"}
+                  </PlasmicLink__>
+                  <Icon4Icon
+                    className={classNames(projectcss.all, sty.svg__xK7XV)}
+                    role={"img"}
+                  />
                 </div>
               </div>
             </div>
@@ -1470,13 +1729,13 @@ const PlasmicDescendants = {
     "img",
     "outer",
     "container3",
-    "h2",
     "softBackground10",
     "border10",
     "interactionEffect10",
     "section",
     "foreground",
-    "link",
+    "mainSection",
+    "container4",
     "tsfFooter"
   ],
 
@@ -1489,7 +1748,6 @@ const PlasmicDescendants = {
   outer: [
     "outer",
     "container3",
-    "h2",
     "softBackground10",
     "border10",
     "interactionEffect10"
@@ -1497,19 +1755,18 @@ const PlasmicDescendants = {
 
   container3: [
     "container3",
-    "h2",
     "softBackground10",
     "border10",
     "interactionEffect10"
   ],
 
-  h2: ["h2"],
   softBackground10: ["softBackground10"],
   border10: ["border10"],
   interactionEffect10: ["interactionEffect10"],
   section: ["section", "foreground"],
   foreground: ["foreground"],
-  link: ["link"],
+  mainSection: ["mainSection", "container4"],
+  container4: ["container4"],
   tsfFooter: ["tsfFooter"]
 };
 
@@ -1553,13 +1810,13 @@ export const PlasmicCaseStudies = Object.assign(
     img: makeNodeComponent("img"),
     outer: makeNodeComponent("outer"),
     container3: makeNodeComponent("container3"),
-    h2: makeNodeComponent("h2"),
     softBackground10: makeNodeComponent("softBackground10"),
     border10: makeNodeComponent("border10"),
     interactionEffect10: makeNodeComponent("interactionEffect10"),
     section: makeNodeComponent("section"),
     foreground: makeNodeComponent("foreground"),
-    link: makeNodeComponent("link"),
+    mainSection: makeNodeComponent("mainSection"),
+    container4: makeNodeComponent("container4"),
     tsfFooter: makeNodeComponent("tsfFooter"),
     // Metadata about props expected for PlasmicCaseStudies
     internalVariantProps: PlasmicCaseStudies__VariantProps,
