@@ -128,15 +128,6 @@ function PlasmicArticles__RenderFunc(props) {
                         className={classNames(
                           projectcss.all,
                           projectcss.__wab_text,
-                          sty.text__vsajs
-                        )}
-                      >
-                        {"Enter some text"}
-                      </div>
-                      <div
-                        className={classNames(
-                          projectcss.all,
-                          projectcss.__wab_text,
                           sty.text__jjMkh
                         )}
                       >
@@ -309,9 +300,9 @@ function PlasmicArticles__RenderFunc(props) {
                           displayWidth={"100%"}
                           loading={"lazy"}
                           src={{
-                            src: "/plasmic/tsf_demand_website/images/fakurianDesignPPTwRTkvXqUnsplashJpg.jpg",
-                            fullWidth: 1920,
-                            fullHeight: 1280,
+                            src: "/plasmic/tsf_demand_website/images/microscopeforTimeJpg.jpg",
+                            fullWidth: 900,
+                            fullHeight: 900,
                             aspectRatio: undefined
                           }}
                         />
@@ -338,7 +329,7 @@ function PlasmicArticles__RenderFunc(props) {
                           >
                             {hasVariant(globalVariants, "screen", "mobileOnly")
                               ? "Customer Loyalty Programs That Stick"
-                              : "Irregular Seasonal Models and a Microscope for Time"}
+                              : "A Microscope for Time"}
                           </h4>
                           <div
                             className={classNames(

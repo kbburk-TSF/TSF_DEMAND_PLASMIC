@@ -10,9 +10,11 @@
 // Component: 1X9k1kstneu0
 import * as React from "react";
 import Head from "next/head";
+import Link from "next/link";
 import { useRouter } from "next/router";
 import {
   PlasmicImg as PlasmicImg__,
+  PlasmicLink as PlasmicLink__,
   classNames,
   createPlasmicElementProxy,
   deriveRenderOpts,
@@ -20,12 +22,15 @@ import {
 } from "@plasmicapp/react-web";
 import { useDataEnv } from "@plasmicapp/react-web/lib/host";
 import TsfDemandMainNavigation from "../../TsfDemandMainNavigation"; // plasmic-import: RS9jruOWtFtt/component
+import Button2 from "../../Button2"; // plasmic-import: IsImc8gJBadG/component
 import TsfFooter from "../../TsfFooter"; // plasmic-import: NmgYw5lHKANx/component
 import { _useGlobalVariants } from "./plasmic"; // plasmic-import: 8yhBRaKsBf3R2wKMhT5dUU/projectModule
 import { _useStyleTokens } from "./PlasmicStyleTokensProvider"; // plasmic-import: 8yhBRaKsBf3R2wKMhT5dUU/styleTokensProvider
 import "@plasmicapp/react-web/lib/plasmic.css";
 import projectcss from "./plasmic.module.css"; // plasmic-import: 8yhBRaKsBf3R2wKMhT5dUU/projectcss
 import sty from "./PlasmicMicroscopeForTime.module.css"; // plasmic-import: 1X9k1kstneu0/css
+import Icon4Icon from "./icons/PlasmicIcon__Icon4"; // plasmic-import: s0pSL1_dtWEm/icon
+import CircleIcon from "./icons/PlasmicIcon__Circle"; // plasmic-import: iCnGomX0kBnc/icon
 
 createPlasmicElementProxy;
 
@@ -144,23 +149,21 @@ function PlasmicMicroscopeForTime__RenderFunc(props) {
                         )}
                       >
                         {
-                          "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,"
+                          "Targeted Seasonal Forecasts combine the Model of Temporal Inertia with a proprietary library of complex, irregular seasonal models. These seasonal models function as lenses in a Microscope for Time \u2014\u00a0they reveal patterns in data that are invisible to the naked eye. "
                         }
                       </div>
                     </div>
                   </div>
                   <div className={classNames(projectcss.all, sty.column__r42J)}>
                     <PlasmicImg__
-                      data-plasmic-name={"img"}
-                      data-plasmic-override={overrides.img}
                       alt={""}
-                      className={classNames(sty.img)}
+                      className={classNames(sty.img__fcYlv)}
                       displayHeight={"auto"}
                       displayMaxHeight={"none"}
                       displayMaxWidth={
                         hasVariant(globalVariants, "screen", "mobileOnly")
                           ? "100%"
-                          : "100%"
+                          : "400px"
                       }
                       displayMinHeight={"0"}
                       displayMinWidth={"0"}
@@ -179,9 +182,9 @@ function PlasmicMicroscopeForTime__RenderFunc(props) {
                               aspectRatio: undefined
                             }
                           : {
-                              src: "/plasmic/tsf_demand_website/images/greenChameleonS9Cc2SKySjmUnsplashJpg.jpg",
-                              fullWidth: 1920,
-                              fullHeight: 1280,
+                              src: "/plasmic/tsf_demand_website/images/microscopeforTimeJpg.jpg",
+                              fullWidth: 900,
+                              fullHeight: 900,
                               aspectRatio: undefined
                             }
                       }
@@ -212,7 +215,7 @@ function PlasmicMicroscopeForTime__RenderFunc(props) {
                 >
                   {hasVariant(globalVariants, "screen", "mobileOnly")
                     ? "Professional And\nDedicated Consulting Services..."
-                    : "Terms of Service heading lorem"}
+                    : "The worlds of business and finance must be able to see the future. "}
                 </h3>
                 <div
                   className={classNames(
@@ -223,7 +226,18 @@ function PlasmicMicroscopeForTime__RenderFunc(props) {
                 >
                   {hasVariant(globalVariants, "screen", "mobileOnly")
                     ? "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam a metus quis lorem malesuada luctus. Cras lacinia, eros at dapibus molestie, risus tortor pretium ligula, eu malesuada tortor eros dapibus mi. Proin laoreet efficitur suscipit. Donec molestie volutpat euismod. Nulla gravida ligula in eros facilisis, sed dignissim tellus aliquam. Etiam convallis enim nisi, at suscipit tortor pulvinar at. "
-                    : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam a metus quis lorem malesuada luctus. Cras lacinia, eros at dapibus molestie, risus tortor pretium ligula, eu malesuada tortor eros dapibus mi. Proin laoreet efficitur suscipit. Donec molestie volutpat euismod. Nulla gravida ligula in eros facilisis, sed dignissim tellus aliquam. Etiam convallis enim nisi, at suscipit tortor pulvinar at. "}
+                    : "Success in these fields requires the ability to anticipate how conditions will change and when those changes will happen. The problem is that human beings have a limited perception of time; we can perceive the past, but we can\u2019t perceive the future. The science of statistics, and specifically the branch of data science concerned with time series forecasting, exists to address this limitation and provide brief, actionable glimpses of the future. Billions of dollars are being spent on advanced mathematical models and cutting-edge computations including neural networks, machine learning, and of course, AI, all in pursuit of an expanded, more detailed, and more precise view of the future. However, none of these strategies address the fundamental problem of the limited ability humans have to perceive the dimension of time."}
+                </div>
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__lXoK
+                  )}
+                >
+                  {
+                    "Science relies on objective observation. We can\u2019t understand something if we can\u2019t see it. Sometimes we need new tools to help us to see things that are invisible to the naked eye."
+                  }
                 </div>
               </div>
               <div className={classNames(projectcss.all, sty.freeBox__kqQg8)}>
@@ -237,7 +251,7 @@ function PlasmicMicroscopeForTime__RenderFunc(props) {
                 >
                   {hasVariant(globalVariants, "screen", "mobileOnly")
                     ? "Professional And\nDedicated Consulting Services..."
-                    : "Lorem Heading main privacy policy"}
+                    : "Before the invention of the microscope, the concept of a biological cell didn\u2019t exist. "}
                 </h3>
                 <div
                   className={classNames(
@@ -246,9 +260,58 @@ function PlasmicMicroscopeForTime__RenderFunc(props) {
                     sty.text__b3Dnt
                   )}
                 >
-                  {hasVariant(globalVariants, "screen", "mobileOnly")
-                    ? "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam a metus quis lorem malesuada luctus. Cras lacinia, eros at dapibus molestie, risus tortor pretium ligula, eu malesuada tortor eros dapibus mi. Proin laoreet efficitur suscipit. Donec molestie volutpat euismod. Nulla gravida ligula in eros facilisis, sed dignissim tellus aliquam. Etiam convallis enim nisi, at suscipit tortor pulvinar at. "
-                    : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam a metus quis lorem malesuada luctus. Cras lacinia, eros at dapibus molestie, risus tortor pretium ligula, eu malesuada tortor eros dapibus mi. Proin laoreet efficitur suscipit. Donec molestie volutpat euismod. Nulla gravida ligula in eros facilisis, sed dignissim tellus aliquam. Etiam convallis enim nisi, at suscipit tortor pulvinar at. "}
+                  {hasVariant(globalVariants, "screen", "mobileOnly") ? (
+                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam a metus quis lorem malesuada luctus. Cras lacinia, eros at dapibus molestie, risus tortor pretium ligula, eu malesuada tortor eros dapibus mi. Proin laoreet efficitur suscipit. Donec molestie volutpat euismod. Nulla gravida ligula in eros facilisis, sed dignissim tellus aliquam. Etiam convallis enim nisi, at suscipit tortor pulvinar at. "
+                  ) : (
+                    <React.Fragment>
+                      <span
+                        className={"plasmic_default__all plasmic_default__span"}
+                        style={{ fontWeight: 700 }}
+                      >
+                        {"Robert Hooke"}
+                      </span>
+                      <React.Fragment>
+                        {
+                          ", a British scientist with an impressive resume of discoveries, coined the term \u201ccell\u201d after viewing a thin slice of cork under a microscope. Hook stated in 1665, "
+                        }
+                      </React.Fragment>
+                      <span
+                        className={"plasmic_default__all plasmic_default__span"}
+                        style={{ fontWeight: 700 }}
+                      >
+                        {
+                          "\u201c\u2026by the help of Microscopes, there is nothing so small as to escape our inquiry; hence there is a new visible World discovered to the understanding.\u201d "
+                        }
+                      </span>
+                      <React.Fragment>
+                        {
+                          "The invention of the microscope made the entire science of microbiology possible, and has led to countless advancements in chemistry and physics."
+                        }
+                      </React.Fragment>
+                    </React.Fragment>
+                  )}
+                </div>
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__abBzL
+                  )}
+                >
+                  {
+                    "Time series forecasting predicts future outcomes by considering historical data. A pattern in the past is expected to continue in the future. All existing time series forecasting tools look for patterns in the historical data and base their forecasts on those patterns."
+                  }
+                </div>
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__aco2H
+                  )}
+                >
+                  {
+                    "To be able to forecast with patterns we must be able to see those patterns. Currently, we\u2019re able to identify patterns only when they present as repeated sequences of peaks and troughs in the historic data, which we call \u201cseasonality.\u201d We expect these sequences to correspond with equal divisions of the calendar or the clock, which is how we understand time. More advanced forecast models look for other types of correlations among the data, but metaphorically, we\u2019re still looking for patterns in the data with the naked eye."
+                  }
                 </div>
               </div>
               <div className={classNames(projectcss.all, sty.freeBox__rgeX7)}>
@@ -262,18 +325,29 @@ function PlasmicMicroscopeForTime__RenderFunc(props) {
                 >
                   {hasVariant(globalVariants, "screen", "mobileOnly")
                     ? "Professional And\nDedicated Consulting Services..."
-                    : "Lorem Heading main privacy policy"}
+                    : "Think of the Model of Temporal Inertia as a Microscope for Time"}
                 </h3>
                 <div
                   className={classNames(
                     projectcss.all,
                     projectcss.__wab_text,
-                    sty.text___4Lqpb
+                    sty.text__mjRos
                   )}
                 >
-                  {hasVariant(globalVariants, "screen", "mobileOnly")
-                    ? "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam a metus quis lorem malesuada luctus. Cras lacinia, eros at dapibus molestie, risus tortor pretium ligula, eu malesuada tortor eros dapibus mi. Proin laoreet efficitur suscipit. Donec molestie volutpat euismod. Nulla gravida ligula in eros facilisis, sed dignissim tellus aliquam. Etiam convallis enim nisi, at suscipit tortor pulvinar at. "
-                    : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam a metus quis lorem malesuada luctus. Cras lacinia, eros at dapibus molestie, risus tortor pretium ligula, eu malesuada tortor eros dapibus mi. Proin laoreet efficitur suscipit. Donec molestie volutpat euismod. Nulla gravida ligula in eros facilisis, sed dignissim tellus aliquam. Etiam convallis enim nisi, at suscipit tortor pulvinar at. "}
+                  {
+                    "When you view a drop of water through the lens of a microscope, you can see a world of single-cell organisms that are otherwise invisible. When you view time series data through the lens of the complex, irregular seasonal models that I\u2019ve developed, you can see patterns and cycles that are otherwise invisible. Those patterns allow us to see further into the future with greater detail, precision, and confidence than possible with any existing tool."
+                  }
+                </div>
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__pm1Dy
+                  )}
+                >
+                  {
+                    "We think of time as a single timeline, the sequential timeline, which is an unbroken, chronological sequence of events. All existing forecast models forecast along the sequential timeline. On the sequential timeline, Season 8 of 2025 follows Season 7 of 2025, which follows Season 6 of 2025. The Model of Temporal Inertia considers two timelines: the sequential timeline and the seasonal timeline. On the seasonal timeline, Season 8 of 2025 follows Season 8 of 2024, which follows Season 8 of 2023."
+                  }
                 </div>
               </div>
               <div className={classNames(projectcss.all, sty.freeBox__dhlDg)}>
@@ -285,20 +359,255 @@ function PlasmicMicroscopeForTime__RenderFunc(props) {
                     sty.h3__lVlGs
                   )}
                 >
-                  {hasVariant(globalVariants, "screen", "mobileOnly")
-                    ? "Professional And\nDedicated Consulting Services..."
-                    : "Lorem Heading main privacy policy"}
+                  {hasVariant(globalVariants, "screen", "mobileOnly") ? (
+                    "Professional And\nDedicated Consulting Services..."
+                  ) : (
+                    <React.Fragment>
+                      <React.Fragment>{"We can "}</React.Fragment>
+                      <span
+                        className={"plasmic_default__all plasmic_default__span"}
+                        style={{ color: "#820A02", fontWeight: 700 }}
+                      >
+                        {"understand"}
+                      </span>
+                      <React.Fragment>
+                        {
+                          " time only when it\u2019s expressed in terms of the calendar or the clock; but the calendar and the clock are not the only ways to "
+                        }
+                      </React.Fragment>
+                      <span
+                        className={"plasmic_default__all plasmic_default__span"}
+                        style={{ color: "#820A02", fontWeight: 700 }}
+                      >
+                        {"measure"}
+                      </span>
+                      <React.Fragment>{" time. "}</React.Fragment>
+                    </React.Fragment>
+                  )}
                 </h3>
                 <div
                   className={classNames(
                     projectcss.all,
                     projectcss.__wab_text,
-                    sty.text__wMChY
+                    sty.text__xwTtB
+                  )}
+                >
+                  {
+                    "Complex, irregular seasonal models must be configured in a matrix that maps the seasons of each seasonal model to specific dates of the calendar."
+                  }
+                </div>
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__aySfJ
+                  )}
+                >
+                  {
+                    "This is a graphic representation of a seasonal matrix for most of Q1 2022, showing the 16 seasonal models used in my original research. The individual calendar dates from January 1, 2022 through March 10, 2022 are listed down the left column. The individual seasons of each seasonal model are color-coded to highlight the varying durations of each season and to make the divisions between seasons more obvious."
+                  }
+                </div>
+                <PlasmicImg__
+                  alt={""}
+                  className={classNames(sty.img__nuJWn)}
+                  displayHeight={"auto"}
+                  displayMaxHeight={"none"}
+                  displayMaxWidth={"100%"}
+                  displayMinHeight={"0"}
+                  displayMinWidth={"0"}
+                  displayWidth={"auto"}
+                  loading={"lazy"}
+                  src={{
+                    src: "/plasmic/tsf_demand_website/images/_1745518468325Jpeg.jpg",
+                    fullWidth: 1188,
+                    fullHeight: 1500,
+                    aspectRatio: undefined
+                  }}
+                />
+              </div>
+              <div className={classNames(projectcss.all, sty.freeBox__oR3EH)}>
+                <h3
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.h3,
+                    projectcss.__wab_text,
+                    sty.h3__sjzNc
+                  )}
+                >
+                  {hasVariant(globalVariants, "screen", "mobileOnly")
+                    ? "Professional And\nDedicated Consulting Services..."
+                    : "I\u2019ve discovered a literal universe of seasonal models that is ready to be explored. "}
+                </h3>
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__klZak
                   )}
                 >
                   {hasVariant(globalVariants, "screen", "mobileOnly")
                     ? "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam a metus quis lorem malesuada luctus. Cras lacinia, eros at dapibus molestie, risus tortor pretium ligula, eu malesuada tortor eros dapibus mi. Proin laoreet efficitur suscipit. Donec molestie volutpat euismod. Nulla gravida ligula in eros facilisis, sed dignissim tellus aliquam. Etiam convallis enim nisi, at suscipit tortor pulvinar at. "
-                    : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam a metus quis lorem malesuada luctus. Cras lacinia, eros at dapibus molestie, risus tortor pretium ligula, eu malesuada tortor eros dapibus mi. Proin laoreet efficitur suscipit. Donec molestie volutpat euismod. Nulla gravida ligula in eros facilisis, sed dignissim tellus aliquam. Etiam convallis enim nisi, at suscipit tortor pulvinar at. "}
+                    : "Think of each seasonal model as a lens in the microscope for time. We simply view the time series data through different combinations of lenses until the hidden patterns in the data come into focus. "}
+                </div>
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__qhbfL
+                  )}
+                >
+                  {hasVariant(globalVariants, "screen", "mobileOnly") ? (
+                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam a metus quis lorem malesuada luctus. Cras lacinia, eros at dapibus molestie, risus tortor pretium ligula, eu malesuada tortor eros dapibus mi. Proin laoreet efficitur suscipit. Donec molestie volutpat euismod. Nulla gravida ligula in eros facilisis, sed dignissim tellus aliquam. Etiam convallis enim nisi, at suscipit tortor pulvinar at. "
+                  ) : (
+                    <React.Fragment>
+                      <React.Fragment>
+                        {
+                          "With the TSF Lite application, each day\u2019s forecast value is selected from "
+                        }
+                      </React.Fragment>
+                      <span
+                        className={"plasmic_default__all plasmic_default__span"}
+                        style={{ fontWeight: 700 }}
+                      >
+                        {"800 independent forecast models"}
+                      </span>
+                      <React.Fragment>
+                        {" \u2014 the result of combining "}
+                      </React.Fragment>
+                      <span
+                        className={"plasmic_default__all plasmic_default__span"}
+                        style={{ fontWeight: 700 }}
+                      >
+                        {"10 seasonal models"}
+                      </span>
+                      <React.Fragment>{" and "}</React.Fragment>
+                      <span
+                        className={"plasmic_default__all plasmic_default__span"}
+                        style={{ fontWeight: 700 }}
+                      >
+                        {"2 seasonal series"}
+                      </span>
+                      <React.Fragment>{", each producing "}</React.Fragment>
+                      <span
+                        className={"plasmic_default__all plasmic_default__span"}
+                        style={{ fontWeight: 700 }}
+                      >
+                        {"40 different forecasts per combination"}
+                      </span>
+                      <React.Fragment>
+                        {
+                          ". The system evaluates each forecast\u2019s historical accuracy and selects the model with the strongest record of performance for that specific date. "
+                        }
+                      </React.Fragment>
+                    </React.Fragment>
+                  )}
+                </div>
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__vIeWa
+                  )}
+                >
+                  <React.Fragment>
+                    <React.Fragment>{"The full "}</React.Fragment>
+                    <span
+                      className={"plasmic_default__all plasmic_default__span"}
+                      style={{ fontWeight: 700 }}
+                    >
+                      {"TSF Engine"}
+                    </span>
+                    <React.Fragment>
+                      {
+                        " \u2014 the foundation of all products \u2014 includes "
+                      }
+                    </React.Fragment>
+                    <span
+                      className={"plasmic_default__all plasmic_default__span"}
+                      style={{ fontWeight: 700 }}
+                    >
+                      {"more than 25 seasonal models"}
+                    </span>
+                    <React.Fragment>{", each with "}</React.Fragment>
+                    <span
+                      className={"plasmic_default__all plasmic_default__span"}
+                      style={{ fontWeight: 700 }}
+                    >
+                      {"3 seasonal series"}
+                    </span>
+                    <React.Fragment>{", creating over "}</React.Fragment>
+                    <span
+                      className={"plasmic_default__all plasmic_default__span"}
+                      style={{ fontWeight: 700 }}
+                    >
+                      {"3,000 forecast models for monthly forecasts "}
+                    </span>
+                    <React.Fragment>{"and another "}</React.Fragment>
+                    <span
+                      className={"plasmic_default__all plasmic_default__span"}
+                      style={{ fontWeight: 700 }}
+                    >
+                      {"3,000 for quarterly forecasts"}
+                    </span>
+                    <React.Fragment>
+                      {
+                        ". Each model is evaluated objectively; none are trained or tuned subjectively. "
+                      }
+                    </React.Fragment>
+                  </React.Fragment>
+                </div>
+                <div className={classNames(projectcss.all, sty.freeBox__q5BdV)}>
+                  <Button2
+                    data-plasmic-name={"button2"}
+                    data-plasmic-override={overrides.button2}
+                    className={classNames("__wab_instance", sty.button2)}
+                    color={"tsfDark"}
+                    end={
+                      <Icon4Icon
+                        className={classNames(projectcss.all, sty.svg__kh7Me)}
+                        role={"img"}
+                      />
+                    }
+                    iconEnd={true}
+                    label={
+                      <div
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.__wab_text,
+                          sty.text__xUAh
+                        )}
+                      >
+                        {"Join the Beta"}
+                      </div>
+                    }
+                    linkTo={`/interest`}
+                    start={
+                      <CircleIcon
+                        className={classNames(projectcss.all, sty.svg__zhLz)}
+                        role={"img"}
+                      />
+                    }
+                  />
+
+                  <PlasmicLink__
+                    data-plasmic-name={"link"}
+                    data-plasmic-override={overrides.link}
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.a,
+                      projectcss.__wab_text,
+                      sty.link
+                    )}
+                    component={Link}
+                    href={`/demo`}
+                    platform={"nextjs"}
+                  >
+                    {"See Real Forecasts   "}
+                  </PlasmicLink__>
+                  <Icon4Icon
+                    className={classNames(projectcss.all, sty.svg__vNaqq)}
+                    role={"img"}
+                  />
                 </div>
               </div>
             </div>
@@ -322,20 +631,22 @@ const PlasmicDescendants = {
     "pageBanner",
     "columns",
     "h1",
-    "img",
     "mainSection2",
     "container3",
+    "button2",
+    "link",
     "tsfFooter"
   ],
 
   tsfDemandMainNavigation: ["tsfDemandMainNavigation"],
-  mainSection: ["mainSection", "pageBanner", "columns", "h1", "img"],
-  pageBanner: ["pageBanner", "columns", "h1", "img"],
-  columns: ["columns", "h1", "img"],
+  mainSection: ["mainSection", "pageBanner", "columns", "h1"],
+  pageBanner: ["pageBanner", "columns", "h1"],
+  columns: ["columns", "h1"],
   h1: ["h1"],
-  img: ["img"],
-  mainSection2: ["mainSection2", "container3"],
-  container3: ["container3"],
+  mainSection2: ["mainSection2", "container3", "button2", "link"],
+  container3: ["container3", "button2", "link"],
+  button2: ["button2"],
+  link: ["link"],
   tsfFooter: ["tsfFooter"]
 };
 
@@ -376,9 +687,10 @@ export const PlasmicMicroscopeForTime = Object.assign(
     pageBanner: makeNodeComponent("pageBanner"),
     columns: makeNodeComponent("columns"),
     h1: makeNodeComponent("h1"),
-    img: makeNodeComponent("img"),
     mainSection2: makeNodeComponent("mainSection2"),
     container3: makeNodeComponent("container3"),
+    button2: makeNodeComponent("button2"),
+    link: makeNodeComponent("link"),
     tsfFooter: makeNodeComponent("tsfFooter"),
     // Metadata about props expected for PlasmicMicroscopeForTime
     internalVariantProps: PlasmicMicroscopeForTime__VariantProps,
