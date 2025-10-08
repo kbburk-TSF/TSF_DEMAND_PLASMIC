@@ -183,6 +183,12 @@ function PlasmicButton__RenderFunc(props) {
           [sty.rootcolor_muted]: hasVariant($state, "color", "muted"),
           [sty.rootcolor_neutral]: hasVariant($state, "color", "neutral"),
           [sty.rootcolor_success]: hasVariant($state, "color", "success"),
+          [sty.rootcolor_tsfDark]: hasVariant($state, "color", "tsfDark"),
+          [sty.rootcolor_unnamedVariant]: hasVariant(
+            $state,
+            "color",
+            "unnamedVariant"
+          ),
           [sty.rootcolor_warning]: hasVariant($state, "color", "warning"),
           [sty.rootflatSide_bottom]: hasVariant($state, "flatSide", "bottom"),
           [sty.rootflatSide_left]: hasVariant($state, "flatSide", "left"),

@@ -199,6 +199,9 @@ function PlasmicButton2__RenderFunc(props) {
           [sty.rootcolor_success_type_soft]:
             hasVariant($state, "color", "success") &&
             hasVariant($state, "type", "soft"),
+          [sty.rootcolor_trueGold]: hasVariant($state, "color", "trueGold"),
+          [sty.rootcolor_tsfDark]: hasVariant($state, "color", "tsfDark"),
+          [sty.rootcolor_tsfGold]: hasVariant($state, "color", "tsfGold"),
           [sty.rootcolor_warning]: hasVariant($state, "color", "warning"),
           [sty.rootcolor_warning_type_bordered]:
             hasVariant($state, "color", "warning") &&

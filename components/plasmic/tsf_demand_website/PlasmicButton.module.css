@@ -38,6 +38,9 @@
 .rootcolor_errorDestructive:global(.__wab_instance) {
   background: var(--token-7Np9RJpK5fbW);
 }
+.rootcolor_tsfDark:global(.__wab_instance) {
+  background: var(--token-zrH0XRQElDBe);
+}
 .roottype_soft:global(.__wab_instance) {
   background: none;
 }

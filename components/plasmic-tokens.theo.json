@@ -21,6 +21,26 @@
       }
     },
     {
+      "name": "24px",
+      "type": "fontsize",
+      "value": "16px",
+      "category": "fontsize",
+      "meta": {
+        "projectId": "8yhBRaKsBf3R2wKMhT5dUU",
+        "id": "bo-deu05BFWT"
+      }
+    },
+    {
+      "name": "32px",
+      "type": "lineheight",
+      "value": "32px",
+      "category": "lineheight",
+      "meta": {
+        "projectId": "8yhBRaKsBf3R2wKMhT5dUU",
+        "id": "kJRtS87BK95r"
+      }
+    },
+    {
       "name": "Basic/Border",
       "type": "color",
       "value": "#D1D5DB",
@@ -1493,7 +1513,7 @@
     {
       "name": "Warning/Warning",
       "type": "color",
-      "value": "#FACC15",
+      "value": "#FCB02C",
       "category": "color",
       "meta": {
         "projectId": "8yhBRaKsBf3R2wKMhT5dUU",

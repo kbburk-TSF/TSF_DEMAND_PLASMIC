@@ -45,6 +45,15 @@
 .rootcolor_black:global(.__wab_instance) {
   background: #000000d9;
 }
+.rootcolor_tsfDark:global(.__wab_instance) {
+  background: var(--token-zrH0XRQElDBe);
+}
+.rootcolor_tsfGold:global(.__wab_instance) {
+  background: var(--token-GVmg7yaE-Tp8);
+}
+.rootcolor_trueGold:global(.__wab_instance) {
+  background: var(--token-4WAF4HbZ93AS);
+}
 .roottype_soft:global(.__wab_instance) {
   background: none;
 }

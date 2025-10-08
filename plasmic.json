@@ -2229,6 +2229,19 @@
           "scheme": "blackbox",
           "componentType": "page",
           "path": "/microscope-for-time"
+        },
+        {
+          "id": "TTJcVgBRi8By",
+          "name": "TsfPricingTable1",
+          "type": "managed",
+          "projectId": "8yhBRaKsBf3R2wKMhT5dUU",
+          "renderModuleFilePath": "plasmic/tsf_demand_website/PlasmicTsfPricingTable1.jsx",
+          "importSpec": {
+            "modulePath": "TsfPricingTable1.jsx"
+          },
+          "cssFilePath": "plasmic/tsf_demand_website/PlasmicTsfPricingTable1.module.css",
+          "scheme": "blackbox",
+          "componentType": "component"
         }
       ],
       "icons": [
@@ -2366,6 +2379,11 @@
           "id": "e15IDclT0vTC",
           "name": "Icon11Icon",
           "moduleFilePath": "plasmic/tsf_demand_website/icons/PlasmicIcon__Icon11.jsx"
+        },
+        {
+          "id": "s0pSL1_dtWEm",
+          "name": "Icon4Icon",
+          "moduleFilePath": "plasmic/tsf_demand_website/icons/PlasmicIcon__Icon4.jsx"
         }
       ],
       "images": [
@@ -2903,6 +2921,41 @@
           "id": "B8rDsiNf6PSb",
           "name": "image 13",
           "filePath": "../public/plasmic/tsf_demand_website/images/image13.svg"
+        },
+        {
+          "id": "WOuNxnTlKBaM",
+          "name": "ForecastOnly-5.png",
+          "filePath": "../public/plasmic/tsf_demand_website/images/forecastOnly5Png.png"
+        },
+        {
+          "id": "QFeXHjysUVWY",
+          "name": "ForecastOnly-2.png",
+          "filePath": "../public/plasmic/tsf_demand_website/images/forecastOnly2Png.png"
+        },
+        {
+          "id": "NW58qClVsfPR",
+          "name": "FARS_GoldLine.png",
+          "filePath": "../public/plasmic/tsf_demand_website/images/farsGoldLinePng.png"
+        },
+        {
+          "id": "AI9ADlz7p6BK",
+          "name": "AQI_FORECAST_ONLY.png",
+          "filePath": "../public/plasmic/tsf_demand_website/images/aqiForecastOnlyPng.png"
+        },
+        {
+          "id": "FYlRVMLX7l07",
+          "name": "shopify.svg",
+          "filePath": "../public/plasmic/tsf_demand_website/images/shopifySvg.svg"
+        },
+        {
+          "id": "1e0QJCq7GrFU",
+          "name": "colleagues-working-together-in-modern-office-using-2024-10-18-04-21-11-utc.jpg",
+          "filePath": "../public/plasmic/tsf_demand_website/images/colleaguesWorkingTogetherInModernOfficeUsing20241018042111UtcJpg.jpg"
+        },
+        {
+          "id": "sZajUucPvDdd",
+          "name": "business-people-having-meeting-and-brainstorming-d-2024-07-09-00-51-55-utc.jpg",
+          "filePath": "../public/plasmic/tsf_demand_website/images/businessPeopleHavingMeetingAndBrainstormingD20240709005155UtcJpg.jpg"
         }
       ],
       "indirect": false,
