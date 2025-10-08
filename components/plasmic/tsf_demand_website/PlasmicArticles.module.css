@@ -128,7 +128,7 @@
   width: 100%;
   height: auto;
   margin-right: -373px;
-  left: 187px;
+  left: 106px;
   top: 98px;
   z-index: 111;
   row-gap: 16px;
@@ -395,6 +395,8 @@
 }
 .text__qHgG {
   white-space: pre;
+  color: var(--token-j36yqbLRSv4k);
+  font-weight: 700;
 }
 .svg__fXlXd {
   object-fit: cover;
@@ -532,6 +534,8 @@
 }
 .text___49BN {
   white-space: pre;
+  color: var(--token-j36yqbLRSv4k);
+  font-weight: 700;
 }
 .svg__r4JEm {
   object-fit: cover;

@@ -132,7 +132,7 @@ function PlasmicArticles__RenderFunc(props) {
                         )}
                       >
                         {
-                          "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,"
+                          "A selection of posts, articles, and resources to help you get the most out of Targeted Seasonal Forecasts. "
                         }
                       </div>
                     </div>
@@ -204,9 +204,9 @@ function PlasmicArticles__RenderFunc(props) {
                           displayWidth={"100%"}
                           loading={"lazy"}
                           src={{
-                            src: "/plasmic/tsf_demand_website/images/istockphoto1306171737170667AJpg2.jpg",
-                            fullWidth: 509,
-                            fullHeight: 340,
+                            src: "/plasmic/tsf_demand_website/images/colleaguesWorkingTogetherInModernOfficeUsing20241018042111UtcJpg.jpg",
+                            fullWidth: 6496,
+                            fullHeight: 4333,
                             aspectRatio: undefined
                           }}
                         />
@@ -242,15 +242,31 @@ function PlasmicArticles__RenderFunc(props) {
                               sty.text__whs1R
                             )}
                           >
-                            {
-                              "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor ..."
-                            }
+                            <React.Fragment>
+                              <React.Fragment>
+                                {
+                                  "A practical guide for Shopify merchants on how demand planning protects cash flow, prevents stockouts, and scales smarter \u2014 and how "
+                                }
+                              </React.Fragment>
+                              <span
+                                className={
+                                  "plasmic_default__all plasmic_default__span"
+                                }
+                                style={{ fontWeight: 700 }}
+                              >
+                                {"TSF Lite "}
+                              </span>
+                              <React.Fragment>
+                                {"makes it effortless."}
+                              </React.Fragment>
+                            </React.Fragment>
                           </div>
                           <Button
                             className={classNames(
                               "__wab_instance",
                               sty.button__kb7I2
                             )}
+                            color={"tsfDark"}
                             end={
                               <ArrowRightSvgIcon
                                 className={classNames(
@@ -260,7 +276,6 @@ function PlasmicArticles__RenderFunc(props) {
                                 role={"img"}
                               />
                             }
-                            iconEnd={true}
                             label={
                               <div
                                 className={classNames(
@@ -272,6 +287,7 @@ function PlasmicArticles__RenderFunc(props) {
                                 {"Read post"}
                               </div>
                             }
+                            linkTo={`/demand-planning-roi`}
                           />
                         </div>
                       </div>
@@ -339,7 +355,7 @@ function PlasmicArticles__RenderFunc(props) {
                             )}
                           >
                             {
-                              "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor ..."
+                              "Targeted Seasonal Forecasts combine the Model of Temporal Inertia with a proprietary library of complex, irregular seasonal models. These seasonal models function as lenses in a Microscope for Time \u2014\u00a0they reveal patterns in data that are invisible to the naked eye. "
                             }
                           </div>
                           <Button
@@ -347,6 +363,7 @@ function PlasmicArticles__RenderFunc(props) {
                               "__wab_instance",
                               sty.button__e9QFr
                             )}
+                            color={"tsfDark"}
                             end={
                               <ArrowRightSvgIcon
                                 className={classNames(
@@ -356,7 +373,6 @@ function PlasmicArticles__RenderFunc(props) {
                                 role={"img"}
                               />
                             }
-                            iconEnd={true}
                             label={
                               <div
                                 className={classNames(
@@ -368,6 +384,7 @@ function PlasmicArticles__RenderFunc(props) {
                                 {"Read post"}
                               </div>
                             }
+                            linkTo={`/microscope-for-time`}
                           />
                         </div>
                       </div>

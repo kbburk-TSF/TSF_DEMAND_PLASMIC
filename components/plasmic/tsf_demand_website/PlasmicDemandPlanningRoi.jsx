@@ -10,9 +10,11 @@
 // Component: wR1qnHgGQmY1
 import * as React from "react";
 import Head from "next/head";
+import Link from "next/link";
 import { useRouter } from "next/router";
 import {
   PlasmicImg as PlasmicImg__,
+  PlasmicLink as PlasmicLink__,
   classNames,
   createPlasmicElementProxy,
   deriveRenderOpts,
@@ -131,7 +133,7 @@ function PlasmicDemandPlanningRoi__RenderFunc(props) {
                           sty.h1
                         )}
                       >
-                        {"Demand Planning Article"}
+                        {"How Smarter Demand Planning Turns Data into Profit"}
                       </h1>
                       <div
                         className={classNames(
@@ -141,7 +143,7 @@ function PlasmicDemandPlanningRoi__RenderFunc(props) {
                         )}
                       >
                         {
-                          "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,"
+                          "A practical guide for Shopify merchants on how demand planning protects cash flow, prevents stockouts, and scales smarter \u2014 and how \u00a0TSF Lite \u00a0makes it effortless."
                         }
                       </div>
                     </div>
@@ -150,10 +152,8 @@ function PlasmicDemandPlanningRoi__RenderFunc(props) {
                     className={classNames(projectcss.all, sty.column___2Mc5Y)}
                   >
                     <PlasmicImg__
-                      data-plasmic-name={"img"}
-                      data-plasmic-override={overrides.img}
                       alt={""}
-                      className={classNames(sty.img)}
+                      className={classNames(sty.img__c9O43)}
                       displayHeight={"auto"}
                       displayMaxHeight={"none"}
                       displayMaxWidth={
@@ -178,9 +178,9 @@ function PlasmicDemandPlanningRoi__RenderFunc(props) {
                               aspectRatio: undefined
                             }
                           : {
-                              src: "/plasmic/tsf_demand_website/images/greenChameleonS9Cc2SKySjmUnsplashJpg.jpg",
-                              fullWidth: 1920,
-                              fullHeight: 1280,
+                              src: "/plasmic/tsf_demand_website/images/colleaguesWorkingTogetherInModernOfficeUsing20241018042111UtcJpg.jpg",
+                              fullWidth: 6496,
+                              fullHeight: 4333,
                               aspectRatio: undefined
                             }
                       }
@@ -211,7 +211,7 @@ function PlasmicDemandPlanningRoi__RenderFunc(props) {
                 >
                   {hasVariant(globalVariants, "screen", "mobileOnly")
                     ? "Professional And\nDedicated Consulting Services..."
-                    : "Terms of Service heading lorem"}
+                    : "Introduction: Why Forecasting Isn\u2019t Optional Anymore"}
                 </h3>
                 <div
                   className={classNames(
@@ -222,7 +222,29 @@ function PlasmicDemandPlanningRoi__RenderFunc(props) {
                 >
                   {hasVariant(globalVariants, "screen", "mobileOnly")
                     ? "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam a metus quis lorem malesuada luctus. Cras lacinia, eros at dapibus molestie, risus tortor pretium ligula, eu malesuada tortor eros dapibus mi. Proin laoreet efficitur suscipit. Donec molestie volutpat euismod. Nulla gravida ligula in eros facilisis, sed dignissim tellus aliquam. Etiam convallis enim nisi, at suscipit tortor pulvinar at. "
-                    : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam a metus quis lorem malesuada luctus. Cras lacinia, eros at dapibus molestie, risus tortor pretium ligula, eu malesuada tortor eros dapibus mi. Proin laoreet efficitur suscipit. Donec molestie volutpat euismod. Nulla gravida ligula in eros facilisis, sed dignissim tellus aliquam. Etiam convallis enim nisi, at suscipit tortor pulvinar at. "}
+                    : "For a long time, small and mid-sized e-commerce merchants treated forecasting as something only big\rcompanies worried about. But once you\u2019ve had a few hot products sell out too soon \u2014 or a stack of unsold\rinventory eating your margins \u2014 you learn that guessing is expensive."}
+                </div>
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__tBez
+                  )}
+                >
+                  {
+                    "Demand planning is simply the process of anticipating what your customers will want and when they\u2019ll want\rit, so you can align your purchasing, marketing, and fulfillment decisions. The goal isn\u2019t to predict the future\rperfectly \u2014 it\u2019s to make sure your money is in motion instead of sitting idle in the wrong inventory."
+                  }
+                </div>
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__k9W7K
+                  )}
+                >
+                  {
+                    "When done right, it touches everything: revenue, profit, cash flow, and customer satisfaction. When done\rwrong, it quietly drains all four."
+                  }
                 </div>
               </div>
               <div className={classNames(projectcss.all, sty.freeBox___41Ofy)}>
@@ -236,19 +258,152 @@ function PlasmicDemandPlanningRoi__RenderFunc(props) {
                 >
                   {hasVariant(globalVariants, "screen", "mobileOnly")
                     ? "Professional And\nDedicated Consulting Services..."
-                    : "Lorem Heading main privacy policy"}
+                    : "The Hidden Cost of Inventory Guesswork"}
                 </h3>
                 <div
                   className={classNames(
                     projectcss.all,
                     projectcss.__wab_text,
-                    sty.text__q6Tca
+                    sty.text__bEnH
                   )}
                 >
-                  {hasVariant(globalVariants, "screen", "mobileOnly")
-                    ? "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam a metus quis lorem malesuada luctus. Cras lacinia, eros at dapibus molestie, risus tortor pretium ligula, eu malesuada tortor eros dapibus mi. Proin laoreet efficitur suscipit. Donec molestie volutpat euismod. Nulla gravida ligula in eros facilisis, sed dignissim tellus aliquam. Etiam convallis enim nisi, at suscipit tortor pulvinar at. "
-                    : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam a metus quis lorem malesuada luctus. Cras lacinia, eros at dapibus molestie, risus tortor pretium ligula, eu malesuada tortor eros dapibus mi. Proin laoreet efficitur suscipit. Donec molestie volutpat euismod. Nulla gravida ligula in eros facilisis, sed dignissim tellus aliquam. Etiam convallis enim nisi, at suscipit tortor pulvinar at. "}
+                  {
+                    "Inventory is usually your largest investment. Every extra case or SKU you order represents cash tied up on\rthe shelf \u2014 cash that could be paying for marketing, staff, or growth."
+                  }
                 </div>
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__fnmjp
+                  )}
+                >
+                  <React.Fragment>
+                    <React.Fragment>{""}</React.Fragment>
+                    {
+                      <ul
+                        data-plasmic-name={"ul"}
+                        data-plasmic-override={overrides.ul}
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.ul,
+                          sty.ul
+                        )}
+                      >
+                        <li
+                          className={classNames(
+                            projectcss.all,
+                            projectcss.li,
+                            projectcss.__wab_text,
+                            sty.li__prtxb
+                          )}
+                        >
+                          <React.Fragment>
+                            <span
+                              className={
+                                "plasmic_default__all plasmic_default__span"
+                              }
+                              style={{ fontWeight: 700 }}
+                            >
+                              {"Overstocking"}
+                            </span>
+                            <React.Fragment>
+                              {
+                                " locks up working capital and increases carrying costs (storage, aging, markdowns).\r"
+                              }
+                            </React.Fragment>
+                          </React.Fragment>
+                        </li>
+                        <li
+                          className={classNames(
+                            projectcss.all,
+                            projectcss.li,
+                            projectcss.__wab_text,
+                            sty.li__dfHrp
+                          )}
+                        >
+                          <React.Fragment>
+                            <span
+                              className={
+                                "plasmic_default__all plasmic_default__span"
+                              }
+                              style={{ fontWeight: 700 }}
+                            >
+                              {"Understocking"}
+                            </span>
+                            <React.Fragment>
+                              {
+                                " means missed sales, frustrated customers, and broken momentum when products\rare suddenly unavailable.\r"
+                              }
+                            </React.Fragment>
+                          </React.Fragment>
+                        </li>
+                        <li
+                          className={classNames(
+                            projectcss.all,
+                            projectcss.li,
+                            projectcss.__wab_text,
+                            sty.li___4GbPq
+                          )}
+                        >
+                          <React.Fragment>
+                            <span
+                              className={
+                                "plasmic_default__all plasmic_default__span"
+                              }
+                              style={{ fontWeight: 700 }}
+                            >
+                              {"Erratic buying makes"}
+                            </span>
+                            <React.Fragment>
+                              {
+                                " supplier relationships unstable and shipping costs unpredictable."
+                              }
+                            </React.Fragment>
+                          </React.Fragment>
+                        </li>
+                      </ul>
+                    }
+                    <React.Fragment>{""}</React.Fragment>
+                  </React.Fragment>
+                </div>
+              </div>
+              <div
+                className={classNames(
+                  projectcss.all,
+                  projectcss.__wab_text,
+                  sty.text___9GbyS
+                )}
+              >
+                {
+                  "These problems compound quietly. A few percentage points of bad timing on each SKU can add up to\rthousands of dollars lost each month."
+                }
+              </div>
+              <div
+                className={classNames(
+                  projectcss.all,
+                  projectcss.__wab_text,
+                  sty.text___7Zj2O
+                )}
+              >
+                <React.Fragment>
+                  <React.Fragment>
+                    {
+                      "Good demand planning doesn\u2019t just reduce mistakes \u2014 it builds "
+                    }
+                  </React.Fragment>
+                  <span
+                    className={"plasmic_default__all plasmic_default__span"}
+                    style={{ fontStyle: "italic" }}
+                  >
+                    {"predictability"}
+                  </span>
+                  <React.Fragment>
+                    {
+                      ". It gives you a rhythm:\rknowing what\u2019s safe to reorder, when to slow down, and how much flexibility you really have."
+                    }
+                  </React.Fragment>
+                </React.Fragment>
               </div>
               <div className={classNames(projectcss.all, sty.freeBox__eq8K9)}>
                 <h3
@@ -261,7 +416,7 @@ function PlasmicDemandPlanningRoi__RenderFunc(props) {
                 >
                   {hasVariant(globalVariants, "screen", "mobileOnly")
                     ? "Professional And\nDedicated Consulting Services..."
-                    : "Lorem Heading main privacy policy"}
+                    : "What Demand Planning Looks Like in Practice"}
                 </h3>
                 <div
                   className={classNames(
@@ -272,32 +427,861 @@ function PlasmicDemandPlanningRoi__RenderFunc(props) {
                 >
                   {hasVariant(globalVariants, "screen", "mobileOnly")
                     ? "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam a metus quis lorem malesuada luctus. Cras lacinia, eros at dapibus molestie, risus tortor pretium ligula, eu malesuada tortor eros dapibus mi. Proin laoreet efficitur suscipit. Donec molestie volutpat euismod. Nulla gravida ligula in eros facilisis, sed dignissim tellus aliquam. Etiam convallis enim nisi, at suscipit tortor pulvinar at. "
-                    : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam a metus quis lorem malesuada luctus. Cras lacinia, eros at dapibus molestie, risus tortor pretium ligula, eu malesuada tortor eros dapibus mi. Proin laoreet efficitur suscipit. Donec molestie volutpat euismod. Nulla gravida ligula in eros facilisis, sed dignissim tellus aliquam. Etiam convallis enim nisi, at suscipit tortor pulvinar at. "}
+                    : "For a typical Shopify merchant, a demand plan usually revolves around three recurring tasks:"}
+                </div>
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text___5Gssq
+                  )}
+                >
+                  <React.Fragment>
+                    <React.Fragment>{""}</React.Fragment>
+                    {
+                      <h5
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.h5,
+                          projectcss.__wab_text,
+                          sty.h5__uf2Q
+                        )}
+                      >
+                        {"1. Understanding your sales pattern.\r"}
+                      </h5>
+                    }
+                    <React.Fragment>
+                      {
+                        "Looking back over 12\u201324 months of daily sales to see what\u2019s seasonal, what\u2019s random, and what\u2019s\rconsistently growing."
+                      }
+                    </React.Fragment>
+                  </React.Fragment>
+                </div>
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text___3GYSz
+                  )}
+                >
+                  <React.Fragment>
+                    <React.Fragment>{""}</React.Fragment>
+                    {
+                      <h5
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.h5,
+                          projectcss.__wab_text,
+                          sty.h5__hKcJz
+                        )}
+                      >
+                        {"2. Translating that pattern into forecasts. \r"}
+                      </h5>
+                    }
+                    <React.Fragment>
+                      {
+                        "Deciding what \u201dnormal\u201d looks like next month and how much deviation you can afford to risk."
+                      }
+                    </React.Fragment>
+                  </React.Fragment>
+                </div>
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__d4DyH
+                  )}
+                >
+                  <React.Fragment>
+                    <React.Fragment>{""}</React.Fragment>
+                    {
+                      <h5
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.h5,
+                          projectcss.__wab_text,
+                          sty.h5__jPb7
+                        )}
+                      >
+                        {
+                          "3. Making stock and marketing decisions around those forecasts.\r"
+                        }
+                      </h5>
+                    }
+                    <React.Fragment>
+                      {
+                        "Ordering inventory, scheduling ads, or planning promotions based on how confident you are that\rdemand will stay within a certain range."
+                      }
+                    </React.Fragment>
+                  </React.Fragment>
+                </div>
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__oPbMy
+                  )}
+                >
+                  {hasVariant(globalVariants, "screen", "mobileOnly")
+                    ? "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam a metus quis lorem malesuada luctus. Cras lacinia, eros at dapibus molestie, risus tortor pretium ligula, eu malesuada tortor eros dapibus mi. Proin laoreet efficitur suscipit. Donec molestie volutpat euismod. Nulla gravida ligula in eros facilisis, sed dignissim tellus aliquam. Etiam convallis enim nisi, at suscipit tortor pulvinar at. "
+                    : "This doesn\u2019t require advanced math \u2014 just structure. Most merchants already have the data they need. The\r challenge is turning that data into a forecast they can trust without hiring a data scientist."}
                 </div>
               </div>
-              <div className={classNames(projectcss.all, sty.freeBox__v2IKv)}>
+              <div className={classNames(projectcss.all, sty.freeBox__jCgf6)}>
                 <h3
                   className={classNames(
                     projectcss.all,
                     projectcss.h3,
                     projectcss.__wab_text,
-                    sty.h3__uCud7
+                    sty.h3__oro9C
                   )}
                 >
                   {hasVariant(globalVariants, "screen", "mobileOnly")
                     ? "Professional And\nDedicated Consulting Services..."
-                    : "Lorem Heading main privacy policy"}
+                    : "Common Mistakes the Kill ROI"}
                 </h3>
                 <div
                   className={classNames(
                     projectcss.all,
                     projectcss.__wab_text,
-                    sty.text___0Lzs4
+                    sty.text__myhQw
+                  )}
+                >
+                  {hasVariant(globalVariants, "screen", "mobileOnly")
+                    ? "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam a metus quis lorem malesuada luctus. Cras lacinia, eros at dapibus molestie, risus tortor pretium ligula, eu malesuada tortor eros dapibus mi. Proin laoreet efficitur suscipit. Donec molestie volutpat euismod. Nulla gravida ligula in eros facilisis, sed dignissim tellus aliquam. Etiam convallis enim nisi, at suscipit tortor pulvinar at. "
+                    : "Even merchants who track their numbers closely often stumble into these pitfalls:"}
+                </div>
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__pJfH
+                  )}
+                >
+                  <React.Fragment>
+                    <React.Fragment>{""}</React.Fragment>
+                    {
+                      <h5
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.h5,
+                          projectcss.__wab_text,
+                          sty.h5__u16Vy
+                        )}
+                      >
+                        {"Relying on averages.\r"}
+                      </h5>
+                    }
+                    <React.Fragment>
+                      {
+                        "Simple trendlines ignore volatility. You end up planning for the middle and missing the peaks and\rvalleys that drive profit."
+                      }
+                    </React.Fragment>
+                  </React.Fragment>
+                </div>
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__bKn4
+                  )}
+                >
+                  <React.Fragment>
+                    <React.Fragment>{""}</React.Fragment>
+                    {
+                      <h5
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.h5,
+                          projectcss.__wab_text,
+                          sty.h5__lUpfc
+                        )}
+                      >
+                        {"Not separating product behavior. \r"}
+                      </h5>
+                    }
+                    <React.Fragment>
+                      {
+                        "One SKU might spike every 90 days, another every weekend. Aggregating them together hides their\rreal patterns."
+                      }
+                    </React.Fragment>
+                  </React.Fragment>
+                </div>
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__x1GF9
+                  )}
+                >
+                  <React.Fragment>
+                    <React.Fragment>{""}</React.Fragment>
+                    {
+                      <h5
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.h5,
+                          projectcss.__wab_text,
+                          sty.h5__hhCy8
+                        )}
+                      >
+                        {"Ignoring uncertainty.\r"}
+                      </h5>
+                    }
+                    <React.Fragment>
+                      {
+                        "Every forecast has risk, but most tools only show one number. Without a range, you can\u2019t tell what\u2019s\rsafe vs. speculative."
+                      }
+                    </React.Fragment>
+                  </React.Fragment>
+                </div>
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__qs2Kw
+                  )}
+                >
+                  <React.Fragment>
+                    <React.Fragment>{""}</React.Fragment>
+                    {
+                      <h5
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.h5,
+                          projectcss.__wab_text,
+                          sty.h5___8AN3
+                        )}
+                      >
+                        {"Failing to update often enough.\r"}
+                      </h5>
+                    }
+                    <React.Fragment>
+                      {
+                        "Forecasts built once per quarter go stale fast. Customer behavior shifts weekly, sometimes daily."
+                      }
+                    </React.Fragment>
+                  </React.Fragment>
+                </div>
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text___0GyC0
+                  )}
+                >
+                  {hasVariant(globalVariants, "screen", "mobileOnly")
+                    ? "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam a metus quis lorem malesuada luctus. Cras lacinia, eros at dapibus molestie, risus tortor pretium ligula, eu malesuada tortor eros dapibus mi. Proin laoreet efficitur suscipit. Donec molestie volutpat euismod. Nulla gravida ligula in eros facilisis, sed dignissim tellus aliquam. Etiam convallis enim nisi, at suscipit tortor pulvinar at. "
+                    : "Each of these mistakes erodes ROI because they push you to overreact \u2014 buying too much, or holding back\rwhen demand was actually climbing."}
+                </div>
+              </div>
+              <div className={classNames(projectcss.all, sty.freeBox__v2IKv)}>
+                <div className={classNames(projectcss.all, sty.freeBox__dZ2PG)}>
+                  <h3
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.h3,
+                      projectcss.__wab_text,
+                      sty.h3__dwg5
+                    )}
+                  >
+                    {hasVariant(globalVariants, "screen", "mobileOnly")
+                      ? "Professional And\nDedicated Consulting Services..."
+                      : "Turning Forecasts into ROI"}
+                  </h3>
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text__yvFuv
+                    )}
+                  >
+                    {hasVariant(globalVariants, "screen", "mobileOnly")
+                      ? "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam a metus quis lorem malesuada luctus. Cras lacinia, eros at dapibus molestie, risus tortor pretium ligula, eu malesuada tortor eros dapibus mi. Proin laoreet efficitur suscipit. Donec molestie volutpat euismod. Nulla gravida ligula in eros facilisis, sed dignissim tellus aliquam. Etiam convallis enim nisi, at suscipit tortor pulvinar at. "
+                      : "When you bring structure and consistency to forecasting, the ROI shows up in three areas:"}
+                  </div>
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text__tbAK
+                    )}
+                  >
+                    <React.Fragment>
+                      <React.Fragment>{""}</React.Fragment>
+                      {
+                        <h5
+                          className={classNames(
+                            projectcss.all,
+                            projectcss.h5,
+                            projectcss.__wab_text,
+                            sty.h5__oZiuy
+                          )}
+                        >
+                          {"1. Cash Flow Efficiency\r"}
+                        </h5>
+                      }
+                      <React.Fragment>
+                        {
+                          "You\u2019re investing only where it pays off. Less idle stock means more liquid\rcapital for ads or product development.."
+                        }
+                      </React.Fragment>
+                    </React.Fragment>
+                  </div>
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text__vc9H7
+                    )}
+                  >
+                    <React.Fragment>
+                      <React.Fragment>{""}</React.Fragment>
+                      {
+                        <h5
+                          className={classNames(
+                            projectcss.all,
+                            projectcss.h5,
+                            projectcss.__wab_text,
+                            sty.h5__pqgoC
+                          )}
+                        >
+                          {"2. Operational Stability \r"}
+                        </h5>
+                      }
+                      <React.Fragment>
+                        {
+                          "Smoother purchase cycles reduce rush orders and last-minute shipping\rcosts."
+                        }
+                      </React.Fragment>
+                    </React.Fragment>
+                  </div>
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text__fRO5
+                    )}
+                  >
+                    <React.Fragment>
+                      <React.Fragment>{""}</React.Fragment>
+                      {
+                        <h5
+                          className={classNames(
+                            projectcss.all,
+                            projectcss.h5,
+                            projectcss.__wab_text,
+                            sty.h5__idFRb
+                          )}
+                        >
+                          {"3. Strategic Confidence\r"}
+                        </h5>
+                      }
+                      <React.Fragment>
+                        {
+                          "With clear forecasts, you can plan promotions or seasonal campaigns\rmonths in advance without guessing."
+                        }
+                      </React.Fragment>
+                    </React.Fragment>
+                  </div>
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text___7Rd5X
+                    )}
+                  >
+                    {hasVariant(globalVariants, "screen", "mobileOnly")
+                      ? "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam a metus quis lorem malesuada luctus. Cras lacinia, eros at dapibus molestie, risus tortor pretium ligula, eu malesuada tortor eros dapibus mi. Proin laoreet efficitur suscipit. Donec molestie volutpat euismod. Nulla gravida ligula in eros facilisis, sed dignissim tellus aliquam. Etiam convallis enim nisi, at suscipit tortor pulvinar at. "
+                      : "The math is simple: fewer surprises = higher margin."}
+                  </div>
+                </div>
+              </div>
+              <div className={classNames(projectcss.all, sty.freeBox__wZmSb)}>
+                <h3
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.h3,
+                    projectcss.__wab_text,
+                    sty.h3___85DB9
+                  )}
+                >
+                  {hasVariant(globalVariants, "screen", "mobileOnly")
+                    ? "Professional And\nDedicated Consulting Services..."
+                    : "Where Most Tools Fall Short"}
+                </h3>
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__mAu3Y
+                  )}
+                >
+                  {hasVariant(globalVariants, "screen", "mobileOnly")
+                    ? "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam a metus quis lorem malesuada luctus. Cras lacinia, eros at dapibus molestie, risus tortor pretium ligula, eu malesuada tortor eros dapibus mi. Proin laoreet efficitur suscipit. Donec molestie volutpat euismod. Nulla gravida ligula in eros facilisis, sed dignissim tellus aliquam. Etiam convallis enim nisi, at suscipit tortor pulvinar at. "
+                    : "The problem isn\u2019t that small merchants lack data \u2014 it\u2019s that most forecasting tools treat their data like it\rbelongs to a Fortune 500 company. They assume you have analysts, time, and context to interpret abstract\rmodels."}
+                </div>
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__aZoWk
+                  )}
+                >
+                  {
+                    "So they give you charts and confidence scores without explaining what to do with them."
+                  }
+                </div>
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__dv3Uh
+                  )}
+                >
+                  {
+                    "Traditional systems also depend on \u201ctrained\u201d models \u2014 algorithms adjusted manually to fit your past data.\rThey perform well until your sales pattern changes (a new product line, a viral promotion, a new channel).\rThen they fail quietly, and you don\u2019t notice until it\u2019s too late."
+                  }
+                </div>
+              </div>
+              <div className={classNames(projectcss.all, sty.freeBox___4TRwn)}>
+                <h3
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.h3,
+                    projectcss.__wab_text,
+                    sty.h3__mUfPk
+                  )}
+                >
+                  {hasVariant(globalVariants, "screen", "mobileOnly")
+                    ? "Professional And\nDedicated Consulting Services..."
+                    : "The TSF Approach: Forecasting That Works Like Merchants Think"}
+                </h3>
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text___71Thd
+                  )}
+                >
+                  {
+                    "TSF Lite takes a different path. Instead of fitting one big model to your data, it treats each day as a separate\rforecasting problem."
+                  }
+                </div>
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text___9ZhE
+                  )}
+                >
+                  <React.Fragment>
+                    <React.Fragment>
+                      {
+                        "For every date in your forecast window, TSF Lite compares "
+                      }
+                    </React.Fragment>
+                    <span
+                      className={"plasmic_default__all plasmic_default__span"}
+                      style={{ fontWeight: 700 }}
+                    >
+                      {"up to 800 different forecast models"}
+                    </span>
+                    <React.Fragment>
+                      {" \u2014 each\rderived from a library of "}
+                    </React.Fragment>
+                    <span
+                      className={"plasmic_default__all plasmic_default__span"}
+                      style={{ fontWeight: 700 }}
+                    >
+                      {"10 seasonal models"}
+                    </span>
+                    <React.Fragment>{" and "}</React.Fragment>
+                    <span
+                      className={"plasmic_default__all plasmic_default__span"}
+                      style={{ fontWeight: 700 }}
+                    >
+                      {"2 seasonal series"}
+                    </span>
+                    <React.Fragment>{", with "}</React.Fragment>
+                    <span
+                      className={"plasmic_default__all plasmic_default__span"}
+                      style={{ fontWeight: 700 }}
+                    >
+                      {"40 unique forecasts per combination"}
+                    </span>
+                    <React.Fragment>
+                      {
+                        ". It\rselects the model that has proven most accurate for that specific date, based on historical performance.\rThe result is a forecast that moves with your business instead of flattening it."
+                      }
+                    </React.Fragment>
+                  </React.Fragment>
+                </div>
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__oaTu5
+                  )}
+                >
+                  <React.Fragment>
+                    <React.Fragment>
+                      {
+                        "The full TSF Engine uses an even larger Seasonal Model library \u2014 more than"
+                      }
+                    </React.Fragment>
+                    <span
+                      className={"plasmic_default__all plasmic_default__span"}
+                      style={{ fontWeight: 700 }}
+                    >
+                      {" 25 seasonal models"}
+                    </span>
+                    <React.Fragment>{", each with\r "}</React.Fragment>
+                    <span
+                      className={"plasmic_default__all plasmic_default__span"}
+                      style={{ fontWeight: 700 }}
+                    >
+                      {"3 seasonal series"}
+                    </span>
+                    <React.Fragment>{", generating over "}</React.Fragment>
+                    <span
+                      className={"plasmic_default__all plasmic_default__span"}
+                      style={{ fontWeight: 700 }}
+                    >
+                      {"3,000 unique forecast models"}
+                    </span>
+                    <React.Fragment>
+                      {
+                        " for monthly forecasts and another 3,000 for\r quarterly forecasts. Not every seasonal model is appropriate for every dataset, but the library ensures that\rTSF can handle everything from 2 years to 20 years of historical data."
+                      }
+                    </React.Fragment>
+                  </React.Fragment>
+                </div>
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__lkIdx
+                  )}
+                >
+                  <React.Fragment>
+                    <React.Fragment>
+                      {"The output is visual and immediate. The "}
+                    </React.Fragment>
+                    <span
+                      className={"plasmic_default__all plasmic_default__span"}
+                      style={{ fontWeight: 700 }}
+                    >
+                      {"gold line "}
+                    </span>
+                    <React.Fragment>
+                      {"shows your daily expected sales. The "}
+                    </React.Fragment>
+                    <span
+                      className={"plasmic_default__all plasmic_default__span"}
+                      style={{ fontWeight: 700 }}
+                    >
+                      {"green zone "}
+                    </span>
+                    <React.Fragment>
+                      {
+                        "shows your 85\u201395% confidence range \u2014\u00a0your safe planning window. "
+                      }
+                    </React.Fragment>
+                  </React.Fragment>
+                </div>
+                <PlasmicImg__
+                  alt={""}
+                  className={classNames(sty.img__yxFcA)}
+                  displayHeight={"auto"}
+                  displayMaxHeight={"none"}
+                  displayMaxWidth={"100%"}
+                  displayMinHeight={"0"}
+                  displayMinWidth={"0"}
+                  displayWidth={"auto"}
+                  loading={"lazy"}
+                  src={{
+                    src: "/plasmic/tsf_demand_website/images/forecastOnly5Png.png",
+                    fullWidth: 1000,
+                    fullHeight: 690,
+                    aspectRatio: undefined
+                  }}
+                />
+
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__j3Ir8
+                  )}
+                >
+                  {
+                    "You can read it at a glance: if your sales stay inside the green, your plan is sound. If they break out of it, you\r know exactly where to adjust."
+                  }
+                </div>
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__rZpOe
+                  )}
+                >
+                  {
+                    "Behind the scenes, this process is 100% objective \u2014 no subjective tuning, no overfitting. Every choice is based on historical accuracy patterns across your own data sets. "
+                  }
+                </div>
+                <div className={classNames(projectcss.all, sty.freeBox__bqEwK)}>
+                  <h3
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.h3,
+                      projectcss.__wab_text,
+                      sty.h3__y6M1J
+                    )}
+                  >
+                    {hasVariant(globalVariants, "screen", "mobileOnly")
+                      ? "Professional And\nDedicated Consulting Services..."
+                      : "How This Converts to ROI for You"}
+                  </h3>
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text__f7HYe
+                    )}
+                  >
+                    {hasVariant(globalVariants, "screen", "mobileOnly")
+                      ? "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam a metus quis lorem malesuada luctus. Cras lacinia, eros at dapibus molestie, risus tortor pretium ligula, eu malesuada tortor eros dapibus mi. Proin laoreet efficitur suscipit. Donec molestie volutpat euismod. Nulla gravida ligula in eros facilisis, sed dignissim tellus aliquam. Etiam convallis enim nisi, at suscipit tortor pulvinar at. "
+                      : "For a typical Shopify merchant, a demand plan usually revolves around three recurring tasks:"}
+                  </div>
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text__prOrr
+                    )}
+                  >
+                    <React.Fragment>
+                      <React.Fragment>{""}</React.Fragment>
+                      {
+                        <h5
+                          className={classNames(
+                            projectcss.all,
+                            projectcss.h5,
+                            projectcss.__wab_text,
+                            sty.h5___2JIuD
+                          )}
+                        >
+                          {"1. Faster decisions.\r"}
+                        </h5>
+                      }
+                      <React.Fragment>
+                        {
+                          "You spend minutes reviewing forecasts, instead of hours analyzing spreadsheets."
+                        }
+                      </React.Fragment>
+                    </React.Fragment>
+                  </div>
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text__jEnka
+                    )}
+                  >
+                    <React.Fragment>
+                      <React.Fragment>{""}</React.Fragment>
+                      {
+                        <h5
+                          className={classNames(
+                            projectcss.all,
+                            projectcss.h5,
+                            projectcss.__wab_text,
+                            sty.h5__df5X
+                          )}
+                        >
+                          {"2. Reduced risk. \r"}
+                        </h5>
+                      }
+                      <React.Fragment>
+                        {
+                          "You can hold less inventory without fearing stockouts because you know your safe range."
+                        }
+                      </React.Fragment>
+                    </React.Fragment>
+                  </div>
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text__x9B5E
+                    )}
+                  >
+                    <React.Fragment>
+                      <React.Fragment>{""}</React.Fragment>
+                      {
+                        <h5
+                          className={classNames(
+                            projectcss.all,
+                            projectcss.h5,
+                            projectcss.__wab_text,
+                            sty.h5__hotiP
+                          )}
+                        >
+                          {"3. Improved margins.\r"}
+                        </h5>
+                      }
+                      <React.Fragment>
+                        {
+                          "Less overstock means less capital trapped on the shelf \u2014 which compounds every month.."
+                        }
+                      </React.Fragment>
+                    </React.Fragment>
+                  </div>
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text__kr9Gx
+                    )}
+                  >
+                    <React.Fragment>
+                      <React.Fragment>{""}</React.Fragment>
+                      {
+                        <h5
+                          className={classNames(
+                            projectcss.all,
+                            projectcss.h5,
+                            projectcss.__wab_text,
+                            sty.h5__dBbXl
+                          )}
+                        >
+                          {"4. Marketing alignment.\r"}
+                        </h5>
+                      }
+                      <React.Fragment>
+                        {
+                          "Run promotions and ads against forecast windows you can trust. Sell more when confidence is high; conserve when it's not."
+                        }
+                      </React.Fragment>
+                    </React.Fragment>
+                  </div>
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text__eDslC
+                    )}
+                  >
+                    {hasVariant(globalVariants, "screen", "mobileOnly")
+                      ? "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam a metus quis lorem malesuada luctus. Cras lacinia, eros at dapibus molestie, risus tortor pretium ligula, eu malesuada tortor eros dapibus mi. Proin laoreet efficitur suscipit. Donec molestie volutpat euismod. Nulla gravida ligula in eros facilisis, sed dignissim tellus aliquam. Etiam convallis enim nisi, at suscipit tortor pulvinar at. "
+                      : "The payoff isn\u2019t theoretical. Even modest improvements in forecast accuracy translate directly into cash flow\rand gross margin. For many merchants, a 5% improvement in forecast accuracy can mean 10\u201315% more\rusable cash each month."}
+                  </div>
+                </div>
+              </div>
+              <div className={classNames(projectcss.all, sty.freeBox__i55De)}>
+                <h3
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.h3,
+                    projectcss.__wab_text,
+                    sty.h3__oyKek
+                  )}
+                >
+                  {hasVariant(globalVariants, "screen", "mobileOnly")
+                    ? "Professional And\nDedicated Consulting Services..."
+                    : "Conclusion: Predictability Is the Real Superpower"}
+                </h3>
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text___4RWl
                   )}
                 >
                   {hasVariant(globalVariants, "screen", "mobileOnly")
                     ? "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam a metus quis lorem malesuada luctus. Cras lacinia, eros at dapibus molestie, risus tortor pretium ligula, eu malesuada tortor eros dapibus mi. Proin laoreet efficitur suscipit. Donec molestie volutpat euismod. Nulla gravida ligula in eros facilisis, sed dignissim tellus aliquam. Etiam convallis enim nisi, at suscipit tortor pulvinar at. "
                     : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam a metus quis lorem malesuada luctus. Cras lacinia, eros at dapibus molestie, risus tortor pretium ligula, eu malesuada tortor eros dapibus mi. Proin laoreet efficitur suscipit. Donec molestie volutpat euismod. Nulla gravida ligula in eros facilisis, sed dignissim tellus aliquam. Etiam convallis enim nisi, at suscipit tortor pulvinar at. "}
+                </div>
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__qjIJz
+                  )}
+                >
+                  {
+                    "You don\u2019t need to predict the future to win in e-commerce. You just need to remove the guesswork from\ryour next 30 days \u2014 or 90, if you opt for quarterly forecasts."
+                  }
+                </div>
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__nFsTe
+                  )}
+                >
+                  {
+                    "Demand planning turns data into control \u2014 and with TSF Lite, that control becomes automatic."
+                  }
+                </div>
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__hnR3U
+                  )}
+                >
+                  {
+                    "Start using your own data as a compass instead of a mystery. The green zone will tell you when to act, the\rgold line will show you where you\u2019re headed."
+                  }
+                </div>
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text___464D
+                  )}
+                >
+                  <React.Fragment>
+                    <React.Fragment>{""}</React.Fragment>
+                    {
+                      <h3
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.h3,
+                          projectcss.__wab_text,
+                          sty.h3__piouu
+                        )}
+                      >
+                        <React.Fragment>
+                          <React.Fragment>
+                            {"Join the early access list \u2192 "}
+                          </React.Fragment>
+                          {
+                            <PlasmicLink__
+                              data-plasmic-name={"link"}
+                              data-plasmic-override={overrides.link}
+                              className={classNames(
+                                projectcss.all,
+                                projectcss.a,
+                                projectcss.__wab_text,
+                                projectcss.plasmic_default__inline,
+                                sty.link
+                              )}
+                              component={Link}
+                              href={`/interest`}
+                              platform={"nextjs"}
+                            >
+                              {"tsfdemand.com/interest"}
+                            </PlasmicLink__>
+                          }
+                          <React.Fragment>{"\r"}</React.Fragment>
+                        </React.Fragment>
+                      </h3>
+                    }
+                    <React.Fragment>{""}</React.Fragment>
+                  </React.Fragment>
                 </div>
               </div>
             </div>
@@ -321,20 +1305,22 @@ const PlasmicDescendants = {
     "pageBanner",
     "columns",
     "h1",
-    "img",
     "mainSection2",
     "container3",
+    "ul",
+    "link",
     "tsfFooter"
   ],
 
   tsfDemandMainNavigation: ["tsfDemandMainNavigation"],
-  mainSection: ["mainSection", "pageBanner", "columns", "h1", "img"],
-  pageBanner: ["pageBanner", "columns", "h1", "img"],
-  columns: ["columns", "h1", "img"],
+  mainSection: ["mainSection", "pageBanner", "columns", "h1"],
+  pageBanner: ["pageBanner", "columns", "h1"],
+  columns: ["columns", "h1"],
   h1: ["h1"],
-  img: ["img"],
-  mainSection2: ["mainSection2", "container3"],
-  container3: ["container3"],
+  mainSection2: ["mainSection2", "container3", "ul", "link"],
+  container3: ["container3", "ul", "link"],
+  ul: ["ul"],
+  link: ["link"],
   tsfFooter: ["tsfFooter"]
 };
 
@@ -375,9 +1361,10 @@ export const PlasmicDemandPlanningRoi = Object.assign(
     pageBanner: makeNodeComponent("pageBanner"),
     columns: makeNodeComponent("columns"),
     h1: makeNodeComponent("h1"),
-    img: makeNodeComponent("img"),
     mainSection2: makeNodeComponent("mainSection2"),
     container3: makeNodeComponent("container3"),
+    ul: makeNodeComponent("ul"),
+    link: makeNodeComponent("link"),
     tsfFooter: makeNodeComponent("tsfFooter"),
     // Metadata about props expected for PlasmicDemandPlanningRoi
     internalVariantProps: PlasmicDemandPlanningRoi__VariantProps,
