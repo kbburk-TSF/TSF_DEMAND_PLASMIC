@@ -16,17 +16,11 @@ import {
   classNames,
   createPlasmicElementProxy,
   deriveRenderOpts,
-  generateStateOnChangeProp,
-  hasVariant,
-  useDollarState
+  hasVariant
 } from "@plasmicapp/react-web";
 import { useDataEnv } from "@plasmicapp/react-web/lib/host";
 import TsfDemandMainNavigation from "../../TsfDemandMainNavigation"; // plasmic-import: RS9jruOWtFtt/component
-import TextField from "../../TextField"; // plasmic-import: 21UNPRpdDW_C/component
-import Select from "../../Select"; // plasmic-import: bO30u1Xaq46V/component
-import MenuItem from "../../MenuItem"; // plasmic-import: X51Fss2dPhJ6/component
-import Checkbox from "../../Checkbox"; // plasmic-import: 5tftsYAJSYY2/component
-import Button from "../../Button"; // plasmic-import: -U7nCsYlsFbS/component
+import { Iframe } from "@plasmicpkgs/plasmic-basic-components";
 import TsfFooter from "../../TsfFooter"; // plasmic-import: NmgYw5lHKANx/component
 import { _useGlobalVariants } from "./plasmic"; // plasmic-import: 8yhBRaKsBf3R2wKMhT5dUU/projectModule
 import { _useStyleTokens } from "./PlasmicStyleTokensProvider"; // plasmic-import: 8yhBRaKsBf3R2wKMhT5dUU/styleTokensProvider
@@ -70,48 +64,6 @@ function PlasmicContact__RenderFunc(props) {
   const refsRef = React.useRef({});
   const $refs = refsRef.current;
   const globalVariants = _useGlobalVariants();
-  const stateSpecs = React.useMemo(
-    () => [
-      {
-        path: "agree.isSelected",
-        type: "private",
-        variableType: "boolean",
-        initFunc: ({ $props, $state, $queries, $ctx }) => undefined
-      },
-      {
-        path: "name.value",
-        type: "private",
-        variableType: "text",
-        initFunc: ({ $props, $state, $queries, $ctx }) => undefined
-      },
-      {
-        path: "email.value",
-        type: "private",
-        variableType: "text",
-        initFunc: ({ $props, $state, $queries, $ctx }) => undefined
-      },
-      {
-        path: "subject.value",
-        type: "private",
-        variableType: "text",
-        initFunc: ({ $props, $state, $queries, $ctx }) => undefined
-      },
-      {
-        path: "message.value",
-        type: "private",
-        variableType: "text",
-        initFunc: ({ $props, $state, $queries, $ctx }) => undefined
-      }
-    ],
-
-    [$props, $ctx, $refs]
-  );
-  const $state = useDollarState(stateSpecs, {
-    $props,
-    $ctx,
-    $queries: {},
-    $refs
-  });
   const styleTokensClassNames = _useStyleTokens();
   return (
     <React.Fragment>
@@ -153,7 +105,11 @@ function PlasmicContact__RenderFunc(props) {
             className={classNames(projectcss.all, sty.pageBanner)}
           >
             <div className={classNames(projectcss.all, sty.freeBox___8HxQr)}>
-              <div className={classNames(projectcss.all, sty.columns___1ZRzo)}>
+              <div
+                data-plasmic-name={"columns"}
+                data-plasmic-override={overrides.columns}
+                className={classNames(projectcss.all, sty.columns)}
+              >
                 <div className={classNames(projectcss.all, sty.column__zmUoe)}>
                   <div
                     className={classNames(projectcss.all, sty.freeBox__mnYyc)}
@@ -168,25 +124,29 @@ function PlasmicContact__RenderFunc(props) {
                         sty.h1
                       )}
                     >
-                      {"Contact Us"}
+                      {"Contact TSF"}
                     </h1>
                     <div
+                      data-plasmic-name={"text"}
+                      data-plasmic-override={overrides.text}
                       className={classNames(
                         projectcss.all,
                         projectcss.__wab_text,
-                        sty.text__qpkTz
+                        sty.text
                       )}
                     >
                       {
-                        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,"
+                        "Got questions? Looking to explore partnership or investment opportunities? Want to interview Kevin B. Burk on your podcast?  This form does it all. "
                       }
                     </div>
                   </div>
                 </div>
                 <div className={classNames(projectcss.all, sty.column__og90J)}>
                   <PlasmicImg__
+                    data-plasmic-name={"img"}
+                    data-plasmic-override={overrides.img}
                     alt={""}
-                    className={classNames(sty.img__ibdzA)}
+                    className={classNames(sty.img)}
                     displayHeight={"auto"}
                     displayMaxHeight={"none"}
                     displayMaxWidth={
@@ -227,176 +187,15 @@ function PlasmicContact__RenderFunc(props) {
             data-plasmic-override={overrides.mainSection}
             className={classNames(projectcss.all, sty.mainSection)}
           >
-            <div className={classNames(projectcss.all, sty.columns__yMLr)}>
-              <div className={classNames(projectcss.all, sty.column___5TOw5)}>
-                <form
-                  data-plasmic-name={"form"}
-                  data-plasmic-override={overrides.form}
-                  action={"https://example.com"}
-                  className={classNames(projectcss.all, sty.form)}
-                >
-                  <h3
-                    data-plasmic-name={"h3"}
-                    data-plasmic-override={overrides.h3}
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.h3,
-                      projectcss.__wab_text,
-                      sty.h3
-                    )}
-                  >
-                    {"Get in touch"}
-                  </h3>
-                  <TextField
-                    data-plasmic-name={"name"}
-                    data-plasmic-override={overrides.name}
-                    className={classNames("__wab_instance", sty.name)}
-                    label={"Name"}
-                    onChange={async (...eventArgs) => {
-                      generateStateOnChangeProp($state, [
-                        "name",
-                        "value"
-                      ]).apply(null, eventArgs);
-                      if (
-                        eventArgs.length > 1 &&
-                        eventArgs[1] &&
-                        eventArgs[1]._plasmic_state_init_
-                      ) {
-                        return;
-                      }
-                    }}
-                    placeholder={"Your name..."}
-                  />
-
-                  <TextField
-                    data-plasmic-name={"email"}
-                    data-plasmic-override={overrides.email}
-                    className={classNames("__wab_instance", sty.email)}
-                    label={"Email"}
-                    onChange={async (...eventArgs) => {
-                      generateStateOnChangeProp($state, [
-                        "email",
-                        "value"
-                      ]).apply(null, eventArgs);
-                      if (
-                        eventArgs.length > 1 &&
-                        eventArgs[1] &&
-                        eventArgs[1]._plasmic_state_init_
-                      ) {
-                        return;
-                      }
-                    }}
-                    placeholder={"example@domain.com"}
-                  />
-
-                  <Select
-                    data-plasmic-name={"subject"}
-                    data-plasmic-override={overrides.subject}
-                    className={classNames("__wab_instance", sty.subject)}
-                    items={
-                      <React.Fragment>
-                        <MenuItem label={"Sales"} value={"sales"} />
-                        <MenuItem label={"Partnership"} value={"partnership"} />
-                        <MenuItem label={"Something else"} value={"other"} />
-                      </React.Fragment>
-                    }
-                    label={"Subject"}
-                    onChange={async (...eventArgs) => {
-                      generateStateOnChangeProp($state, [
-                        "subject",
-                        "value"
-                      ]).apply(null, eventArgs);
-                      if (
-                        eventArgs.length > 1 &&
-                        eventArgs[1] &&
-                        eventArgs[1]._plasmic_state_init_
-                      ) {
-                        return;
-                      }
-                    }}
-                    placeholder={"Subject..."}
-                  />
-
-                  <TextField
-                    data-plasmic-name={"message"}
-                    data-plasmic-override={overrides.message}
-                    className={classNames("__wab_instance", sty.message)}
-                    label={"Message"}
-                    multiLine={true}
-                    onChange={async (...eventArgs) => {
-                      generateStateOnChangeProp($state, [
-                        "message",
-                        "value"
-                      ]).apply(null, eventArgs);
-                      if (
-                        eventArgs.length > 1 &&
-                        eventArgs[1] &&
-                        eventArgs[1]._plasmic_state_init_
-                      ) {
-                        return;
-                      }
-                    }}
-                  />
-
-                  <Checkbox
-                    data-plasmic-name={"agree"}
-                    data-plasmic-override={overrides.agree}
-                    className={classNames("__wab_instance", sty.agree)}
-                    label={"Agree to send form data to us?"}
-                    onChange={async (...eventArgs) => {
-                      generateStateOnChangeProp($state, [
-                        "agree",
-                        "isSelected"
-                      ]).apply(null, eventArgs);
-                      if (
-                        eventArgs.length > 1 &&
-                        eventArgs[1] &&
-                        eventArgs[1]._plasmic_state_init_
-                      ) {
-                        return;
-                      }
-                    }}
-                  />
-
-                  <Button
-                    data-plasmic-name={"submit"}
-                    data-plasmic-override={overrides.submit}
-                    className={classNames("__wab_instance", sty.submit)}
-                    label={
-                      <div
-                        className={classNames(
-                          projectcss.all,
-                          projectcss.__wab_text,
-                          sty.text__ctKhh
-                        )}
-                      >
-                        {"Submit"}
-                      </div>
-                    }
-                    submitsForm={true}
-                  />
-                </form>
-              </div>
-              <div className={classNames(projectcss.all, sty.column__qNrRz)}>
-                <PlasmicImg__
-                  alt={""}
-                  className={classNames(sty.img__sQlrw)}
-                  displayHeight={"100%"}
-                  displayMaxHeight={"none"}
-                  displayMaxWidth={"100%"}
-                  displayMinHeight={"0"}
-                  displayMinWidth={"0"}
-                  displayWidth={"100%"}
-                  loading={"lazy"}
-                  src={{
-                    src: "/plasmic/tsf_demand_website/images/corinneKutzTMi2R5NfoUnsplashJpg.jpg",
-                    fullWidth: 1920,
-                    fullHeight: 1280,
-                    aspectRatio: undefined
-                  }}
-                />
-              </div>
-            </div>
+            <Iframe
+              data-plasmic-name={"iframe"}
+              data-plasmic-override={overrides.iframe}
+              className={classNames("__wab_instance", sty.iframe)}
+              preview={true}
+              src={"https://tally.so/embed/mYNgbz?alignLeft=1&dynamicHeight=1"}
+              srcDoc={"<div><h3>Heading</h3><p>Example text...</p></div>"}
+              useHtml={false}
+            />
           </div>
           <TsfFooter
             data-plasmic-name={"tsfFooter"}
@@ -414,52 +213,23 @@ const PlasmicDescendants = {
     "root",
     "tsfDemandMainNavigation",
     "pageBanner",
+    "columns",
     "h1",
+    "text",
+    "img",
     "mainSection",
-    "form",
-    "h3",
-    "name",
-    "email",
-    "subject",
-    "message",
-    "agree",
-    "submit",
+    "iframe",
     "tsfFooter"
   ],
 
   tsfDemandMainNavigation: ["tsfDemandMainNavigation"],
-  pageBanner: ["pageBanner", "h1"],
+  pageBanner: ["pageBanner", "columns", "h1", "text", "img"],
+  columns: ["columns", "h1", "text", "img"],
   h1: ["h1"],
-  mainSection: [
-    "mainSection",
-    "form",
-    "h3",
-    "name",
-    "email",
-    "subject",
-    "message",
-    "agree",
-    "submit"
-  ],
-
-  form: [
-    "form",
-    "h3",
-    "name",
-    "email",
-    "subject",
-    "message",
-    "agree",
-    "submit"
-  ],
-
-  h3: ["h3"],
-  name: ["name"],
-  email: ["email"],
-  subject: ["subject"],
-  message: ["message"],
-  agree: ["agree"],
-  submit: ["submit"],
+  text: ["text"],
+  img: ["img"],
+  mainSection: ["mainSection", "iframe"],
+  iframe: ["iframe"],
   tsfFooter: ["tsfFooter"]
 };
 
@@ -497,16 +267,12 @@ export const PlasmicContact = Object.assign(
     // Helper components rendering sub-elements
     tsfDemandMainNavigation: makeNodeComponent("tsfDemandMainNavigation"),
     pageBanner: makeNodeComponent("pageBanner"),
+    columns: makeNodeComponent("columns"),
     h1: makeNodeComponent("h1"),
+    text: makeNodeComponent("text"),
+    img: makeNodeComponent("img"),
     mainSection: makeNodeComponent("mainSection"),
-    form: makeNodeComponent("form"),
-    h3: makeNodeComponent("h3"),
-    _name: makeNodeComponent("name"),
-    email: makeNodeComponent("email"),
-    subject: makeNodeComponent("subject"),
-    message: makeNodeComponent("message"),
-    agree: makeNodeComponent("agree"),
-    submit: makeNodeComponent("submit"),
+    iframe: makeNodeComponent("iframe"),
     tsfFooter: makeNodeComponent("tsfFooter"),
     // Metadata about props expected for PlasmicContact
     internalVariantProps: PlasmicContact__VariantProps,

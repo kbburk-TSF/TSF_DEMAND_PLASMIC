@@ -26,6 +26,7 @@ import { BaseDialogTrigger } from "@plasmicpkgs/react-aria/skinny/registerDialog
 import Button from "../../Button"; // plasmic-import: -U7nCsYlsFbS/component
 import { BaseModal } from "@plasmicpkgs/react-aria/skinny/registerModal";
 import { BaseDialog } from "@plasmicpkgs/react-aria/skinny/registerDialog";
+import { Iframe } from "@plasmicpkgs/plasmic-basic-components";
 import { _useStyleTokens } from "./PlasmicStyleTokensProvider"; // plasmic-import: 8yhBRaKsBf3R2wKMhT5dUU/styleTokensProvider
 import "@plasmicapp/react-web/lib/plasmic.css";
 import projectcss from "./plasmic.module.css"; // plasmic-import: 8yhBRaKsBf3R2wKMhT5dUU/projectcss
@@ -204,26 +205,20 @@ function PlasmicModal__RenderFunc(props) {
                   <div
                     className={classNames(projectcss.all, sty.freeBox__o7XGp)}
                   >
-                    <div
+                    <Iframe
                       className={classNames(
-                        projectcss.all,
-                        projectcss.__wab_text,
-                        sty.text___61Vxp
+                        "__wab_instance",
+                        sty.iframe__anzKj
                       )}
-                    >
-                      {"This is a Modal!"}
-                    </div>
-                    <div
-                      className={classNames(
-                        projectcss.all,
-                        projectcss.__wab_text,
-                        sty.text___0XoQc
-                      )}
-                    >
-                      {
-                        "You can put anything here!\n\nLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\n\nLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+                      preview={true}
+                      src={
+                        "https://tally.so/embed/3xOodd?alignLeft=1&dynamicHeight=1"
                       }
-                    </div>
+                      srcDoc={
+                        "<div><h3>Heading</h3><p>Example text...</p></div>"
+                      }
+                      useHtml={false}
+                    />
                   </div>
                 ),
 
@@ -304,7 +299,23 @@ function PlasmicModal__RenderFunc(props) {
       trigger={
         (hasVariant($state, "noTrigger", "noTrigger") ? false : true)
           ? renderPlasmicSlot({
-              defaultContents: <Button label={"Open Modal"} />,
+              defaultContents: (
+                <Button
+                  color={"tsfDark"}
+                  label={
+                    <div
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.__wab_text,
+                        sty.text__zlZMc
+                      )}
+                    >
+                      {"Join the Beta"}
+                    </div>
+                  }
+                />
+              ),
+
               value: args.trigger
             })
           : null
