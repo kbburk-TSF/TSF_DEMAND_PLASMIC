@@ -192,7 +192,9 @@ function PlasmicContact__RenderFunc(props) {
               data-plasmic-override={overrides.iframe}
               className={classNames("__wab_instance", sty.iframe)}
               preview={true}
-              src={"https://tally.so/embed/mYNgbz?alignLeft=1&dynamicHeight=1"}
+              src={
+                "https://tally.so/embed/mYNgbz?alignLeft=1&hideTitle=1&dynamicHeight=1"
+              }
               srcDoc={"<div><h3>Heading</h3><p>Example text...</p></div>"}
               useHtml={false}
             />
