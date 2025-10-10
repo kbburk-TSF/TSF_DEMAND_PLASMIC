@@ -901,9 +901,9 @@ function PlasmicTsfLiteApp__RenderFunc(props) {
                         displayWidth={"auto"}
                         loading={"lazy"}
                         src={{
-                          src: "/plasmic/tsf_demand_website/images/aqiForecastOnlyPng.png",
+                          src: "/plasmic/tsf_demand_website/images/tsfInAction02Png2.png",
                           fullWidth: 1200,
-                          fullHeight: 483,
+                          fullHeight: 435,
                           aspectRatio: undefined
                         }}
                       />

@@ -117,6 +117,55 @@
   color: #05050599;
   flex-shrink: 0;
 }
+.link__x5J3 {
+  position: relative;
+  transition-property: all;
+  transition-duration: 0.5s;
+  transition-timing-function: ease-out;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  column-gap: 8px;
+  -webkit-transition-property: all;
+  -webkit-transition-timing-function: ease-out;
+  -webkit-transition-duration: 0.5s;
+  border-radius: 6px;
+  padding: 10px 16px;
+  border: 1px solid transparent;
+}
+.svg__oqLd4 {
+  width: 24px;
+  height: 24px;
+  position: relative;
+  object-fit: cover;
+  color: #05050599;
+  flex-shrink: 0;
+}
+.text__urO1G {
+  font-family: "Montserrat", sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  font-style: normal;
+  color: #050505;
+  text-align: left;
+  text-transform: none;
+  line-height: 26px;
+  letter-spacing: normal;
+  white-space: pre-wrap;
+  user-select: text;
+  text-decoration-line: none;
+  text-overflow: clip;
+}
+.svg___3Smnu {
+  width: 24px;
+  height: 24px;
+  position: relative;
+  object-fit: cover;
+  color: #05050599;
+  flex-shrink: 0;
+}
 .link__tJiJg {
   position: relative;
   transition-property: all;
@@ -158,6 +207,9 @@
   text-decoration-line: none;
   text-overflow: clip;
   height: auto;
+}
+.textglobal_unnamedGlobalGroupOfVariants_unnamedVariant__u8ZOtFzl1R {
+  color: var(--token-ycRh5DILhgk3);
 }
 .svg__bS0Cy {
   width: 24px;
@@ -208,6 +260,9 @@
   text-decoration-line: none;
   text-overflow: clip;
 }
+.textglobal_unnamedGlobalGroupOfVariants_unnamedVariant__maKtHfzl1R {
+  color: var(--token-ycRh5DILhgk3);
+}
 .svg__ymyaE {
   width: 24px;
   height: 24px;
@@ -257,6 +312,9 @@
   text-decoration-line: none;
   text-overflow: clip;
 }
+.textglobal_unnamedGlobalGroupOfVariants_unnamedVariant__bPkQmfzl1R {
+  color: var(--token-ycRh5DILhgk3);
+}
 .svg__se5M3 {
   width: 24px;
   height: 24px;
@@ -305,6 +363,9 @@
   user-select: text;
   text-decoration-line: none;
   text-overflow: clip;
+}
+.textglobal_unnamedGlobalGroupOfVariants_unnamedVariant___6KZiLfzl1R {
+  color: var(--token-ycRh5DILhgk3);
 }
 .svg___7JiNx {
   width: 24px;

@@ -108,7 +108,15 @@ function PlasmicHomepage__RenderFunc(props) {
             data-plasmic-override={overrides.tsfDemandMainNavigation}
             className={classNames(
               "__wab_instance",
-              sty.tsfDemandMainNavigation
+              sty.tsfDemandMainNavigation,
+              {
+                [sty.tsfDemandMainNavigationglobal_unnamedGlobalGroupOfVariants_unnamedVariant]:
+                  hasVariant(
+                    globalVariants,
+                    "unnamedGlobalGroupOfVariants",
+                    "unnamedVariant"
+                  )
+              }
             )}
           />
 
@@ -273,64 +281,6 @@ function PlasmicHomepage__RenderFunc(props) {
                           className={classNames(
                             projectcss.all,
                             projectcss.__wab_text,
-                            sty.text__x5L2E
-                          )}
-                        >
-                          <React.Fragment>
-                            <span
-                              className={
-                                "plasmic_default__all plasmic_default__span"
-                              }
-                              style={{ color: "var(--token-Ry9eGMy91QvA)" }}
-                            >
-                              {
-                                "Traditional models like ARIMA, SES, HWES, Prophet, and other ML approaches smooth out volatility, missing critical intra-month and intra-quarter changes. A monthly or quarterly forecast horizon usually resolves to a trend line with no guarantee of reliability."
-                              }
-                            </span>
-                          </React.Fragment>
-                        </div>
-                        <div
-                          className={classNames(
-                            projectcss.all,
-                            projectcss.__wab_text,
-                            sty.text__u7Y3G
-                          )}
-                        >
-                          <React.Fragment>
-                            <span
-                              className={
-                                "plasmic_default__all plasmic_default__span"
-                              }
-                              style={{ color: "var(--token-Ry9eGMy91QvA)" }}
-                            >
-                              {
-                                "As you can see below, the traditional forecast values can't adjust to the real-world changes within the forecast period. "
-                              }
-                            </span>
-                          </React.Fragment>
-                        </div>
-                        <PlasmicImg__
-                          alt={""}
-                          className={classNames(sty.img__eQu9)}
-                          displayHeight={"auto"}
-                          displayMaxHeight={"none"}
-                          displayMaxWidth={"100%"}
-                          displayMinHeight={"0"}
-                          displayMinWidth={"0"}
-                          displayWidth={"auto"}
-                          loading={"lazy"}
-                          src={{
-                            src: "/plasmic/tsf_demand_website/images/aqiFlorida022023ClassicalPng.png",
-                            fullWidth: 1200,
-                            fullHeight: 437,
-                            aspectRatio: undefined
-                          }}
-                        />
-
-                        <div
-                          className={classNames(
-                            projectcss.all,
-                            projectcss.__wab_text,
                             sty.text__snCAq
                           )}
                         >
@@ -341,66 +291,9 @@ function PlasmicHomepage__RenderFunc(props) {
                               }
                               style={{ color: "var(--token-Ry9eGMy91QvA)" }}
                             >
-                              {"For each date, TSF Lite evaluates up to "}
-                            </span>
-                            <React.Fragment>{""}</React.Fragment>
-                            <span
-                              className={
-                                "plasmic_default__all plasmic_default__span"
-                              }
-                              style={{
-                                color: "var(--token-Ry9eGMy91QvA)",
-                                fontWeight: 700
-                              }}
-                            >
-                              {"800 forecast models"}
-                            </span>
-                            <React.Fragment>{""}</React.Fragment>
-                            <span
-                              className={
-                                "plasmic_default__all plasmic_default__span"
-                              }
-                              style={{ color: "var(--token-Ry9eGMy91QvA)" }}
-                            >
                               {
-                                " (10 seasonal models x 2 series x 40 forecasts each) and selects the one with the best historical accuracy for that day. This independence allows the forecast to adjust immediately when real conditions change, without being chained to yesterday\u2019s trend."
+                                "At the start of each month, TSF gives you a forecast like this \u2014 the "
                               }
-                            </span>
-                          </React.Fragment>
-                        </div>
-                        <PlasmicImg__
-                          alt={""}
-                          className={classNames(sty.img__jI2Rb)}
-                          displayHeight={"auto"}
-                          displayMaxHeight={"none"}
-                          displayMaxWidth={"100%"}
-                          displayMinHeight={"0"}
-                          displayMinWidth={"0"}
-                          displayWidth={"auto"}
-                          loading={"lazy"}
-                          src={{
-                            src: "/plasmic/tsf_demand_website/images/aqiFlorida022023TsfPng.png",
-                            fullWidth: 1200,
-                            fullHeight: 437,
-                            aspectRatio: undefined
-                          }}
-                        />
-
-                        <div
-                          className={classNames(
-                            projectcss.all,
-                            projectcss.__wab_text,
-                            sty.text__igkuR
-                          )}
-                        >
-                          <React.Fragment>
-                            <span
-                              className={
-                                "plasmic_default__all plasmic_default__span"
-                              }
-                              style={{ color: "var(--token-Ry9eGMy91QvA)" }}
-                            >
-                              {"The "}
                             </span>
                             <React.Fragment>{""}</React.Fragment>
                             <span
@@ -421,7 +314,7 @@ function PlasmicHomepage__RenderFunc(props) {
                               }
                               style={{ color: "var(--token-Ry9eGMy91QvA)" }}
                             >
-                              {" is the bulls-eye forecast. The "}
+                              {" shows your expected daily sales, and the "}
                             </span>
                             <React.Fragment>{""}</React.Fragment>
                             <span
@@ -442,10 +335,186 @@ function PlasmicHomepage__RenderFunc(props) {
                               }
                               style={{ color: "var(--token-Ry9eGMy91QvA)" }}
                             >
+                              {" marks what\u2019s considered "}
+                            </span>
+                            <React.Fragment>{""}</React.Fragment>
+                            <span
+                              className={
+                                "plasmic_default__all plasmic_default__span"
+                              }
+                              style={{
+                                color: "var(--token-Ry9eGMy91QvA)",
+                                fontStyle: "italic"
+                              }}
+                            >
+                              {"normal"}
+                            </span>
+                            <React.Fragment>{""}</React.Fragment>
+                            <span
+                              className={
+                                "plasmic_default__all plasmic_default__span"
+                              }
+                              style={{ color: "var(--token-Ry9eGMy91QvA)" }}
+                            >
                               {
-                                " is your target range \u2014 an accuracy band built from real historical performance. Together, they give you clarity: where the future is most likely to land. "
+                                ". The upper edge is your planning line: stock or produce enough to cover everything inside that band."
                               }
                             </span>
+                          </React.Fragment>
+                        </div>
+                        <PlasmicImg__
+                          alt={""}
+                          className={classNames(sty.img__kKg7B)}
+                          displayHeight={"auto"}
+                          displayMaxHeight={"none"}
+                          displayMaxWidth={"100%"}
+                          displayMinHeight={"0"}
+                          displayMinWidth={"0"}
+                          displayWidth={"auto"}
+                          loading={"lazy"}
+                          src={{
+                            src: "/plasmic/tsf_demand_website/images/tsfInAction01Png2.png",
+                            fullWidth: 1200,
+                            fullHeight: 435,
+                            aspectRatio: undefined
+                          }}
+                        />
+
+                        <div
+                          className={classNames(
+                            projectcss.all,
+                            projectcss.__wab_text,
+                            sty.text__igkuR
+                          )}
+                        >
+                          <React.Fragment>
+                            <span
+                              className={
+                                "plasmic_default__all plasmic_default__span"
+                              }
+                              style={{ color: "var(--token-Ry9eGMy91QvA)" }}
+                            >
+                              {
+                                "As the month begins, your actual sales (the dotted line) appear automatically on the same chart. You can see at a glance whether performance is on pace, soft, or trending hot."
+                              }
+                            </span>
+                          </React.Fragment>
+                        </div>
+                        <PlasmicImg__
+                          alt={""}
+                          className={classNames(sty.img__n2Gj7)}
+                          displayHeight={"auto"}
+                          displayMaxHeight={"none"}
+                          displayMaxWidth={"100%"}
+                          displayMinHeight={"0"}
+                          displayMinWidth={"0"}
+                          displayWidth={"auto"}
+                          loading={"lazy"}
+                          src={{
+                            src: "/plasmic/tsf_demand_website/images/tsfInAction02Png2.png",
+                            fullWidth: 1200,
+                            fullHeight: 435,
+                            aspectRatio: undefined
+                          }}
+                        />
+
+                        <div
+                          className={classNames(
+                            projectcss.all,
+                            projectcss.__wab_text,
+                            sty.text__wCbJl
+                          )}
+                        >
+                          <React.Fragment>
+                            <span
+                              className={
+                                "plasmic_default__all plasmic_default__span"
+                              }
+                              style={{ color: "var(--token-Ry9eGMy91QvA)" }}
+                            >
+                              {
+                                "If actuals stay inside the green zone \u2192 you\u2019re on plan."
+                              }
+                            </span>
+                          </React.Fragment>
+                        </div>
+                        <div
+                          className={classNames(
+                            projectcss.all,
+                            projectcss.__wab_text,
+                            sty.text__cDvqU
+                          )}
+                        >
+                          <React.Fragment>
+                            <span
+                              className={
+                                "plasmic_default__all plasmic_default__span"
+                              }
+                              style={{ color: "var(--token-Ry9eGMy91QvA)" }}
+                            >
+                              {
+                                "If they press the upper edge \u2192 reorder early."
+                              }
+                            </span>
+                          </React.Fragment>
+                        </div>
+                        <div
+                          className={classNames(
+                            projectcss.all,
+                            projectcss.__wab_text,
+                            sty.text__jiusm
+                          )}
+                        >
+                          <React.Fragment>
+                            <span
+                              className={
+                                "plasmic_default__all plasmic_default__span"
+                              }
+                              style={{ color: "var(--token-Ry9eGMy91QvA)" }}
+                            >
+                              {
+                                "If they fall toward the bottom \u2192 hold or scale back."
+                              }
+                            </span>
+                          </React.Fragment>
+                        </div>
+                        <div
+                          className={classNames(
+                            projectcss.all,
+                            projectcss.__wab_text,
+                            sty.text__susLe
+                          )}
+                        >
+                          <React.Fragment>
+                            <React.Fragment>{""}</React.Fragment>
+                            {
+                              <h3
+                                data-plasmic-name={"h3"}
+                                data-plasmic-override={overrides.h3}
+                                className={classNames(
+                                  projectcss.all,
+                                  projectcss.h3,
+                                  projectcss.__wab_text,
+                                  sty.h3
+                                )}
+                              >
+                                <React.Fragment>
+                                  <span
+                                    className={
+                                      "plasmic_default__all plasmic_default__span"
+                                    }
+                                    style={{
+                                      color: "var(--token-Ry9eGMy91QvA)"
+                                    }}
+                                  >
+                                    {
+                                      "That\u2019s the whole process\u2014no analysis, no dashboards full of noise, just a single chart that updates itself every day."
+                                    }
+                                  </span>
+                                </React.Fragment>
+                              </h3>
+                            }
+                            <React.Fragment>{""}</React.Fragment>
                           </React.Fragment>
                         </div>
                         <Button2
@@ -472,10 +541,10 @@ function PlasmicHomepage__RenderFunc(props) {
                                 sty.text__jYvrq
                               )}
                             >
-                              {"See how it on real data "}
+                              {"See TSF in Action"}
                             </div>
                           }
-                          linkTo={`/demo`}
+                          linkTo={`/tsf-action`}
                           start={
                             <CircleIcon
                               className={classNames(
@@ -1264,6 +1333,7 @@ const PlasmicDescendants = {
     "root",
     "tsfDemandMainNavigation",
     "features",
+    "h3",
     "foreground3",
     "foreground2",
     "ul",
@@ -1275,7 +1345,8 @@ const PlasmicDescendants = {
   ],
 
   tsfDemandMainNavigation: ["tsfDemandMainNavigation"],
-  features: ["features", "foreground3", "foreground2"],
+  features: ["features", "h3", "foreground3", "foreground2"],
+  h3: ["h3"],
   foreground3: ["foreground3"],
   foreground2: ["foreground2"],
   ul: ["ul"],
@@ -1320,6 +1391,7 @@ export const PlasmicHomepage = Object.assign(
     // Helper components rendering sub-elements
     tsfDemandMainNavigation: makeNodeComponent("tsfDemandMainNavigation"),
     features: makeNodeComponent("features"),
+    h3: makeNodeComponent("h3"),
     foreground3: makeNodeComponent("foreground3"),
     foreground2: makeNodeComponent("foreground2"),
     ul: makeNodeComponent("ul"),

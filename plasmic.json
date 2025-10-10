@@ -2255,6 +2255,20 @@
           "cssFilePath": "plasmic/tsf_demand_website/PlasmicHowToUseYourForecast.module.css",
           "scheme": "blackbox",
           "componentType": "component"
+        },
+        {
+          "id": "zWH5Zp9Cu-sR",
+          "name": "TsfInAction",
+          "type": "managed",
+          "projectId": "8yhBRaKsBf3R2wKMhT5dUU",
+          "renderModuleFilePath": "plasmic/tsf_demand_website/PlasmicTsfInAction.jsx",
+          "importSpec": {
+            "modulePath": "../pages/tsf-action.jsx"
+          },
+          "cssFilePath": "plasmic/tsf_demand_website/PlasmicTsfInAction.module.css",
+          "scheme": "blackbox",
+          "componentType": "page",
+          "path": "/tsf-action"
         }
       ],
       "icons": [
@@ -3014,6 +3028,36 @@
           "id": "5SK-I7Jb_GxZ",
           "name": "1745518468325.jpeg",
           "filePath": "../public/plasmic/tsf_demand_website/images/_1745518468325Jpeg.jpg"
+        },
+        {
+          "id": "tEzILygPSnw2",
+          "name": "TSF-In-Action-01.png",
+          "filePath": "../public/plasmic/tsf_demand_website/images/tsfInAction01Png.png"
+        },
+        {
+          "id": "OgoYhfkqEgwp",
+          "name": "TSF-In-Action-02.png",
+          "filePath": "../public/plasmic/tsf_demand_website/images/tsfInAction02Png.png"
+        },
+        {
+          "id": "8rHumfKBRQTh",
+          "name": "TSF-In-Action-01.png 2",
+          "filePath": "../public/plasmic/tsf_demand_website/images/tsfInAction01Png2.png"
+        },
+        {
+          "id": "giWclkXxlBO8",
+          "name": "TSF-In-Action-02.png 2",
+          "filePath": "../public/plasmic/tsf_demand_website/images/tsfInAction02Png2.png"
+        },
+        {
+          "id": "-Z7RjeFog1GD",
+          "name": "TSF-In-Action-03.png",
+          "filePath": "../public/plasmic/tsf_demand_website/images/tsfInAction03Png.png"
+        },
+        {
+          "id": "ux5sx3q9ygv8",
+          "name": "TSF-In-Action-04.png",
+          "filePath": "../public/plasmic/tsf_demand_website/images/tsfInAction04Png.png"
         }
       ],
       "indirect": false,
@@ -3063,6 +3107,12 @@
         "name": "Screen",
         "projectId": "8yhBRaKsBf3R2wKMhT5dUU",
         "contextFilePath": "plasmic/tsf_demand_website/PlasmicGlobalVariant__Screen.jsx"
+      },
+      {
+        "id": "nSDYWyHpBOUY",
+        "name": "UnnamedGlobalGroupOfVariants",
+        "projectId": "8yhBRaKsBf3R2wKMhT5dUU",
+        "contextFilePath": "plasmic/tsf_demand_website/PlasmicGlobalVariant__UnnamedGlobalGroupOfVariants.jsx"
       }
     ]
   },

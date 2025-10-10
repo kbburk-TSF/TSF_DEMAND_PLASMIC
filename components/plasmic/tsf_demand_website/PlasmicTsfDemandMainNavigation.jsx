@@ -15,10 +15,13 @@ import {
   PlasmicLink as PlasmicLink__,
   classNames,
   createPlasmicElementProxy,
-  deriveRenderOpts
+  deriveRenderOpts,
+  hasVariant,
+  useDollarState
 } from "@plasmicapp/react-web";
 import { useDataEnv } from "@plasmicapp/react-web/lib/host";
 import { BaseButton } from "@plasmicpkgs/react-aria/skinny/registerButton";
+import { _useGlobalVariants } from "./plasmic"; // plasmic-import: 8yhBRaKsBf3R2wKMhT5dUU/projectModule
 import { _useStyleTokens } from "./PlasmicStyleTokensProvider"; // plasmic-import: 8yhBRaKsBf3R2wKMhT5dUU/styleTokensProvider
 import "@plasmicapp/react-web/lib/plasmic.css";
 import projectcss from "./plasmic.module.css"; // plasmic-import: 8yhBRaKsBf3R2wKMhT5dUU/projectcss
@@ -63,6 +66,25 @@ function PlasmicTsfDemandMainNavigation__RenderFunc(props) {
   const $ctx = useDataEnv?.() || {};
   const refsRef = React.useRef({});
   const $refs = refsRef.current;
+  const globalVariants = _useGlobalVariants();
+  const stateSpecs = React.useMemo(
+    () => [
+      {
+        path: "variable",
+        type: "private",
+        variableType: "text",
+        initFunc: ({ $props, $state, $queries, $ctx }) => ""
+      }
+    ],
+
+    [$props, $ctx, $refs]
+  );
+  const $state = useDollarState(stateSpecs, {
+    $props,
+    $ctx,
+    $queries: {},
+    $refs
+  });
   const styleTokensClassNames = _useStyleTokens();
   return (
     <div
@@ -112,7 +134,15 @@ function PlasmicTsfDemandMainNavigation__RenderFunc(props) {
               className={classNames(
                 projectcss.all,
                 projectcss.__wab_text,
-                sty.text__gSnb
+                sty.text__gSnb,
+                {
+                  [sty.textglobal_unnamedGlobalGroupOfVariants_unnamedVariant__gSnbFzl1R]:
+                    hasVariant(
+                      globalVariants,
+                      "unnamedGlobalGroupOfVariants",
+                      "unnamedVariant"
+                    )
+                }
               )}
             >
               {"TSF Lite App"}
@@ -120,6 +150,34 @@ function PlasmicTsfDemandMainNavigation__RenderFunc(props) {
             {false ? (
               <IconIcon
                 className={classNames(projectcss.all, sty.svg__ypEw)}
+                role={"img"}
+              />
+            ) : null}
+          </PlasmicLink__>
+          <PlasmicLink__
+            className={classNames(projectcss.all, projectcss.a, sty.link__x5J3)}
+            component={Link}
+            href={`/tsf-action`}
+            platform={"nextjs"}
+          >
+            {false ? (
+              <IconIcon
+                className={classNames(projectcss.all, sty.svg__oqLd4)}
+                role={"img"}
+              />
+            ) : null}
+            <div
+              className={classNames(
+                projectcss.all,
+                projectcss.__wab_text,
+                sty.text__urO1G
+              )}
+            >
+              {"TSF in Action"}
+            </div>
+            {false ? (
+              <IconIcon
+                className={classNames(projectcss.all, sty.svg___3Smnu)}
                 role={"img"}
               />
             ) : null}
@@ -144,7 +202,15 @@ function PlasmicTsfDemandMainNavigation__RenderFunc(props) {
               className={classNames(
                 projectcss.all,
                 projectcss.__wab_text,
-                sty.text__u8ZOt
+                sty.text__u8ZOt,
+                {
+                  [sty.textglobal_unnamedGlobalGroupOfVariants_unnamedVariant__u8ZOtFzl1R]:
+                    hasVariant(
+                      globalVariants,
+                      "unnamedGlobalGroupOfVariants",
+                      "unnamedVariant"
+                    )
+                }
               )}
             >
               {"TSF Engine Demo"}
@@ -172,7 +238,15 @@ function PlasmicTsfDemandMainNavigation__RenderFunc(props) {
               className={classNames(
                 projectcss.all,
                 projectcss.__wab_text,
-                sty.text__maKtH
+                sty.text__maKtH,
+                {
+                  [sty.textglobal_unnamedGlobalGroupOfVariants_unnamedVariant__maKtHfzl1R]:
+                    hasVariant(
+                      globalVariants,
+                      "unnamedGlobalGroupOfVariants",
+                      "unnamedVariant"
+                    )
+                }
               )}
             >
               {"Case Studies"}
@@ -204,7 +278,15 @@ function PlasmicTsfDemandMainNavigation__RenderFunc(props) {
               className={classNames(
                 projectcss.all,
                 projectcss.__wab_text,
-                sty.text__bPkQm
+                sty.text__bPkQm,
+                {
+                  [sty.textglobal_unnamedGlobalGroupOfVariants_unnamedVariant__bPkQmfzl1R]:
+                    hasVariant(
+                      globalVariants,
+                      "unnamedGlobalGroupOfVariants",
+                      "unnamedVariant"
+                    )
+                }
               )}
             >
               {"The Science"}
@@ -232,7 +314,15 @@ function PlasmicTsfDemandMainNavigation__RenderFunc(props) {
               className={classNames(
                 projectcss.all,
                 projectcss.__wab_text,
-                sty.text___6KZiL
+                sty.text___6KZiL,
+                {
+                  [sty.textglobal_unnamedGlobalGroupOfVariants_unnamedVariant___6KZiLfzl1R]:
+                    hasVariant(
+                      globalVariants,
+                      "unnamedGlobalGroupOfVariants",
+                      "unnamedVariant"
+                    )
+                }
               )}
             >
               {"Articles"}

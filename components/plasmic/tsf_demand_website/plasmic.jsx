@@ -5,7 +5,9 @@
 // Plasmic Project: 8yhBRaKsBf3R2wKMhT5dUU
 import { createUseGlobalVariants } from "@plasmicapp/react-web";
 import { useScreenVariants as useScreenVariantskgix2VlVw2Ev } from "./PlasmicGlobalVariant__Screen"; // plasmic-import: KGIX2vlVw2ev/globalVariant
+import { useUnnamedGlobalGroupOfVariants } from "./PlasmicGlobalVariant__UnnamedGlobalGroupOfVariants"; // plasmic-import: nSDYWyHpBOUY/globalVariant
 
 export const _useGlobalVariants = createUseGlobalVariants({
-  screen: useScreenVariantskgix2VlVw2Ev
+  screen: useScreenVariantskgix2VlVw2Ev,
+  unnamedGlobalGroupOfVariants: useUnnamedGlobalGroupOfVariants
 });
