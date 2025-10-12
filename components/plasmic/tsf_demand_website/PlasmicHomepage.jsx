@@ -171,7 +171,7 @@ function PlasmicHomepage__RenderFunc(props) {
                           ? "Forecasts built for decision makers, not for data scientists."
                           : hasVariant(globalVariants, "screen", "mobileOnly")
                             ? "Ready to accept or acquiesce willing."
-                            : "Accuracy Made Simple.\nConfidence Made Certain."}
+                            : "Forecasts built for decision makers, not data scientists. "}
                       </h1>
                       <div
                         className={classNames(
