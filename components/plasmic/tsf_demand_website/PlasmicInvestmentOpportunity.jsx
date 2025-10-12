@@ -22,7 +22,7 @@ import {
 } from "@plasmicapp/react-web";
 import { useDataEnv } from "@plasmicapp/react-web/lib/host";
 import Header from "../../Header"; // plasmic-import: _SjLXPL93E_I/component
-import Footer from "../../Footer"; // plasmic-import: uEqGgNuRcZj8/component
+import TsfFooter from "../../TsfFooter"; // plasmic-import: NmgYw5lHKANx/component
 import { _useGlobalVariants } from "./plasmic"; // plasmic-import: 8yhBRaKsBf3R2wKMhT5dUU/projectModule
 import { _useStyleTokens } from "./PlasmicStyleTokensProvider"; // plasmic-import: 8yhBRaKsBf3R2wKMhT5dUU/styleTokensProvider
 import "@plasmicapp/react-web/lib/plasmic.css";
@@ -196,7 +196,7 @@ function PlasmicInvestmentOpportunity__RenderFunc(props) {
                 displayWidth={"auto"}
                 loading={"lazy"}
                 src={{
-                  src: "/plasmic/tsf_demand_website/images/tsfPitchDeck002Jpeg.jpg",
+                  src: "/plasmic/tsf_demand_website/images/tsfPitchDeckV3001Jpeg.jpg",
                   fullWidth: 1920,
                   fullHeight: 1080,
                   aspectRatio: undefined
@@ -219,7 +219,7 @@ function PlasmicInvestmentOpportunity__RenderFunc(props) {
                 displayWidth={"auto"}
                 loading={"lazy"}
                 src={{
-                  src: "/plasmic/tsf_demand_website/images/tsfPitchDeck003Jpeg.jpg",
+                  src: "/plasmic/tsf_demand_website/images/tsfPitchDeckV3002Jpeg.jpg",
                   fullWidth: 1920,
                   fullHeight: 1080,
                   aspectRatio: undefined
@@ -242,7 +242,7 @@ function PlasmicInvestmentOpportunity__RenderFunc(props) {
                 displayWidth={"auto"}
                 loading={"lazy"}
                 src={{
-                  src: "/plasmic/tsf_demand_website/images/tsfPitchDeck004Jpeg.jpg",
+                  src: "/plasmic/tsf_demand_website/images/tsfPitchDeckV3003Jpeg.jpg",
                   fullWidth: 1920,
                   fullHeight: 1080,
                   aspectRatio: undefined
@@ -265,7 +265,7 @@ function PlasmicInvestmentOpportunity__RenderFunc(props) {
                 displayWidth={"auto"}
                 loading={"lazy"}
                 src={{
-                  src: "/plasmic/tsf_demand_website/images/tsfPitchDeck005Jpeg2.jpg",
+                  src: "/plasmic/tsf_demand_website/images/tsfPitchDeckV3004Jpeg.jpg",
                   fullWidth: 1920,
                   fullHeight: 1080,
                   aspectRatio: undefined
@@ -288,7 +288,7 @@ function PlasmicInvestmentOpportunity__RenderFunc(props) {
                 displayWidth={"auto"}
                 loading={"lazy"}
                 src={{
-                  src: "/plasmic/tsf_demand_website/images/tsfPitchDeck006Jpeg.jpg",
+                  src: "/plasmic/tsf_demand_website/images/tsfPitchDeckV3005Jpeg.jpg",
                   fullWidth: 1920,
                   fullHeight: 1080,
                   aspectRatio: undefined
@@ -311,7 +311,7 @@ function PlasmicInvestmentOpportunity__RenderFunc(props) {
                 displayWidth={"auto"}
                 loading={"lazy"}
                 src={{
-                  src: "/plasmic/tsf_demand_website/images/tsfPitchDeck007Jpeg.jpg",
+                  src: "/plasmic/tsf_demand_website/images/tsfPitchDeckV3006Jpeg.jpg",
                   fullWidth: 1920,
                   fullHeight: 1080,
                   aspectRatio: undefined
@@ -334,7 +334,7 @@ function PlasmicInvestmentOpportunity__RenderFunc(props) {
                 displayWidth={"auto"}
                 loading={"lazy"}
                 src={{
-                  src: "/plasmic/tsf_demand_website/images/tsfPitchDeck008Jpeg.jpg",
+                  src: "/plasmic/tsf_demand_website/images/tsfPitchDeckV3007Jpeg.jpg",
                   fullWidth: 1920,
                   fullHeight: 1080,
                   aspectRatio: undefined
@@ -357,7 +357,7 @@ function PlasmicInvestmentOpportunity__RenderFunc(props) {
                 displayWidth={"auto"}
                 loading={"lazy"}
                 src={{
-                  src: "/plasmic/tsf_demand_website/images/tsfPitchDeck009Jpeg.jpg",
+                  src: "/plasmic/tsf_demand_website/images/tsfPitchDeckV3008Jpeg.jpg",
                   fullWidth: 1920,
                   fullHeight: 1080,
                   aspectRatio: undefined
@@ -380,7 +380,7 @@ function PlasmicInvestmentOpportunity__RenderFunc(props) {
                 displayWidth={"auto"}
                 loading={"lazy"}
                 src={{
-                  src: "/plasmic/tsf_demand_website/images/tsfPitchDeck010Jpeg.jpg",
+                  src: "/plasmic/tsf_demand_website/images/tsfPitchDeckV3009Jpeg.jpg",
                   fullWidth: 1920,
                   fullHeight: 1080,
                   aspectRatio: undefined
@@ -403,7 +403,7 @@ function PlasmicInvestmentOpportunity__RenderFunc(props) {
                 displayWidth={"auto"}
                 loading={"lazy"}
                 src={{
-                  src: "/plasmic/tsf_demand_website/images/tsfPitchDeck011Jpeg.jpg",
+                  src: "/plasmic/tsf_demand_website/images/tsfPitchDeckV3010Jpeg.jpg",
                   fullWidth: 1920,
                   fullHeight: 1080,
                   aspectRatio: undefined
@@ -426,7 +426,7 @@ function PlasmicInvestmentOpportunity__RenderFunc(props) {
                 displayWidth={"auto"}
                 loading={"lazy"}
                 src={{
-                  src: "/plasmic/tsf_demand_website/images/tsfPitchDeck012Jpeg.jpg",
+                  src: "/plasmic/tsf_demand_website/images/tsfPitchDeckV3011Jpeg.jpg",
                   fullWidth: 1920,
                   fullHeight: 1080,
                   aspectRatio: undefined
@@ -449,7 +449,7 @@ function PlasmicInvestmentOpportunity__RenderFunc(props) {
                 displayWidth={"auto"}
                 loading={"lazy"}
                 src={{
-                  src: "/plasmic/tsf_demand_website/images/tsfPitchDeck013Jpeg.jpg",
+                  src: "/plasmic/tsf_demand_website/images/tsfPitchDeckV3012Jpeg.jpg",
                   fullWidth: 1920,
                   fullHeight: 1080,
                   aspectRatio: undefined
@@ -472,7 +472,7 @@ function PlasmicInvestmentOpportunity__RenderFunc(props) {
                 displayWidth={"auto"}
                 loading={"lazy"}
                 src={{
-                  src: "/plasmic/tsf_demand_website/images/tsfPitchDeck014Jpeg.jpg",
+                  src: "/plasmic/tsf_demand_website/images/tsfPitchDeckV3013Jpeg.jpg",
                   fullWidth: 1920,
                   fullHeight: 1080,
                   aspectRatio: undefined
@@ -495,7 +495,7 @@ function PlasmicInvestmentOpportunity__RenderFunc(props) {
                 displayWidth={"auto"}
                 loading={"lazy"}
                 src={{
-                  src: "/plasmic/tsf_demand_website/images/tsfPitchDeck015Jpeg.jpg",
+                  src: "/plasmic/tsf_demand_website/images/tsfPitchDeckV3014Jpeg.jpg",
                   fullWidth: 1920,
                   fullHeight: 1080,
                   aspectRatio: undefined
@@ -508,9 +508,11 @@ function PlasmicInvestmentOpportunity__RenderFunc(props) {
               className={classNames(projectcss.all, sty.container18)}
             >
               <PlasmicLink__
-                data-plasmic-name={"link"}
-                data-plasmic-override={overrides.link}
-                className={classNames(projectcss.all, projectcss.a, sty.link)}
+                className={classNames(
+                  projectcss.all,
+                  projectcss.a,
+                  sty.link__ui6Ys
+                )}
                 component={Link}
                 href={"mailto:kevin@temporalinertia.com"}
                 platform={"nextjs"}
@@ -527,7 +529,7 @@ function PlasmicInvestmentOpportunity__RenderFunc(props) {
                   displayWidth={"auto"}
                   loading={"lazy"}
                   src={{
-                    src: "/plasmic/tsf_demand_website/images/tsfPitchDeck016Jpeg.jpg",
+                    src: "/plasmic/tsf_demand_website/images/tsfPitchDeckV3015Jpeg.jpg",
                     fullWidth: 1920,
                     fullHeight: 1080,
                     aspectRatio: undefined
@@ -535,11 +537,186 @@ function PlasmicInvestmentOpportunity__RenderFunc(props) {
                 />
               </PlasmicLink__>
             </div>
+            <div
+              data-plasmic-name={"container19"}
+              data-plasmic-override={overrides.container19}
+              className={classNames(projectcss.all, sty.container19)}
+            >
+              <PlasmicLink__
+                className={classNames(
+                  projectcss.all,
+                  projectcss.a,
+                  sty.link__d76C8
+                )}
+                component={Link}
+                href={"mailto:kevin@temporalinertia.com"}
+                platform={"nextjs"}
+                target={"_blank"}
+              >
+                <PlasmicImg__
+                  alt={""}
+                  className={classNames(sty.img__k8WOj)}
+                  displayHeight={"auto"}
+                  displayMaxHeight={"none"}
+                  displayMaxWidth={"100%"}
+                  displayMinHeight={"0"}
+                  displayMinWidth={"0"}
+                  displayWidth={"auto"}
+                  loading={"lazy"}
+                  src={{
+                    src: "/plasmic/tsf_demand_website/images/tsfPitchDeckV3016Jpeg.jpg",
+                    fullWidth: 1920,
+                    fullHeight: 1080,
+                    aspectRatio: undefined
+                  }}
+                />
+              </PlasmicLink__>
+            </div>
+            <div
+              data-plasmic-name={"container20"}
+              data-plasmic-override={overrides.container20}
+              className={classNames(projectcss.all, sty.container20)}
+            >
+              <PlasmicLink__
+                className={classNames(
+                  projectcss.all,
+                  projectcss.a,
+                  sty.link__dbmnH
+                )}
+                component={Link}
+                href={"mailto:kevin@temporalinertia.com"}
+                platform={"nextjs"}
+                target={"_blank"}
+              >
+                <PlasmicImg__
+                  alt={""}
+                  className={classNames(sty.img__m7IZi)}
+                  displayHeight={"auto"}
+                  displayMaxHeight={"none"}
+                  displayMaxWidth={"100%"}
+                  displayMinHeight={"0"}
+                  displayMinWidth={"0"}
+                  displayWidth={"auto"}
+                  loading={"lazy"}
+                  src={{
+                    src: "/plasmic/tsf_demand_website/images/tsfPitchDeckV3017Jpeg.jpg",
+                    fullWidth: 1920,
+                    fullHeight: 1080,
+                    aspectRatio: undefined
+                  }}
+                />
+              </PlasmicLink__>
+            </div>
+            <div
+              data-plasmic-name={"container21"}
+              data-plasmic-override={overrides.container21}
+              className={classNames(projectcss.all, sty.container21)}
+            >
+              <PlasmicLink__
+                className={classNames(
+                  projectcss.all,
+                  projectcss.a,
+                  sty.link__z9KKz
+                )}
+                component={Link}
+                href={"mailto:kevin@temporalinertia.com"}
+                platform={"nextjs"}
+                target={"_blank"}
+              >
+                <PlasmicImg__
+                  alt={""}
+                  className={classNames(sty.img__q8IBn)}
+                  displayHeight={"auto"}
+                  displayMaxHeight={"none"}
+                  displayMaxWidth={"100%"}
+                  displayMinHeight={"0"}
+                  displayMinWidth={"0"}
+                  displayWidth={"auto"}
+                  loading={"lazy"}
+                  src={{
+                    src: "/plasmic/tsf_demand_website/images/tsfPitchDeckV3018Jpeg.jpg",
+                    fullWidth: 1920,
+                    fullHeight: 1080,
+                    aspectRatio: undefined
+                  }}
+                />
+              </PlasmicLink__>
+            </div>
+            <div
+              data-plasmic-name={"container22"}
+              data-plasmic-override={overrides.container22}
+              className={classNames(projectcss.all, sty.container22)}
+            >
+              <PlasmicLink__
+                className={classNames(
+                  projectcss.all,
+                  projectcss.a,
+                  sty.link__h9FuN
+                )}
+                component={Link}
+                href={"mailto:kevin@temporalinertia.com"}
+                platform={"nextjs"}
+                target={"_blank"}
+              >
+                <PlasmicImg__
+                  alt={""}
+                  className={classNames(sty.img__cLylt)}
+                  displayHeight={"auto"}
+                  displayMaxHeight={"none"}
+                  displayMaxWidth={"100%"}
+                  displayMinHeight={"0"}
+                  displayMinWidth={"0"}
+                  displayWidth={"auto"}
+                  loading={"lazy"}
+                  src={{
+                    src: "/plasmic/tsf_demand_website/images/tsfPitchDeckV3019Jpeg.jpg",
+                    fullWidth: 1920,
+                    fullHeight: 1080,
+                    aspectRatio: undefined
+                  }}
+                />
+              </PlasmicLink__>
+              <div
+                data-plasmic-name={"container23"}
+                data-plasmic-override={overrides.container23}
+                className={classNames(projectcss.all, sty.container23)}
+              >
+                <PlasmicLink__
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.a,
+                    sty.link__jxjmZ
+                  )}
+                  component={Link}
+                  href={"mailto:kevin@temporalinertia.com"}
+                  platform={"nextjs"}
+                  target={"_blank"}
+                >
+                  <PlasmicImg__
+                    alt={""}
+                    className={classNames(sty.img__rvIt)}
+                    displayHeight={"auto"}
+                    displayMaxHeight={"none"}
+                    displayMaxWidth={"100%"}
+                    displayMinHeight={"0"}
+                    displayMinWidth={"0"}
+                    displayWidth={"auto"}
+                    loading={"lazy"}
+                    src={{
+                      src: "/plasmic/tsf_demand_website/images/tsfPitchDeckV3020Jpeg.jpg",
+                      fullWidth: 1920,
+                      fullHeight: 1080,
+                      aspectRatio: undefined
+                    }}
+                  />
+                </PlasmicLink__>
+              </div>
+            </div>
           </div>
-          <Footer
-            data-plasmic-name={"footer"}
-            data-plasmic-override={overrides.footer}
-            className={classNames("__wab_instance", sty.footer)}
+          <TsfFooter
+            data-plasmic-name={"tsfFooter"}
+            data-plasmic-override={overrides.tsfFooter}
+            className={classNames("__wab_instance", sty.tsfFooter)}
           />
         </div>
       </div>
@@ -572,8 +749,12 @@ const PlasmicDescendants = {
     "container16",
     "container17",
     "container18",
-    "link",
-    "footer"
+    "container19",
+    "container20",
+    "container21",
+    "container22",
+    "container23",
+    "tsfFooter"
   ],
 
   header: ["header"],
@@ -599,7 +780,11 @@ const PlasmicDescendants = {
     "container16",
     "container17",
     "container18",
-    "link"
+    "container19",
+    "container20",
+    "container21",
+    "container22",
+    "container23"
   ],
 
   container3: ["container3"],
@@ -616,9 +801,13 @@ const PlasmicDescendants = {
   container15: ["container15"],
   container16: ["container16"],
   container17: ["container17"],
-  container18: ["container18", "link"],
-  link: ["link"],
-  footer: ["footer"]
+  container18: ["container18"],
+  container19: ["container19"],
+  container20: ["container20"],
+  container21: ["container21"],
+  container22: ["container22", "container23"],
+  container23: ["container23"],
+  tsfFooter: ["tsfFooter"]
 };
 
 function makeNodeComponent(nodeName) {
@@ -675,8 +864,12 @@ export const PlasmicInvestmentOpportunity = Object.assign(
     container16: makeNodeComponent("container16"),
     container17: makeNodeComponent("container17"),
     container18: makeNodeComponent("container18"),
-    link: makeNodeComponent("link"),
-    footer: makeNodeComponent("footer"),
+    container19: makeNodeComponent("container19"),
+    container20: makeNodeComponent("container20"),
+    container21: makeNodeComponent("container21"),
+    container22: makeNodeComponent("container22"),
+    container23: makeNodeComponent("container23"),
+    tsfFooter: makeNodeComponent("tsfFooter"),
     // Metadata about props expected for PlasmicInvestmentOpportunity
     internalVariantProps: PlasmicInvestmentOpportunity__VariantProps,
     internalArgProps: PlasmicInvestmentOpportunity__ArgProps,

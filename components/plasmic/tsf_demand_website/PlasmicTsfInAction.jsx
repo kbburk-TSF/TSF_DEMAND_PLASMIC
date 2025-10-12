@@ -800,7 +800,7 @@ function PlasmicTsfInAction__RenderFunc(props) {
                         sty.h3__sMCye
                       )}
                     >
-                      {"Week 3: When Actuals Break Above the Gren Zone"}
+                      {"Week 3: When Actuals Break Above the Green Zone"}
                     </h3>
                     <PlasmicImg__
                       alt={""}
