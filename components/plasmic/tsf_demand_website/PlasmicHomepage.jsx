@@ -100,7 +100,15 @@ function PlasmicHomepage__RenderFunc(props) {
             projectcss.plasmic_default_styles,
             projectcss.plasmic_mixins,
             styleTokensClassNames,
-            sty.root
+            sty.root,
+            {
+              [sty.rootglobal_unnamedGlobalGroupOfVariants_unnamedVariant]:
+                hasVariant(
+                  globalVariants,
+                  "unnamedGlobalGroupOfVariants",
+                  "unnamedVariant"
+                )
+            }
           )}
         >
           <TsfDemandMainNavigation
@@ -122,7 +130,16 @@ function PlasmicHomepage__RenderFunc(props) {
 
           <div className={classNames(projectcss.all, sty.freeBox__wUjrb)}>
             <div className={classNames(projectcss.all, sty.freeBox__cgm78)}>
-              <div className={classNames(projectcss.all, sty.freeBox__eq8X9)}>
+              <div
+                className={classNames(projectcss.all, sty.freeBox__eq8X9, {
+                  [sty.freeBoxglobal_unnamedGlobalGroupOfVariants_unnamedVariant__eq8X9Fzl1R]:
+                    hasVariant(
+                      globalVariants,
+                      "unnamedGlobalGroupOfVariants",
+                      "unnamedVariant"
+                    )
+                })}
+              >
                 <div className={classNames(projectcss.all, sty.freeBox__fFuWj)}>
                   <div
                     className={classNames(projectcss.all, sty.freeBox__u9LG)}
@@ -135,12 +152,26 @@ function PlasmicHomepage__RenderFunc(props) {
                           projectcss.all,
                           projectcss.h1,
                           projectcss.__wab_text,
-                          sty.h1___4AZ0Y
+                          sty.h1___4AZ0Y,
+                          {
+                            [sty.h1global_unnamedGlobalGroupOfVariants_unnamedVariant___4AZ0Yfzl1R]:
+                              hasVariant(
+                                globalVariants,
+                                "unnamedGlobalGroupOfVariants",
+                                "unnamedVariant"
+                              )
+                          }
                         )}
                       >
-                        {hasVariant(globalVariants, "screen", "mobileOnly")
-                          ? "Ready to accept or acquiesce willing."
-                          : "Accuracy Made Simple.\nConfidence Made Certain."}
+                        {hasVariant(
+                          globalVariants,
+                          "unnamedGlobalGroupOfVariants",
+                          "unnamedVariant"
+                        )
+                          ? "Forecasts built for decision makers, not for data scientists."
+                          : hasVariant(globalVariants, "screen", "mobileOnly")
+                            ? "Ready to accept or acquiesce willing."
+                            : "Accuracy Made Simple.\nConfidence Made Certain."}
                       </h1>
                       <div
                         className={classNames(

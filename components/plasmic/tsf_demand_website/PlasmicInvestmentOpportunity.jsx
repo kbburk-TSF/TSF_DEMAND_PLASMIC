@@ -22,12 +22,16 @@ import {
 } from "@plasmicapp/react-web";
 import { useDataEnv } from "@plasmicapp/react-web/lib/host";
 import Header from "../../Header"; // plasmic-import: _SjLXPL93E_I/component
+import Button from "../../Button"; // plasmic-import: -U7nCsYlsFbS/component
+import Button2 from "../../Button2"; // plasmic-import: IsImc8gJBadG/component
 import TsfFooter from "../../TsfFooter"; // plasmic-import: NmgYw5lHKANx/component
 import { _useGlobalVariants } from "./plasmic"; // plasmic-import: 8yhBRaKsBf3R2wKMhT5dUU/projectModule
 import { _useStyleTokens } from "./PlasmicStyleTokensProvider"; // plasmic-import: 8yhBRaKsBf3R2wKMhT5dUU/styleTokensProvider
 import "@plasmicapp/react-web/lib/plasmic.css";
 import projectcss from "./plasmic.module.css"; // plasmic-import: 8yhBRaKsBf3R2wKMhT5dUU/projectcss
 import sty from "./PlasmicInvestmentOpportunity.module.css"; // plasmic-import: X5WAcoXMH_rH/css
+import CircleIcon from "./icons/PlasmicIcon__Circle"; // plasmic-import: iCnGomX0kBnc/icon
+import Icon4Icon from "./icons/PlasmicIcon__Icon4"; // plasmic-import: s0pSL1_dtWEm/icon
 
 createPlasmicElementProxy;
 
@@ -107,16 +111,8 @@ function PlasmicInvestmentOpportunity__RenderFunc(props) {
               data-plasmic-override={overrides.pageBanner}
               className={classNames(projectcss.all, sty.pageBanner)}
             >
-              <div
-                data-plasmic-name={"freeBox"}
-                data-plasmic-override={overrides.freeBox}
-                className={classNames(projectcss.all, sty.freeBox)}
-              >
-                <div
-                  data-plasmic-name={"columns"}
-                  data-plasmic-override={overrides.columns}
-                  className={classNames(projectcss.all, sty.columns)}
-                >
+              <div className={classNames(projectcss.all, sty.freeBox__hnit4)}>
+                <div className={classNames(projectcss.all, sty.columns__bjf9)}>
                   <div
                     className={classNames(projectcss.all, sty.column__zMauj)}
                   >
@@ -130,8 +126,51 @@ function PlasmicInvestmentOpportunity__RenderFunc(props) {
                         sty.h1
                       )}
                     >
-                      {"TSF Pitch Deck"}
+                      {"TSF is redefining forecasting."}
                     </h1>
+                    <div
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.__wab_text,
+                        sty.text___3LDch
+                      )}
+                    >
+                      {
+                        "Built on seven years of original research, TSF replaces prediction with proof\u2014defining what\u2019s normal for every SKU, every month. Merchants and agencies plan inside the band, not against a guess."
+                      }
+                    </div>
+                    <div
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.__wab_text,
+                        sty.text__rTfma
+                      )}
+                    >
+                      {
+                        "Now raising a $350k SAFE to complete launch and reach breakeven in six months. "
+                      }
+                    </div>
+                    <Button
+                      data-plasmic-name={"button"}
+                      data-plasmic-override={overrides.button}
+                      className={classNames("__wab_instance", sty.button)}
+                      color={"neutral"}
+                      label={
+                        <div
+                          className={classNames(
+                            projectcss.all,
+                            projectcss.__wab_text,
+                            sty.text__pSfFw
+                          )}
+                        >
+                          {"Get in touch "}
+                        </div>
+                      }
+                      linkTo={`/contact`}
+                      onClick={async event => {
+                        const $steps = {};
+                      }}
+                    />
                   </div>
                   <div
                     className={classNames(projectcss.all, sty.column__dnhpB)}
@@ -163,9 +202,9 @@ function PlasmicInvestmentOpportunity__RenderFunc(props) {
                               aspectRatio: undefined
                             }
                           : {
-                              src: "/plasmic/tsf_demand_website/images/tsfPitchDeck001Jpeg.jpg",
-                              fullWidth: 1920,
-                              fullHeight: 1080,
+                              src: "/plasmic/tsf_demand_website/images/midRangeCumulativeRevenuevsCostPng.png",
+                              fullWidth: 800,
+                              fullHeight: 547,
                               aspectRatio: undefined
                             }
                       }
@@ -712,6 +751,67 @@ function PlasmicInvestmentOpportunity__RenderFunc(props) {
                 </PlasmicLink__>
               </div>
             </div>
+            <div className={classNames(projectcss.all, sty.freeBox__zi4Cs)}>
+              <div className={classNames(projectcss.all, sty.columns__agP2)}>
+                <div className={classNames(projectcss.all, sty.column__wH9Ug)}>
+                  <h2
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.h2,
+                      projectcss.__wab_text,
+                      sty.h2___1W0T
+                    )}
+                  >
+                    {"The future of forecasting is already here."}
+                  </h2>
+                  <h2
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.h2,
+                      projectcss.__wab_text,
+                      sty.h2__iik5A
+                    )}
+                  >
+                    {"The only question is who owns it."}
+                  </h2>
+                  <div
+                    className={classNames(projectcss.all, sty.freeBox__mncyT)}
+                  >
+                    <Button2
+                      data-plasmic-name={"button2"}
+                      data-plasmic-override={overrides.button2}
+                      className={classNames("__wab_instance", sty.button2)}
+                      color={"trueGold"}
+                      end={
+                        <Icon4Icon
+                          className={classNames(projectcss.all, sty.svg__kjkb2)}
+                          role={"img"}
+                        />
+                      }
+                      iconEnd={true}
+                      label={
+                        <div
+                          className={classNames(
+                            projectcss.all,
+                            projectcss.__wab_text,
+                            sty.text__bfAee
+                          )}
+                        >
+                          {"Get in touch"}
+                        </div>
+                      }
+                      linkTo={`/contact`}
+                      start={
+                        <CircleIcon
+                          className={classNames(projectcss.all, sty.svg__yqTxc)}
+                          role={"img"}
+                        />
+                      }
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
           <TsfFooter
             data-plasmic-name={"tsfFooter"}
@@ -730,9 +830,8 @@ const PlasmicDescendants = {
     "header",
     "mainSection",
     "pageBanner",
-    "freeBox",
-    "columns",
     "h1",
+    "button",
     "mainSection2",
     "container3",
     "container4",
@@ -754,15 +853,15 @@ const PlasmicDescendants = {
     "container21",
     "container22",
     "container23",
+    "button2",
     "tsfFooter"
   ],
 
   header: ["header"],
-  mainSection: ["mainSection", "pageBanner", "freeBox", "columns", "h1"],
-  pageBanner: ["pageBanner", "freeBox", "columns", "h1"],
-  freeBox: ["freeBox", "columns", "h1"],
-  columns: ["columns", "h1"],
+  mainSection: ["mainSection", "pageBanner", "h1", "button"],
+  pageBanner: ["pageBanner", "h1", "button"],
   h1: ["h1"],
+  button: ["button"],
   mainSection2: [
     "mainSection2",
     "container3",
@@ -784,7 +883,8 @@ const PlasmicDescendants = {
     "container20",
     "container21",
     "container22",
-    "container23"
+    "container23",
+    "button2"
   ],
 
   container3: ["container3"],
@@ -807,6 +907,7 @@ const PlasmicDescendants = {
   container21: ["container21"],
   container22: ["container22", "container23"],
   container23: ["container23"],
+  button2: ["button2"],
   tsfFooter: ["tsfFooter"]
 };
 
@@ -845,9 +946,8 @@ export const PlasmicInvestmentOpportunity = Object.assign(
     header: makeNodeComponent("header"),
     mainSection: makeNodeComponent("mainSection"),
     pageBanner: makeNodeComponent("pageBanner"),
-    freeBox: makeNodeComponent("freeBox"),
-    columns: makeNodeComponent("columns"),
     h1: makeNodeComponent("h1"),
+    button: makeNodeComponent("button"),
     mainSection2: makeNodeComponent("mainSection2"),
     container3: makeNodeComponent("container3"),
     container4: makeNodeComponent("container4"),
@@ -869,6 +969,7 @@ export const PlasmicInvestmentOpportunity = Object.assign(
     container21: makeNodeComponent("container21"),
     container22: makeNodeComponent("container22"),
     container23: makeNodeComponent("container23"),
+    button2: makeNodeComponent("button2"),
     tsfFooter: makeNodeComponent("tsfFooter"),
     // Metadata about props expected for PlasmicInvestmentOpportunity
     internalVariantProps: PlasmicInvestmentOpportunity__VariantProps,
