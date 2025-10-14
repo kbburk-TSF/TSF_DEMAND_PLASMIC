@@ -286,7 +286,33 @@ function PlasmicHomepage__RenderFunc(props) {
                             sty.text__ymhv5
                           )}
                         >
-                          {"Run your business with foresight, not forecasts. "}
+                          <React.Fragment>
+                            <React.Fragment>
+                              {"Traditional forecasts predict "}
+                            </React.Fragment>
+                            <span
+                              className={
+                                "plasmic_default__all plasmic_default__span"
+                              }
+                              style={{ textDecorationLine: "underline" }}
+                            >
+                              {"numbers"}
+                            </span>
+                            <React.Fragment>{", not "}</React.Fragment>
+                            <span
+                              className={
+                                "plasmic_default__all plasmic_default__span"
+                              }
+                              style={{ textDecorationLine: "underline" }}
+                            >
+                              {"decisions"}
+                            </span>
+                            <React.Fragment>
+                              {
+                                ". They leave you to interpret what\u2019s normal. "
+                              }
+                            </React.Fragment>
+                          </React.Fragment>
                         </div>
                         <div
                           className={classNames(
@@ -303,8 +329,52 @@ function PlasmicHomepage__RenderFunc(props) {
                               style={{ fontStyle: "italic" }}
                             >
                               {
-                                "Because knowing the month ahead is better than reacting to it."
+                                "Every merchant runs out of stock or over-orders because their \u201cforecast\u201d is a "
                               }
+                            </span>
+                            <React.Fragment>{""}</React.Fragment>
+                            <span
+                              className={
+                                "plasmic_default__all plasmic_default__span"
+                              }
+                              style={{
+                                fontStyle: "italic",
+                                fontWeight: 700,
+                                textDecorationLine: "underline"
+                              }}
+                            >
+                              {"spreadsheet"}
+                            </span>
+                            <React.Fragment>{""}</React.Fragment>
+                            <span
+                              className={
+                                "plasmic_default__all plasmic_default__span"
+                              }
+                              style={{ fontStyle: "italic" }}
+                            >
+                              {", not a "}
+                            </span>
+                            <React.Fragment>{""}</React.Fragment>
+                            <span
+                              className={
+                                "plasmic_default__all plasmic_default__span"
+                              }
+                              style={{
+                                fontStyle: "italic",
+                                fontWeight: 700,
+                                textDecorationLine: "underline"
+                              }}
+                            >
+                              {"signal"}
+                            </span>
+                            <React.Fragment>{""}</React.Fragment>
+                            <span
+                              className={
+                                "plasmic_default__all plasmic_default__span"
+                              }
+                              style={{ fontStyle: "italic" }}
+                            >
+                              {"."}
                             </span>
                           </React.Fragment>
                         </div>
@@ -313,6 +383,54 @@ function PlasmicHomepage__RenderFunc(props) {
                             projectcss.all,
                             projectcss.__wab_text,
                             sty.text__snCAq
+                          )}
+                        >
+                          <React.Fragment>
+                            <React.Fragment>{""}</React.Fragment>
+                            {
+                              <h2
+                                className={classNames(
+                                  projectcss.all,
+                                  projectcss.h2,
+                                  projectcss.__wab_text,
+                                  sty.h2__r4Zff
+                                )}
+                              >
+                                <React.Fragment>
+                                  <span
+                                    className={
+                                      "plasmic_default__all plasmic_default__span"
+                                    }
+                                    style={{
+                                      color: "var(--token-zrH0XRQElDBe)"
+                                    }}
+                                  >
+                                    {"The TSF Soultion: "}
+                                  </span>
+                                  <React.Fragment>{"\n"}</React.Fragment>
+                                  <span
+                                    className={
+                                      "plasmic_default__all plasmic_default__span"
+                                    }
+                                    style={{
+                                      color: "var(--token-zrH0XRQElDBe)"
+                                    }}
+                                  >
+                                    {
+                                      "One Forecast. Every Cadence. Every Decision. "
+                                    }
+                                  </span>
+                                </React.Fragment>
+                              </h2>
+                            }
+                            <React.Fragment>{""}</React.Fragment>
+                          </React.Fragment>
+                        </div>
+                        <div
+                          className={classNames(
+                            projectcss.all,
+                            projectcss.__wab_text,
+                            sty.text___2N6QG
                           )}
                         >
                           <React.Fragment>

@@ -319,6 +319,25 @@
   user-select: text;
   text-decoration-line: none;
   text-overflow: clip;
+  padding-bottom: 0px;
+}
+.h2__r4Zff {
+  color: var(--token-zrH0XRQElDBe);
+}
+.text___2N6QG {
+  font-size: 22px;
+  color: #05050599;
+  line-height: var(--token-kJRtS87BK95r);
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  text-align: left;
+  text-transform: none;
+  letter-spacing: normal;
+  white-space: pre-wrap;
+  user-select: text;
+  text-decoration-line: none;
+  text-overflow: clip;
 }
 .img__kKg7B {
   object-fit: cover;

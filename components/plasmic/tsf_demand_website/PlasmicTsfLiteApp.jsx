@@ -125,7 +125,7 @@ function PlasmicTsfLiteApp__RenderFunc(props) {
                       sty.h1
                     )}
                   >
-                    {"Foresight, automated. "}
+                    {"One forecast. Every cadence. Every decision."}
                   </h1>
                   <h3
                     className={classNames(
