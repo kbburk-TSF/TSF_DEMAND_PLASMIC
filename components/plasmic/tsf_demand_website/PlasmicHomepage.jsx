@@ -116,15 +116,7 @@ function PlasmicHomepage__RenderFunc(props) {
             data-plasmic-override={overrides.tsfDemandMainNavigation}
             className={classNames(
               "__wab_instance",
-              sty.tsfDemandMainNavigation,
-              {
-                [sty.tsfDemandMainNavigationglobal_unnamedGlobalGroupOfVariants_unnamedVariant]:
-                  hasVariant(
-                    globalVariants,
-                    "unnamedGlobalGroupOfVariants",
-                    "unnamedVariant"
-                  )
-              }
+              sty.tsfDemandMainNavigation
             )}
           />
 

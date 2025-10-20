@@ -14,8 +14,6 @@
 }
 .tsfDemandMainNavigation:global(.__wab_instance) {
   max-width: 100%;
-  align-self: stretch;
-  width: 1445px;
 }
 .freeBox__wUjrb {
   display: flex;
