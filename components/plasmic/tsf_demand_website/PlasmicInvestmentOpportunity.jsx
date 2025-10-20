@@ -21,7 +21,7 @@ import {
   hasVariant
 } from "@plasmicapp/react-web";
 import { useDataEnv } from "@plasmicapp/react-web/lib/host";
-import Header from "../../Header"; // plasmic-import: _SjLXPL93E_I/component
+import TsfDemandMainNavigation from "../../TsfDemandMainNavigation"; // plasmic-import: RS9jruOWtFtt/component
 import Button from "../../Button"; // plasmic-import: -U7nCsYlsFbS/component
 import Button2 from "../../Button2"; // plasmic-import: IsImc8gJBadG/component
 import TsfFooter from "../../TsfFooter"; // plasmic-import: NmgYw5lHKANx/component
@@ -95,10 +95,13 @@ function PlasmicInvestmentOpportunity__RenderFunc(props) {
             sty.root
           )}
         >
-          <Header
-            data-plasmic-name={"header"}
-            data-plasmic-override={overrides.header}
-            className={classNames("__wab_instance", sty.header)}
+          <TsfDemandMainNavigation
+            data-plasmic-name={"tsfDemandMainNavigation"}
+            data-plasmic-override={overrides.tsfDemandMainNavigation}
+            className={classNames(
+              "__wab_instance",
+              sty.tsfDemandMainNavigation
+            )}
           />
 
           <div
@@ -827,7 +830,7 @@ function PlasmicInvestmentOpportunity__RenderFunc(props) {
 const PlasmicDescendants = {
   root: [
     "root",
-    "header",
+    "tsfDemandMainNavigation",
     "mainSection",
     "pageBanner",
     "h1",
@@ -857,7 +860,7 @@ const PlasmicDescendants = {
     "tsfFooter"
   ],
 
-  header: ["header"],
+  tsfDemandMainNavigation: ["tsfDemandMainNavigation"],
   mainSection: ["mainSection", "pageBanner", "h1", "button"],
   pageBanner: ["pageBanner", "h1", "button"],
   h1: ["h1"],
@@ -943,7 +946,7 @@ export const PlasmicInvestmentOpportunity = Object.assign(
   makeNodeComponent("root"),
   {
     // Helper components rendering sub-elements
-    header: makeNodeComponent("header"),
+    tsfDemandMainNavigation: makeNodeComponent("tsfDemandMainNavigation"),
     mainSection: makeNodeComponent("mainSection"),
     pageBanner: makeNodeComponent("pageBanner"),
     h1: makeNodeComponent("h1"),
