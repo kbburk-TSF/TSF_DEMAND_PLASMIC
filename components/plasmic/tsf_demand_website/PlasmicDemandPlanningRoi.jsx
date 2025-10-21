@@ -222,7 +222,7 @@ function PlasmicDemandPlanningRoi__RenderFunc(props) {
                 >
                   {hasVariant(globalVariants, "screen", "mobileOnly")
                     ? "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam a metus quis lorem malesuada luctus. Cras lacinia, eros at dapibus molestie, risus tortor pretium ligula, eu malesuada tortor eros dapibus mi. Proin laoreet efficitur suscipit. Donec molestie volutpat euismod. Nulla gravida ligula in eros facilisis, sed dignissim tellus aliquam. Etiam convallis enim nisi, at suscipit tortor pulvinar at. "
-                    : "For a long time, small and mid-sized e-commerce merchants treated forecasting as something only big\rcompanies worried about. But once you\u2019ve had a few hot products sell out too soon \u2014 or a stack of unsold\rinventory eating your margins \u2014 you learn that guessing is expensive."}
+                    : "For a long time, small and mid-sized e-commerce merchants treated forecasting as something only big \rcompanies worried about. But once you\u2019ve had a few hot products sell out too soon \u2014 or a stack of unsold\r inventory eating your margins \u2014 you learn that guessing is expensive."}
                 </div>
                 <div
                   className={classNames(
@@ -232,7 +232,7 @@ function PlasmicDemandPlanningRoi__RenderFunc(props) {
                   )}
                 >
                   {
-                    "Demand planning is simply the process of anticipating what your customers will want and when they\u2019ll want\rit, so you can align your purchasing, marketing, and fulfillment decisions. The goal isn\u2019t to predict the future\rperfectly \u2014 it\u2019s to make sure your money is in motion instead of sitting idle in the wrong inventory."
+                    "Demand planning is simply the process of anticipating what your customers will want and when they\u2019ll want \rit, so you can align your purchasing, marketing, and fulfillment decisions. The goal isn\u2019t to predict the future\r perfectly \u2014 it\u2019s to make sure your money is in motion instead of sitting idle in the wrong inventory."
                   }
                 </div>
                 <div
@@ -243,7 +243,7 @@ function PlasmicDemandPlanningRoi__RenderFunc(props) {
                   )}
                 >
                   {
-                    "When done right, it touches everything: revenue, profit, cash flow, and customer satisfaction. When done\rwrong, it quietly drains all four."
+                    "When done right, it touches everything: revenue, profit, cash flow, and customer satisfaction. When done \rwrong, it quietly drains all four."
                   }
                 </div>
               </div>
@@ -333,7 +333,7 @@ function PlasmicDemandPlanningRoi__RenderFunc(props) {
                             </span>
                             <React.Fragment>
                               {
-                                " means missed sales, frustrated customers, and broken momentum when products\rare suddenly unavailable.\r"
+                                " means missed sales, frustrated customers, and broken momentum when products\r are suddenly unavailable.\r"
                               }
                             </React.Fragment>
                           </React.Fragment>
@@ -376,7 +376,7 @@ function PlasmicDemandPlanningRoi__RenderFunc(props) {
                 )}
               >
                 {
-                  "These problems compound quietly. A few percentage points of bad timing on each SKU can add up to\rthousands of dollars lost each month."
+                  "These problems compound quietly. A few percentage points of bad timing on each SKU can add up to \rthousands of dollars lost each month."
                 }
               </div>
               <div
@@ -400,7 +400,7 @@ function PlasmicDemandPlanningRoi__RenderFunc(props) {
                   </span>
                   <React.Fragment>
                     {
-                      ". It gives you a rhythm:\rknowing what\u2019s safe to reorder, when to slow down, and how much flexibility you really have."
+                      ". It gives you a rhythm: \rknowing what\u2019s safe to reorder, when to slow down, and how much flexibility you really have."
                     }
                   </React.Fragment>
                 </React.Fragment>
@@ -452,7 +452,7 @@ function PlasmicDemandPlanningRoi__RenderFunc(props) {
                     }
                     <React.Fragment>
                       {
-                        "Looking back over 12\u201324 months of daily sales to see what\u2019s seasonal, what\u2019s random, and what\u2019s\rconsistently growing."
+                        "Looking back over 12\u201324 months of daily sales to see what\u2019s seasonal, what\u2019s random, and what\u2019s\r consistently growing."
                       }
                     </React.Fragment>
                   </React.Fragment>
@@ -510,7 +510,7 @@ function PlasmicDemandPlanningRoi__RenderFunc(props) {
                     }
                     <React.Fragment>
                       {
-                        "Ordering inventory, scheduling ads, or planning promotions based on how confident you are that\rdemand will stay within a certain range."
+                        "Ordering inventory, scheduling ads, or planning promotions based on how confident you are that \rdemand will stay within a certain range."
                       }
                     </React.Fragment>
                   </React.Fragment>
@@ -574,7 +574,7 @@ function PlasmicDemandPlanningRoi__RenderFunc(props) {
                     }
                     <React.Fragment>
                       {
-                        "Simple trendlines ignore volatility. You end up planning for the middle and missing the peaks and\rvalleys that drive profit."
+                        "Simple trend lines ignore volatility. You end up planning for the middle and missing the peaks and\r valleys that drive profit."
                       }
                     </React.Fragment>
                   </React.Fragment>
@@ -602,7 +602,7 @@ function PlasmicDemandPlanningRoi__RenderFunc(props) {
                     }
                     <React.Fragment>
                       {
-                        "One SKU might spike every 90 days, another every weekend. Aggregating them together hides their\rreal patterns."
+                        "One SKU might spike every 90 days, another every weekend. Aggregating them together hides their \rreal patterns."
                       }
                     </React.Fragment>
                   </React.Fragment>
@@ -630,7 +630,7 @@ function PlasmicDemandPlanningRoi__RenderFunc(props) {
                     }
                     <React.Fragment>
                       {
-                        "Every forecast has risk, but most tools only show one number. Without a range, you can\u2019t tell what\u2019s\rsafe vs. speculative."
+                        "Every forecast has risk, but most tools only show one number. Without a range, you can\u2019t tell what\u2019s\r safe vs. speculative."
                       }
                     </React.Fragment>
                   </React.Fragment>
@@ -672,7 +672,7 @@ function PlasmicDemandPlanningRoi__RenderFunc(props) {
                 >
                   {hasVariant(globalVariants, "screen", "mobileOnly")
                     ? "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam a metus quis lorem malesuada luctus. Cras lacinia, eros at dapibus molestie, risus tortor pretium ligula, eu malesuada tortor eros dapibus mi. Proin laoreet efficitur suscipit. Donec molestie volutpat euismod. Nulla gravida ligula in eros facilisis, sed dignissim tellus aliquam. Etiam convallis enim nisi, at suscipit tortor pulvinar at. "
-                    : "Each of these mistakes erodes ROI because they push you to overreact \u2014 buying too much, or holding back\rwhen demand was actually climbing."}
+                    : "Each of these mistakes erodes ROI because they push you to overreact \u2014 buying too much, or holding back\r when demand was actually climbing."}
                 </div>
               </div>
               <div className={classNames(projectcss.all, sty.freeBox__v2IKv)}>
@@ -723,7 +723,7 @@ function PlasmicDemandPlanningRoi__RenderFunc(props) {
                       }
                       <React.Fragment>
                         {
-                          "You\u2019re investing only where it pays off. Less idle stock means more liquid\rcapital for ads or product development.."
+                          "You\u2019re investing only where it pays off. Less idle stock means more liquid\r capital for ads or product development.."
                         }
                       </React.Fragment>
                     </React.Fragment>
@@ -751,7 +751,7 @@ function PlasmicDemandPlanningRoi__RenderFunc(props) {
                       }
                       <React.Fragment>
                         {
-                          "Smoother purchase cycles reduce rush orders and last-minute shipping\rcosts."
+                          "Smoother purchase cycles reduce rush orders and last-minute shipping \rcosts."
                         }
                       </React.Fragment>
                     </React.Fragment>
@@ -779,7 +779,7 @@ function PlasmicDemandPlanningRoi__RenderFunc(props) {
                       }
                       <React.Fragment>
                         {
-                          "With clear forecasts, you can plan promotions or seasonal campaigns\rmonths in advance without guessing."
+                          "With clear forecasts, you can plan promotions or seasonal campaigns \rmonths in advance without guessing."
                         }
                       </React.Fragment>
                     </React.Fragment>
@@ -819,7 +819,7 @@ function PlasmicDemandPlanningRoi__RenderFunc(props) {
                 >
                   {hasVariant(globalVariants, "screen", "mobileOnly")
                     ? "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam a metus quis lorem malesuada luctus. Cras lacinia, eros at dapibus molestie, risus tortor pretium ligula, eu malesuada tortor eros dapibus mi. Proin laoreet efficitur suscipit. Donec molestie volutpat euismod. Nulla gravida ligula in eros facilisis, sed dignissim tellus aliquam. Etiam convallis enim nisi, at suscipit tortor pulvinar at. "
-                    : "The problem isn\u2019t that small merchants lack data \u2014 it\u2019s that most forecasting tools treat their data like it\rbelongs to a Fortune 500 company. They assume you have analysts, time, and context to interpret abstract\rmodels."}
+                    : "The problem isn\u2019t that small merchants lack data \u2014 it\u2019s that most forecasting tools treat their data like it \rbelongs to a Fortune 500 company. They assume you have analysts, time, and context to interpret abstrac t\rmodels."}
                 </div>
                 <div
                   className={classNames(
@@ -865,7 +865,7 @@ function PlasmicDemandPlanningRoi__RenderFunc(props) {
                   )}
                 >
                   {
-                    "TSF Lite takes a different path. Instead of fitting one big model to your data, it treats each day as a separate\rforecasting problem."
+                    "TSF Lite takes a different path. Instead of fitting one big model to your data, it treats each day as a separate \rforecasting problem."
                   }
                 </div>
                 <div
@@ -888,7 +888,7 @@ function PlasmicDemandPlanningRoi__RenderFunc(props) {
                       {"up to 800 different forecast models"}
                     </span>
                     <React.Fragment>
-                      {" \u2014 each\rderived from a library of "}
+                      {" \u2014 each \rderived from a library of "}
                     </React.Fragment>
                     <span
                       className={"plasmic_default__all plasmic_default__span"}
@@ -912,7 +912,7 @@ function PlasmicDemandPlanningRoi__RenderFunc(props) {
                     </span>
                     <React.Fragment>
                       {
-                        ". It\rselects the model that has proven most accurate for that specific date, based on historical performance.\rThe result is a forecast that moves with your business instead of flattening it."
+                        ". It selects the model that has proven most accurate for that specific date, based on historical performance.\r The result is a forecast that moves with your business instead of flattening it."
                       }
                     </React.Fragment>
                   </React.Fragment>
@@ -952,7 +952,7 @@ function PlasmicDemandPlanningRoi__RenderFunc(props) {
                     </span>
                     <React.Fragment>
                       {
-                        " for monthly forecasts and another 3,000 for\r quarterly forecasts. Not every seasonal model is appropriate for every dataset, but the library ensures that\rTSF can handle everything from 2 years to 20 years of historical data."
+                        " for monthly forecasts and another 3,000 for\r quarterly forecasts. Not every seasonal model is appropriate for every dataset, but the library ensures that\r TSF can handle everything from 2 years to 20 years of historical data."
                       }
                     </React.Fragment>
                   </React.Fragment>
@@ -1133,7 +1133,7 @@ function PlasmicDemandPlanningRoi__RenderFunc(props) {
                       }
                       <React.Fragment>
                         {
-                          "Less overstock means less capital trapped on the shelf \u2014 which compounds every month.."
+                          "Less overstock means less capital trapped on the shelf \u2014 which compounds every month."
                         }
                       </React.Fragment>
                     </React.Fragment>
@@ -1196,17 +1196,6 @@ function PlasmicDemandPlanningRoi__RenderFunc(props) {
                   className={classNames(
                     projectcss.all,
                     projectcss.__wab_text,
-                    sty.text___4RWl
-                  )}
-                >
-                  {hasVariant(globalVariants, "screen", "mobileOnly")
-                    ? "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam a metus quis lorem malesuada luctus. Cras lacinia, eros at dapibus molestie, risus tortor pretium ligula, eu malesuada tortor eros dapibus mi. Proin laoreet efficitur suscipit. Donec molestie volutpat euismod. Nulla gravida ligula in eros facilisis, sed dignissim tellus aliquam. Etiam convallis enim nisi, at suscipit tortor pulvinar at. "
-                    : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam a metus quis lorem malesuada luctus. Cras lacinia, eros at dapibus molestie, risus tortor pretium ligula, eu malesuada tortor eros dapibus mi. Proin laoreet efficitur suscipit. Donec molestie volutpat euismod. Nulla gravida ligula in eros facilisis, sed dignissim tellus aliquam. Etiam convallis enim nisi, at suscipit tortor pulvinar at. "}
-                </div>
-                <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
                     sty.text__qjIJz
                   )}
                 >
@@ -1233,7 +1222,7 @@ function PlasmicDemandPlanningRoi__RenderFunc(props) {
                   )}
                 >
                   {
-                    "Start using your own data as a compass instead of a mystery. The green zone will tell you when to act, the\rgold line will show you where you\u2019re headed."
+                    "Start using your own data as a compass instead of a mystery. The green zone will tell you when to act, the\r gold line will show you where you\u2019re headed."
                   }
                 </div>
                 <div

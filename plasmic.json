@@ -2269,6 +2269,20 @@
           "scheme": "blackbox",
           "componentType": "page",
           "path": "/tsf-action"
+        },
+        {
+          "id": "hYC3Z0VRUfD1",
+          "name": "AgencyPartnerProgram",
+          "type": "managed",
+          "projectId": "8yhBRaKsBf3R2wKMhT5dUU",
+          "renderModuleFilePath": "plasmic/tsf_demand_website/PlasmicAgencyPartnerProgram.jsx",
+          "importSpec": {
+            "modulePath": "../pages/partners.jsx"
+          },
+          "cssFilePath": "plasmic/tsf_demand_website/PlasmicAgencyPartnerProgram.module.css",
+          "scheme": "blackbox",
+          "componentType": "page",
+          "path": "/partners"
         }
       ],
       "icons": [
@@ -3188,6 +3202,30 @@
           "name": "IframeEmbed",
           "displayName": "IframeEmbed",
           "componentImportPath": "./components/IframeEmbed"
+        }
+      ],
+      "customFunctions": []
+    },
+    {
+      "projectId": "enk3K4vZ6pmH6kVCoZJXGn",
+      "projectApiToken": "3n3SKEMyDjMJptsNvaK6yxRaa8PAgqwkfIhRbKT4ZG9SobeM3Kb5rE2pSYmbR338Z5p6vBTScOAnptZwGSbQ",
+      "projectName": "react-youtube",
+      "version": ">0.0.0",
+      "cssFilePath": "plasmic/react_youtube/plasmic.module.css",
+      "components": [],
+      "icons": [],
+      "images": [],
+      "indirect": true,
+      "globalContextsFilePath": "",
+      "splitsProviderFilePath": "",
+      "styleTokensProviderFilePath": "plasmic/react_youtube/PlasmicStyleTokensProvider.jsx",
+      "projectModuleFilePath": "plasmic/react_youtube/plasmic.jsx",
+      "codeComponents": [
+        {
+          "id": "CHO21V9uYw",
+          "name": "YouTube",
+          "displayName": "hostless-youtube",
+          "componentImportPath": "@plasmicpkgs/react-youtube"
         }
       ],
       "customFunctions": []
