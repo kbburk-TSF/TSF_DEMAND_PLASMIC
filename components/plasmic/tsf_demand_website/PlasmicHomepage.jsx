@@ -24,6 +24,7 @@ import { useDataEnv } from "@plasmicapp/react-web/lib/host";
 import TsfDemandMainNavigation from "../../TsfDemandMainNavigation"; // plasmic-import: RS9jruOWtFtt/component
 import Button from "../../Button"; // plasmic-import: -U7nCsYlsFbS/component
 import Button2 from "../../Button2"; // plasmic-import: IsImc8gJBadG/component
+import HowToUseYourForecast from "../../HowToUseYourForecast"; // plasmic-import: udcHmc-MXrK7/component
 import TsfFooter from "../../TsfFooter"; // plasmic-import: NmgYw5lHKANx/component
 import BlogPosts from "../../BlogPosts"; // plasmic-import: t8iMRGE7O8dB/component
 import CtaBlock from "../../CtaBlock"; // plasmic-import: qoTEPcEAYg5b/component
@@ -35,11 +36,6 @@ import projectcss from "./plasmic.module.css"; // plasmic-import: 8yhBRaKsBf3R2w
 import sty from "./PlasmicHomepage.module.css"; // plasmic-import: pPnx7cCl0iri/css
 import CircleIcon from "./icons/PlasmicIcon__Circle"; // plasmic-import: iCnGomX0kBnc/icon
 import Icon4Icon from "./icons/PlasmicIcon__Icon4"; // plasmic-import: s0pSL1_dtWEm/icon
-import Icon11Icon from "./icons/PlasmicIcon__Icon11"; // plasmic-import: e15IDclT0vTC/icon
-import Icon8Icon from "./icons/PlasmicIcon__Icon8"; // plasmic-import: FGJcG_uIECwR/icon
-import Icon10Icon from "./icons/PlasmicIcon__Icon10"; // plasmic-import: WKmUSY2JMrqE/icon
-import Icon13Icon from "./icons/PlasmicIcon__Icon13"; // plasmic-import: jJJqFQNMqxtj/icon
-import ShopifySvg2Icon from "./icons/PlasmicIcon__ShopifySvg2"; // plasmic-import: ZY2ILszd07ta/icon
 
 createPlasmicElementProxy;
 
@@ -163,7 +159,33 @@ function PlasmicHomepage__RenderFunc(props) {
                           ? "Forecasts built for decision makers, not for data scientists."
                           : hasVariant(globalVariants, "screen", "mobileOnly")
                             ? "Ready to accept or acquiesce willing."
-                            : "Forecasts built for decision makers, not data scientists. "}
+                            : "The Decision Framework for Timing Every Business Move"}
+                      </h1>
+                      <h1
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.h1,
+                          projectcss.__wab_text,
+                          sty.h1__csGh0,
+                          {
+                            [sty.h1global_unnamedGlobalGroupOfVariants_unnamedVariant__csGh0Fzl1R]:
+                              hasVariant(
+                                globalVariants,
+                                "unnamedGlobalGroupOfVariants",
+                                "unnamedVariant"
+                              )
+                          }
+                        )}
+                      >
+                        {hasVariant(
+                          globalVariants,
+                          "unnamedGlobalGroupOfVariants",
+                          "unnamedVariant"
+                        )
+                          ? "Forecasts built for decision makers, not for data scientists."
+                          : hasVariant(globalVariants, "screen", "mobileOnly")
+                            ? "Ready to accept or acquiesce willing."
+                            : "It\u2019s not about guessing what happens next. It\u2019s about knowing what\u2019s happening now. "}
                       </h1>
                       <div
                         className={classNames(
@@ -173,7 +195,7 @@ function PlasmicHomepage__RenderFunc(props) {
                         )}
                       >
                         {
-                          "\r\nPowered by a breakthrough in forecasting science, Targeted Seasonal Forecasts deliver daily predictions with month-long horizons \u2014 and quantified confidence in every single value. The proprietary library of irregular seasonal models reveals objective patterns in the historical data. Each forecast value is selected from at least 800 different forecast models, based on historical patterns of accuracy. \r\n"
+                          "Instead of predicting the future, TSF translates complex data into clear, immediate direction\u2014showing when to hold steady, when to grow, and when to protect. It gives leaders a simple, visual way to recognize opportunity and risk in real time, so actions match reality."
                         }
                       </div>
                       <Button
@@ -278,151 +300,15 @@ function PlasmicHomepage__RenderFunc(props) {
                             sty.text__ymhv5
                           )}
                         >
-                          <React.Fragment>
-                            <React.Fragment>
-                              {"Traditional forecasts predict "}
-                            </React.Fragment>
-                            <span
-                              className={
-                                "plasmic_default__all plasmic_default__span"
-                              }
-                              style={{ textDecorationLine: "underline" }}
-                            >
-                              {"numbers"}
-                            </span>
-                            <React.Fragment>{", not "}</React.Fragment>
-                            <span
-                              className={
-                                "plasmic_default__all plasmic_default__span"
-                              }
-                              style={{ textDecorationLine: "underline" }}
-                            >
-                              {"decisions"}
-                            </span>
-                            <React.Fragment>
-                              {
-                                ". They leave you to interpret what\u2019s normal. "
-                              }
-                            </React.Fragment>
-                          </React.Fragment>
+                          {
+                            "Building a business is hard. Running one shouldn\u2019t be."
+                          }
                         </div>
                         <div
                           className={classNames(
                             projectcss.all,
                             projectcss.__wab_text,
-                            sty.text__xuoZq
-                          )}
-                        >
-                          <React.Fragment>
-                            <span
-                              className={
-                                "plasmic_default__all plasmic_default__span"
-                              }
-                              style={{ fontStyle: "italic" }}
-                            >
-                              {
-                                "Every merchant runs out of stock or over-orders because their \u201cforecast\u201d is a "
-                              }
-                            </span>
-                            <React.Fragment>{""}</React.Fragment>
-                            <span
-                              className={
-                                "plasmic_default__all plasmic_default__span"
-                              }
-                              style={{
-                                fontStyle: "italic",
-                                fontWeight: 700,
-                                textDecorationLine: "underline"
-                              }}
-                            >
-                              {"spreadsheet"}
-                            </span>
-                            <React.Fragment>{""}</React.Fragment>
-                            <span
-                              className={
-                                "plasmic_default__all plasmic_default__span"
-                              }
-                              style={{ fontStyle: "italic" }}
-                            >
-                              {", not a "}
-                            </span>
-                            <React.Fragment>{""}</React.Fragment>
-                            <span
-                              className={
-                                "plasmic_default__all plasmic_default__span"
-                              }
-                              style={{
-                                fontStyle: "italic",
-                                fontWeight: 700,
-                                textDecorationLine: "underline"
-                              }}
-                            >
-                              {"signal"}
-                            </span>
-                            <React.Fragment>{""}</React.Fragment>
-                            <span
-                              className={
-                                "plasmic_default__all plasmic_default__span"
-                              }
-                              style={{ fontStyle: "italic" }}
-                            >
-                              {"."}
-                            </span>
-                          </React.Fragment>
-                        </div>
-                        <div
-                          className={classNames(
-                            projectcss.all,
-                            projectcss.__wab_text,
-                            sty.text__snCAq
-                          )}
-                        >
-                          <React.Fragment>
-                            <React.Fragment>{""}</React.Fragment>
-                            {
-                              <h2
-                                className={classNames(
-                                  projectcss.all,
-                                  projectcss.h2,
-                                  projectcss.__wab_text,
-                                  sty.h2__r4Zff
-                                )}
-                              >
-                                <React.Fragment>
-                                  <span
-                                    className={
-                                      "plasmic_default__all plasmic_default__span"
-                                    }
-                                    style={{
-                                      color: "var(--token-zrH0XRQElDBe)"
-                                    }}
-                                  >
-                                    {"The TSF Soultion: "}
-                                  </span>
-                                  <React.Fragment>{"\n"}</React.Fragment>
-                                  <span
-                                    className={
-                                      "plasmic_default__all plasmic_default__span"
-                                    }
-                                    style={{
-                                      color: "var(--token-zrH0XRQElDBe)"
-                                    }}
-                                  >
-                                    {
-                                      "One Forecast. Every Cadence. Every Decision. "
-                                    }
-                                  </span>
-                                </React.Fragment>
-                              </h2>
-                            }
-                            <React.Fragment>{""}</React.Fragment>
-                          </React.Fragment>
-                        </div>
-                        <div
-                          className={classNames(
-                            projectcss.all,
-                            projectcss.__wab_text,
-                            sty.text___2N6QG
+                            sty.text__iVlts
                           )}
                         >
                           <React.Fragment>
@@ -432,8 +318,29 @@ function PlasmicHomepage__RenderFunc(props) {
                               }
                               style={{ color: "var(--token-Ry9eGMy91QvA)" }}
                             >
+                              {"When you\u2019re "}
+                            </span>
+                            <React.Fragment>{""}</React.Fragment>
+                            <span
+                              className={
+                                "plasmic_default__all plasmic_default__span"
+                              }
+                              style={{
+                                color: "var(--token-Ry9eGMy91QvA)",
+                                fontWeight: 700
+                              }}
+                            >
+                              {"building"}
+                            </span>
+                            <React.Fragment>{""}</React.Fragment>
+                            <span
+                              className={
+                                "plasmic_default__all plasmic_default__span"
+                              }
+                              style={{ color: "var(--token-Ry9eGMy91QvA)" }}
+                            >
                               {
-                                "At the start of each month, TSF gives you a forecast like this \u2014 the "
+                                ", everything\u2019s uncertain \u2014 you\u2019re "
                               }
                             </span>
                             <React.Fragment>{""}</React.Fragment>
@@ -446,7 +353,7 @@ function PlasmicHomepage__RenderFunc(props) {
                                 fontWeight: 700
                               }}
                             >
-                              {"gold line"}
+                              {"creating"}
                             </span>
                             <React.Fragment>{""}</React.Fragment>
                             <span
@@ -455,7 +362,29 @@ function PlasmicHomepage__RenderFunc(props) {
                               }
                               style={{ color: "var(--token-Ry9eGMy91QvA)" }}
                             >
-                              {" shows your expected daily sales, and the "}
+                              {
+                                " structure, systems, and stability from scratch."
+                              }
+                            </span>
+                          </React.Fragment>
+                        </div>
+                        <div
+                          className={classNames(
+                            projectcss.all,
+                            projectcss.__wab_text,
+                            sty.text__ssKt4
+                          )}
+                        >
+                          <React.Fragment>
+                            <span
+                              className={
+                                "plasmic_default__all plasmic_default__span"
+                              }
+                              style={{ color: "var(--token-Ry9eGMy91QvA)" }}
+                            >
+                              {
+                                "But once you\u2019re running, the game changes. It\u2019s not about building anymore. It\u2019s about "
+                              }
                             </span>
                             <React.Fragment>{""}</React.Fragment>
                             <span
@@ -467,7 +396,7 @@ function PlasmicHomepage__RenderFunc(props) {
                                 fontWeight: 700
                               }}
                             >
-                              {"green zone"}
+                              {"maintaining"}
                             </span>
                             <React.Fragment>{""}</React.Fragment>
                             <span
@@ -476,7 +405,7 @@ function PlasmicHomepage__RenderFunc(props) {
                               }
                               style={{ color: "var(--token-Ry9eGMy91QvA)" }}
                             >
-                              {" marks what\u2019s considered "}
+                              {" what works and "}
                             </span>
                             <React.Fragment>{""}</React.Fragment>
                             <span
@@ -485,10 +414,10 @@ function PlasmicHomepage__RenderFunc(props) {
                               }
                               style={{
                                 color: "var(--token-Ry9eGMy91QvA)",
-                                fontStyle: "italic"
+                                fontWeight: 700
                               }}
                             >
-                              {"normal"}
+                              {"guiding"}
                             </span>
                             <React.Fragment>{""}</React.Fragment>
                             <span
@@ -498,34 +427,17 @@ function PlasmicHomepage__RenderFunc(props) {
                               style={{ color: "var(--token-Ry9eGMy91QvA)" }}
                             >
                               {
-                                ". The upper edge is your planning line: stock or produce enough to cover everything inside that band."
+                                " what\u2019s next. And in that game, there are only three possible moves:"
                               }
                             </span>
                           </React.Fragment>
                         </div>
-                        <PlasmicImg__
-                          alt={""}
-                          className={classNames(sty.img__kKg7B)}
-                          displayHeight={"auto"}
-                          displayMaxHeight={"none"}
-                          displayMaxWidth={"100%"}
-                          displayMinHeight={"0"}
-                          displayMinWidth={"0"}
-                          displayWidth={"auto"}
-                          loading={"lazy"}
-                          src={{
-                            src: "/plasmic/tsf_demand_website/images/tsfInAction01Png2.png",
-                            fullWidth: 1200,
-                            fullHeight: 435,
-                            aspectRatio: undefined
-                          }}
-                        />
-
-                        <div
+                        <h3
                           className={classNames(
                             projectcss.all,
+                            projectcss.h3,
                             projectcss.__wab_text,
-                            sty.text__igkuR
+                            sty.h3__k3MKk
                           )}
                         >
                           <React.Fragment>
@@ -533,129 +445,222 @@ function PlasmicHomepage__RenderFunc(props) {
                               className={
                                 "plasmic_default__all plasmic_default__span"
                               }
-                              style={{ color: "var(--token-Ry9eGMy91QvA)" }}
+                              style={{ color: "var(--token-ElSOFvpR3TI_)" }}
                             >
-                              {
-                                "As the month begins, your actual sales (the dotted line) appear automatically on the same chart. You can see at a glance whether performance is on pace, soft, or trending hot."
-                              }
+                              {"Hold"}
                             </span>
-                          </React.Fragment>
-                        </div>
-                        <PlasmicImg__
-                          alt={""}
-                          className={classNames(sty.img__n2Gj7)}
-                          displayHeight={"auto"}
-                          displayMaxHeight={"none"}
-                          displayMaxWidth={"100%"}
-                          displayMinHeight={"0"}
-                          displayMinWidth={"0"}
-                          displayWidth={"auto"}
-                          loading={"lazy"}
-                          src={{
-                            src: "/plasmic/tsf_demand_website/images/tsfInAction02Png2.png",
-                            fullWidth: 1200,
-                            fullHeight: 435,
-                            aspectRatio: undefined
-                          }}
-                        />
-
-                        <div
-                          className={classNames(
-                            projectcss.all,
-                            projectcss.__wab_text,
-                            sty.text__wCbJl
-                          )}
-                        >
-                          <React.Fragment>
-                            <span
-                              className={
-                                "plasmic_default__all plasmic_default__span"
-                              }
-                              style={{ color: "var(--token-Ry9eGMy91QvA)" }}
-                            >
-                              {
-                                "If actuals stay inside the green zone \u2192 you\u2019re on plan."
-                              }
-                            </span>
-                          </React.Fragment>
-                        </div>
-                        <div
-                          className={classNames(
-                            projectcss.all,
-                            projectcss.__wab_text,
-                            sty.text__cDvqU
-                          )}
-                        >
-                          <React.Fragment>
-                            <span
-                              className={
-                                "plasmic_default__all plasmic_default__span"
-                              }
-                              style={{ color: "var(--token-Ry9eGMy91QvA)" }}
-                            >
-                              {
-                                "If they press the upper edge \u2192 reorder early."
-                              }
-                            </span>
-                          </React.Fragment>
-                        </div>
-                        <div
-                          className={classNames(
-                            projectcss.all,
-                            projectcss.__wab_text,
-                            sty.text__jiusm
-                          )}
-                        >
-                          <React.Fragment>
-                            <span
-                              className={
-                                "plasmic_default__all plasmic_default__span"
-                              }
-                              style={{ color: "var(--token-Ry9eGMy91QvA)" }}
-                            >
-                              {
-                                "If they fall toward the bottom \u2192 hold or scale back."
-                              }
-                            </span>
-                          </React.Fragment>
-                        </div>
-                        <div
-                          className={classNames(
-                            projectcss.all,
-                            projectcss.__wab_text,
-                            sty.text__susLe
-                          )}
-                        >
-                          <React.Fragment>
                             <React.Fragment>{""}</React.Fragment>
-                            {
-                              <h3
-                                data-plasmic-name={"h3"}
-                                data-plasmic-override={overrides.h3}
-                                className={classNames(
-                                  projectcss.all,
-                                  projectcss.h3,
-                                  projectcss.__wab_text,
-                                  sty.h3
-                                )}
-                              >
-                                <React.Fragment>
-                                  <span
-                                    className={
-                                      "plasmic_default__all plasmic_default__span"
-                                    }
-                                    style={{
-                                      color: "var(--token-Ry9eGMy91QvA)"
-                                    }}
-                                  >
-                                    {
-                                      "That\u2019s the whole process\u2014no analysis, no dashboards full of noise, just a single chart that updates itself every day."
-                                    }
-                                  </span>
-                                </React.Fragment>
-                              </h3>
-                            }
+                            <span
+                              className={
+                                "plasmic_default__all plasmic_default__span"
+                              }
+                              style={{ color: "var(--token-Ry9eGMy91QvA)" }}
+                            >
+                              {". "}
+                            </span>
                             <React.Fragment>{""}</React.Fragment>
+                            <span
+                              className={
+                                "plasmic_default__all plasmic_default__span"
+                              }
+                              style={{ color: "var(--token-vQyax-nfo-J2)" }}
+                            >
+                              {"Grow"}
+                            </span>
+                            <React.Fragment>{""}</React.Fragment>
+                            <span
+                              className={
+                                "plasmic_default__all plasmic_default__span"
+                              }
+                              style={{ color: "var(--token-Ry9eGMy91QvA)" }}
+                            >
+                              {". "}
+                            </span>
+                            <React.Fragment>{""}</React.Fragment>
+                            <span
+                              className={
+                                "plasmic_default__all plasmic_default__span"
+                              }
+                              style={{ color: "var(--token-zrH0XRQElDBe)" }}
+                            >
+                              {"Protect"}
+                            </span>
+                            <React.Fragment>{""}</React.Fragment>
+                            <span
+                              className={
+                                "plasmic_default__all plasmic_default__span"
+                              }
+                              style={{ color: "var(--token-Ry9eGMy91QvA)" }}
+                            >
+                              {". "}
+                            </span>
+                          </React.Fragment>
+                        </h3>
+                        <div
+                          className={classNames(
+                            projectcss.all,
+                            projectcss.__wab_text,
+                            sty.text__hi6X5
+                          )}
+                        >
+                          <React.Fragment>
+                            <span
+                              className={
+                                "plasmic_default__all plasmic_default__span"
+                              }
+                              style={{ color: "var(--token-Ry9eGMy91QvA)" }}
+                            >
+                              {
+                                "Every decision \u2014\u00a0every hire, every order, every campaign \u2014 falls into one of those three categories. "
+                              }
+                            </span>
+                          </React.Fragment>
+                        </div>
+                        <h3
+                          className={classNames(
+                            projectcss.all,
+                            projectcss.h3,
+                            projectcss.__wab_text,
+                            sty.h3__tRrTa
+                          )}
+                        >
+                          <React.Fragment>
+                            <span
+                              className={
+                                "plasmic_default__all plasmic_default__span"
+                              }
+                              style={{ color: "var(--token-ElSOFvpR3TI_)" }}
+                            >
+                              {"Hold"}
+                            </span>
+                            <React.Fragment>{""}</React.Fragment>
+                            <span
+                              className={
+                                "plasmic_default__all plasmic_default__span"
+                              }
+                              style={{ color: "var(--token-Ry9eGMy91QvA)" }}
+                            >
+                              {". "}
+                            </span>
+                            <React.Fragment>{""}</React.Fragment>
+                            <span
+                              className={
+                                "plasmic_default__all plasmic_default__span"
+                              }
+                              style={{ color: "var(--token-vQyax-nfo-J2)" }}
+                            >
+                              {"Grow"}
+                            </span>
+                            <React.Fragment>{""}</React.Fragment>
+                            <span
+                              className={
+                                "plasmic_default__all plasmic_default__span"
+                              }
+                              style={{ color: "var(--token-Ry9eGMy91QvA)" }}
+                            >
+                              {". "}
+                            </span>
+                            <React.Fragment>{""}</React.Fragment>
+                            <span
+                              className={
+                                "plasmic_default__all plasmic_default__span"
+                              }
+                              style={{ color: "var(--token-zrH0XRQElDBe)" }}
+                            >
+                              {"Protect"}
+                            </span>
+                            <React.Fragment>{""}</React.Fragment>
+                            <span
+                              className={
+                                "plasmic_default__all plasmic_default__span"
+                              }
+                              style={{ color: "var(--token-Ry9eGMy91QvA)" }}
+                            >
+                              {". "}
+                            </span>
+                          </React.Fragment>
+                        </h3>
+                        <div
+                          className={classNames(
+                            projectcss.all,
+                            projectcss.__wab_text,
+                            sty.text__h6J9O
+                          )}
+                        >
+                          <React.Fragment>
+                            <span
+                              className={
+                                "plasmic_default__all plasmic_default__span"
+                              }
+                              style={{ color: "var(--token-Ry9eGMy91QvA)" }}
+                            >
+                              {
+                                "The hard part isn\u2019t choosing what to do. It\u2019s "
+                              }
+                            </span>
+                            <React.Fragment>{""}</React.Fragment>
+                            <span
+                              className={
+                                "plasmic_default__all plasmic_default__span"
+                              }
+                              style={{
+                                color: "var(--token-Ry9eGMy91QvA)",
+                                fontWeight: 700
+                              }}
+                            >
+                              {"knowing which one to do right now"}
+                            </span>
+                            <React.Fragment>{""}</React.Fragment>
+                            <span
+                              className={
+                                "plasmic_default__all plasmic_default__span"
+                              }
+                              style={{ color: "var(--token-Ry9eGMy91QvA)" }}
+                            >
+                              {". That's where TSF comes in. "}
+                            </span>
+                          </React.Fragment>
+                        </div>
+                        <div
+                          className={classNames(
+                            projectcss.all,
+                            projectcss.__wab_text,
+                            sty.text__cFj1W
+                          )}
+                        >
+                          <React.Fragment>
+                            <React.Fragment>
+                              {
+                                "TSF tells you, at a glance whether this moment is normal or not \u2014\u00a0and whether it's time to "
+                              }
+                            </React.Fragment>
+                            <span
+                              className={
+                                "plasmic_default__all plasmic_default__span"
+                              }
+                              style={{ color: "var(--token-ElSOFvpR3TI_)" }}
+                            >
+                              {"hold"}
+                            </span>
+                            <React.Fragment>{", "}</React.Fragment>
+                            <span
+                              className={
+                                "plasmic_default__all plasmic_default__span"
+                              }
+                              style={{ color: "var(--token-vQyax-nfo-J2)" }}
+                            >
+                              {"grow"}
+                            </span>
+                            <React.Fragment>{", or "}</React.Fragment>
+                            <span
+                              className={
+                                "plasmic_default__all plasmic_default__span"
+                              }
+                              style={{ color: "var(--token-zrH0XRQElDBe)" }}
+                            >
+                              {"protect"}
+                            </span>
+                            <React.Fragment>{". "}</React.Fragment>
                           </React.Fragment>
                         </div>
                         <Button2
@@ -700,416 +705,126 @@ function PlasmicHomepage__RenderFunc(props) {
                     </div>
                   </div>
                   <div
-                    className={classNames(projectcss.all, sty.freeBox__dRzR7)}
+                    className={classNames(projectcss.all, sty.freeBox__vJv7W)}
                   >
                     <div
-                      className={classNames(projectcss.all, sty.freeBox__w3LN)}
-                    >
-                      <div
-                        data-plasmic-name={"foreground3"}
-                        data-plasmic-override={overrides.foreground3}
-                        className={classNames(projectcss.all, sty.foreground3)}
-                      >
-                        <h2
-                          className={classNames(
-                            projectcss.all,
-                            projectcss.h2,
-                            projectcss.__wab_text,
-                            sty.h2__kfV2L
-                          )}
-                        >
-                          {"Fewer Stockouts. Less Overstock. No Guessing. "}
-                        </h2>
-                      </div>
-                      <div
-                        data-plasmic-name={"foreground2"}
-                        data-plasmic-override={overrides.foreground2}
-                        className={classNames(projectcss.all, sty.foreground2)}
-                      >
-                        <div
-                          className={classNames(
-                            projectcss.all,
-                            sty.freeBox__zqeJm
-                          )}
-                        >
-                          <div
-                            className={classNames(
-                              projectcss.all,
-                              sty.freeBox__ipvVr
-                            )}
-                          >
-                            <div
-                              className={classNames(
-                                projectcss.all,
-                                sty.freeBox__gKrE5
-                              )}
-                            >
-                              <Icon11Icon
-                                className={classNames(
-                                  projectcss.all,
-                                  sty.svg__cF0D
-                                )}
-                                role={"img"}
-                              />
-                            </div>
-                            {false ? (
-                              <div
-                                className={classNames(
-                                  projectcss.all,
-                                  sty.freeBox__mDkWx
-                                )}
-                              >
-                                <Icon8Icon
-                                  className={classNames(
-                                    projectcss.all,
-                                    sty.svg__k9Emh
-                                  )}
-                                  role={"img"}
-                                />
-                              </div>
-                            ) : null}
-                            <div
-                              className={classNames(
-                                projectcss.all,
-                                sty.freeBox__uuD3S
-                              )}
-                            >
-                              <div
-                                className={classNames(
-                                  projectcss.all,
-                                  projectcss.__wab_text,
-                                  sty.text__lB89N
-                                )}
-                              >
-                                {"Start each month with clarity."}
-                              </div>
-                              <div
-                                className={classNames(
-                                  projectcss.all,
-                                  projectcss.__wab_text,
-                                  sty.text___19U5Z
-                                )}
-                              >
-                                {
-                                  "The green zone defines your safe operating range for each day \u2014 your best- and worst-case expectations based on real data. "
-                                }
-                              </div>
-                            </div>
-                          </div>
-                          <div
-                            className={classNames(
-                              projectcss.all,
-                              sty.freeBox__p4Bp
-                            )}
-                          >
-                            <div
-                              className={classNames(
-                                projectcss.all,
-                                sty.freeBox__wnsAu
-                              )}
-                            >
-                              <Icon10Icon
-                                className={classNames(
-                                  projectcss.all,
-                                  sty.svg___1AUc5
-                                )}
-                                role={"img"}
-                              />
-                            </div>
-                            {false ? (
-                              <div
-                                className={classNames(
-                                  projectcss.all,
-                                  sty.freeBox__qrP5I
-                                )}
-                              >
-                                <Icon8Icon
-                                  className={classNames(
-                                    projectcss.all,
-                                    sty.svg__h7Kza
-                                  )}
-                                  role={"img"}
-                                />
-                              </div>
-                            ) : null}
-                            <div
-                              className={classNames(
-                                projectcss.all,
-                                sty.freeBox__lTPre
-                              )}
-                            >
-                              <div
-                                className={classNames(
-                                  projectcss.all,
-                                  projectcss.__wab_text,
-                                  sty.text__feh6
-                                )}
-                              >
-                                {"Watch volatility, not just direction."}
-                              </div>
-                              <div
-                                className={classNames(
-                                  projectcss.all,
-                                  projectcss.__wab_text,
-                                  sty.text__uqEnl
-                                )}
-                              >
-                                {
-                                  "When the band widens, expect more variability \u2014\u00a0it's your signal to build flexibility into cash flow or supply. "
-                                }
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                        <div
-                          className={classNames(
-                            projectcss.all,
-                            sty.freeBox__pnKIm
-                          )}
-                        >
-                          <div
-                            className={classNames(
-                              projectcss.all,
-                              sty.freeBox__vb3P7
-                            )}
-                          >
-                            <div
-                              className={classNames(
-                                projectcss.all,
-                                sty.freeBox__ghRie
-                              )}
-                            >
-                              <Icon8Icon
-                                className={classNames(
-                                  projectcss.all,
-                                  sty.svg___1Hz1S
-                                )}
-                                role={"img"}
-                              />
-                            </div>
-                            {false ? (
-                              <div
-                                className={classNames(
-                                  projectcss.all,
-                                  sty.freeBox__poUlg
-                                )}
-                              >
-                                <Icon8Icon
-                                  className={classNames(
-                                    projectcss.all,
-                                    sty.svg__uoqWc
-                                  )}
-                                  role={"img"}
-                                />
-                              </div>
-                            ) : null}
-                            <div
-                              className={classNames(
-                                projectcss.all,
-                                sty.freeBox___7L319
-                              )}
-                            >
-                              <div
-                                className={classNames(
-                                  projectcss.all,
-                                  projectcss.__wab_text,
-                                  sty.text__ht21K
-                                )}
-                              >
-                                {
-                                  "Plan inventory, ads, and staffing within the band. "
-                                }
-                              </div>
-                              <div
-                                className={classNames(
-                                  projectcss.all,
-                                  projectcss.__wab_text,
-                                  sty.text__tDctR
-                                )}
-                              >
-                                {
-                                  "The top of the band is the strong demand scenario. The bottom of the band is the conservative scenario. Plan your orders and budgets around the range that fits your risk tolerance. "
-                                }
-                              </div>
-                            </div>
-                          </div>
-                          <div
-                            className={classNames(
-                              projectcss.all,
-                              sty.freeBox__svIu5
-                            )}
-                          >
-                            <div
-                              className={classNames(
-                                projectcss.all,
-                                sty.freeBox__cxlR
-                              )}
-                            >
-                              <Icon13Icon
-                                className={classNames(
-                                  projectcss.all,
-                                  sty.svg__ww61S
-                                )}
-                                role={"img"}
-                              />
-                            </div>
-                            {false ? (
-                              <div
-                                className={classNames(
-                                  projectcss.all,
-                                  sty.freeBox__exUtm
-                                )}
-                              >
-                                <Icon8Icon
-                                  className={classNames(
-                                    projectcss.all,
-                                    sty.svg___1R2Yj
-                                  )}
-                                  role={"img"}
-                                />
-                              </div>
-                            ) : null}
-                            <div
-                              className={classNames(
-                                projectcss.all,
-                                sty.freeBox__aZmNv
-                              )}
-                            >
-                              <div
-                                className={classNames(
-                                  projectcss.all,
-                                  projectcss.__wab_text,
-                                  sty.text___2FrMg
-                                )}
-                              >
-                                {"Measure signal vs. noise."}
-                              </div>
-                              <div
-                                className={classNames(
-                                  projectcss.all,
-                                  projectcss.__wab_text,
-                                  sty.text__xINlD
-                                )}
-                              >
-                                {
-                                  "If actual results stay inside the band, you're fine. If they consistently move above or below it, something has genuinely changed \u2014 that's a planning insight for next month, not a daily fire drill."
-                                }
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div
-                      className={classNames(projectcss.all, sty.freeBox__irFxI)}
+                      className={classNames(projectcss.all, sty.columns__ewpau)}
                     >
                       <div
                         className={classNames(
                           projectcss.all,
-                          sty.freeBox__n12L
+                          sty.column__axH6A
                         )}
                       >
                         <div
                           className={classNames(
                             projectcss.all,
-                            sty.freeBox__t5Ja
-                          )}
-                        >
-                          <ShopifySvg2Icon
-                            className={classNames(
-                              projectcss.all,
-                              sty.svg__eem1V
-                            )}
-                            role={"img"}
-                          />
-                        </div>
-                        {false ? (
-                          <div
-                            className={classNames(
-                              projectcss.all,
-                              sty.freeBox__c77Bt
-                            )}
-                          >
-                            <Icon8Icon
-                              className={classNames(
-                                projectcss.all,
-                                sty.svg__nlndn
-                              )}
-                              role={"img"}
-                            />
-                          </div>
-                        ) : null}
-                        <div
-                          className={classNames(
-                            projectcss.all,
-                            sty.freeBox__xOEz4
+                            sty.freeBox__iOmxQ
                           )}
                         >
                           <div
                             className={classNames(
                               projectcss.all,
                               projectcss.__wab_text,
-                              sty.text__gLtHu
+                              sty.text__d0JW3
                             )}
                           >
-                            {"Built for Shopify Merchants"}
+                            {"The Forecast That Defines Normal"}
                           </div>
                           <div
                             className={classNames(
                               projectcss.all,
                               projectcss.__wab_text,
-                              sty.text__hrlA6
+                              sty.text__vi7Ei
+                            )}
+                          >
+                            {
+                              "When performance stays within \u201dnormal,\u201d you hold. When it moves outside, you act."
+                            }
+                          </div>
+                          <div
+                            className={classNames(
+                              projectcss.all,
+                              projectcss.__wab_text,
+                              sty.text__mj9Wi
                             )}
                           >
                             <React.Fragment>
+                              <React.Fragment>
+                                {
+                                  "Each TSF forecast defines that boundary. The "
+                                }
+                              </React.Fragment>
                               <span
                                 className={
                                   "plasmic_default__all plasmic_default__span"
                                 }
-                                style={{ fontWeight: 700 }}
+                                style={{ fontWeight: 900 }}
                               >
-                                {"Set up once. Forecast forever. "}
+                                {"gold line"}
                               </span>
+                              <React.Fragment>
+                                {
+                                  " represents the expected value for each date, chosen from more than "
+                                }
+                              </React.Fragment>
+                              <span
+                                className={
+                                  "plasmic_default__all plasmic_default__span"
+                                }
+                                style={{ fontWeight: 900 }}
+                              >
+                                {"800 competing forecast models"}
+                              </span>
+                              <React.Fragment>
+                                {" based on proven historical accuracy. The "}
+                              </React.Fragment>
+                              <span
+                                className={
+                                  "plasmic_default__all plasmic_default__span"
+                                }
+                                style={{ fontWeight: 900 }}
+                              >
+                                {"green zone"}
+                              </span>
+                              <React.Fragment>
+                                {
+                                  " marks the confidence interval built from that same accuracy record \u2014 it's the statistical range of what\u2019s normal. When actuals fall inside the zone, conditions are stable. When they break above or below it, opportunity knocks. "
+                                }
+                              </React.Fragment>
                             </React.Fragment>
                           </div>
-                          <div
-                            className={classNames(
-                              projectcss.all,
-                              projectcss.__wab_text,
-                              sty.text__eeB1H
-                            )}
-                          >
-                            {
-                              "Connect your Shopify store, pick your products, and TSF Lite does the rest. Forecasts run automatically, uploaded and delivered straight to your dashboard each month. "
-                            }
-                          </div>
-                          <Button
-                            className={classNames(
-                              "__wab_instance",
-                              sty.button__tcey7
-                            )}
-                            color={"tsfDark"}
-                            label={
-                              <div
-                                className={classNames(
-                                  projectcss.all,
-                                  projectcss.__wab_text,
-                                  sty.text__laxy
-                                )}
-                              >
-                                {"TSF Lite App"}
-                              </div>
-                            }
-                            linkTo={`/tsf-lite`}
-                            onClick={async event => {
-                              const $steps = {};
-                            }}
-                          />
                         </div>
+                        <PlasmicImg__
+                          alt={""}
+                          className={classNames(sty.img__rhy9)}
+                          displayHeight={"auto"}
+                          displayMaxHeight={"none"}
+                          displayMaxWidth={"100%"}
+                          displayMinHeight={"0"}
+                          displayMinWidth={"0"}
+                          displayWidth={"auto"}
+                          loading={"lazy"}
+                          src={{
+                            src: "/plasmic/tsf_demand_website/images/tsfInAction4UpPng.png",
+                            fullWidth: 1500,
+                            fullHeight: 778,
+                            aspectRatio: undefined
+                          }}
+                        />
                       </div>
                     </div>
                   </div>
                 </div>
+                <HowToUseYourForecast
+                  data-plasmic-name={"tsfLiteFewerStockouts"}
+                  data-plasmic-override={overrides.tsfLiteFewerStockouts}
+                  className={classNames(
+                    "__wab_instance",
+                    sty.tsfLiteFewerStockouts
+                  )}
+                />
+
                 <div className={classNames(projectcss.all, sty.columns__oxRvY)}>
                   <div
                     className={classNames(projectcss.all, sty.column__ddl3J)}
@@ -1474,9 +1189,7 @@ const PlasmicDescendants = {
     "root",
     "tsfDemandMainNavigation",
     "features",
-    "h3",
-    "foreground3",
-    "foreground2",
+    "tsfLiteFewerStockouts",
     "ul",
     "link",
     "tsfFooter",
@@ -1486,10 +1199,8 @@ const PlasmicDescendants = {
   ],
 
   tsfDemandMainNavigation: ["tsfDemandMainNavigation"],
-  features: ["features", "h3", "foreground3", "foreground2"],
-  h3: ["h3"],
-  foreground3: ["foreground3"],
-  foreground2: ["foreground2"],
+  features: ["features", "tsfLiteFewerStockouts"],
+  tsfLiteFewerStockouts: ["tsfLiteFewerStockouts"],
   ul: ["ul"],
   link: ["link"],
   tsfFooter: ["tsfFooter"],
@@ -1532,9 +1243,7 @@ export const PlasmicHomepage = Object.assign(
     // Helper components rendering sub-elements
     tsfDemandMainNavigation: makeNodeComponent("tsfDemandMainNavigation"),
     features: makeNodeComponent("features"),
-    h3: makeNodeComponent("h3"),
-    foreground3: makeNodeComponent("foreground3"),
-    foreground2: makeNodeComponent("foreground2"),
+    tsfLiteFewerStockouts: makeNodeComponent("tsfLiteFewerStockouts"),
     ul: makeNodeComponent("ul"),
     link: makeNodeComponent("link"),
     tsfFooter: makeNodeComponent("tsfFooter"),
