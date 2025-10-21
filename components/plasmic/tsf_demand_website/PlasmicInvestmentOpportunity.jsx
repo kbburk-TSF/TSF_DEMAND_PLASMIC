@@ -238,7 +238,7 @@ function PlasmicInvestmentOpportunity__RenderFunc(props) {
                 displayWidth={"auto"}
                 loading={"lazy"}
                 src={{
-                  src: "/plasmic/tsf_demand_website/images/tsfPitchDeckV3001Jpeg.jpg",
+                  src: "/plasmic/tsf_demand_website/images/tsfPitchDeckV4001Jpeg.jpg",
                   fullWidth: 1920,
                   fullHeight: 1080,
                   aspectRatio: undefined
@@ -261,7 +261,7 @@ function PlasmicInvestmentOpportunity__RenderFunc(props) {
                 displayWidth={"auto"}
                 loading={"lazy"}
                 src={{
-                  src: "/plasmic/tsf_demand_website/images/tsfPitchDeckV3002Jpeg.jpg",
+                  src: "/plasmic/tsf_demand_website/images/tsfPitchDeckV4002Jpeg.jpg",
                   fullWidth: 1920,
                   fullHeight: 1080,
                   aspectRatio: undefined
@@ -284,7 +284,7 @@ function PlasmicInvestmentOpportunity__RenderFunc(props) {
                 displayWidth={"auto"}
                 loading={"lazy"}
                 src={{
-                  src: "/plasmic/tsf_demand_website/images/tsfPitchDeckV3003Jpeg.jpg",
+                  src: "/plasmic/tsf_demand_website/images/tsfPitchDeckV4003Jpeg.jpg",
                   fullWidth: 1920,
                   fullHeight: 1080,
                   aspectRatio: undefined
@@ -307,7 +307,7 @@ function PlasmicInvestmentOpportunity__RenderFunc(props) {
                 displayWidth={"auto"}
                 loading={"lazy"}
                 src={{
-                  src: "/plasmic/tsf_demand_website/images/tsfPitchDeckV3004Jpeg.jpg",
+                  src: "/plasmic/tsf_demand_website/images/tsfPitchDeckV4004Jpeg.jpg",
                   fullWidth: 1920,
                   fullHeight: 1080,
                   aspectRatio: undefined
@@ -376,7 +376,7 @@ function PlasmicInvestmentOpportunity__RenderFunc(props) {
                 displayWidth={"auto"}
                 loading={"lazy"}
                 src={{
-                  src: "/plasmic/tsf_demand_website/images/tsfPitchDeckV3007Jpeg.jpg",
+                  src: "/plasmic/tsf_demand_website/images/tsfPitchDeckV4007Jpeg.jpg",
                   fullWidth: 1920,
                   fullHeight: 1080,
                   aspectRatio: undefined
@@ -399,7 +399,7 @@ function PlasmicInvestmentOpportunity__RenderFunc(props) {
                 displayWidth={"auto"}
                 loading={"lazy"}
                 src={{
-                  src: "/plasmic/tsf_demand_website/images/tsfPitchDeckV3008Jpeg.jpg",
+                  src: "/plasmic/tsf_demand_website/images/tsfPitchDeckV4008Jpeg.jpg",
                   fullWidth: 1920,
                   fullHeight: 1080,
                   aspectRatio: undefined
@@ -468,7 +468,7 @@ function PlasmicInvestmentOpportunity__RenderFunc(props) {
                 displayWidth={"auto"}
                 loading={"lazy"}
                 src={{
-                  src: "/plasmic/tsf_demand_website/images/tsfPitchDeckV3011Jpeg.jpg",
+                  src: "/plasmic/tsf_demand_website/images/tsfPitchDeckV4011Jpeg.jpg",
                   fullWidth: 1920,
                   fullHeight: 1080,
                   aspectRatio: undefined
@@ -641,7 +641,7 @@ function PlasmicInvestmentOpportunity__RenderFunc(props) {
                   displayWidth={"auto"}
                   loading={"lazy"}
                   src={{
-                    src: "/plasmic/tsf_demand_website/images/tsfPitchDeckV3017Jpeg.jpg",
+                    src: "/plasmic/tsf_demand_website/images/tsfPitchDeckV4017Jpeg.jpg",
                     fullWidth: 1920,
                     fullHeight: 1080,
                     aspectRatio: undefined
@@ -745,7 +745,7 @@ function PlasmicInvestmentOpportunity__RenderFunc(props) {
                     displayWidth={"auto"}
                     loading={"lazy"}
                     src={{
-                      src: "/plasmic/tsf_demand_website/images/tsfPitchDeckV3020Jpeg.jpg",
+                      src: "/plasmic/tsf_demand_website/images/tsfPitchDeckV4020Jpeg.jpg",
                       fullWidth: 1920,
                       fullHeight: 1080,
                       aspectRatio: undefined
