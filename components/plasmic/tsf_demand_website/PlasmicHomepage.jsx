@@ -631,7 +631,7 @@ function PlasmicHomepage__RenderFunc(props) {
                           <React.Fragment>
                             <React.Fragment>
                               {
-                                "TSF tells you, at a glance whether this moment is normal or not \u2014\u00a0and whether it's time to "
+                                "TSF tells you, at a glance, whether this moment is normal or not \u2014\u00a0and whether it's time to "
                               }
                             </React.Fragment>
                             <span
