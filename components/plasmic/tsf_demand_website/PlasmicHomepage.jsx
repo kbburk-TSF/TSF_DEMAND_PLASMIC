@@ -24,8 +24,8 @@ import { useDataEnv } from "@plasmicapp/react-web/lib/host";
 import TsfDemandMainNavigation from "../../TsfDemandMainNavigation"; // plasmic-import: RS9jruOWtFtt/component
 import Button from "../../Button"; // plasmic-import: -U7nCsYlsFbS/component
 import Button2 from "../../Button2"; // plasmic-import: IsImc8gJBadG/component
-import HowToUseYourForecast from "../../HowToUseYourForecast"; // plasmic-import: udcHmc-MXrK7/component
 import YouTube from "@plasmicpkgs/react-youtube";
+import HowToUseYourForecast from "../../HowToUseYourForecast"; // plasmic-import: udcHmc-MXrK7/component
 import TsfFooter from "../../TsfFooter"; // plasmic-import: NmgYw5lHKANx/component
 import BlogPosts from "../../BlogPosts"; // plasmic-import: t8iMRGE7O8dB/component
 import CtaBlock from "../../CtaBlock"; // plasmic-import: qoTEPcEAYg5b/component
@@ -817,6 +817,78 @@ function PlasmicHomepage__RenderFunc(props) {
                     </div>
                   </div>
                 </div>
+                <div className={classNames(projectcss.all, sty.freeBox__vWrGy)}>
+                  <div
+                    className={classNames(projectcss.all, sty.freeBox__zijGc)}
+                  >
+                    <div
+                      className={classNames(projectcss.all, sty.freeBox__vgfas)}
+                    >
+                      <YouTube
+                        className={classNames(
+                          "__wab_instance",
+                          sty.youTube__t6XkK
+                        )}
+                        videoId={"0Hx_uMwLFkY"}
+                      />
+                    </div>
+                    <div
+                      className={classNames(projectcss.all, sty.freeBox__iqMhz)}
+                    >
+                      <YouTube
+                        className={classNames(
+                          "__wab_instance",
+                          sty.youTube___0MUa
+                        )}
+                        videoId={"fpAUzYyV5_A"}
+                      />
+                    </div>
+                    <div
+                      className={classNames(projectcss.all, sty.freeBox__rAckx)}
+                    >
+                      <YouTube
+                        className={classNames(
+                          "__wab_instance",
+                          sty.youTube___0Zlf
+                        )}
+                        videoId={"en4AhUIyi9U"}
+                      />
+                    </div>
+                    <div
+                      className={classNames(projectcss.all, sty.freeBox__tDGiK)}
+                    >
+                      <YouTube
+                        className={classNames(
+                          "__wab_instance",
+                          sty.youTube__dgpex
+                        )}
+                        videoId={"0Hx_uMwLFkY"}
+                      />
+                    </div>
+                    <div
+                      className={classNames(projectcss.all, sty.freeBox__qvvqG)}
+                    >
+                      <YouTube
+                        className={classNames(
+                          "__wab_instance",
+                          sty.youTube__g3M0J
+                        )}
+                        videoId={"0Hx_uMwLFkY"}
+                      />
+                    </div>
+                    <div
+                      className={classNames(projectcss.all, sty.freeBox__qNpXx)}
+                    >
+                      <YouTube
+                        className={classNames(
+                          "__wab_instance",
+                          sty.youTube___051HF
+                        )}
+                        videoId={"0Hx_uMwLFkY"}
+                      />
+                    </div>
+                  </div>
+                </div>
                 <HowToUseYourForecast
                   data-plasmic-name={"tsfLiteFewerStockouts"}
                   data-plasmic-override={overrides.tsfLiteFewerStockouts}
@@ -826,112 +898,6 @@ function PlasmicHomepage__RenderFunc(props) {
                   )}
                 />
 
-                <div className={classNames(projectcss.all, sty.freeBox__vWrGy)}>
-                  <div
-                    className={classNames(projectcss.all, sty.freeBox__zijGc)}
-                  >
-                    <div
-                      className={classNames(projectcss.all, sty.freeBox__vgfas)}
-                    >
-                      <YouTube
-                        data-plasmic-name={"youTube"}
-                        data-plasmic-override={overrides.youTube}
-                        className={classNames("__wab_instance", sty.youTube)}
-                        videoId={"R6MeLqRQzYw"}
-                      />
-                    </div>
-                    <div
-                      className={classNames(projectcss.all, sty.freeBox__iqMhz)}
-                    >
-                      <PlasmicImg__
-                        alt={""}
-                        className={classNames(sty.img__trXE)}
-                        displayHeight={"auto"}
-                        displayMaxHeight={"none"}
-                        displayMaxWidth={"100%"}
-                        displayMinHeight={"0"}
-                        displayMinWidth={"0"}
-                        displayWidth={"auto"}
-                        loading={"lazy"}
-                        src={
-                          "https://images.unsplash.com/photo-1585854467604-cf2080ccef31?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1173&q=80"
-                        }
-                      />
-                    </div>
-                    <div
-                      className={classNames(projectcss.all, sty.freeBox__rAckx)}
-                    >
-                      <PlasmicImg__
-                        alt={""}
-                        className={classNames(sty.img__o6Koi)}
-                        displayHeight={"auto"}
-                        displayMaxHeight={"none"}
-                        displayMaxWidth={"100%"}
-                        displayMinHeight={"0"}
-                        displayMinWidth={"0"}
-                        displayWidth={"auto"}
-                        loading={"lazy"}
-                        src={
-                          "https://images.unsplash.com/photo-1466527574304-f7d7f39bc404?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
-                        }
-                      />
-                    </div>
-                    <div
-                      className={classNames(projectcss.all, sty.freeBox__tDGiK)}
-                    >
-                      <PlasmicImg__
-                        alt={""}
-                        className={classNames(sty.img__fknHw)}
-                        displayHeight={"auto"}
-                        displayMaxHeight={"none"}
-                        displayMaxWidth={"100%"}
-                        displayMinHeight={"0"}
-                        displayMinWidth={"0"}
-                        displayWidth={"auto"}
-                        loading={"lazy"}
-                        src={
-                          "https://images.unsplash.com/photo-1520052205864-92d242b3a76b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1169&q=80"
-                        }
-                      />
-                    </div>
-                    <div
-                      className={classNames(projectcss.all, sty.freeBox__qvvqG)}
-                    >
-                      <PlasmicImg__
-                        alt={""}
-                        className={classNames(sty.img__mdzx0)}
-                        displayHeight={"auto"}
-                        displayMaxHeight={"none"}
-                        displayMaxWidth={"100%"}
-                        displayMinHeight={"0"}
-                        displayMinWidth={"0"}
-                        displayWidth={"auto"}
-                        loading={"lazy"}
-                        src={
-                          "https://images.unsplash.com/photo-1543046457-5237d0ad953f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
-                        }
-                      />
-                    </div>
-                    <div
-                      className={classNames(projectcss.all, sty.freeBox__qNpXx)}
-                    >
-                      <PlasmicImg__
-                        alt={""}
-                        className={classNames(sty.img__i0UJw)}
-                        displayHeight={"auto"}
-                        displayMaxHeight={"none"}
-                        displayMaxWidth={"100%"}
-                        displayMinHeight={"0"}
-                        displayMinWidth={"0"}
-                        displayWidth={"auto"}
-                        loading={"lazy"}
-                        src={
-                          "https://images.unsplash.com/photo-1533460004989-cef01064af7e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
-                        }
-                      />
-                    </div>
-                  </div>
-                </div>
                 <div className={classNames(projectcss.all, sty.columns__oxRvY)}>
                   <div
                     className={classNames(projectcss.all, sty.column__ddl3J)}
@@ -1297,7 +1263,6 @@ const PlasmicDescendants = {
     "tsfDemandMainNavigation",
     "features",
     "tsfLiteFewerStockouts",
-    "youTube",
     "ul",
     "link",
     "tsfFooter",
@@ -1307,9 +1272,8 @@ const PlasmicDescendants = {
   ],
 
   tsfDemandMainNavigation: ["tsfDemandMainNavigation"],
-  features: ["features", "tsfLiteFewerStockouts", "youTube"],
+  features: ["features", "tsfLiteFewerStockouts"],
   tsfLiteFewerStockouts: ["tsfLiteFewerStockouts"],
-  youTube: ["youTube"],
   ul: ["ul"],
   link: ["link"],
   tsfFooter: ["tsfFooter"],
@@ -1353,7 +1317,6 @@ export const PlasmicHomepage = Object.assign(
     tsfDemandMainNavigation: makeNodeComponent("tsfDemandMainNavigation"),
     features: makeNodeComponent("features"),
     tsfLiteFewerStockouts: makeNodeComponent("tsfLiteFewerStockouts"),
-    youTube: makeNodeComponent("youTube"),
     ul: makeNodeComponent("ul"),
     link: makeNodeComponent("link"),
     tsfFooter: makeNodeComponent("tsfFooter"),
