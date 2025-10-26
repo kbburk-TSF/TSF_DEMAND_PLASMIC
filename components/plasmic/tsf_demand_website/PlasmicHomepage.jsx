@@ -18,12 +18,20 @@ import {
   classNames,
   createPlasmicElementProxy,
   deriveRenderOpts,
-  hasVariant
+  generateOnMutateForSpec,
+  generateStateOnChangePropForCodeComponents,
+  generateStateValueProp,
+  hasVariant,
+  initializeCodeComponentStates,
+  useDollarState
 } from "@plasmicapp/react-web";
 import { useDataEnv } from "@plasmicapp/react-web/lib/host";
 import TsfDemandMainNavigation from "../../TsfDemandMainNavigation"; // plasmic-import: RS9jruOWtFtt/component
 import Button from "../../Button"; // plasmic-import: -U7nCsYlsFbS/component
 import Button2 from "../../Button2"; // plasmic-import: IsImc8gJBadG/component
+import { SliderWrapper } from "@plasmicpkgs/react-slick";
+import { sliderHelpers as SliderWrapper_Helpers } from "@plasmicpkgs/react-slick";
+import YouTube from "@plasmicpkgs/react-youtube";
 import HowToUseYourForecast from "../../HowToUseYourForecast"; // plasmic-import: udcHmc-MXrK7/component
 import TsfFooter from "../../TsfFooter"; // plasmic-import: NmgYw5lHKANx/component
 import BlogPosts from "../../BlogPosts"; // plasmic-import: t8iMRGE7O8dB/component
@@ -73,6 +81,26 @@ function PlasmicHomepage__RenderFunc(props) {
   const refsRef = React.useRef({});
   const $refs = refsRef.current;
   const globalVariants = _useGlobalVariants();
+  const stateSpecs = React.useMemo(
+    () => [
+      {
+        path: "sliderCarousel.currentSlide",
+        type: "private",
+        variableType: "number",
+        initFunc: ({ $props, $state, $queries, $ctx }) => 0,
+        refName: "sliderCarousel",
+        onMutate: generateOnMutateForSpec("currentSlide", SliderWrapper_Helpers)
+      }
+    ],
+
+    [$props, $ctx, $refs]
+  );
+  const $state = useDollarState(stateSpecs, {
+    $props,
+    $ctx,
+    $queries: {},
+    $refs
+  });
   const styleTokensClassNames = _useStyleTokens();
   return (
     <React.Fragment>
@@ -816,6 +844,90 @@ function PlasmicHomepage__RenderFunc(props) {
                     </div>
                   </div>
                 </div>
+                {(() => {
+                  const child$Props = {
+                    beforeChange: async (...eventArgs) => {
+                      generateStateOnChangePropForCodeComponents(
+                        $state,
+                        "currentSlide",
+                        ["sliderCarousel", "currentSlide"],
+                        SliderWrapper_Helpers
+                      ).apply(null, eventArgs);
+                    },
+                    className: classNames("__wab_instance", sty.sliderCarousel),
+                    initialSlide: generateStateValueProp($state, [
+                      "sliderCarousel",
+                      "currentSlide"
+                    ]),
+                    ref: ref => {
+                      $refs["sliderCarousel"] = ref;
+                    },
+                    sliderScopeClassName: sty["sliderCarousel__slider"]
+                  };
+                  initializeCodeComponentStates(
+                    $state,
+                    [
+                      {
+                        name: "currentSlide",
+                        plasmicStateName: "sliderCarousel.currentSlide"
+                      }
+                    ],
+
+                    [],
+                    SliderWrapper_Helpers ?? {},
+                    child$Props
+                  );
+                  return (
+                    <SliderWrapper
+                      data-plasmic-name={"sliderCarousel"}
+                      data-plasmic-override={overrides.sliderCarousel}
+                      {...child$Props}
+                    >
+                      <div
+                        className={classNames(
+                          projectcss.all,
+                          sty.freeBox__lOzxx
+                        )}
+                      >
+                        <YouTube
+                          className={classNames(
+                            "__wab_instance",
+                            sty.youTube__aoi2C
+                          )}
+                          videoId={"0Hx_uMwLFkY"}
+                        />
+                      </div>
+                      <div
+                        className={classNames(
+                          projectcss.all,
+                          sty.freeBox__yadwm
+                        )}
+                      >
+                        <YouTube
+                          className={classNames(
+                            "__wab_instance",
+                            sty.youTube__tQolE
+                          )}
+                          videoId={"fpAUzYyV5_A"}
+                        />
+                      </div>
+                      <div
+                        className={classNames(
+                          projectcss.all,
+                          sty.freeBox__nUlcj
+                        )}
+                      >
+                        <YouTube
+                          className={classNames(
+                            "__wab_instance",
+                            sty.youTube__ftHdb
+                          )}
+                          videoId={"en4AhUIyi9U"}
+                        />
+                      </div>
+                    </SliderWrapper>
+                  );
+                })()}
                 <HowToUseYourForecast
                   data-plasmic-name={"tsfLiteFewerStockouts"}
                   data-plasmic-override={overrides.tsfLiteFewerStockouts}
@@ -1189,6 +1301,7 @@ const PlasmicDescendants = {
     "root",
     "tsfDemandMainNavigation",
     "features",
+    "sliderCarousel",
     "tsfLiteFewerStockouts",
     "ul",
     "link",
@@ -1199,7 +1312,8 @@ const PlasmicDescendants = {
   ],
 
   tsfDemandMainNavigation: ["tsfDemandMainNavigation"],
-  features: ["features", "tsfLiteFewerStockouts"],
+  features: ["features", "sliderCarousel", "tsfLiteFewerStockouts"],
+  sliderCarousel: ["sliderCarousel"],
   tsfLiteFewerStockouts: ["tsfLiteFewerStockouts"],
   ul: ["ul"],
   link: ["link"],
@@ -1243,6 +1357,7 @@ export const PlasmicHomepage = Object.assign(
     // Helper components rendering sub-elements
     tsfDemandMainNavigation: makeNodeComponent("tsfDemandMainNavigation"),
     features: makeNodeComponent("features"),
+    sliderCarousel: makeNodeComponent("sliderCarousel"),
     tsfLiteFewerStockouts: makeNodeComponent("tsfLiteFewerStockouts"),
     ul: makeNodeComponent("ul"),
     link: makeNodeComponent("link"),
