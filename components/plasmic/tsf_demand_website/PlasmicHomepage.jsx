@@ -886,43 +886,54 @@ function PlasmicHomepage__RenderFunc(props) {
                       <div
                         className={classNames(
                           projectcss.all,
-                          sty.freeBox__lOzxx
+                          sty.freeBox__h2Bl4
                         )}
                       >
                         <YouTube
-                          className={classNames(
-                            "__wab_instance",
-                            sty.youTube__aoi2C
-                          )}
+                          data-plasmic-name={"youTube"}
+                          data-plasmic-override={overrides.youTube}
+                          className={classNames("__wab_instance", sty.youTube)}
                           videoId={"0Hx_uMwLFkY"}
                         />
                       </div>
                       <div
                         className={classNames(
                           projectcss.all,
-                          sty.freeBox__yadwm
+                          sty.freeBox__gwbyP
                         )}
                       >
-                        <YouTube
-                          className={classNames(
-                            "__wab_instance",
-                            sty.youTube__tQolE
-                          )}
-                          videoId={"fpAUzYyV5_A"}
+                        <PlasmicImg__
+                          alt={""}
+                          className={classNames(sty.img__id5W3)}
+                          displayHeight={"auto"}
+                          displayMaxHeight={"none"}
+                          displayMaxWidth={"100%"}
+                          displayMinHeight={"0"}
+                          displayMinWidth={"0"}
+                          displayWidth={"auto"}
+                          src={
+                            "https://static1.plasmic.app/components/react-slick/slide2.png"
+                          }
                         />
                       </div>
                       <div
                         className={classNames(
                           projectcss.all,
-                          sty.freeBox__nUlcj
+                          sty.freeBox__xso5E
                         )}
                       >
-                        <YouTube
-                          className={classNames(
-                            "__wab_instance",
-                            sty.youTube__ftHdb
-                          )}
-                          videoId={"en4AhUIyi9U"}
+                        <PlasmicImg__
+                          alt={""}
+                          className={classNames(sty.img__peAeT)}
+                          displayHeight={"auto"}
+                          displayMaxHeight={"none"}
+                          displayMaxWidth={"100%"}
+                          displayMinHeight={"0"}
+                          displayMinWidth={"0"}
+                          displayWidth={"auto"}
+                          src={
+                            "https://static1.plasmic.app/components/react-slick/slide3.png"
+                          }
                         />
                       </div>
                     </SliderWrapper>
@@ -1302,6 +1313,7 @@ const PlasmicDescendants = {
     "tsfDemandMainNavigation",
     "features",
     "sliderCarousel",
+    "youTube",
     "tsfLiteFewerStockouts",
     "ul",
     "link",
@@ -1312,8 +1324,9 @@ const PlasmicDescendants = {
   ],
 
   tsfDemandMainNavigation: ["tsfDemandMainNavigation"],
-  features: ["features", "sliderCarousel", "tsfLiteFewerStockouts"],
-  sliderCarousel: ["sliderCarousel"],
+  features: ["features", "sliderCarousel", "youTube", "tsfLiteFewerStockouts"],
+  sliderCarousel: ["sliderCarousel", "youTube"],
+  youTube: ["youTube"],
   tsfLiteFewerStockouts: ["tsfLiteFewerStockouts"],
   ul: ["ul"],
   link: ["link"],
@@ -1358,6 +1371,7 @@ export const PlasmicHomepage = Object.assign(
     tsfDemandMainNavigation: makeNodeComponent("tsfDemandMainNavigation"),
     features: makeNodeComponent("features"),
     sliderCarousel: makeNodeComponent("sliderCarousel"),
+    youTube: makeNodeComponent("youTube"),
     tsfLiteFewerStockouts: makeNodeComponent("tsfLiteFewerStockouts"),
     ul: makeNodeComponent("ul"),
     link: makeNodeComponent("link"),
