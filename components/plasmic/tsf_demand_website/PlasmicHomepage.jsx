@@ -109,12 +109,9 @@ function PlasmicHomepage__RenderFunc(props) {
           )}
         >
           <TsfDemandMainNavigation
-            data-plasmic-name={"tsfDemandMainNavigation"}
-            data-plasmic-override={overrides.tsfDemandMainNavigation}
-            className={classNames(
-              "__wab_instance",
-              sty.tsfDemandMainNavigation
-            )}
+            data-plasmic-name={"tsfMainNavigationHome"}
+            data-plasmic-override={overrides.tsfMainNavigationHome}
+            className={classNames("__wab_instance", sty.tsfMainNavigationHome)}
           />
 
           <div className={classNames(projectcss.all, sty.freeBox__wUjrb)}>
@@ -1252,7 +1249,7 @@ function PlasmicHomepage__RenderFunc(props) {
 const PlasmicDescendants = {
   root: [
     "root",
-    "tsfDemandMainNavigation",
+    "tsfMainNavigationHome",
     "features",
     "img",
     "tsfLiteFewerStockouts",
@@ -1264,7 +1261,7 @@ const PlasmicDescendants = {
     "heroSection"
   ],
 
-  tsfDemandMainNavigation: ["tsfDemandMainNavigation"],
+  tsfMainNavigationHome: ["tsfMainNavigationHome"],
   features: ["features", "img", "tsfLiteFewerStockouts"],
   img: ["img"],
   tsfLiteFewerStockouts: ["tsfLiteFewerStockouts"],
@@ -1308,7 +1305,7 @@ export const PlasmicHomepage = Object.assign(
   makeNodeComponent("root"),
   {
     // Helper components rendering sub-elements
-    tsfDemandMainNavigation: makeNodeComponent("tsfDemandMainNavigation"),
+    tsfMainNavigationHome: makeNodeComponent("tsfMainNavigationHome"),
     features: makeNodeComponent("features"),
     img: makeNodeComponent("img"),
     tsfLiteFewerStockouts: makeNodeComponent("tsfLiteFewerStockouts"),

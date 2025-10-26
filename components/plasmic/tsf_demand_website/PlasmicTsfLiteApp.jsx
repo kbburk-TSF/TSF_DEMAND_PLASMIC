@@ -97,12 +97,9 @@ function PlasmicTsfLiteApp__RenderFunc(props) {
           )}
         >
           <TsfDemandMainNavigation
-            data-plasmic-name={"tsfDemandMainNavigation"}
-            data-plasmic-override={overrides.tsfDemandMainNavigation}
-            className={classNames(
-              "__wab_instance",
-              sty.tsfDemandMainNavigation
-            )}
+            data-plasmic-name={"tsfLiteNavigation"}
+            data-plasmic-override={overrides.tsfLiteNavigation}
+            className={classNames("__wab_instance", sty.tsfLiteNavigation)}
           />
 
           <div
@@ -1540,7 +1537,7 @@ function PlasmicTsfLiteApp__RenderFunc(props) {
 const PlasmicDescendants = {
   root: [
     "root",
-    "tsfDemandMainNavigation",
+    "tsfLiteNavigation",
     "pageBanner",
     "h1",
     "button",
@@ -1552,7 +1549,7 @@ const PlasmicDescendants = {
     "tsfFooter"
   ],
 
-  tsfDemandMainNavigation: ["tsfDemandMainNavigation"],
+  tsfLiteNavigation: ["tsfLiteNavigation"],
   pageBanner: ["pageBanner", "h1", "button", "youTube"],
   h1: ["h1"],
   button: ["button"],
@@ -1596,7 +1593,7 @@ export const PlasmicTsfLiteApp = Object.assign(
   makeNodeComponent("root"),
   {
     // Helper components rendering sub-elements
-    tsfDemandMainNavigation: makeNodeComponent("tsfDemandMainNavigation"),
+    tsfLiteNavigation: makeNodeComponent("tsfLiteNavigation"),
     pageBanner: makeNodeComponent("pageBanner"),
     h1: makeNodeComponent("h1"),
     button: makeNodeComponent("button"),
