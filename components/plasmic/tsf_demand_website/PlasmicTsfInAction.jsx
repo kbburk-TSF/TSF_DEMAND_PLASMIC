@@ -17,16 +17,15 @@ import {
   PlasmicLink as PlasmicLink__,
   classNames,
   createPlasmicElementProxy,
-  deriveRenderOpts,
-  hasVariant
+  deriveRenderOpts
 } from "@plasmicapp/react-web";
 import { useDataEnv } from "@plasmicapp/react-web/lib/host";
 import TsfDemandMainNavigation from "../../TsfDemandMainNavigation"; // plasmic-import: RS9jruOWtFtt/component
+import YouTube from "@plasmicpkgs/react-youtube";
 import Button2 from "../../Button2"; // plasmic-import: IsImc8gJBadG/component
 import HowToUseYourForecast from "../../HowToUseYourForecast"; // plasmic-import: udcHmc-MXrK7/component
 import TsfPricingTable1 from "../../TsfPricingTable1"; // plasmic-import: TTJcVgBRi8By/component
 import TsfFooter from "../../TsfFooter"; // plasmic-import: NmgYw5lHKANx/component
-import { _useGlobalVariants } from "./plasmic"; // plasmic-import: 8yhBRaKsBf3R2wKMhT5dUU/projectModule
 import { _useStyleTokens } from "./PlasmicStyleTokensProvider"; // plasmic-import: 8yhBRaKsBf3R2wKMhT5dUU/styleTokensProvider
 import "@plasmicapp/react-web/lib/plasmic.css";
 import projectcss from "./plasmic.module.css"; // plasmic-import: 8yhBRaKsBf3R2wKMhT5dUU/projectcss
@@ -69,7 +68,6 @@ function PlasmicTsfInAction__RenderFunc(props) {
   const $ctx = useDataEnv?.() || {};
   const refsRef = React.useRef({});
   const $refs = refsRef.current;
-  const globalVariants = _useGlobalVariants();
   const styleTokensClassNames = _useStyleTokens();
   return (
     <React.Fragment>
@@ -162,39 +160,11 @@ function PlasmicTsfInAction__RenderFunc(props) {
                   </h3>
                 </div>
                 <div className={classNames(projectcss.all, sty.column__nRa4M)}>
-                  <PlasmicImg__
-                    alt={""}
-                    className={classNames(sty.img__hEeyn)}
-                    displayHeight={"auto"}
-                    displayMaxHeight={"none"}
-                    displayMaxWidth={
-                      hasVariant(globalVariants, "screen", "mobileOnly")
-                        ? "100%"
-                        : "100%"
-                    }
-                    displayMinHeight={"0"}
-                    displayMinWidth={"0"}
-                    displayWidth={"auto"}
-                    loading={
-                      hasVariant(globalVariants, "screen", "mobileOnly")
-                        ? "lazy"
-                        : "lazy"
-                    }
-                    src={
-                      hasVariant(globalVariants, "screen", "mobileOnly")
-                        ? {
-                            src: "/plasmic/tsf_demand_website/images/_3ThumbJpg.jpg",
-                            fullWidth: 700,
-                            fullHeight: 466,
-                            aspectRatio: undefined
-                          }
-                        : {
-                            src: "/plasmic/tsf_demand_website/images/forecastOnly5Png.png",
-                            fullWidth: 1000,
-                            fullHeight: 690,
-                            aspectRatio: undefined
-                          }
-                    }
+                  <YouTube
+                    data-plasmic-name={"youTube"}
+                    data-plasmic-override={overrides.youTube}
+                    className={classNames("__wab_instance", sty.youTube)}
+                    videoId={"fpAUzYyV5_A"}
                   />
                 </div>
               </div>
@@ -1765,14 +1735,16 @@ const PlasmicDescendants = {
     "tsfDemandMainNavigation",
     "pageBanner",
     "h1",
+    "youTube",
     "tsfLiteFewerStockouts",
     "tsfPricingTable1",
     "tsfFooter"
   ],
 
   tsfDemandMainNavigation: ["tsfDemandMainNavigation"],
-  pageBanner: ["pageBanner", "h1"],
+  pageBanner: ["pageBanner", "h1", "youTube"],
   h1: ["h1"],
+  youTube: ["youTube"],
   tsfLiteFewerStockouts: ["tsfLiteFewerStockouts"],
   tsfPricingTable1: ["tsfPricingTable1"],
   tsfFooter: ["tsfFooter"]
@@ -1813,6 +1785,7 @@ export const PlasmicTsfInAction = Object.assign(
     tsfDemandMainNavigation: makeNodeComponent("tsfDemandMainNavigation"),
     pageBanner: makeNodeComponent("pageBanner"),
     h1: makeNodeComponent("h1"),
+    youTube: makeNodeComponent("youTube"),
     tsfLiteFewerStockouts: makeNodeComponent("tsfLiteFewerStockouts"),
     tsfPricingTable1: makeNodeComponent("tsfPricingTable1"),
     tsfFooter: makeNodeComponent("tsfFooter"),

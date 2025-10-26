@@ -136,26 +136,13 @@
   min-width: 0;
   padding: 0px;
 }
-.img__hEeyn {
-  position: relative;
-  object-fit: cover;
+.youTube:global(.__wab_instance) {
+  width: 640px;
+  height: 390px;
+  max-height: 100%;
   max-width: 100%;
-  margin-left: 0px;
-}
-.img__hEeyn > picture > img {
   object-fit: cover;
-}
-@media (min-width: 0px) and (max-width: 767px) {
-  .img__hEeyn {
-    position: relative;
-    object-fit: cover;
-    max-width: 100%;
-  }
-}
-@media (min-width: 0px) and (max-width: 767px) {
-  .img__hEeyn > picture > img {
-    object-fit: cover;
-  }
+  flex-shrink: 0;
 }
 .freeBox__mqfbj {
   display: flex;

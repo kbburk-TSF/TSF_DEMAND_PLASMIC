@@ -17,17 +17,16 @@ import {
   PlasmicLink as PlasmicLink__,
   classNames,
   createPlasmicElementProxy,
-  deriveRenderOpts,
-  hasVariant
+  deriveRenderOpts
 } from "@plasmicapp/react-web";
 import { useDataEnv } from "@plasmicapp/react-web/lib/host";
 import TsfDemandMainNavigation from "../../TsfDemandMainNavigation"; // plasmic-import: RS9jruOWtFtt/component
 import Button from "../../Button"; // plasmic-import: -U7nCsYlsFbS/component
+import YouTube from "@plasmicpkgs/react-youtube";
 import Button2 from "../../Button2"; // plasmic-import: IsImc8gJBadG/component
 import HowToUseYourForecast from "../../HowToUseYourForecast"; // plasmic-import: udcHmc-MXrK7/component
 import TsfPricingTable1 from "../../TsfPricingTable1"; // plasmic-import: TTJcVgBRi8By/component
 import TsfFooter from "../../TsfFooter"; // plasmic-import: NmgYw5lHKANx/component
-import { _useGlobalVariants } from "./plasmic"; // plasmic-import: 8yhBRaKsBf3R2wKMhT5dUU/projectModule
 import { _useStyleTokens } from "./PlasmicStyleTokensProvider"; // plasmic-import: 8yhBRaKsBf3R2wKMhT5dUU/styleTokensProvider
 import "@plasmicapp/react-web/lib/plasmic.css";
 import projectcss from "./plasmic.module.css"; // plasmic-import: 8yhBRaKsBf3R2wKMhT5dUU/projectcss
@@ -71,7 +70,6 @@ function PlasmicTsfLiteApp__RenderFunc(props) {
   const $ctx = useDataEnv?.() || {};
   const refsRef = React.useRef({});
   const $refs = refsRef.current;
-  const globalVariants = _useGlobalVariants();
   const styleTokensClassNames = _useStyleTokens();
   return (
     <React.Fragment>
@@ -217,39 +215,11 @@ function PlasmicTsfLiteApp__RenderFunc(props) {
                   />
                 </div>
                 <div className={classNames(projectcss.all, sty.column___0P2KQ)}>
-                  <PlasmicImg__
-                    alt={""}
-                    className={classNames(sty.img__psZuj)}
-                    displayHeight={"auto"}
-                    displayMaxHeight={"none"}
-                    displayMaxWidth={
-                      hasVariant(globalVariants, "screen", "mobileOnly")
-                        ? "100%"
-                        : "100%"
-                    }
-                    displayMinHeight={"0"}
-                    displayMinWidth={"0"}
-                    displayWidth={"auto"}
-                    loading={
-                      hasVariant(globalVariants, "screen", "mobileOnly")
-                        ? "lazy"
-                        : "lazy"
-                    }
-                    src={
-                      hasVariant(globalVariants, "screen", "mobileOnly")
-                        ? {
-                            src: "/plasmic/tsf_demand_website/images/_3ThumbJpg.jpg",
-                            fullWidth: 700,
-                            fullHeight: 466,
-                            aspectRatio: undefined
-                          }
-                        : {
-                            src: "/plasmic/tsf_demand_website/images/forecastOnly5Png.png",
-                            fullWidth: 1000,
-                            fullHeight: 690,
-                            aspectRatio: undefined
-                          }
-                    }
+                  <YouTube
+                    data-plasmic-name={"youTube"}
+                    data-plasmic-override={overrides.youTube}
+                    className={classNames("__wab_instance", sty.youTube)}
+                    videoId={"en4AhUIyi9U"}
                   />
                 </div>
               </div>
@@ -1574,6 +1544,7 @@ const PlasmicDescendants = {
     "pageBanner",
     "h1",
     "button",
+    "youTube",
     "section",
     "foreground",
     "tsfLiteFewerStockouts",
@@ -1582,9 +1553,10 @@ const PlasmicDescendants = {
   ],
 
   tsfDemandMainNavigation: ["tsfDemandMainNavigation"],
-  pageBanner: ["pageBanner", "h1", "button"],
+  pageBanner: ["pageBanner", "h1", "button", "youTube"],
   h1: ["h1"],
   button: ["button"],
+  youTube: ["youTube"],
   section: ["section", "foreground"],
   foreground: ["foreground"],
   tsfLiteFewerStockouts: ["tsfLiteFewerStockouts"],
@@ -1628,6 +1600,7 @@ export const PlasmicTsfLiteApp = Object.assign(
     pageBanner: makeNodeComponent("pageBanner"),
     h1: makeNodeComponent("h1"),
     button: makeNodeComponent("button"),
+    youTube: makeNodeComponent("youTube"),
     section: makeNodeComponent("section"),
     foreground: makeNodeComponent("foreground"),
     tsfLiteFewerStockouts: makeNodeComponent("tsfLiteFewerStockouts"),
