@@ -18,21 +18,14 @@ import {
   classNames,
   createPlasmicElementProxy,
   deriveRenderOpts,
-  generateOnMutateForSpec,
-  generateStateOnChangePropForCodeComponents,
-  generateStateValueProp,
-  hasVariant,
-  initializeCodeComponentStates,
-  useDollarState
+  hasVariant
 } from "@plasmicapp/react-web";
 import { useDataEnv } from "@plasmicapp/react-web/lib/host";
 import TsfDemandMainNavigation from "../../TsfDemandMainNavigation"; // plasmic-import: RS9jruOWtFtt/component
 import Button from "../../Button"; // plasmic-import: -U7nCsYlsFbS/component
 import Button2 from "../../Button2"; // plasmic-import: IsImc8gJBadG/component
-import { SliderWrapper } from "@plasmicpkgs/react-slick";
-import { sliderHelpers as SliderWrapper_Helpers } from "@plasmicpkgs/react-slick";
-import YouTube from "@plasmicpkgs/react-youtube";
 import HowToUseYourForecast from "../../HowToUseYourForecast"; // plasmic-import: udcHmc-MXrK7/component
+import YouTube from "@plasmicpkgs/react-youtube";
 import TsfFooter from "../../TsfFooter"; // plasmic-import: NmgYw5lHKANx/component
 import BlogPosts from "../../BlogPosts"; // plasmic-import: t8iMRGE7O8dB/component
 import CtaBlock from "../../CtaBlock"; // plasmic-import: qoTEPcEAYg5b/component
@@ -81,26 +74,6 @@ function PlasmicHomepage__RenderFunc(props) {
   const refsRef = React.useRef({});
   const $refs = refsRef.current;
   const globalVariants = _useGlobalVariants();
-  const stateSpecs = React.useMemo(
-    () => [
-      {
-        path: "sliderCarousel.currentSlide",
-        type: "private",
-        variableType: "number",
-        initFunc: ({ $props, $state, $queries, $ctx }) => 0,
-        refName: "sliderCarousel",
-        onMutate: generateOnMutateForSpec("currentSlide", SliderWrapper_Helpers)
-      }
-    ],
-
-    [$props, $ctx, $refs]
-  );
-  const $state = useDollarState(stateSpecs, {
-    $props,
-    $ctx,
-    $queries: {},
-    $refs
-  });
   const styleTokensClassNames = _useStyleTokens();
   return (
     <React.Fragment>
@@ -844,101 +817,6 @@ function PlasmicHomepage__RenderFunc(props) {
                     </div>
                   </div>
                 </div>
-                {(() => {
-                  const child$Props = {
-                    beforeChange: async (...eventArgs) => {
-                      generateStateOnChangePropForCodeComponents(
-                        $state,
-                        "currentSlide",
-                        ["sliderCarousel", "currentSlide"],
-                        SliderWrapper_Helpers
-                      ).apply(null, eventArgs);
-                    },
-                    className: classNames("__wab_instance", sty.sliderCarousel),
-                    initialSlide: generateStateValueProp($state, [
-                      "sliderCarousel",
-                      "currentSlide"
-                    ]),
-                    ref: ref => {
-                      $refs["sliderCarousel"] = ref;
-                    },
-                    sliderScopeClassName: sty["sliderCarousel__slider"]
-                  };
-                  initializeCodeComponentStates(
-                    $state,
-                    [
-                      {
-                        name: "currentSlide",
-                        plasmicStateName: "sliderCarousel.currentSlide"
-                      }
-                    ],
-
-                    [],
-                    SliderWrapper_Helpers ?? {},
-                    child$Props
-                  );
-                  return (
-                    <SliderWrapper
-                      data-plasmic-name={"sliderCarousel"}
-                      data-plasmic-override={overrides.sliderCarousel}
-                      {...child$Props}
-                    >
-                      <div
-                        className={classNames(
-                          projectcss.all,
-                          sty.freeBox__h2Bl4
-                        )}
-                      >
-                        <YouTube
-                          data-plasmic-name={"youTube"}
-                          data-plasmic-override={overrides.youTube}
-                          className={classNames("__wab_instance", sty.youTube)}
-                          videoId={"0Hx_uMwLFkY"}
-                        />
-                      </div>
-                      <div
-                        className={classNames(
-                          projectcss.all,
-                          sty.freeBox__gwbyP
-                        )}
-                      >
-                        <PlasmicImg__
-                          alt={""}
-                          className={classNames(sty.img__id5W3)}
-                          displayHeight={"auto"}
-                          displayMaxHeight={"none"}
-                          displayMaxWidth={"100%"}
-                          displayMinHeight={"0"}
-                          displayMinWidth={"0"}
-                          displayWidth={"auto"}
-                          src={
-                            "https://static1.plasmic.app/components/react-slick/slide2.png"
-                          }
-                        />
-                      </div>
-                      <div
-                        className={classNames(
-                          projectcss.all,
-                          sty.freeBox__xso5E
-                        )}
-                      >
-                        <PlasmicImg__
-                          alt={""}
-                          className={classNames(sty.img__peAeT)}
-                          displayHeight={"auto"}
-                          displayMaxHeight={"none"}
-                          displayMaxWidth={"100%"}
-                          displayMinHeight={"0"}
-                          displayMinWidth={"0"}
-                          displayWidth={"auto"}
-                          src={
-                            "https://static1.plasmic.app/components/react-slick/slide3.png"
-                          }
-                        />
-                      </div>
-                    </SliderWrapper>
-                  );
-                })()}
                 <HowToUseYourForecast
                   data-plasmic-name={"tsfLiteFewerStockouts"}
                   data-plasmic-override={overrides.tsfLiteFewerStockouts}
@@ -948,6 +826,112 @@ function PlasmicHomepage__RenderFunc(props) {
                   )}
                 />
 
+                <div className={classNames(projectcss.all, sty.freeBox__vWrGy)}>
+                  <div
+                    className={classNames(projectcss.all, sty.freeBox__zijGc)}
+                  >
+                    <div
+                      className={classNames(projectcss.all, sty.freeBox__vgfas)}
+                    >
+                      <YouTube
+                        data-plasmic-name={"youTube"}
+                        data-plasmic-override={overrides.youTube}
+                        className={classNames("__wab_instance", sty.youTube)}
+                        videoId={"R6MeLqRQzYw"}
+                      />
+                    </div>
+                    <div
+                      className={classNames(projectcss.all, sty.freeBox__iqMhz)}
+                    >
+                      <PlasmicImg__
+                        alt={""}
+                        className={classNames(sty.img__trXE)}
+                        displayHeight={"auto"}
+                        displayMaxHeight={"none"}
+                        displayMaxWidth={"100%"}
+                        displayMinHeight={"0"}
+                        displayMinWidth={"0"}
+                        displayWidth={"auto"}
+                        loading={"lazy"}
+                        src={
+                          "https://images.unsplash.com/photo-1585854467604-cf2080ccef31?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1173&q=80"
+                        }
+                      />
+                    </div>
+                    <div
+                      className={classNames(projectcss.all, sty.freeBox__rAckx)}
+                    >
+                      <PlasmicImg__
+                        alt={""}
+                        className={classNames(sty.img__o6Koi)}
+                        displayHeight={"auto"}
+                        displayMaxHeight={"none"}
+                        displayMaxWidth={"100%"}
+                        displayMinHeight={"0"}
+                        displayMinWidth={"0"}
+                        displayWidth={"auto"}
+                        loading={"lazy"}
+                        src={
+                          "https://images.unsplash.com/photo-1466527574304-f7d7f39bc404?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
+                        }
+                      />
+                    </div>
+                    <div
+                      className={classNames(projectcss.all, sty.freeBox__tDGiK)}
+                    >
+                      <PlasmicImg__
+                        alt={""}
+                        className={classNames(sty.img__fknHw)}
+                        displayHeight={"auto"}
+                        displayMaxHeight={"none"}
+                        displayMaxWidth={"100%"}
+                        displayMinHeight={"0"}
+                        displayMinWidth={"0"}
+                        displayWidth={"auto"}
+                        loading={"lazy"}
+                        src={
+                          "https://images.unsplash.com/photo-1520052205864-92d242b3a76b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1169&q=80"
+                        }
+                      />
+                    </div>
+                    <div
+                      className={classNames(projectcss.all, sty.freeBox__qvvqG)}
+                    >
+                      <PlasmicImg__
+                        alt={""}
+                        className={classNames(sty.img__mdzx0)}
+                        displayHeight={"auto"}
+                        displayMaxHeight={"none"}
+                        displayMaxWidth={"100%"}
+                        displayMinHeight={"0"}
+                        displayMinWidth={"0"}
+                        displayWidth={"auto"}
+                        loading={"lazy"}
+                        src={
+                          "https://images.unsplash.com/photo-1543046457-5237d0ad953f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
+                        }
+                      />
+                    </div>
+                    <div
+                      className={classNames(projectcss.all, sty.freeBox__qNpXx)}
+                    >
+                      <PlasmicImg__
+                        alt={""}
+                        className={classNames(sty.img__i0UJw)}
+                        displayHeight={"auto"}
+                        displayMaxHeight={"none"}
+                        displayMaxWidth={"100%"}
+                        displayMinHeight={"0"}
+                        displayMinWidth={"0"}
+                        displayWidth={"auto"}
+                        loading={"lazy"}
+                        src={
+                          "https://images.unsplash.com/photo-1533460004989-cef01064af7e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
+                        }
+                      />
+                    </div>
+                  </div>
+                </div>
                 <div className={classNames(projectcss.all, sty.columns__oxRvY)}>
                   <div
                     className={classNames(projectcss.all, sty.column__ddl3J)}
@@ -1312,9 +1296,8 @@ const PlasmicDescendants = {
     "root",
     "tsfDemandMainNavigation",
     "features",
-    "sliderCarousel",
-    "youTube",
     "tsfLiteFewerStockouts",
+    "youTube",
     "ul",
     "link",
     "tsfFooter",
@@ -1324,10 +1307,9 @@ const PlasmicDescendants = {
   ],
 
   tsfDemandMainNavigation: ["tsfDemandMainNavigation"],
-  features: ["features", "sliderCarousel", "youTube", "tsfLiteFewerStockouts"],
-  sliderCarousel: ["sliderCarousel", "youTube"],
-  youTube: ["youTube"],
+  features: ["features", "tsfLiteFewerStockouts", "youTube"],
   tsfLiteFewerStockouts: ["tsfLiteFewerStockouts"],
+  youTube: ["youTube"],
   ul: ["ul"],
   link: ["link"],
   tsfFooter: ["tsfFooter"],
@@ -1370,9 +1352,8 @@ export const PlasmicHomepage = Object.assign(
     // Helper components rendering sub-elements
     tsfDemandMainNavigation: makeNodeComponent("tsfDemandMainNavigation"),
     features: makeNodeComponent("features"),
-    sliderCarousel: makeNodeComponent("sliderCarousel"),
-    youTube: makeNodeComponent("youTube"),
     tsfLiteFewerStockouts: makeNodeComponent("tsfLiteFewerStockouts"),
+    youTube: makeNodeComponent("youTube"),
     ul: makeNodeComponent("ul"),
     link: makeNodeComponent("link"),
     tsfFooter: makeNodeComponent("tsfFooter"),
