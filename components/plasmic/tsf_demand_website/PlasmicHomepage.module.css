@@ -145,14 +145,13 @@
   position: relative;
   height: 400px;
 }
-.img__frdAn {
-  object-fit: contain;
+.youTube__avni4:global(.__wab_instance) {
+  width: 677px;
+  height: 458px;
+  max-height: 100%;
   max-width: 100%;
-  width: 553px;
+  object-fit: cover;
   flex-shrink: 0;
-}
-.img__frdAn > picture > img {
-  object-fit: contain;
 }
 .features {
   display: flex;
@@ -538,12 +537,12 @@
   text-overflow: clip;
   padding-bottom: 0px;
 }
-.img__rhy9 {
+.img {
   object-fit: cover;
   max-width: 100%;
   margin-top: 25px;
 }
-.img__rhy9 > picture > img {
+.img > picture > img {
   object-fit: cover;
 }
 .freeBox__vWrGy {

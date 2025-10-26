@@ -23,8 +23,8 @@ import {
 import { useDataEnv } from "@plasmicapp/react-web/lib/host";
 import TsfDemandMainNavigation from "../../TsfDemandMainNavigation"; // plasmic-import: RS9jruOWtFtt/component
 import Button from "../../Button"; // plasmic-import: -U7nCsYlsFbS/component
-import Button2 from "../../Button2"; // plasmic-import: IsImc8gJBadG/component
 import YouTube from "@plasmicpkgs/react-youtube";
+import Button2 from "../../Button2"; // plasmic-import: IsImc8gJBadG/component
 import HowToUseYourForecast from "../../HowToUseYourForecast"; // plasmic-import: udcHmc-MXrK7/component
 import TsfFooter from "../../TsfFooter"; // plasmic-import: NmgYw5lHKANx/component
 import BlogPosts from "../../BlogPosts"; // plasmic-import: t8iMRGE7O8dB/component
@@ -252,22 +252,12 @@ function PlasmicHomepage__RenderFunc(props) {
                   <div
                     className={classNames(projectcss.all, sty.freeBox__sBxuq)}
                   >
-                    <PlasmicImg__
-                      alt={""}
-                      className={classNames(sty.img__frdAn)}
-                      displayHeight={"auto"}
-                      displayMaxHeight={"none"}
-                      displayMaxWidth={"100%"}
-                      displayMinHeight={"0"}
-                      displayMinWidth={"0"}
-                      displayWidth={"553px"}
-                      loading={"lazy"}
-                      src={{
-                        src: "/plasmic/tsf_demand_website/images/tsfLogoStackedSvg.svg",
-                        fullWidth: 612,
-                        fullHeight: 515.2,
-                        aspectRatio: 1.187888
-                      }}
+                    <YouTube
+                      className={classNames(
+                        "__wab_instance",
+                        sty.youTube__avni4
+                      )}
+                      videoId={"0Hx_uMwLFkY"}
                     />
                   </div>
                 </div>
@@ -797,8 +787,10 @@ function PlasmicHomepage__RenderFunc(props) {
                           </div>
                         </div>
                         <PlasmicImg__
+                          data-plasmic-name={"img"}
+                          data-plasmic-override={overrides.img}
                           alt={""}
-                          className={classNames(sty.img__rhy9)}
+                          className={classNames(sty.img)}
                           displayHeight={"auto"}
                           displayMaxHeight={"none"}
                           displayMaxWidth={"100%"}
@@ -1262,6 +1254,7 @@ const PlasmicDescendants = {
     "root",
     "tsfDemandMainNavigation",
     "features",
+    "img",
     "tsfLiteFewerStockouts",
     "ul",
     "link",
@@ -1272,7 +1265,8 @@ const PlasmicDescendants = {
   ],
 
   tsfDemandMainNavigation: ["tsfDemandMainNavigation"],
-  features: ["features", "tsfLiteFewerStockouts"],
+  features: ["features", "img", "tsfLiteFewerStockouts"],
+  img: ["img"],
   tsfLiteFewerStockouts: ["tsfLiteFewerStockouts"],
   ul: ["ul"],
   link: ["link"],
@@ -1316,6 +1310,7 @@ export const PlasmicHomepage = Object.assign(
     // Helper components rendering sub-elements
     tsfDemandMainNavigation: makeNodeComponent("tsfDemandMainNavigation"),
     features: makeNodeComponent("features"),
+    img: makeNodeComponent("img"),
     tsfLiteFewerStockouts: makeNodeComponent("tsfLiteFewerStockouts"),
     ul: makeNodeComponent("ul"),
     link: makeNodeComponent("link"),
