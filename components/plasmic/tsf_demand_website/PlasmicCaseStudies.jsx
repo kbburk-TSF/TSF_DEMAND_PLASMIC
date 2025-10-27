@@ -13,7 +13,6 @@ import Head from "next/head";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import {
-  PlasmicImg as PlasmicImg__,
   PlasmicLink as PlasmicLink__,
   classNames,
   createPlasmicElementProxy,
@@ -23,6 +22,7 @@ import {
 import { useDataEnv } from "@plasmicapp/react-web/lib/host";
 import TsfDemandMainNavigation from "../../TsfDemandMainNavigation"; // plasmic-import: RS9jruOWtFtt/component
 import { BaseButton } from "@plasmicpkgs/react-aria/skinny/registerButton";
+import YouTube from "@plasmicpkgs/react-youtube";
 import Button2 from "../../Button2"; // plasmic-import: IsImc8gJBadG/component
 import TsfFooter from "../../TsfFooter"; // plasmic-import: NmgYw5lHKANx/component
 import { _useGlobalVariants } from "./plasmic"; // plasmic-import: 8yhBRaKsBf3R2wKMhT5dUU/projectModule
@@ -153,17 +153,8 @@ function PlasmicCaseStudies__RenderFunc(props) {
                               style={{ fontStyle: "italic" }}
                             >
                               {
-                                "Because knowing the month ahead is better than "
+                                "Because knowing the month ahead is better than  reacting to it."
                               }
-                            </span>
-                            <React.Fragment>{"\n"}</React.Fragment>
-                            <span
-                              className={
-                                "plasmic_default__all plasmic_default__span"
-                              }
-                              style={{ fontStyle: "italic" }}
-                            >
-                              {"reacting to it."}
                             </span>
                           </React.Fragment>
                         )}
@@ -266,24 +257,11 @@ function PlasmicCaseStudies__RenderFunc(props) {
                     <div
                       className={classNames(projectcss.all, sty.freeBox__gBdBp)}
                     >
-                      <PlasmicImg__
-                        data-plasmic-name={"img"}
-                        data-plasmic-override={overrides.img}
-                        alt={""}
-                        className={classNames(sty.img)}
-                        displayHeight={"400px"}
-                        displayMaxHeight={"none"}
-                        displayMaxWidth={"none"}
-                        displayMinHeight={"0"}
-                        displayMinWidth={"0"}
-                        displayWidth={"400px"}
-                        loading={"lazy"}
-                        src={{
-                          src: "/plasmic/tsf_demand_website/images/financeReportWomanEconomistManagerMillennial20250225060407UtcJpg.jpg",
-                          fullWidth: 6000,
-                          fullHeight: 4000,
-                          aspectRatio: undefined
-                        }}
+                      <YouTube
+                        data-plasmic-name={"youTube"}
+                        data-plasmic-override={overrides.youTube}
+                        className={classNames("__wab_instance", sty.youTube)}
+                        videoId={"0Hwh-bWbi8A"}
                       />
                     </div>
                   </div>
@@ -1726,7 +1704,7 @@ const PlasmicDescendants = {
     "softBackground3",
     "border3",
     "interactionEffect3",
-    "img",
+    "youTube",
     "outer",
     "container3",
     "softBackground10",
@@ -1744,7 +1722,7 @@ const PlasmicDescendants = {
   softBackground3: ["softBackground3"],
   border3: ["border3"],
   interactionEffect3: ["interactionEffect3"],
-  img: ["img"],
+  youTube: ["youTube"],
   outer: [
     "outer",
     "container3",
@@ -1807,7 +1785,7 @@ export const PlasmicCaseStudies = Object.assign(
     softBackground3: makeNodeComponent("softBackground3"),
     border3: makeNodeComponent("border3"),
     interactionEffect3: makeNodeComponent("interactionEffect3"),
-    img: makeNodeComponent("img"),
+    youTube: makeNodeComponent("youTube"),
     outer: makeNodeComponent("outer"),
     container3: makeNodeComponent("container3"),
     softBackground10: makeNodeComponent("softBackground10"),

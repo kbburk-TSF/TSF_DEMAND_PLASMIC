@@ -635,6 +635,7 @@
   flex-shrink: 0;
 }
 .freeBox__tDGiK {
+  display: flex;
   position: relative;
   flex-direction: column;
   width: 100%;
@@ -643,7 +644,6 @@
   justify-content: flex-start;
   align-items: center;
   min-width: 0;
-  display: none;
   padding: 8px;
 }
 .youTube__dgpex:global(.__wab_instance) {
@@ -654,8 +654,10 @@
   object-fit: cover;
   margin-bottom: 0px;
   flex-shrink: 0;
+  display: none;
 }
 .freeBox__qvvqG {
+  display: flex;
   position: relative;
   flex-direction: column;
   width: 100%;
@@ -664,7 +666,6 @@
   justify-content: flex-start;
   align-items: center;
   min-width: 0;
-  display: none;
   padding: 8px;
 }
 .youTube__g3M0J:global(.__wab_instance) {
@@ -675,7 +676,6 @@
   object-fit: cover;
   margin-bottom: 0px;
   flex-shrink: 0;
-  display: none;
 }
 .freeBox__qNpXx {
   position: relative;
