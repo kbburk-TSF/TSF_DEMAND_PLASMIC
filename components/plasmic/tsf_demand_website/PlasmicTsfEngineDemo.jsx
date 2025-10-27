@@ -20,6 +20,7 @@ import {
 } from "@plasmicapp/react-web";
 import { useDataEnv } from "@plasmicapp/react-web/lib/host";
 import TsfDemandMainNavigation from "../../TsfDemandMainNavigation"; // plasmic-import: RS9jruOWtFtt/component
+import YouTube from "@plasmicpkgs/react-youtube";
 import IframeEmbed from "../../IframeEmbed"; // plasmic-import: nSE9S-d7qhfH/codeComponent
 import Button from "../../Button"; // plasmic-import: -U7nCsYlsFbS/component
 import Button2 from "../../Button2"; // plasmic-import: IsImc8gJBadG/component
@@ -228,39 +229,11 @@ function PlasmicTsfEngineDemo__RenderFunc(props) {
                   </div>
                 </div>
                 <div className={classNames(projectcss.all, sty.column__krZzE)}>
-                  <PlasmicImg__
-                    alt={""}
-                    className={classNames(sty.img__ngSah)}
-                    displayHeight={"auto"}
-                    displayMaxHeight={"none"}
-                    displayMaxWidth={
-                      hasVariant(globalVariants, "screen", "mobileOnly")
-                        ? "100%"
-                        : "100%"
-                    }
-                    displayMinHeight={"0"}
-                    displayMinWidth={"0"}
-                    displayWidth={"auto"}
-                    loading={
-                      hasVariant(globalVariants, "screen", "mobileOnly")
-                        ? "lazy"
-                        : "lazy"
-                    }
-                    src={
-                      hasVariant(globalVariants, "screen", "mobileOnly")
-                        ? {
-                            src: "/plasmic/tsf_demand_website/images/_3ThumbJpg.jpg",
-                            fullWidth: 700,
-                            fullHeight: 466,
-                            aspectRatio: undefined
-                          }
-                        : {
-                            src: "/plasmic/tsf_demand_website/images/aqiFloridaClassicalTsfPng.png",
-                            fullWidth: 1200,
-                            fullHeight: 876,
-                            aspectRatio: undefined
-                          }
-                    }
+                  <YouTube
+                    data-plasmic-name={"youTube"}
+                    data-plasmic-override={overrides.youTube}
+                    className={classNames("__wab_instance", sty.youTube)}
+                    videoId={"sPudzF7p_4I"}
                   />
                 </div>
               </div>
@@ -501,8 +474,10 @@ function PlasmicTsfEngineDemo__RenderFunc(props) {
                     className={classNames(projectcss.all, sty.art)}
                   >
                     <PlasmicImg__
+                      data-plasmic-name={"img"}
+                      data-plasmic-override={overrides.img}
                       alt={""}
-                      className={classNames(sty.img__sAy6T)}
+                      className={classNames(sty.img)}
                       displayHeight={"100%"}
                       displayMaxHeight={"none"}
                       displayMaxWidth={"none"}
@@ -732,12 +707,14 @@ const PlasmicDescendants = {
     "tsfDemandMainNavigation",
     "pageBanner",
     "ul",
+    "youTube",
     "iframeEmbed",
     "section",
     "foreground",
     "copy",
     "button",
     "art",
+    "img",
     "button2",
     "tsfFooter",
     "heroSection",
@@ -746,14 +723,16 @@ const PlasmicDescendants = {
   ],
 
   tsfDemandMainNavigation: ["tsfDemandMainNavigation"],
-  pageBanner: ["pageBanner", "ul"],
+  pageBanner: ["pageBanner", "ul", "youTube"],
   ul: ["ul"],
+  youTube: ["youTube"],
   iframeEmbed: ["iframeEmbed"],
   section: ["section", "foreground"],
   foreground: ["foreground"],
   copy: ["copy", "button"],
   button: ["button"],
-  art: ["art"],
+  art: ["art", "img"],
+  img: ["img"],
   button2: ["button2"],
   tsfFooter: ["tsfFooter"],
   heroSection: ["heroSection"],
@@ -796,12 +775,14 @@ export const PlasmicTsfEngineDemo = Object.assign(
     tsfDemandMainNavigation: makeNodeComponent("tsfDemandMainNavigation"),
     pageBanner: makeNodeComponent("pageBanner"),
     ul: makeNodeComponent("ul"),
+    youTube: makeNodeComponent("youTube"),
     iframeEmbed: makeNodeComponent("iframeEmbed"),
     section: makeNodeComponent("section"),
     foreground: makeNodeComponent("foreground"),
     copy: makeNodeComponent("copy"),
     button: makeNodeComponent("button"),
     art: makeNodeComponent("art"),
+    img: makeNodeComponent("img"),
     button2: makeNodeComponent("button2"),
     tsfFooter: makeNodeComponent("tsfFooter"),
     heroSection: makeNodeComponent("heroSection"),
