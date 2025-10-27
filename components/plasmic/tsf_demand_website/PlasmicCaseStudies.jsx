@@ -132,7 +132,7 @@ function PlasmicCaseStudies__RenderFunc(props) {
                       >
                         {hasVariant(globalVariants, "screen", "mobileOnly")
                           ? "Ready to accept or acquiesce willing."
-                          : "Run your business with foresight, not forecasts."}
+                          : "The future of demand planning is here."}
                       </h1>
                       <h3
                         className={classNames(
