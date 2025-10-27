@@ -167,7 +167,7 @@ function PlasmicCaseStudies__RenderFunc(props) {
                         )}
                       >
                         {
-                          "Traditional forecasts chase accuracy. TSF forecasts create clarity. Each month starts with a complete picture of what's likely ahead \u2014 a daily green zone that defines what \u201dnormal\u201d looks like. You dont analyze it. You use it \u2014 to plan, to spend, to staff, to stay ahead. "
+                          "Traditional forecasts chase accuracy. TSF forecasts create clarity. Each month starts with a complete picture of what's likely ahead \u2014 a daily green zone that defines what \u201dnormal\u201d looks like. You dont analyze it. You use it \u2014 to plan, to spend, to staff, to stay ahead.  "
                         }
                       </div>
                       <BaseButton
