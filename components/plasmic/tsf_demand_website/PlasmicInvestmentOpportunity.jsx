@@ -384,29 +384,6 @@ function PlasmicInvestmentOpportunity__RenderFunc(props) {
               />
             </div>
             <div
-              data-plasmic-name={"container11"}
-              data-plasmic-override={overrides.container11}
-              className={classNames(projectcss.all, sty.container11)}
-            >
-              <PlasmicImg__
-                alt={""}
-                className={classNames(sty.img__rUgyU)}
-                displayHeight={"auto"}
-                displayMaxHeight={"none"}
-                displayMaxWidth={"100%"}
-                displayMinHeight={"0"}
-                displayMinWidth={"0"}
-                displayWidth={"auto"}
-                loading={"lazy"}
-                src={{
-                  src: "/plasmic/tsf_demand_website/images/tsfPitchDeckV4008Jpeg.jpg",
-                  fullWidth: 1920,
-                  fullHeight: 1080,
-                  aspectRatio: undefined
-                }}
-              />
-            </div>
-            <div
               data-plasmic-name={"container12"}
               data-plasmic-override={overrides.container12}
               className={classNames(projectcss.all, sty.container12)}
@@ -446,6 +423,75 @@ function PlasmicInvestmentOpportunity__RenderFunc(props) {
                 loading={"lazy"}
                 src={{
                   src: "/plasmic/tsf_demand_website/images/tsfPitchDeckV3010Jpeg.jpg",
+                  fullWidth: 1920,
+                  fullHeight: 1080,
+                  aspectRatio: undefined
+                }}
+              />
+            </div>
+            <div
+              data-plasmic-name={"container24"}
+              data-plasmic-override={overrides.container24}
+              className={classNames(projectcss.all, sty.container24)}
+            >
+              <PlasmicImg__
+                alt={""}
+                className={classNames(sty.img__xdOkg)}
+                displayHeight={"auto"}
+                displayMaxHeight={"none"}
+                displayMaxWidth={"100%"}
+                displayMinHeight={"0"}
+                displayMinWidth={"0"}
+                displayWidth={"auto"}
+                loading={"lazy"}
+                src={{
+                  src: "/plasmic/tsf_demand_website/images/tsfPitchDeckV5010Jpeg.jpg",
+                  fullWidth: 1920,
+                  fullHeight: 1080,
+                  aspectRatio: undefined
+                }}
+              />
+            </div>
+            <div
+              data-plasmic-name={"container25"}
+              data-plasmic-override={overrides.container25}
+              className={classNames(projectcss.all, sty.container25)}
+            >
+              <PlasmicImg__
+                alt={""}
+                className={classNames(sty.img__fR8Y)}
+                displayHeight={"auto"}
+                displayMaxHeight={"none"}
+                displayMaxWidth={"100%"}
+                displayMinHeight={"0"}
+                displayMinWidth={"0"}
+                displayWidth={"auto"}
+                loading={"lazy"}
+                src={{
+                  src: "/plasmic/tsf_demand_website/images/tsfPitchDeckV5011Jpeg.jpg",
+                  fullWidth: 1920,
+                  fullHeight: 1080,
+                  aspectRatio: undefined
+                }}
+              />
+            </div>
+            <div
+              data-plasmic-name={"container26"}
+              data-plasmic-override={overrides.container26}
+              className={classNames(projectcss.all, sty.container26)}
+            >
+              <PlasmicImg__
+                alt={""}
+                className={classNames(sty.img__doHyL)}
+                displayHeight={"auto"}
+                displayMaxHeight={"none"}
+                displayMaxWidth={"100%"}
+                displayMinHeight={"0"}
+                displayMinWidth={"0"}
+                displayWidth={"auto"}
+                loading={"lazy"}
+                src={{
+                  src: "/plasmic/tsf_demand_website/images/tsfPitchDeckV5012Jpeg.jpg",
                   fullWidth: 1920,
                   fullHeight: 1080,
                   aspectRatio: undefined
@@ -843,9 +889,11 @@ const PlasmicDescendants = {
     "container8",
     "container9",
     "container10",
-    "container11",
     "container12",
     "container13",
+    "container24",
+    "container25",
+    "container26",
     "container14",
     "container15",
     "container16",
@@ -874,9 +922,11 @@ const PlasmicDescendants = {
     "container8",
     "container9",
     "container10",
-    "container11",
     "container12",
     "container13",
+    "container24",
+    "container25",
+    "container26",
     "container14",
     "container15",
     "container16",
@@ -897,9 +947,11 @@ const PlasmicDescendants = {
   container8: ["container8"],
   container9: ["container9"],
   container10: ["container10"],
-  container11: ["container11"],
   container12: ["container12"],
   container13: ["container13"],
+  container24: ["container24"],
+  container25: ["container25"],
+  container26: ["container26"],
   container14: ["container14"],
   container15: ["container15"],
   container16: ["container16"],
@@ -959,9 +1011,11 @@ export const PlasmicInvestmentOpportunity = Object.assign(
     container8: makeNodeComponent("container8"),
     container9: makeNodeComponent("container9"),
     container10: makeNodeComponent("container10"),
-    container11: makeNodeComponent("container11"),
     container12: makeNodeComponent("container12"),
     container13: makeNodeComponent("container13"),
+    container24: makeNodeComponent("container24"),
+    container25: makeNodeComponent("container25"),
+    container26: makeNodeComponent("container26"),
     container14: makeNodeComponent("container14"),
     container15: makeNodeComponent("container15"),
     container16: makeNodeComponent("container16"),
