@@ -453,29 +453,6 @@ function PlasmicInvestmentOpportunity__RenderFunc(props) {
               />
             </div>
             <div
-              data-plasmic-name={"container25"}
-              data-plasmic-override={overrides.container25}
-              className={classNames(projectcss.all, sty.container25)}
-            >
-              <PlasmicImg__
-                alt={""}
-                className={classNames(sty.img__fR8Y)}
-                displayHeight={"auto"}
-                displayMaxHeight={"none"}
-                displayMaxWidth={"100%"}
-                displayMinHeight={"0"}
-                displayMinWidth={"0"}
-                displayWidth={"auto"}
-                loading={"lazy"}
-                src={{
-                  src: "/plasmic/tsf_demand_website/images/tsfPitchDeckV5011Jpeg.jpg",
-                  fullWidth: 1920,
-                  fullHeight: 1080,
-                  aspectRatio: undefined
-                }}
-              />
-            </div>
-            <div
               data-plasmic-name={"container26"}
               data-plasmic-override={overrides.container26}
               className={classNames(projectcss.all, sty.container26)}
@@ -537,7 +514,7 @@ function PlasmicInvestmentOpportunity__RenderFunc(props) {
                 displayWidth={"auto"}
                 loading={"lazy"}
                 src={{
-                  src: "/plasmic/tsf_demand_website/images/tsfPitchDeckV3012Jpeg.jpg",
+                  src: "/plasmic/tsf_demand_website/images/tsfPitchDeckV5014Jpeg.jpg",
                   fullWidth: 1920,
                   fullHeight: 1080,
                   aspectRatio: undefined
@@ -773,7 +750,7 @@ function PlasmicInvestmentOpportunity__RenderFunc(props) {
                   className={classNames(
                     projectcss.all,
                     projectcss.a,
-                    sty.link__jxjmZ
+                    sty.link__j5Yem
                   )}
                   component={Link}
                   href={"mailto:kevin@temporalinertia.com"}
@@ -782,7 +759,7 @@ function PlasmicInvestmentOpportunity__RenderFunc(props) {
                 >
                   <PlasmicImg__
                     alt={""}
-                    className={classNames(sty.img__rvIt)}
+                    className={classNames(sty.img__oi6Qs)}
                     displayHeight={"auto"}
                     displayMaxHeight={"none"}
                     displayMaxWidth={"100%"}
@@ -892,7 +869,6 @@ const PlasmicDescendants = {
     "container12",
     "container13",
     "container24",
-    "container25",
     "container26",
     "container14",
     "container15",
@@ -925,7 +901,6 @@ const PlasmicDescendants = {
     "container12",
     "container13",
     "container24",
-    "container25",
     "container26",
     "container14",
     "container15",
@@ -950,7 +925,6 @@ const PlasmicDescendants = {
   container12: ["container12"],
   container13: ["container13"],
   container24: ["container24"],
-  container25: ["container25"],
   container26: ["container26"],
   container14: ["container14"],
   container15: ["container15"],
@@ -1014,7 +988,6 @@ export const PlasmicInvestmentOpportunity = Object.assign(
     container12: makeNodeComponent("container12"),
     container13: makeNodeComponent("container13"),
     container24: makeNodeComponent("container24"),
-    container25: makeNodeComponent("container25"),
     container26: makeNodeComponent("container26"),
     container14: makeNodeComponent("container14"),
     container15: makeNodeComponent("container15"),
