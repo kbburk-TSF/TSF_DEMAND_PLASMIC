@@ -466,7 +466,7 @@ function PlasmicInvestmentOpportunity__RenderFunc(props) {
                 displayWidth={"auto"}
                 loading={"lazy"}
                 src={{
-                  src: "/plasmic/tsf_demand_website/images/tsfPitchDeckV5011Jpeg.jpg",
+                  src: "/plasmic/tsf_demand_website/images/tsfPitchDeckV5011Jpeg2.jpg",
                   fullWidth: 1920,
                   fullHeight: 1080,
                   aspectRatio: undefined
