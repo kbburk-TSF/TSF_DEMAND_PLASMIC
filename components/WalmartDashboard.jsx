@@ -1,311 +1,69 @@
 // components/WalmartDashboard.jsx
-// Walmart Forecast Dashboard with PDF Download
+// EXACT copy from dashboard-NEON/frontend/index.html
+import React, { useState, useEffect, useRef, useLayoutEffect } from 'react';
 
-import React, { useState, useEffect, useRef } from 'react';
+const API_BASE = 'https://tsf-demand-back.onrender.com';
 
-// Backend URL
-const API_BASE = 'https://tsf-demand-back.onrender.com/api/walmart';
+// Inject styles
+const cssText = `
+* { box-sizing: border-box; }
+.wm-root { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #f5f5f5; min-height: 100vh; }
+.header { background: #1a1a2e; color: white; padding: 20px 30px; margin-bottom: 20px; }
+.header h1 { margin: 0; font-size: 24px; }
+.header-sub { margin: 5px 0 0; font-size: 14px; color: #aaa; }
+.container { max-width: 1400px; margin: 0 auto; padding: 20px; }
+.controls { display: flex; gap: 20px; align-items: flex-end; margin-bottom: 20px; padding: 20px; background: white; border-radius: 8px; box-shadow: 0 1px 3px rgba(0,0,0,0.1); flex-wrap: wrap; }
+.control-group { display: flex; flex-direction: column; gap: 6px; }
+.control-group label { font-size: 12px; font-weight: 600; color: #666; text-transform: uppercase; }
+.control-group select { padding: 8px 12px; font-size: 14px; border: 1px solid #ddd; border-radius: 4px; min-width: 160px; }
+.card { background: white; border-radius: 8px; box-shadow: 0 1px 3px rgba(0,0,0,0.1); margin-bottom: 20px; overflow: hidden; }
+.card-header { padding: 16px 20px; border-bottom: 1px solid #eee; background: #fafafa; }
+.card-header h2 { margin: 0; font-size: 18px; font-weight: 600; }
+.card-header h3 { margin: 0; font-size: 14px; font-weight: 500; color: #666; }
+.card-body { padding: 20px; }
+.charts-row { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+.wm-root table { width: 100%; border-collapse: collapse; }
+.wm-root th { padding: 10px 12px; text-align: center; border-bottom: 2px solid #eee; font-size: 11px; font-weight: 600; color: #666; text-transform: uppercase; background: #fafafa; }
+.wm-root th.left { text-align: left; }
+.wm-root td { padding: 10px 12px; border-bottom: 1px solid #f0f0f0; font-size: 13px; text-align: center; }
+.wm-root td.left { text-align: left; font-weight: 600; }
+.wm-root tr.clickable { cursor: pointer; }
+.wm-root tr.clickable:hover { background: #f8f9fa; }
+.loading { padding: 40px; text-align: center; color: #666; }
+.chart-title { margin: 0 0 10px; font-size: 14px; font-weight: 600; }
+.legend { display: flex; gap: 20px; justify-content: center; margin-top: 10px; font-size: 12px; }
+.legend-item { display: flex; align-items: center; gap: 6px; }
+.metric-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 15px; margin-bottom: 20px; }
+.metric-card { background: #f8f9fa; padding: 15px; border-radius: 6px; text-align: center; }
+.metric-card.alert { background: #fff0f0; }
+.metric-card.warning { background: #fff8e6; }
+.metric-value { font-size: 24px; font-weight: 700; color: #1a1a2e; }
+.metric-label { font-size: 11px; color: #666; text-transform: uppercase; margin-top: 5px; }
+.break-high { color: #c00; font-weight: 700; }
+.break-med { color: #e65c00; font-weight: 600; }
+.break-low { color: #080; }
+.break-cell { font-variant-numeric: tabular-nums; }
+.consec { font-size: 10px; color: #666; display: block; }
+.sku-note { background: #fff3cd; padding: 10px 15px; border-radius: 6px; margin-bottom: 15px; font-size: 13px; color: #856404; }
+.download-btn { padding: 8px 16px; font-size: 14px; background-color: #1a1a2e; color: white; border: none; border-radius: 4px; cursor: pointer; font-weight: 600; }
+.download-btn:disabled { background-color: #666; cursor: not-allowed; }
+.download-btn:hover:not(:disabled) { background-color: #2a2a4e; }
+.legend-box { background: #f8f9fa; border: 1px solid #e0e0e0; border-radius: 6px; padding: 12px 16px; margin-bottom: 15px; font-size: 12px; color: #555; }
+.legend-box strong { color: #1a1a2e; }
+.legend-box .stockout { color: #c00; font-weight: 600; }
+.legend-box .overstock { color: #e65c00; font-weight: 600; }
+`;
 
-const styles = {
-  container: { maxWidth: 1400, margin: '0 auto', padding: 20, fontFamily: "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" },
-  header: { background: '#1a1a2e', color: 'white', padding: '20px 30px', marginBottom: 20, borderRadius: 8 },
-  headerTitle: { margin: 0, fontSize: 24 },
-  headerSub: { margin: '5px 0 0', fontSize: 14, color: '#aaa' },
-  headerData: { marginTop: 8, color: '#4ecdc4', fontWeight: 600, fontSize: 14 },
-  controls: { display: 'flex', gap: 20, alignItems: 'flex-end', marginBottom: 20, padding: 20, background: 'white', borderRadius: 8, boxShadow: '0 1px 3px rgba(0,0,0,0.1)', flexWrap: 'wrap' },
-  controlGroup: { display: 'flex', flexDirection: 'column', gap: 6 },
-  label: { fontSize: 12, fontWeight: 600, color: '#666', textTransform: 'uppercase' },
-  select: { padding: '8px 12px', fontSize: 14, border: '1px solid #ddd', borderRadius: 4, minWidth: 160 },
-  card: { background: 'white', borderRadius: 8, boxShadow: '0 1px 3px rgba(0,0,0,0.1)', marginBottom: 20, overflow: 'hidden' },
-  cardHeader: { padding: '16px 20px', borderBottom: '1px solid #eee', background: '#fafafa' },
-  cardTitle: { margin: 0, fontSize: 18, fontWeight: 600 },
-  cardSubtitle: { margin: 0, fontSize: 14, fontWeight: 500, color: '#666' },
-  cardBody: { padding: 20 },
-  chartsRow: { display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 20 },
-  metricGrid: { display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 15, marginBottom: 20 },
-  metricCard: { background: '#f8f9fa', padding: 15, borderRadius: 6, textAlign: 'center' },
-  metricCardAlert: { background: '#fff0f0' },
-  metricCardWarning: { background: '#fff8e6' },
-  metricValue: { fontSize: 24, fontWeight: 700, color: '#1a1a2e' },
-  metricLabel: { fontSize: 11, color: '#666', textTransform: 'uppercase', marginTop: 5 },
-  table: { width: '100%', borderCollapse: 'collapse' },
-  th: { padding: '10px 12px', textAlign: 'center', borderBottom: '2px solid #eee', fontSize: 11, fontWeight: 600, color: '#666', textTransform: 'uppercase', background: '#fafafa' },
-  thLeft: { textAlign: 'left' },
-  td: { padding: '10px 12px', borderBottom: '1px solid #f0f0f0', fontSize: 13, textAlign: 'center' },
-  tdLeft: { textAlign: 'left', fontWeight: 600 },
-  loading: { padding: 40, textAlign: 'center', color: '#666' },
-  legendBox: { background: '#f8f9fa', border: '1px solid #e0e0e0', borderRadius: 6, padding: '12px 16px', marginBottom: 15, fontSize: 12, color: '#555' },
-  chartTitle: { margin: '0 0 10px', fontSize: 14, fontWeight: 600 },
-  legend: { display: 'flex', gap: 20, justifyContent: 'center', marginTop: 10, fontSize: 12 },
-  legendItem: { display: 'flex', alignItems: 'center', gap: 6 },
-  downloadBtn: { padding: '10px 20px', fontSize: 14, backgroundColor: '#1a1a2e', color: 'white', border: 'none', borderRadius: 4, cursor: 'pointer', fontWeight: 600 },
-  downloadBtnDisabled: { backgroundColor: '#999', cursor: 'not-allowed' },
-};
-
-const breakClass = (count, total) => {
-  if (!total || count === 0) return {};
-  const pct = count / total;
-  if (pct > 0.15 || count >= 5) return { color: '#c00', fontWeight: 700 };
-  if (pct > 0.05 || count >= 2) return { color: '#e65c00', fontWeight: 600 };
-  return { color: '#080' };
-};
-
-const BreakCell = ({ count, consec, total }) => (
-  <td style={{ ...styles.td, ...breakClass(count, total), fontVariantNumeric: 'tabular-nums' }}>
-    {count || 0}
-    {consec > 1 && <span style={{ fontSize: 10, color: '#666', display: 'block' }}>({consec} consec)</span>}
-  </td>
-);
-
-function useContainerWidth() {
-  const ref = useRef(null);
-  const [w, setW] = useState(400);
-  useEffect(() => {
-    if (!ref.current) return;
-    const el = ref.current;
-    const ro = new ResizeObserver(entries => {
-      for (const e of entries) {
-        setW(e.contentRect.width || 400);
-      }
-    });
-    ro.observe(el);
-    setW(el.clientWidth || 400);
-    return () => ro.disconnect();
-  }, []);
-  return [ref, w];
+if (typeof document !== 'undefined' && !document.getElementById('wm-styles')) {
+  const s = document.createElement('style');
+  s.id = 'wm-styles';
+  s.textContent = cssText;
+  document.head.appendChild(s);
 }
 
-function ForecastChart({ data, title }) {
-  const [wrapRef, W] = useContainerWidth();
-  if (!data || !data.length) return <div ref={wrapRef} style={{ padding: 20, color: '#999' }}>No data</div>;
-
-  const H = 280;
-  const pad = { top: 30, right: 20, bottom: 60, left: 70 };
-  const innerW = Math.max(1, W - pad.left - pad.right);
-  const innerH = Math.max(1, H - pad.top - pad.bottom);
-
-  const allVals = data.flatMap(d => [d.actual, d.forecast, d.ci85_low, d.ci85_high, d.ci95_low, d.ci95_high]).filter(v => v != null && isFinite(v));
-  const yMin = allVals.length ? Math.min(...allVals) : 0;
-  const yMax = allVals.length ? Math.max(...allVals) : 100;
-  const yPad = (yMax - yMin) * 0.1 || 10;
-  const Y0 = Math.max(0, yMin - yPad);
-  const Y1 = yMax + yPad;
-
-  const xScale = (i) => pad.left + (i / Math.max(1, data.length - 1)) * innerW;
-  const yScale = (v) => pad.top + innerH * (1 - ((v - Y0) / Math.max(1e-9, Y1 - Y0)));
-  const makePath = (pts) => pts.length ? pts.map((p, i) => (i ? 'L' : 'M') + xScale(p.i) + ' ' + yScale(p.y)).join(' ') : '';
-
-  const actualPts = data.map((d, i) => d.actual != null ? { i, y: d.actual } : null).filter(Boolean);
-  const forecastPts = data.map((d, i) => d.forecast != null ? { i, y: d.forecast } : null).filter(Boolean);
-  const ci95LowPts = data.map((d, i) => d.ci95_low != null ? { i, y: d.ci95_low } : null).filter(Boolean);
-  const ci95HighPts = data.map((d, i) => d.ci95_high != null ? { i, y: d.ci95_high } : null).filter(Boolean);
-  const ci85LowPts = data.map((d, i) => d.ci85_low != null ? { i, y: d.ci85_low } : null).filter(Boolean);
-  const ci85HighPts = data.map((d, i) => d.ci85_high != null ? { i, y: d.ci85_high } : null).filter(Boolean);
-
-  let poly95 = '', poly85 = '';
-  if (ci95LowPts.length && ci95HighPts.length) {
-    poly95 = ci95HighPts.map(p => `${xScale(p.i)},${yScale(p.y)}`).join(' ') + ' ' + [...ci95LowPts].reverse().map(p => `${xScale(p.i)},${yScale(p.y)}`).join(' ');
-  }
-  if (ci85LowPts.length && ci85HighPts.length) {
-    poly85 = ci85HighPts.map(p => `${xScale(p.i)},${yScale(p.y)}`).join(' ') + ' ' + [...ci85LowPts].reverse().map(p => `${xScale(p.i)},${yScale(p.y)}`).join(' ');
-  }
-
-  const yTicks = [0,1,2,3,4,5].map(i => Y0 + (Y1 - Y0) * (i / 5));
-  const fmt = (n) => n >= 1000000 ? (n/1000000).toFixed(1)+'M' : n >= 1000 ? (n/1000).toFixed(1)+'K' : n.toFixed(0);
-
-  return (
-    <div ref={wrapRef} style={{ width: '100%' }}>
-      <h4 style={styles.chartTitle}>{title}</h4>
-      <svg width={W} height={H} style={{ display: 'block' }}>
-        {yTicks.map((v, i) => (
-          <g key={i}>
-            <line x1={pad.left} y1={yScale(v)} x2={W - pad.right} y2={yScale(v)} stroke="#eee" />
-            <text x={pad.left - 8} y={yScale(v) + 4} fontSize={11} fill="#666" textAnchor="end">{fmt(v)}</text>
-          </g>
-        ))}
-        <line x1={pad.left} y1={H - pad.bottom} x2={W - pad.right} y2={H - pad.bottom} stroke="#999" />
-        <line x1={pad.left} y1={pad.top} x2={pad.left} y2={H - pad.bottom} stroke="#999" />
-        {poly95 && <polygon points={poly95} fill="rgba(46, 204, 113, 0.25)" stroke="none" />}
-        {poly85 && <polygon points={poly85} fill="rgba(46, 204, 113, 0.45)" stroke="none" />}
-        <path d={makePath(forecastPts)} fill="none" stroke="#FFD700" strokeWidth={2.5} />
-        <path d={makePath(actualPts)} fill="none" stroke="#000" strokeWidth={2} />
-        {data.map((d, i) => {
-          if (i % 7 !== 0 && i !== data.length - 1) return null;
-          return (
-            <g key={i} transform={`translate(${xScale(i)}, ${H - pad.bottom})`}>
-              <line x1={0} y1={0} x2={0} y2={5} stroke="#999" />
-              <text x={0} y={18} fontSize={10} fill="#666" textAnchor="middle" transform="rotate(45 0 18)">{d.date?.slice(5)}</text>
-            </g>
-          );
-        })}
-      </svg>
-      <div style={styles.legend}>
-        <div style={styles.legendItem}><svg width={30} height={10}><line x1={0} y1={5} x2={30} y2={5} stroke="#000" strokeWidth={2} /></svg><span>Actual</span></div>
-        <div style={styles.legendItem}><svg width={30} height={10}><line x1={0} y1={5} x2={30} y2={5} stroke="#FFD700" strokeWidth={2.5} /></svg><span>Forecast</span></div>
-        <div style={styles.legendItem}><svg width={30} height={10}><rect x={0} y={0} width={30} height={10} fill="rgba(46,204,113,0.45)" /></svg><span>85% CI</span></div>
-        <div style={styles.legendItem}><svg width={30} height={10}><rect x={0} y={0} width={30} height={10} fill="rgba(46,204,113,0.25)" /></svg><span>95% CI</span></div>
-      </div>
-    </div>
-  );
-}
-
-function LocationReport({ week, forecastType, geoLevel, geoId, apiBase }) {
-  const [loading, setLoading] = useState(true);
-  const [departments, setDepartments] = useState([]);
-  const [categories, setCategories] = useState([]);
-  const [chartUnits, setChartUnits] = useState([]);
-  const [chartRevenue, setChartRevenue] = useState([]);
-  const [summary, setSummary] = useState({ units: {}, revenue: {} });
-
-  useEffect(() => { loadData(); }, [week, forecastType, geoLevel, geoId]);
-
-  async function loadData() {
-    setLoading(true);
-    try {
-      const base = apiBase || API_BASE;
-      const [deptRes, catRes, chartU, chartR, sumRes] = await Promise.all([
-        fetch(`${base}/departments?week=${week}&forecast_type=${forecastType}&geo_level=${geoLevel}&geo_id=${geoId}`),
-        fetch(`${base}/categories?week=${week}&forecast_type=${forecastType}&geo_level=${geoLevel}&geo_id=${geoId}`),
-        fetch(`${base}/chart/location?week=${week}&forecast_type=${forecastType}&type_id=U&geo_level=${geoLevel}&geo_id=${geoId}`),
-        fetch(`${base}/chart/location?week=${week}&forecast_type=${forecastType}&type_id=R&geo_level=${geoLevel}&geo_id=${geoId}`),
-        fetch(`${base}/location-summary?week=${week}&forecast_type=${forecastType}&geo_level=${geoLevel}&geo_id=${geoId}`)
-      ]);
-      setDepartments(await deptRes.json());
-      setCategories(await catRes.json());
-      setChartUnits(await chartU.json());
-      setChartRevenue(await chartR.json());
-      setSummary(await sumRes.json());
-    } catch (e) { console.error(e); }
-    setLoading(false);
-  }
-
-  if (loading) return <div style={styles.loading}>Loading...</div>;
-
-  const geoLabel = geoLevel === 'all_locations' ? 'All Locations' : geoLevel === 'state_id' ? `State: ${geoId}` : `Store: ${geoId}`;
-  const u = summary.units || {};
-  const r = summary.revenue || {};
-  const windowDays = forecastType === 'monthly' ? 30 : 90;
-
-  return (
-    <div>
-      <div style={styles.card}>
-        <div style={styles.cardHeader}>
-          <h2 style={styles.cardTitle}>{geoLabel} - Band Break Summary</h2>
-          <h3 style={styles.cardSubtitle}>Data through: {week} • Rolling {windowDays}-day window • {u.total_days || 0} days analyzed</h3>
-        </div>
-        <div style={styles.cardBody}>
-          <div style={styles.metricGrid}>
-            <div style={{ ...styles.metricCard, ...(u.upper_85 > 0 ? styles.metricCardAlert : {}) }}>
-              <div style={styles.metricValue}>{u.upper_85 || 0}</div>
-              <div style={styles.metricLabel}>Units Stockout Risk (Upper 85%)</div>
-              {u.upper_85_consec > 1 && <div style={{ fontSize: 11, color: '#c00' }}>{u.upper_85_consec} consecutive</div>}
-            </div>
-            <div style={{ ...styles.metricCard, ...(u.lower_85 > 0 ? styles.metricCardWarning : {}) }}>
-              <div style={styles.metricValue}>{u.lower_85 || 0}</div>
-              <div style={styles.metricLabel}>Units Overstock Risk (Lower 85%)</div>
-              {u.lower_85_consec > 1 && <div style={{ fontSize: 11, color: '#e65c00' }}>{u.lower_85_consec} consecutive</div>}
-            </div>
-            <div style={{ ...styles.metricCard, ...(r.lower_85 > 0 ? styles.metricCardAlert : {}) }}>
-              <div style={styles.metricValue}>{r.lower_85 || 0}</div>
-              <div style={styles.metricLabel}>Revenue Shortfall (Lower 85%)</div>
-              {r.lower_85_consec > 1 && <div style={{ fontSize: 11, color: '#c00' }}>{r.lower_85_consec} consecutive</div>}
-            </div>
-            <div style={styles.metricCard}>
-              <div style={styles.metricValue}>${((r.total || 0) / 1000000).toFixed(1)}M</div>
-              <div style={styles.metricLabel}>Total Revenue</div>
-            </div>
-          </div>
-          <div style={styles.chartsRow}>
-            <ForecastChart data={chartUnits} title="Units Forecast vs Actual" />
-            <ForecastChart data={chartRevenue} title="Revenue Forecast vs Actual" />
-          </div>
-        </div>
-      </div>
-
-      <div style={styles.card}>
-        <div style={styles.cardHeader}><h2 style={styles.cardTitle}>Department Band Breaks</h2></div>
-        <div style={{ padding: 0 }}>
-          <table style={styles.table}>
-            <thead>
-              <tr>
-                <th rowSpan={2} style={{ ...styles.th, ...styles.thLeft }}>Department</th>
-                <th colSpan={2} style={{ ...styles.th, borderBottom: '1px solid #ddd', background: '#fff0f0' }}>Stockout Risk</th>
-                <th colSpan={2} style={{ ...styles.th, borderBottom: '1px solid #ddd', background: '#fff8e6' }}>Overstock Risk</th>
-                <th colSpan={2} style={{ ...styles.th, borderBottom: '1px solid #ddd', background: '#f0f8ff' }}>Revenue Shortfall</th>
-              </tr>
-              <tr>
-                <th style={{ ...styles.th, background: '#fff0f0' }}>85%</th>
-                <th style={{ ...styles.th, background: '#fff0f0' }}>95%</th>
-                <th style={{ ...styles.th, background: '#fff8e6' }}>85%</th>
-                <th style={{ ...styles.th, background: '#fff8e6' }}>95%</th>
-                <th style={{ ...styles.th, background: '#f0f8ff' }}>85%</th>
-                <th style={{ ...styles.th, background: '#f0f8ff' }}>95%</th>
-              </tr>
-            </thead>
-            <tbody>
-              {departments.map(row => (
-                <tr key={row.department_id}>
-                  <td style={{ ...styles.td, ...styles.tdLeft }}>{row.department_id}</td>
-                  <BreakCell count={row.units?.upper_85} consec={row.units?.upper_85_consec} total={row.units?.total_days} />
-                  <BreakCell count={row.units?.upper_95} consec={0} total={row.units?.total_days} />
-                  <BreakCell count={row.units?.lower_85} consec={row.units?.lower_85_consec} total={row.units?.total_days} />
-                  <BreakCell count={row.units?.lower_95} consec={0} total={row.units?.total_days} />
-                  <BreakCell count={row.revenue?.lower_85} consec={row.revenue?.lower_85_consec} total={row.revenue?.total_days} />
-                  <BreakCell count={row.revenue?.lower_95} consec={0} total={row.revenue?.total_days} />
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
-      </div>
-
-      <div style={styles.card}>
-        <div style={styles.cardHeader}><h2 style={styles.cardTitle}>Category Band Breaks</h2></div>
-        <div style={{ padding: 0 }}>
-          <table style={styles.table}>
-            <thead>
-              <tr>
-                <th rowSpan={2} style={{ ...styles.th, ...styles.thLeft }}>Category</th>
-                <th colSpan={2} style={{ ...styles.th, borderBottom: '1px solid #ddd', background: '#fff0f0' }}>Stockout Risk</th>
-                <th colSpan={2} style={{ ...styles.th, borderBottom: '1px solid #ddd', background: '#fff8e6' }}>Overstock Risk</th>
-                <th colSpan={2} style={{ ...styles.th, borderBottom: '1px solid #ddd', background: '#f0f8ff' }}>Revenue Shortfall</th>
-              </tr>
-              <tr>
-                <th style={{ ...styles.th, background: '#fff0f0' }}>85%</th>
-                <th style={{ ...styles.th, background: '#fff0f0' }}>95%</th>
-                <th style={{ ...styles.th, background: '#fff8e6' }}>85%</th>
-                <th style={{ ...styles.th, background: '#fff8e6' }}>95%</th>
-                <th style={{ ...styles.th, background: '#f0f8ff' }}>85%</th>
-                <th style={{ ...styles.th, background: '#f0f8ff' }}>95%</th>
-              </tr>
-            </thead>
-            <tbody>
-              {categories.map(row => (
-                <tr key={row.category_id}>
-                  <td style={{ ...styles.td, ...styles.tdLeft }}>{row.category_id}</td>
-                  <BreakCell count={row.units?.upper_85} consec={row.units?.upper_85_consec} total={row.units?.total_days} />
-                  <BreakCell count={row.units?.upper_95} consec={0} total={row.units?.total_days} />
-                  <BreakCell count={row.units?.lower_85} consec={row.units?.lower_85_consec} total={row.units?.total_days} />
-                  <BreakCell count={row.units?.lower_95} consec={0} total={row.units?.total_days} />
-                  <BreakCell count={row.revenue?.lower_85} consec={row.revenue?.lower_85_consec} total={row.revenue?.total_days} />
-                  <BreakCell count={row.revenue?.lower_95} consec={0} total={row.revenue?.total_days} />
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
-      </div>
-    </div>
-  );
-}
-
-// Load jsPDF dynamically
 function loadJsPDF() {
   return new Promise((resolve, reject) => {
-    if (window.jspdf) {
-      resolve(window.jspdf.jsPDF);
-      return;
-    }
+    if (typeof window !== 'undefined' && window.jspdf) { resolve(window.jspdf.jsPDF); return; }
     const script = document.createElement('script');
     script.src = 'https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js';
     script.onload = () => resolve(window.jspdf.jsPDF);
@@ -314,239 +72,1182 @@ function loadJsPDF() {
   });
 }
 
-export function WalmartDashboard({ apiBase }) {
-  const base = apiBase || API_BASE;
-  
-  const [weeks, setWeeks] = useState([]);
-  const [selectedWeek, setSelectedWeek] = useState('');
-  const [forecastType, setForecastType] = useState('monthly');
-  const [geoLevel, setGeoLevel] = useState('all_locations');
-  const [geoIds, setGeoIds] = useState(['ALL']);
-  const [selectedGeoId, setSelectedGeoId] = useState('ALL');
-  const [generating, setGenerating] = useState(false);
-  const [pdfStatus, setPdfStatus] = useState('');
-
-  useEffect(() => {
-    fetch(`${base}/weeks?forecast_type=${forecastType}`)
-      .then(r => r.json())
-      .then(data => { 
-        setWeeks(data); 
-        if (data.length && !selectedWeek) setSelectedWeek(data[Math.floor(data.length / 2)]); 
-      })
-      .catch(console.error);
-  }, [forecastType, base]);
-
-  useEffect(() => {
-    if (geoLevel === 'all_locations') {
-      setGeoIds(['ALL']);
-      setSelectedGeoId('ALL');
-      return;
+    function useContainerWidth() {
+      const ref = useRef(null);
+      const [w, setW] = useState(0);
+      useLayoutEffect(() => {
+        if (!ref.current) return;
+        const el = ref.current;
+        const ro = new ResizeObserver(entries => {
+          for (const e of entries) {
+            const box = e.contentBoxSize ? (Array.isArray(e.contentBoxSize) ? e.contentBoxSize[0] : e.contentBoxSize) : null;
+            const width = box ? box.inlineSize : el.clientWidth || 0;
+            setW(width);
+          }
+        });
+        ro.observe(el);
+        setW(el.clientWidth || 0);
+        return () => ro.disconnect();
+      }, []);
+      return [ref, w];
     }
-    fetch(`${base}/geo-ids?geo_level=${geoLevel}&forecast_type=${forecastType}`)
-      .then(r => r.json())
-      .then(data => { setGeoIds(data); if (data.length) setSelectedGeoId(data[0]); })
-      .catch(console.error);
-  }, [geoLevel, forecastType, base]);
 
-  async function generatePDF() {
-    setGenerating(true);
-    setPdfStatus('Loading PDF library...');
-    
-    try {
-      const jsPDF = await loadJsPDF();
-      const doc = new jsPDF({ orientation: 'landscape', unit: 'pt', format: 'letter' });
-      const pageW = doc.internal.pageSize.getWidth();
-      const pageH = doc.internal.pageSize.getHeight();
+    function ForecastChart({ data, title }) {
+      const [wrapRef, W] = useContainerWidth();
+      if (!data || !data.length) return <div ref={wrapRef} style={{ padding: 20, color: '#999' }}>No data</div>;
+
+      const H = 280;
+      const pad = { top: 30, right: 20, bottom: 60, left: 70 };
+      const innerW = Math.max(1, W - pad.left - pad.right);
+      const innerH = Math.max(1, H - pad.top - pad.bottom);
+
+      const allVals = data.flatMap(d => [d.actual, d.forecast, d.ci85_low, d.ci85_high, d.ci95_low, d.ci95_high]).filter(v => v != null && isFinite(v));
+      const yMin = allVals.length ? Math.min(...allVals) : 0;
+      const yMax = allVals.length ? Math.max(...allVals) : 100;
+      const yPad = (yMax - yMin) * 0.1 || 10;
+      const Y0 = Math.max(0, yMin - yPad);
+      const Y1 = yMax + yPad;
+
+      const xScale = (i) => pad.left + (i / Math.max(1, data.length - 1)) * innerW;
+      const yScale = (v) => pad.top + innerH * (1 - ((v - Y0) / Math.max(1e-9, Y1 - Y0)));
+      const makePath = (pts) => pts.length ? pts.map((p, i) => (i ? 'L' : 'M') + xScale(p.i) + ' ' + yScale(p.y)).join(' ') : '';
+
+      const actualPts = data.map((d, i) => d.actual != null ? { i, y: d.actual } : null).filter(Boolean);
+      const forecastPts = data.map((d, i) => d.forecast != null ? { i, y: d.forecast } : null).filter(Boolean);
+      const ci95LowPts = data.map((d, i) => d.ci95_low != null ? { i, y: d.ci95_low } : null).filter(Boolean);
+      const ci95HighPts = data.map((d, i) => d.ci95_high != null ? { i, y: d.ci95_high } : null).filter(Boolean);
+      const ci85LowPts = data.map((d, i) => d.ci85_low != null ? { i, y: d.ci85_low } : null).filter(Boolean);
+      const ci85HighPts = data.map((d, i) => d.ci85_high != null ? { i, y: d.ci85_high } : null).filter(Boolean);
+
+      let poly95 = '', poly85 = '';
+      if (ci95LowPts.length && ci95HighPts.length) {
+        poly95 = ci95HighPts.map(p => `${xScale(p.i)},${yScale(p.y)}`).join(' ') + ' ' + [...ci95LowPts].reverse().map(p => `${xScale(p.i)},${yScale(p.y)}`).join(' ');
+      }
+      if (ci85LowPts.length && ci85HighPts.length) {
+        poly85 = ci85HighPts.map(p => `${xScale(p.i)},${yScale(p.y)}`).join(' ') + ' ' + [...ci85LowPts].reverse().map(p => `${xScale(p.i)},${yScale(p.y)}`).join(' ');
+      }
+
+      const yTicks = [0,1,2,3,4,5].map(i => Y0 + (Y1 - Y0) * (i / 5));
+      const fmt = (n) => n >= 1000000 ? (n/1000000).toFixed(1)+'M' : n >= 1000 ? (n/1000).toFixed(1)+'K' : n.toFixed(0);
+
+      return (
+        <div ref={wrapRef} style={{ width: '100%' }}>
+          <h4 className="chart-title">{title}</h4>
+          <svg width={W} height={H} style={{ display: 'block' }}>
+            {yTicks.map((v, i) => (
+              <g key={i}>
+                <line x1={pad.left} y1={yScale(v)} x2={W - pad.right} y2={yScale(v)} stroke="#eee" />
+                <text x={pad.left - 8} y={yScale(v) + 4} fontSize={11} fill="#666" textAnchor="end">{fmt(v)}</text>
+              </g>
+            ))}
+            <line x1={pad.left} y1={H - pad.bottom} x2={W - pad.right} y2={H - pad.bottom} stroke="#999" />
+            <line x1={pad.left} y1={pad.top} x2={pad.left} y2={H - pad.bottom} stroke="#999" />
+            {poly95 && <polygon points={poly95} fill="rgba(46, 204, 113, 0.25)" stroke="none" />}
+            {poly85 && <polygon points={poly85} fill="rgba(46, 204, 113, 0.45)" stroke="none" />}
+            <path d={makePath(forecastPts)} fill="none" stroke="#FFD700" strokeWidth={2.5} />
+            <path d={makePath(actualPts)} fill="none" stroke="#000" strokeWidth={2} />
+            {data.map((d, i) => {
+              if (i % 7 !== 0 && i !== data.length - 1) return null;
+              return (
+                <g key={i} transform={`translate(${xScale(i)}, ${H - pad.bottom})`}>
+                  <line x1={0} y1={0} x2={0} y2={5} stroke="#999" />
+                  <text x={0} y={18} fontSize={10} fill="#666" textAnchor="middle" transform="rotate(45 0 18)">{d.date.slice(5)}</text>
+                </g>
+              );
+            })}
+          </svg>
+          <div className="legend">
+            <div className="legend-item"><svg width={30} height={10}><line x1={0} y1={5} x2={30} y2={5} stroke="#000" strokeWidth={2} /></svg><span>Actual</span></div>
+            <div className="legend-item"><svg width={30} height={10}><line x1={0} y1={5} x2={30} y2={5} stroke="#FFD700" strokeWidth={2.5} /></svg><span>Forecast</span></div>
+            <div className="legend-item"><svg width={30} height={10}><rect x={0} y={0} width={30} height={10} fill="rgba(46,204,113,0.45)" /></svg><span>85% CI</span></div>
+            <div className="legend-item"><svg width={30} height={10}><rect x={0} y={0} width={30} height={10} fill="rgba(46,204,113,0.25)" /></svg><span>95% CI</span></div>
+          </div>
+        </div>
+      );
+    }
+
+    // =============================================================================
+    // HELPERS
+    // =============================================================================
+    const breakClass = (count, total) => {
+      if (!total || count === 0) return 'break-low';
+      const pct = count / total;
+      if (pct > 0.15 || count >= 5) return 'break-high';
+      if (pct > 0.05 || count >= 2) return 'break-med';
+      return 'break-low';
+    };
+
+    const BreakCell = ({ count, consec, total }) => (
+      <td className={`break-cell ${breakClass(count, total)}`}>
+        {count || 0}
+        {consec > 1 && <span className="consec">({consec} consec)</span>}
+      </td>
+    );
+
+    // =============================================================================
+    // PDF GENERATION (CLIENT-SIDE)
+    // =============================================================================
+    function renderChartToCanvas(data, title, width = 500, height = 200) {
+      const canvas = document.createElement('canvas');
+      canvas.width = width;
+      canvas.height = height;
+      const ctx = canvas.getContext('2d');
+      
+      if (!data || !data.length) {
+        ctx.fillStyle = '#999';
+        ctx.font = '12px sans-serif';
+        ctx.fillText('No data', 20, height/2);
+        return canvas;
+      }
+
+      const pad = { top: 25, right: 15, bottom: 35, left: 55 };
+      const innerW = width - pad.left - pad.right;
+      const innerH = height - pad.top - pad.bottom;
+
+      const allVals = data.flatMap(d => [d.actual, d.forecast, d.ci85_low, d.ci85_high, d.ci95_low, d.ci95_high]).filter(v => v != null && isFinite(v));
+      const yMin = allVals.length ? Math.min(...allVals) : 0;
+      const yMax = allVals.length ? Math.max(...allVals) : 100;
+      const yPad = (yMax - yMin) * 0.1 || 10;
+      const Y0 = Math.max(0, yMin - yPad);
+      const Y1 = yMax + yPad;
+
+      const xScale = (i) => pad.left + (i / Math.max(1, data.length - 1)) * innerW;
+      const yScale = (v) => pad.top + innerH * (1 - ((v - Y0) / Math.max(1e-9, Y1 - Y0)));
+
+      // Background
+      ctx.fillStyle = '#fff';
+      ctx.fillRect(0, 0, width, height);
+
+      // Title
+      ctx.fillStyle = '#000';
+      ctx.font = 'bold 11px sans-serif';
+      ctx.fillText(title, pad.left, 15);
+
+      // Grid
+      ctx.strokeStyle = '#eee';
+      ctx.lineWidth = 1;
+      for (let i = 0; i <= 5; i++) {
+        const v = Y0 + (Y1 - Y0) * (i / 5);
+        const y = yScale(v);
+        ctx.beginPath();
+        ctx.moveTo(pad.left, y);
+        ctx.lineTo(width - pad.right, y);
+        ctx.stroke();
+        
+        ctx.fillStyle = '#666';
+        ctx.font = '9px sans-serif';
+        ctx.textAlign = 'right';
+        const fmt = v >= 1000000 ? (v/1000000).toFixed(1)+'M' : v >= 1000 ? (v/1000).toFixed(1)+'K' : v.toFixed(0);
+        ctx.fillText(fmt, pad.left - 5, y + 3);
+      }
+
+      // Axes
+      ctx.strokeStyle = '#999';
+      ctx.beginPath();
+      ctx.moveTo(pad.left, height - pad.bottom);
+      ctx.lineTo(width - pad.right, height - pad.bottom);
+      ctx.moveTo(pad.left, pad.top);
+      ctx.lineTo(pad.left, height - pad.bottom);
+      ctx.stroke();
+
+      // 95% CI band
+      const ci95Points = data.map((d, i) => ({ i, low: d.ci95_low, high: d.ci95_high })).filter(p => p.low != null && p.high != null);
+      if (ci95Points.length > 1) {
+        ctx.fillStyle = 'rgba(46, 204, 113, 0.25)';
+        ctx.beginPath();
+        ctx.moveTo(xScale(ci95Points[0].i), yScale(ci95Points[0].high));
+        ci95Points.forEach(p => ctx.lineTo(xScale(p.i), yScale(p.high)));
+        [...ci95Points].reverse().forEach(p => ctx.lineTo(xScale(p.i), yScale(p.low)));
+        ctx.closePath();
+        ctx.fill();
+      }
+
+      // 85% CI band
+      const ci85Points = data.map((d, i) => ({ i, low: d.ci85_low, high: d.ci85_high })).filter(p => p.low != null && p.high != null);
+      if (ci85Points.length > 1) {
+        ctx.fillStyle = 'rgba(46, 204, 113, 0.45)';
+        ctx.beginPath();
+        ctx.moveTo(xScale(ci85Points[0].i), yScale(ci85Points[0].high));
+        ci85Points.forEach(p => ctx.lineTo(xScale(p.i), yScale(p.high)));
+        [...ci85Points].reverse().forEach(p => ctx.lineTo(xScale(p.i), yScale(p.low)));
+        ctx.closePath();
+        ctx.fill();
+      }
+
+      // Forecast line
+      const fcPoints = data.map((d, i) => ({ i, y: d.forecast })).filter(p => p.y != null);
+      if (fcPoints.length > 1) {
+        ctx.strokeStyle = '#FFD700';
+        ctx.lineWidth = 2;
+        ctx.beginPath();
+        ctx.moveTo(xScale(fcPoints[0].i), yScale(fcPoints[0].y));
+        fcPoints.forEach(p => ctx.lineTo(xScale(p.i), yScale(p.y)));
+        ctx.stroke();
+      }
+
+      // Actual line
+      const actPoints = data.map((d, i) => ({ i, y: d.actual })).filter(p => p.y != null);
+      if (actPoints.length > 1) {
+        ctx.strokeStyle = '#000';
+        ctx.lineWidth = 1.5;
+        ctx.beginPath();
+        ctx.moveTo(xScale(actPoints[0].i), yScale(actPoints[0].y));
+        actPoints.forEach(p => ctx.lineTo(xScale(p.i), yScale(p.y)));
+        ctx.stroke();
+      }
+
+      // X-axis labels
+      ctx.fillStyle = '#666';
+      ctx.font = '8px sans-serif';
+      ctx.textAlign = 'center';
+      data.forEach((d, i) => {
+        if (i % 7 === 0 || i === data.length - 1) {
+          ctx.fillText(d.date.slice(5), xScale(i), height - pad.bottom + 12);
+        }
+      });
+
+      return canvas;
+    }
+
+    async function generatePDFReport(week, forecastType, setProgress) {
+      const jsPDF = await loadJsPDF(); const pdf = new jsPDF({ orientation: 'portrait', unit: 'pt', format: 'letter' });
+      const pageW = pdf.internal.pageSize.getWidth();
+      const pageH = pdf.internal.pageSize.getHeight();
+      const margin = 40;
+      const contentW = pageW - 2 * margin;
       const windowDays = forecastType === 'monthly' ? 30 : 90;
 
-      // Cover page
-      doc.setFillColor(26, 26, 46);
-      doc.rect(0, 0, pageW, pageH, 'F');
-      doc.setTextColor(255, 255, 255);
-      doc.setFontSize(36);
-      doc.text('Walmart Forecast Dashboard', pageW / 2, 200, { align: 'center' });
-      doc.setFontSize(18);
-      doc.text('Band Break Exception Report', pageW / 2, 250, { align: 'center' });
-      doc.setTextColor(78, 205, 196);
-      doc.setFontSize(16);
-      doc.text(`Data through: ${selectedWeek}`, pageW / 2, 320, { align: 'center' });
-      doc.setTextColor(200, 200, 200);
-      doc.setFontSize(12);
-      doc.text(`Generated: ${new Date().toLocaleString()}`, pageW / 2, 360, { align: 'center' });
-      doc.text(`Rolling ${windowDays}-day analysis window`, pageW / 2, 380, { align: 'center' });
+      setProgress('Fetching geo levels...');
 
-      // Get all stores
-      setPdfStatus('Fetching store list...');
-      const storesRes = await fetch(`${base}/geo-ids?geo_level=location_id&forecast_type=${forecastType}`);
+      // Get all geo IDs
+      const statesRes = await fetch(`${API_BASE}/api/walmart/geo-ids?geo_level=state_id&forecast_type=${forecastType}`);
+      const states = await statesRes.json();
+      
+      const storesRes = await fetch(`${API_BASE}/api/walmart/geo-ids?geo_level=location_id&forecast_type=${forecastType}`);
       const stores = await storesRes.json();
 
-      // Generate page for each store
-      for (let i = 0; i < stores.length; i++) {
-        const store = stores[i];
-        setPdfStatus(`Generating Store ${store} (${i + 1}/${stores.length})...`);
+      // Cover page
+      pdf.setFontSize(28);
+      pdf.setFont('helvetica', 'bold');
+      pdf.text('Walmart Forecast Report', pageW / 2, 180, { align: 'center' });
+      
+      pdf.setFontSize(18);
+      pdf.text('Band Break Analysis', pageW / 2, 220, { align: 'center' });
+      
+      pdf.setFontSize(12);
+      pdf.setFont('helvetica', 'normal');
+      pdf.setTextColor(100);
+      pdf.text('Actionable exceptions requiring attention today', pageW / 2, 250, { align: 'center' });
+      
+      pdf.setFontSize(16);
+      pdf.setFont('helvetica', 'bold');
+      pdf.setTextColor(0, 128, 100);
+      pdf.text(`Data through: ${week}`, pageW / 2, 310, { align: 'center' });
+      
+      pdf.setFontSize(14);
+      pdf.setFont('helvetica', 'normal');
+      pdf.setTextColor(0);
+      pdf.text(`Forecast Type: ${forecastType.charAt(0).toUpperCase() + forecastType.slice(1)}`, pageW / 2, 340, { align: 'center' });
+      pdf.text(`Rolling ${windowDays}-Day Window`, pageW / 2, 360, { align: 'center' });
+      
+      pdf.setFontSize(10);
+      pdf.setTextColor(100);
+      pdf.text(`Report generated: ${new Date().toLocaleString()}`, pageW / 2, 420, { align: 'center' });
 
-        const [deptRes, catRes, sumRes] = await Promise.all([
-          fetch(`${base}/departments?week=${selectedWeek}&forecast_type=${forecastType}&geo_level=location_id&geo_id=${store}`),
-          fetch(`${base}/categories?week=${selectedWeek}&forecast_type=${forecastType}&geo_level=location_id&geo_id=${store}`),
-          fetch(`${base}/location-summary?week=${selectedWeek}&forecast_type=${forecastType}&geo_level=location_id&geo_id=${store}`)
+      // Executive Summary / How to Read This Report
+      pdf.addPage();
+      let ey = margin;
+      
+      pdf.setFontSize(20);
+      pdf.setFont('helvetica', 'bold');
+      pdf.text('How to Read This Report', margin, ey);
+      ey += 35;
+      
+      // What You're Looking At
+      pdf.setFontSize(14);
+      pdf.setFont('helvetica', 'bold');
+      pdf.setTextColor(26, 26, 46);
+      pdf.text('What You\'re Looking At', margin, ey);
+      ey += 20;
+      
+      pdf.setFontSize(11);
+      pdf.setFont('helvetica', 'normal');
+      pdf.setTextColor(60, 60, 60);
+      const lookingAt = [
+        `• Data through: ${week}`,
+        '• Forecasts generated daily at SKU level',
+        `• ${windowDays}-day rolling window for band break analysis`,
+      ];
+      lookingAt.forEach(line => {
+        pdf.text(line, margin + 10, ey);
+        ey += 16;
+      });
+      ey += 15;
+      
+      // What Band Breaks Mean
+      pdf.setFontSize(14);
+      pdf.setFont('helvetica', 'bold');
+      pdf.setTextColor(26, 26, 46);
+      pdf.text('What Band Breaks Mean', margin, ey);
+      ey += 20;
+      
+      pdf.setFontSize(11);
+      pdf.setFont('helvetica', 'normal');
+      pdf.setTextColor(60, 60, 60);
+      const bandBreaks = [
+        '• Band break = actual sales fell outside the statistical confidence interval',
+        '• 85% CI: Expect ~15% of days to fall outside naturally. Breaks here = worth watching.',
+        '• 95% CI: Expect ~5% of days outside. Breaks here = significant deviation.',
+        '',
+        '• UPPER break (Stockout Risk): Selling FASTER than forecast. Check inventory.',
+        '• LOWER break (Overstock Risk): Selling SLOWER than forecast. Markdown risk.',
+        '• Consecutive breaks: Sustained pattern, not noise. Escalate priority.',
+      ];
+      bandBreaks.forEach(line => {
+        if (line.includes('UPPER')) pdf.setTextColor(200, 0, 0);
+        else if (line.includes('LOWER')) pdf.setTextColor(230, 92, 0);
+        else pdf.setTextColor(60, 60, 60);
+        pdf.text(line, margin + 10, ey);
+        ey += 16;
+      });
+      pdf.setTextColor(60, 60, 60);
+      ey += 15;
+      
+      // Your Job Today
+      pdf.setFontSize(14);
+      pdf.setFont('helvetica', 'bold');
+      pdf.setTextColor(26, 26, 46);
+      pdf.text('Your Job Today', margin, ey);
+      ey += 20;
+      
+      pdf.setFontSize(11);
+      pdf.setFont('helvetica', 'normal');
+      pdf.setTextColor(60, 60, 60);
+      const yourJob = [
+        '• Investigate items with breaks (especially consecutive)',
+        '• Check inventory position for stockout risks',
+        '• Flag overstock items for markdown/reallocation review',
+        '• Assign actions and owners',
+        '',
+        'The math is done. The judgment is yours.',
+      ];
+      yourJob.forEach(line => {
+        if (line.includes('math is done')) {
+          pdf.setFont('helvetica', 'bold');
+          pdf.setTextColor(26, 26, 46);
+        }
+        pdf.text(line, margin + 10, ey);
+        ey += 16;
+        pdf.setFont('helvetica', 'normal');
+        pdf.setTextColor(60, 60, 60);
+      });
+      ey += 25;
+      
+      // Report Contents
+      pdf.setFontSize(14);
+      pdf.setFont('helvetica', 'bold');
+      pdf.setTextColor(26, 26, 46);
+      pdf.text('Report Contents', margin, ey);
+      ey += 20;
+      
+      pdf.setFontSize(11);
+      pdf.setFont('helvetica', 'normal');
+      pdf.setTextColor(60, 60, 60);
+      const contents = [
+        '1. Executive Summary (All Locations) — Total portfolio view',
+        `2. State Reports (${states.length} states) — Regional rollup`,
+        `3. Store Reports (${stores.length} stores) — Location-level detail`,
+        '   • Store CA_1 includes SKU-level alerts for items with breaks',
+      ];
+      contents.forEach(line => {
+        pdf.text(line, margin + 10, ey);
+        ey += 16;
+      });
+
+      // Helper to add a location section
+      async function addLocationSection(geoLevel, geoId, sectionTitle, includeSKUs = false) {
+        pdf.addPage();
+        let y = margin;
+
+        // Section header
+        pdf.setFontSize(16);
+        pdf.setFont('helvetica', 'bold');
+        pdf.text(sectionTitle, margin, y);
+        y += 15;
+        
+        pdf.setFontSize(10);
+        pdf.setFont('helvetica', 'normal');
+        pdf.text(`Rolling ${windowDays}-day window ending ${week}`, margin, y);
+        y += 25;
+
+        // Fetch chart data
+        const [chartU, chartR] = await Promise.all([
+          fetch(`${API_BASE}/api/walmart/chart/location?week=${week}&forecast_type=${forecastType}&type_id=U&geo_level=${geoLevel}&geo_id=${geoId}`).then(r => r.json()),
+          fetch(`${API_BASE}/api/walmart/chart/location?week=${week}&forecast_type=${forecastType}&type_id=R&geo_level=${geoLevel}&geo_id=${geoId}`).then(r => r.json())
         ]);
 
-        const depts = await deptRes.json();
-        const cats = await catRes.json();
-        const summary = await sumRes.json();
+        // Render charts
+        const chartW = contentW;
+        const chartH = 140;
 
-        doc.addPage();
-        doc.setTextColor(0, 0, 0);
-        doc.setFontSize(20);
-        doc.text(`Store: ${store}`, 40, 40);
-        doc.setFontSize(10);
-        doc.text(`Data through: ${selectedWeek} | Rolling ${windowDays}-day window`, 40, 58);
-
-        // Summary metrics
-        const u = summary.units || {};
-        const r = summary.revenue || {};
-        doc.setFontSize(11);
-        doc.text(`Stockout Risk (Upper 85%): ${u.upper_85 || 0}`, 40, 85);
-        doc.text(`Overstock Risk (Lower 85%): ${u.lower_85 || 0}`, 200, 85);
-        doc.text(`Revenue Shortfall: ${r.lower_85 || 0}`, 360, 85);
-
-        // Departments table
-        let y = 115;
-        doc.setFontSize(12);
-        doc.text('Department Band Breaks', 40, y);
-        y += 18;
-        doc.setFontSize(8);
-        doc.setFillColor(240, 240, 240);
-        doc.rect(40, y - 10, pageW - 80, 14, 'F');
-        doc.text('Department', 45, y);
-        doc.text('Stock85', 200, y);
-        doc.text('Stock95', 260, y);
-        doc.text('Over85', 320, y);
-        doc.text('Over95', 380, y);
-        doc.text('Rev85', 440, y);
-        doc.text('Rev95', 500, y);
-        y += 14;
-
-        for (const d of depts.slice(0, 10)) {
-          doc.text(String(d.department_id || ''), 45, y);
-          doc.text(String(d.units?.upper_85 || 0), 200, y);
-          doc.text(String(d.units?.upper_95 || 0), 260, y);
-          doc.text(String(d.units?.lower_85 || 0), 320, y);
-          doc.text(String(d.units?.lower_95 || 0), 380, y);
-          doc.text(String(d.revenue?.lower_85 || 0), 440, y);
-          doc.text(String(d.revenue?.lower_95 || 0), 500, y);
-          y += 12;
+        if (chartU && chartU.length) {
+          const canvasU = renderChartToCanvas(chartU, 'Units Forecast vs Actual', chartW, chartH);
+          const imgU = canvasU.toDataURL('image/png');
+          pdf.addImage(imgU, 'PNG', margin, y, chartW, chartH);
+          y += chartH + 10;
         }
 
-        // Categories table
-        y += 20;
-        doc.setFontSize(12);
-        doc.text('Category Band Breaks', 40, y);
-        y += 18;
-        doc.setFontSize(8);
-        doc.setFillColor(240, 240, 240);
-        doc.rect(40, y - 10, pageW - 80, 14, 'F');
-        doc.text('Category', 45, y);
-        doc.text('Stock85', 200, y);
-        doc.text('Stock95', 260, y);
-        doc.text('Over85', 320, y);
-        doc.text('Over95', 380, y);
-        doc.text('Rev85', 440, y);
-        doc.text('Rev95', 500, y);
-        y += 14;
+        if (chartR && chartR.length) {
+          const canvasR = renderChartToCanvas(chartR, 'Revenue Forecast vs Actual', chartW, chartH);
+          const imgR = canvasR.toDataURL('image/png');
+          pdf.addImage(imgR, 'PNG', margin, y, chartW, chartH);
+          y += chartH + 15;
+        }
 
-        for (const c of cats.slice(0, 15)) {
-          if (y > pageH - 40) break;
-          doc.text(String(c.category_id || '').slice(0, 25), 45, y);
-          doc.text(String(c.units?.upper_85 || 0), 200, y);
-          doc.text(String(c.units?.upper_95 || 0), 260, y);
-          doc.text(String(c.units?.lower_85 || 0), 320, y);
-          doc.text(String(c.units?.lower_95 || 0), 380, y);
-          doc.text(String(c.revenue?.lower_85 || 0), 440, y);
-          doc.text(String(c.revenue?.lower_95 || 0), 500, y);
-          y += 12;
+        // Fetch band break data
+        const [depts, cats] = await Promise.all([
+          fetch(`${API_BASE}/api/walmart/departments?week=${week}&forecast_type=${forecastType}&geo_level=${geoLevel}&geo_id=${geoId}`).then(r => r.json()),
+          fetch(`${API_BASE}/api/walmart/categories?week=${week}&forecast_type=${forecastType}&geo_level=${geoLevel}&geo_id=${geoId}`).then(r => r.json())
+        ]);
+
+        // Department table
+        if (y > pageH - 200) { pdf.addPage(); y = margin; }
+        
+        pdf.setFontSize(12);
+        pdf.setFont('helvetica', 'bold');
+        pdf.text('Department Band Breaks', margin, y);
+        y += 15;
+
+        y = addBreakTable(pdf, depts, 'department_id', margin, y, contentW);
+
+        // Category table  
+        if (y > pageH - 200) { pdf.addPage(); y = margin; }
+        
+        pdf.setFontSize(12);
+        pdf.setFont('helvetica', 'bold');
+        pdf.text('Category Band Breaks', margin, y);
+        y += 15;
+
+        y = addBreakTable(pdf, cats, 'category_id', margin, y, contentW);
+
+        // SKU table for CA_1 only
+        if (includeSKUs) {
+          // Get all categories and fetch SKUs for each
+          const categories = [...new Set(cats.map(c => c.category_id))];
+          
+          for (const catId of categories) {
+            const skuRes = await fetch(`${API_BASE}/api/walmart/skus?week=${week}&forecast_type=${forecastType}&category_id=${catId}&limit=100`);
+            const skus = await skuRes.json();
+            
+            // Only include if there are SKUs with breaks
+            const skusWithBreaks = skus.filter(s => 
+              (s.units?.upper_85 || 0) + (s.units?.lower_85 || 0) + (s.revenue?.lower_85 || 0) > 0
+            );
+            
+            if (skusWithBreaks.length > 0) {
+              if (y > pageH - 150) { pdf.addPage(); y = margin; }
+              
+              pdf.setFontSize(11);
+              pdf.setFont('helvetica', 'bold');
+              pdf.text(`SKU Alerts: ${catId}`, margin, y);
+              y += 12;
+              
+              y = addBreakTable(pdf, skusWithBreaks, 'sku_id', margin, y, contentW, true);
+            }
+          }
         }
       }
 
-      setPdfStatus('Saving PDF...');
-      doc.save(`Walmart_BandBreaks_${selectedWeek}.pdf`);
-      setPdfStatus('');
-    } catch (e) {
-      console.error(e);
-      setPdfStatus('Error generating PDF');
+      function addBreakTable(pdf, data, idField, x, y, w, smallText = false) {
+        if (!data || !data.length) {
+          pdf.setFontSize(9);
+          pdf.setFont('helvetica', 'normal');
+          pdf.text('No data available', x, y);
+          return y + 15;
+        }
+
+        const colWidths = [w * 0.25, w * 0.125, w * 0.125, w * 0.125, w * 0.125, w * 0.125, w * 0.125];
+        const rowH = smallText ? 14 : 16;
+        const fontSize = smallText ? 7 : 8;
+        
+        // Header row 1
+        pdf.setFillColor(255, 240, 240);
+        pdf.rect(x + colWidths[0], y, colWidths[1] + colWidths[2], rowH, 'F');
+        pdf.setFillColor(255, 248, 230);
+        pdf.rect(x + colWidths[0] + colWidths[1] + colWidths[2], y, colWidths[3] + colWidths[4], rowH, 'F');
+        pdf.setFillColor(240, 248, 255);
+        pdf.rect(x + colWidths[0] + colWidths[1] + colWidths[2] + colWidths[3] + colWidths[4], y, colWidths[5] + colWidths[6], rowH, 'F');
+        
+        pdf.setFontSize(fontSize);
+        pdf.setFont('helvetica', 'bold');
+        pdf.setTextColor(0);
+        pdf.text('Stockout Risk', x + colWidths[0] + (colWidths[1] + colWidths[2]) / 2, y + 10, { align: 'center' });
+        pdf.text('Overstock Risk', x + colWidths[0] + colWidths[1] + colWidths[2] + (colWidths[3] + colWidths[4]) / 2, y + 10, { align: 'center' });
+        pdf.text('Rev Shortfall', x + colWidths[0] + colWidths[1] + colWidths[2] + colWidths[3] + colWidths[4] + (colWidths[5] + colWidths[6]) / 2, y + 10, { align: 'center' });
+        y += rowH;
+
+        // Header row 2
+        pdf.setFillColor(250, 250, 250);
+        pdf.rect(x, y, w, rowH, 'F');
+        
+        const headers = ['Name', '85%', '95%', '85%', '95%', '85%', '95%'];
+        let cx = x;
+        headers.forEach((h, i) => {
+          pdf.text(h, cx + colWidths[i] / 2, y + 10, { align: 'center' });
+          cx += colWidths[i];
+        });
+        y += rowH;
+
+        // Data rows
+        pdf.setFont('helvetica', 'normal');
+        data.forEach(row => {
+          if (y > pageH - 50) {
+            pdf.addPage();
+            y = margin;
+          }
+
+          const u = row.units || {};
+          const r = row.revenue || {};
+          
+          const fmt = (count, consec) => {
+            if (!count) return '0';
+            return consec > 1 ? `${count} (${consec})` : String(count);
+          };
+
+          const name = row[idField] || row.id;
+          const vals = [
+            name,
+            fmt(u.upper_85, u.upper_85_consec),
+            String(u.upper_95 || 0),
+            fmt(u.lower_85, u.lower_85_consec),
+            String(u.lower_95 || 0),
+            fmt(r.lower_85, r.lower_85_consec),
+            String(r.lower_95 || 0)
+          ];
+
+          cx = x;
+          vals.forEach((v, i) => {
+            // Color coding for breaks - both 85% and 95%
+            if ((i === 1 || i === 2) && (i === 1 ? u.upper_85 : u.upper_95) > 0) pdf.setTextColor(200, 0, 0);
+            else if ((i === 3 || i === 4) && (i === 3 ? u.lower_85 : u.lower_95) > 0) pdf.setTextColor(230, 92, 0);
+            else if ((i === 5 || i === 6) && (i === 5 ? r.lower_85 : r.lower_95) > 0) pdf.setTextColor(200, 0, 0);
+            else pdf.setTextColor(0);
+
+            if (i === 0) {
+              // Truncate long names
+              const maxLen = smallText ? 18 : 20;
+              const displayName = String(v).length > maxLen ? String(v).substring(0, maxLen) + '...' : String(v);
+              pdf.text(displayName, cx + 3, y + 10);
+            } else {
+              pdf.text(v, cx + colWidths[i] / 2, y + 10, { align: 'center' });
+            }
+            cx += colWidths[i];
+          });
+          
+          // Row border
+          pdf.setDrawColor(220);
+          pdf.line(x, y + rowH, x + w, y + rowH);
+          y += rowH;
+        });
+
+        pdf.setTextColor(0);
+        return y + 10;
+      }
+
+      // Generate sections
+      const totalSections = 1 + states.length + stores.length;
+      let sectionNum = 0;
+
+      setProgress(`Generating All Locations (1/${totalSections})...`);
+      await addLocationSection('all_locations', 'ALL', '1. Executive Summary - All Locations');
+      sectionNum++;
+
+      for (let i = 0; i < states.length; i++) {
+        sectionNum++;
+        setProgress(`Generating State ${states[i]} (${sectionNum}/${totalSections})...`);
+        await addLocationSection('state_id', states[i], `2.${i + 1}. State: ${states[i]}`);
+      }
+
+      for (let i = 0; i < stores.length; i++) {
+        sectionNum++;
+        const isCA1 = stores[i] === 'CA_1';
+        setProgress(`Generating Store ${stores[i]}${isCA1 ? ' + SKUs' : ''} (${sectionNum}/${totalSections})...`);
+        await addLocationSection('location_id', stores[i], `3.${i + 1}. Store: ${stores[i]}`, isCA1);
+      }
+
+      setProgress('Saving PDF...');
+      pdf.save(`walmart_report_${week}_${forecastType}.pdf`);
+      setProgress(null);
     }
-    
-    setGenerating(false);
-  }
 
-  return (
-    <div style={styles.container}>
-      <div style={styles.header}>
-        <h1 style={styles.headerTitle}>Walmart Forecast Dashboard</h1>
-        <div style={styles.headerSub}>Band Break Analysis: Stockouts • Overstocks • Revenue Shortfalls</div>
-        {selectedWeek && <div style={styles.headerData}>Data through: {selectedWeek} • Forecasts generated daily at SKU level</div>}
-      </div>
+    // =============================================================================
+    // LOCATION REPORT
+    // =============================================================================
+    function LocationReport({ week, forecastType, geoLevel, geoId, onSelectDepartment, onSelectCategory }) {
+      const [loading, setLoading] = useState(true);
+      const [departments, setDepartments] = useState([]);
+      const [categories, setCategories] = useState([]);
+      const [chartUnits, setChartUnits] = useState([]);
+      const [chartRevenue, setChartRevenue] = useState([]);
+      const [summary, setSummary] = useState({ units: {}, revenue: {} });
 
-      <div style={styles.controls}>
-        <div style={styles.controlGroup}>
-          <label style={styles.label}>Geo Level</label>
-          <select style={styles.select} value={geoLevel} onChange={e => setGeoLevel(e.target.value)}>
-            <option value="all_locations">All Locations</option>
-            <option value="state_id">State</option>
-            <option value="location_id">Store</option>
-          </select>
-        </div>
-        {geoLevel !== 'all_locations' && (
-          <div style={styles.controlGroup}>
-            <label style={styles.label}>{geoLevel === 'state_id' ? 'State' : 'Store'}</label>
-            <select style={styles.select} value={selectedGeoId} onChange={e => setSelectedGeoId(e.target.value)}>
-              {geoIds.map(id => <option key={id} value={id}>{id}</option>)}
-            </select>
+      useEffect(() => { loadData(); }, [week, forecastType, geoLevel, geoId]);
+
+      async function loadData() {
+        setLoading(true);
+        try {
+          const [deptRes, catRes, chartU, chartR, sumRes] = await Promise.all([
+            fetch(`${API_BASE}/api/walmart/departments?week=${week}&forecast_type=${forecastType}&geo_level=${geoLevel}&geo_id=${geoId}`),
+            fetch(`${API_BASE}/api/walmart/categories?week=${week}&forecast_type=${forecastType}&geo_level=${geoLevel}&geo_id=${geoId}`),
+            fetch(`${API_BASE}/api/walmart/chart/location?week=${week}&forecast_type=${forecastType}&type_id=U&geo_level=${geoLevel}&geo_id=${geoId}`),
+            fetch(`${API_BASE}/api/walmart/chart/location?week=${week}&forecast_type=${forecastType}&type_id=R&geo_level=${geoLevel}&geo_id=${geoId}`),
+            fetch(`${API_BASE}/api/walmart/location-summary?week=${week}&forecast_type=${forecastType}&geo_level=${geoLevel}&geo_id=${geoId}`)
+          ]);
+          setDepartments(await deptRes.json());
+          setCategories(await catRes.json());
+          setChartUnits(await chartU.json());
+          setChartRevenue(await chartR.json());
+          setSummary(await sumRes.json());
+        } catch (e) { console.error(e); }
+        setLoading(false);
+      }
+
+      if (loading) return <div className="loading">Loading...</div>;
+
+      const geoLabel = geoLevel === 'all_locations' ? 'All Locations' : geoLevel === 'state_id' ? `State: ${geoId}` : `Store: ${geoId}`;
+      const u = summary.units || {};
+      const r = summary.revenue || {};
+      const windowDays = forecastType === 'monthly' ? 30 : 90;
+
+      return (
+        <div>
+          <div className="card">
+            <div className="card-header">
+              <h2>{geoLabel} - Band Break Summary</h2>
+              <h3>Data through: {week} • Rolling {windowDays}-day window • {u.total_days || 0} days analyzed</h3>
+            </div>
+            <div className="card-body">
+              <div className="metric-grid">
+                <div className={`metric-card ${u.upper_85 > 0 ? 'alert' : ''}`}>
+                  <div className="metric-value">{u.upper_85 || 0}</div>
+                  <div className="metric-label">Units Stockout Risk (Upper 85%)</div>
+                  {u.upper_85_consec > 1 && <div style={{fontSize:11,color:'#c00'}}>{u.upper_85_consec} consecutive</div>}
+                </div>
+                <div className={`metric-card ${u.lower_85 > 0 ? 'warning' : ''}`}>
+                  <div className="metric-value">{u.lower_85 || 0}</div>
+                  <div className="metric-label">Units Overstock Risk (Lower 85%)</div>
+                  {u.lower_85_consec > 1 && <div style={{fontSize:11,color:'#e65c00'}}>{u.lower_85_consec} consecutive</div>}
+                </div>
+                <div className={`metric-card ${r.lower_85 > 0 ? 'alert' : ''}`}>
+                  <div className="metric-value">{r.lower_85 || 0}</div>
+                  <div className="metric-label">Revenue Shortfall (Lower 85%)</div>
+                  {r.lower_85_consec > 1 && <div style={{fontSize:11,color:'#c00'}}>{r.lower_85_consec} consecutive</div>}
+                </div>
+                <div className="metric-card">
+                  <div className="metric-value">${((r.total||0)/1000000).toFixed(1)}M</div>
+                  <div className="metric-label">Total Revenue</div>
+                </div>
+              </div>
+              <div className="charts-row">
+                <ForecastChart data={chartUnits} title="Units Forecast vs Actual" />
+                <ForecastChart data={chartRevenue} title="Revenue Forecast vs Actual" />
+              </div>
+            </div>
           </div>
-        )}
-        <div style={styles.controlGroup}>
-          <label style={styles.label}>Forecast</label>
-          <select style={styles.select} value={forecastType} onChange={e => setForecastType(e.target.value)}>
-            <option value="monthly">Monthly</option>
-            <option value="quarterly">Quarterly</option>
-          </select>
-        </div>
-        <div style={styles.controlGroup}>
-          <label style={styles.label}>Week Ending</label>
-          <select style={styles.select} value={selectedWeek} onChange={e => setSelectedWeek(e.target.value)}>
-            {weeks.map(w => <option key={w} value={w}>{w}</option>)}
-          </select>
-        </div>
-        <div style={styles.controlGroup}>
-          <label style={styles.label}>&nbsp;</label>
-          <button 
-            style={{ ...styles.downloadBtn, ...(generating ? styles.downloadBtnDisabled : {}) }}
-            onClick={generatePDF}
-            disabled={generating}
-          >
-            {generating ? pdfStatus : 'Download PDF Report'}
-          </button>
-        </div>
-      </div>
 
-      <div style={styles.legendBox}>
-        <strong>Band Break</strong> = Actual sales outside forecast confidence interval. 
-        <span style={{ color: '#c00', fontWeight: 600 }}> Upper break (Stockout Risk)</span>: Selling faster than forecast — check inventory. 
-        <span style={{ color: '#e65c00', fontWeight: 600 }}> Lower break (Overstock Risk)</span>: Selling slower than forecast — markdown/overstock risk. 
-        <strong> Consecutive breaks</strong> = sustained pattern requiring action.
-      </div>
+          <div className="card">
+            <div className="card-header"><h2>Department Band Breaks</h2></div>
+            <div className="card-body" style={{ padding: 0 }}>
+              <table>
+                <thead>
+                  <tr>
+                    <th rowSpan={2} className="left">Department</th>
+                    <th colSpan={2} style={{ borderBottom: '1px solid #ddd', background: '#fff0f0' }}>Stockout Risk</th>
+                    <th colSpan={2} style={{ borderBottom: '1px solid #ddd', background: '#fff8e6' }}>Overstock Risk</th>
+                    <th colSpan={2} style={{ borderBottom: '1px solid #ddd', background: '#f0f8ff' }}>Revenue Shortfall</th>
+                  </tr>
+                  <tr>
+                    <th style={{ background: '#fff0f0' }}>85%</th>
+                    <th style={{ background: '#fff0f0' }}>95%</th>
+                    <th style={{ background: '#fff8e6' }}>85%</th>
+                    <th style={{ background: '#fff8e6' }}>95%</th>
+                    <th style={{ background: '#f0f8ff' }}>85%</th>
+                    <th style={{ background: '#f0f8ff' }}>95%</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {departments.map(row => (
+                    <tr key={row.department_id} className="clickable" onClick={() => onSelectDepartment(row.department_id)}>
+                      <td className="left">{row.department_id}</td>
+                      <BreakCell count={row.units?.upper_85} consec={row.units?.upper_85_consec} total={row.units?.total_days} />
+                      <BreakCell count={row.units?.upper_95} consec={0} total={row.units?.total_days} />
+                      <BreakCell count={row.units?.lower_85} consec={row.units?.lower_85_consec} total={row.units?.total_days} />
+                      <BreakCell count={row.units?.lower_95} consec={0} total={row.units?.total_days} />
+                      <BreakCell count={row.revenue?.lower_85} consec={row.revenue?.lower_85_consec} total={row.revenue?.total_days} />
+                      <BreakCell count={row.revenue?.lower_95} consec={0} total={row.revenue?.total_days} />
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </div>
 
-      {selectedWeek && (
-        <LocationReport 
-          week={selectedWeek} 
-          forecastType={forecastType} 
-          geoLevel={geoLevel} 
-          geoId={selectedGeoId}
-          apiBase={base}
-        />
-      )}
-    </div>
-  );
-}
+          <div className="card">
+            <div className="card-header"><h2>Category Band Breaks</h2></div>
+            <div className="card-body" style={{ padding: 0 }}>
+              <table>
+                <thead>
+                  <tr>
+                    <th rowSpan={2} className="left">Category</th>
+                    <th colSpan={2} style={{ borderBottom: '1px solid #ddd', background: '#fff0f0' }}>Stockout Risk</th>
+                    <th colSpan={2} style={{ borderBottom: '1px solid #ddd', background: '#fff8e6' }}>Overstock Risk</th>
+                    <th colSpan={2} style={{ borderBottom: '1px solid #ddd', background: '#f0f8ff' }}>Revenue Shortfall</th>
+                  </tr>
+                  <tr>
+                    <th style={{ background: '#fff0f0' }}>85%</th>
+                    <th style={{ background: '#fff0f0' }}>95%</th>
+                    <th style={{ background: '#fff8e6' }}>85%</th>
+                    <th style={{ background: '#fff8e6' }}>95%</th>
+                    <th style={{ background: '#f0f8ff' }}>85%</th>
+                    <th style={{ background: '#f0f8ff' }}>95%</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {categories.map(row => (
+                    <tr key={row.category_id} className="clickable" onClick={() => onSelectCategory(row.category_id)}>
+                      <td className="left">{row.category_id}</td>
+                      <BreakCell count={row.units?.upper_85} consec={row.units?.upper_85_consec} total={row.units?.total_days} />
+                      <BreakCell count={row.units?.upper_95} consec={0} total={row.units?.total_days} />
+                      <BreakCell count={row.units?.lower_85} consec={row.units?.lower_85_consec} total={row.units?.total_days} />
+                      <BreakCell count={row.units?.lower_95} consec={0} total={row.units?.total_days} />
+                      <BreakCell count={row.revenue?.lower_85} consec={row.revenue?.lower_85_consec} total={row.revenue?.total_days} />
+                      <BreakCell count={row.revenue?.lower_95} consec={0} total={row.revenue?.total_days} />
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      );
+    }
+
+    // =============================================================================
+    // DEPARTMENT REPORT
+    // =============================================================================
+    function DepartmentReport({ week, forecastType, geoLevel, geoId, departmentId, onSelectCategory }) {
+      const [loading, setLoading] = useState(true);
+      const [categories, setCategories] = useState([]);
+      const [chartUnits, setChartUnits] = useState([]);
+      const [chartRevenue, setChartRevenue] = useState([]);
+
+      useEffect(() => { loadData(); }, [week, forecastType, geoLevel, geoId, departmentId]);
+
+      async function loadData() {
+        setLoading(true);
+        try {
+          const [catRes, chartU, chartR] = await Promise.all([
+            fetch(`${API_BASE}/api/walmart/categories?week=${week}&forecast_type=${forecastType}&geo_level=${geoLevel}&geo_id=${geoId}&department_id=${departmentId}`),
+            fetch(`${API_BASE}/api/walmart/chart/department?week=${week}&forecast_type=${forecastType}&type_id=U&geo_level=${geoLevel}&geo_id=${geoId}&department_id=${departmentId}`),
+            fetch(`${API_BASE}/api/walmart/chart/department?week=${week}&forecast_type=${forecastType}&type_id=R&geo_level=${geoLevel}&geo_id=${geoId}&department_id=${departmentId}`)
+          ]);
+          setCategories(await catRes.json());
+          setChartUnits(await chartU.json());
+          setChartRevenue(await chartR.json());
+        } catch (e) { console.error(e); }
+        setLoading(false);
+      }
+
+      if (loading) return <div className="loading">Loading...</div>;
+
+      const windowDays = forecastType === 'monthly' ? 30 : 90;
+
+      return (
+        <div>
+          <div className="card">
+            <div className="card-header">
+              <h2>Department: {departmentId}</h2>
+              <h3>Data through: {week} • Rolling {windowDays}-day window</h3>
+            </div>
+            <div className="card-body">
+              <div className="charts-row">
+                <ForecastChart data={chartUnits} title="Units Forecast vs Actual" />
+                <ForecastChart data={chartRevenue} title="Revenue Forecast vs Actual" />
+              </div>
+            </div>
+          </div>
+
+          <div className="card">
+            <div className="card-header"><h2>Category Band Breaks in {departmentId}</h2></div>
+            <div className="card-body" style={{ padding: 0 }}>
+              <table>
+                <thead>
+                  <tr>
+                    <th rowSpan={2} className="left">Category</th>
+                    <th colSpan={2} style={{ borderBottom: '1px solid #ddd', background: '#fff0f0' }}>Stockout Risk</th>
+                    <th colSpan={2} style={{ borderBottom: '1px solid #ddd', background: '#fff8e6' }}>Overstock Risk</th>
+                    <th colSpan={2} style={{ borderBottom: '1px solid #ddd', background: '#f0f8ff' }}>Revenue Shortfall</th>
+                  </tr>
+                  <tr>
+                    <th style={{ background: '#fff0f0' }}>85%</th>
+                    <th style={{ background: '#fff0f0' }}>95%</th>
+                    <th style={{ background: '#fff8e6' }}>85%</th>
+                    <th style={{ background: '#fff8e6' }}>95%</th>
+                    <th style={{ background: '#f0f8ff' }}>85%</th>
+                    <th style={{ background: '#f0f8ff' }}>95%</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {categories.map(row => (
+                    <tr key={row.category_id} className="clickable" onClick={() => onSelectCategory(row.category_id)}>
+                      <td className="left">{row.category_id}</td>
+                      <BreakCell count={row.units?.upper_85} consec={row.units?.upper_85_consec} total={row.units?.total_days} />
+                      <BreakCell count={row.units?.upper_95} consec={0} total={row.units?.total_days} />
+                      <BreakCell count={row.units?.lower_85} consec={row.units?.lower_85_consec} total={row.units?.total_days} />
+                      <BreakCell count={row.units?.lower_95} consec={0} total={row.units?.total_days} />
+                      <BreakCell count={row.revenue?.lower_85} consec={row.revenue?.lower_85_consec} total={row.revenue?.total_days} />
+                      <BreakCell count={row.revenue?.lower_95} consec={0} total={row.revenue?.total_days} />
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      );
+    }
+
+    // =============================================================================
+    // CATEGORY REPORT
+    // =============================================================================
+    function CategoryReport({ week, forecastType, geoLevel, geoId, categoryId, onSelectSKU }) {
+      const [loading, setLoading] = useState(true);
+      const [skus, setSKUs] = useState([]);
+      const [chartUnits, setChartUnits] = useState([]);
+      const [chartRevenue, setChartRevenue] = useState([]);
+
+      useEffect(() => { loadData(); }, [week, forecastType, geoLevel, geoId, categoryId]);
+
+      async function loadData() {
+        setLoading(true);
+        try {
+          const [chartU, chartR] = await Promise.all([
+            fetch(`${API_BASE}/api/walmart/chart/category?week=${week}&forecast_type=${forecastType}&type_id=U&geo_level=${geoLevel}&geo_id=${geoId}&category_id=${categoryId}`),
+            fetch(`${API_BASE}/api/walmart/chart/category?week=${week}&forecast_type=${forecastType}&type_id=R&geo_level=${geoLevel}&geo_id=${geoId}&category_id=${categoryId}`)
+          ]);
+          setChartUnits(await chartU.json());
+          setChartRevenue(await chartR.json());
+          if (geoLevel === 'location_id' && geoId === 'CA_1') {
+            const skuRes = await fetch(`${API_BASE}/api/walmart/skus?week=${week}&forecast_type=${forecastType}&category_id=${categoryId}&limit=50`);
+            setSKUs(await skuRes.json());
+          } else {
+            setSKUs([]);
+          }
+        } catch (e) { console.error(e); }
+        setLoading(false);
+      }
+
+      if (loading) return <div className="loading">Loading...</div>;
+      const showSKUs = geoLevel === 'location_id' && geoId === 'CA_1';
+      const windowDays = forecastType === 'monthly' ? 30 : 90;
+
+      return (
+        <div>
+          <div className="card">
+            <div className="card-header">
+              <h2>Category: {categoryId}</h2>
+              <h3>Data through: {week} • Rolling {windowDays}-day window</h3>
+            </div>
+            <div className="card-body">
+              <div className="charts-row">
+                <ForecastChart data={chartUnits} title="Units Forecast vs Actual" />
+                <ForecastChart data={chartRevenue} title="Revenue Forecast vs Actual" />
+              </div>
+            </div>
+          </div>
+
+          {!showSKUs && <div className="sku-note"><strong>Note:</strong> SKU drill-down only available for Store CA_1.</div>}
+
+          {showSKUs && skus.length > 0 && (
+            <div className="card">
+              <div className="card-header"><h2>SKU Band Breaks (Top 50 by breaks)</h2></div>
+              <div className="card-body" style={{ padding: 0 }}>
+                <table>
+                  <thead>
+                    <tr>
+                      <th rowSpan={2} className="left">SKU</th>
+                      <th colSpan={2} style={{ borderBottom: '1px solid #ddd', background: '#fff0f0' }}>Stockout</th>
+                      <th colSpan={2} style={{ borderBottom: '1px solid #ddd', background: '#fff8e6' }}>Overstock</th>
+                      <th colSpan={2} style={{ borderBottom: '1px solid #ddd', background: '#f0f8ff' }}>Rev Shortfall</th>
+                    </tr>
+                    <tr>
+                      <th style={{ background: '#fff0f0' }}>85%</th>
+                      <th style={{ background: '#fff0f0' }}>95%</th>
+                      <th style={{ background: '#fff8e6' }}>85%</th>
+                      <th style={{ background: '#fff8e6' }}>95%</th>
+                      <th style={{ background: '#f0f8ff' }}>85%</th>
+                      <th style={{ background: '#f0f8ff' }}>95%</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {skus.map(row => (
+                      <tr key={row.sku_id} className="clickable" onClick={() => onSelectSKU(row.sku_id)}>
+                        <td className="left" style={{fontSize:11}}>{row.sku_id}</td>
+                        <BreakCell count={row.units?.upper_85} consec={row.units?.upper_85_consec} total={row.units?.total_days} />
+                        <BreakCell count={row.units?.upper_95} consec={0} total={row.units?.total_days} />
+                        <BreakCell count={row.units?.lower_85} consec={row.units?.lower_85_consec} total={row.units?.total_days} />
+                        <BreakCell count={row.units?.lower_95} consec={0} total={row.units?.total_days} />
+                        <BreakCell count={row.revenue?.lower_85} consec={row.revenue?.lower_85_consec} total={row.revenue?.total_days} />
+                        <BreakCell count={row.revenue?.lower_95} consec={0} total={row.revenue?.total_days} />
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          )}
+        </div>
+      );
+    }
+
+    // =============================================================================
+    // SKU REPORT
+    // =============================================================================
+    function SKUReport({ week, forecastType, skuId }) {
+      const [loading, setLoading] = useState(true);
+      const [chartUnits, setChartUnits] = useState([]);
+      const [chartRevenue, setChartRevenue] = useState([]);
+      const [skuInfo, setSKUInfo] = useState(null);
+
+      useEffect(() => { if (skuId) loadData(); }, [week, forecastType, skuId]);
+
+      async function loadData() {
+        setLoading(true);
+        try {
+          const [chartU, chartR, infoRes] = await Promise.all([
+            fetch(`${API_BASE}/api/walmart/chart/sku?week=${week}&forecast_type=${forecastType}&type_id=U&sku_id=${encodeURIComponent(skuId)}`),
+            fetch(`${API_BASE}/api/walmart/chart/sku?week=${week}&forecast_type=${forecastType}&type_id=R&sku_id=${encodeURIComponent(skuId)}`),
+            fetch(`${API_BASE}/api/walmart/sku-info?week=${week}&forecast_type=${forecastType}&sku_id=${encodeURIComponent(skuId)}`)
+          ]);
+          setChartUnits(await chartU.json());
+          setChartRevenue(await chartR.json());
+          setSKUInfo(await infoRes.json());
+        } catch (e) { console.error(e); }
+        setLoading(false);
+      }
+
+      if (!skuId) return <div className="loading">Select a SKU</div>;
+      if (loading) return <div className="loading">Loading...</div>;
+
+      const u = skuInfo?.units || {};
+      const r = skuInfo?.revenue || {};
+      const windowDays = forecastType === 'monthly' ? 30 : 90;
+
+      return (
+        <div>
+          <div className="card">
+            <div className="card-header">
+              <h2>SKU: {skuId}</h2>
+              <h3>Store: CA_1 • Data through: {week} • Rolling {windowDays}-day window</h3>
+            </div>
+            <div className="card-body">
+              <div className="metric-grid">
+                <div className={`metric-card ${u.upper_85 > 0 ? 'alert' : ''}`}>
+                  <div className="metric-value">{u.upper_85 || 0}</div>
+                  <div className="metric-label">Stockout Days (85%)</div>
+                  {u.upper_85_consec > 1 && <div style={{fontSize:11,color:'#c00'}}>{u.upper_85_consec} consecutive</div>}
+                </div>
+                <div className={`metric-card ${u.lower_85 > 0 ? 'warning' : ''}`}>
+                  <div className="metric-value">{u.lower_85 || 0}</div>
+                  <div className="metric-label">Overstock Days (85%)</div>
+                  {u.lower_85_consec > 1 && <div style={{fontSize:11,color:'#e65c00'}}>{u.lower_85_consec} consecutive</div>}
+                </div>
+                <div className={`metric-card ${r.lower_85 > 0 ? 'alert' : ''}`}>
+                  <div className="metric-value">{r.lower_85 || 0}</div>
+                  <div className="metric-label">Rev Shortfall Days (85%)</div>
+                  {r.lower_85_consec > 1 && <div style={{fontSize:11,color:'#c00'}}>{r.lower_85_consec} consecutive</div>}
+                </div>
+                <div className="metric-card">
+                  <div className="metric-value">{u.total_days || 0}/{windowDays}</div>
+                  <div className="metric-label">Days with Data</div>
+                </div>
+              </div>
+              <div className="charts-row">
+                <ForecastChart data={chartUnits} title="Units Forecast vs Actual" />
+                <ForecastChart data={chartRevenue} title="Revenue Forecast vs Actual" />
+              </div>
+            </div>
+          </div>
+        </div>
+      );
+    }
+
+    // =============================================================================
+    // MAIN APP
+    // =============================================================================
+    export function WalmartDashboard() {
+      const [weeks, setWeeks] = useState([]);
+      const [selectedWeek, setSelectedWeek] = useState('');
+      const [forecastType, setForecastType] = useState('monthly');
+      const [geoLevel, setGeoLevel] = useState('all_locations');
+      const [geoIds, setGeoIds] = useState(['ALL']);
+      const [selectedGeoId, setSelectedGeoId] = useState('ALL');
+      const [reportType, setReportType] = useState('location');
+      const [departments, setDepartments] = useState([]);
+      const [categories, setCategories] = useState([]);
+      const [skuList, setSKUList] = useState([]);
+      const [selectedDepartment, setSelectedDepartment] = useState('');
+      const [selectedCategory, setSelectedCategory] = useState('');
+      const [selectedSKU, setSelectedSKU] = useState('');
+      const [pdfProgress, setPdfProgress] = useState(null);
+
+      useEffect(() => {
+        fetch(`${API_BASE}/api/walmart/weeks?forecast_type=${forecastType}`)
+          .then(r => r.json())
+          .then(data => { setWeeks(data); if (data.length && !selectedWeek) setSelectedWeek(data[Math.floor(data.length / 2)]); });
+      }, [forecastType]);
+
+      useEffect(() => {
+        fetch(`${API_BASE}/api/walmart/geo-ids?geo_level=${geoLevel}&forecast_type=${forecastType}`)
+          .then(r => r.json())
+          .then(data => { setGeoIds(data); if (data.length) setSelectedGeoId(data[0]); });
+      }, [geoLevel, forecastType]);
+
+      useEffect(() => {
+        if (!selectedWeek) return;
+        fetch(`${API_BASE}/api/walmart/departments?week=${selectedWeek}&forecast_type=${forecastType}&geo_level=${geoLevel}&geo_id=${selectedGeoId}`)
+          .then(r => r.json())
+          .then(data => { setDepartments(data); if (data.length && !selectedDepartment) setSelectedDepartment(data[0].department_id); });
+      }, [selectedWeek, forecastType, geoLevel, selectedGeoId]);
+
+      useEffect(() => {
+        if (!selectedWeek) return;
+        fetch(`${API_BASE}/api/walmart/categories?week=${selectedWeek}&forecast_type=${forecastType}&geo_level=${geoLevel}&geo_id=${selectedGeoId}`)
+          .then(r => r.json())
+          .then(data => { setCategories(data); if (data.length && !selectedCategory) setSelectedCategory(data[0].category_id); });
+      }, [selectedWeek, forecastType, geoLevel, selectedGeoId]);
+
+      useEffect(() => {
+        if (geoLevel !== 'location_id' || selectedGeoId !== 'CA_1') { setSKUList([]); return; }
+        fetch(`${API_BASE}/api/walmart/sku-list?forecast_type=${forecastType}`)
+          .then(r => r.json())
+          .then(data => { setSKUList(data); if (data.length && !selectedSKU) setSelectedSKU(data[0].sku_id); });
+      }, [forecastType, geoLevel, selectedGeoId]);
+
+      const showSKUOption = geoLevel === 'location_id' && selectedGeoId === 'CA_1';
+
+      return (
+        <div>
+          <div className="header">
+            <h1>Walmart Forecast Dashboard</h1>
+            <div className="header-sub">Band Break Analysis: Stockouts • Overstocks • Revenue Shortfalls</div>
+            {selectedWeek && <div className="header-sub" style={{marginTop: 8, color: '#4ecdc4', fontWeight: 600}}>Data through: {selectedWeek} • Forecasts generated daily at SKU level</div>}
+          </div>
+          <div className="container">
+            <div className="controls">
+              <div className="control-group">
+                <label>Report</label>
+                <select value={reportType} onChange={e => setReportType(e.target.value)}>
+                  <option value="location">Location Overview</option>
+                  <option value="department">Department</option>
+                  <option value="category">Category</option>
+                  {showSKUOption && <option value="sku">SKU</option>}
+                </select>
+              </div>
+              <div className="control-group">
+                <label>Geo Level</label>
+                <select value={geoLevel} onChange={e => { setGeoLevel(e.target.value); setReportType('location'); }}>
+                  <option value="all_locations">All Locations</option>
+                  <option value="state_id">State</option>
+                  <option value="location_id">Store</option>
+                </select>
+              </div>
+              {geoLevel !== 'all_locations' && (
+                <div className="control-group">
+                  <label>{geoLevel === 'state_id' ? 'State' : 'Store'}</label>
+                  <select value={selectedGeoId} onChange={e => setSelectedGeoId(e.target.value)}>
+                    {geoIds.map(id => <option key={id} value={id}>{id}</option>)}
+                  </select>
+                </div>
+              )}
+              {reportType === 'department' && (
+                <div className="control-group">
+                  <label>Department</label>
+                  <select value={selectedDepartment} onChange={e => setSelectedDepartment(e.target.value)}>
+                    {departments.map(d => <option key={d.department_id} value={d.department_id}>{d.department_id}</option>)}
+                  </select>
+                </div>
+              )}
+              {reportType === 'category' && (
+                <div className="control-group">
+                  <label>Category</label>
+                  <select value={selectedCategory} onChange={e => setSelectedCategory(e.target.value)}>
+                    {categories.map(c => <option key={c.category_id} value={c.category_id}>{c.category_id}</option>)}
+                  </select>
+                </div>
+              )}
+              {reportType === 'sku' && showSKUOption && (
+                <div className="control-group">
+                  <label>SKU</label>
+                  <select value={selectedSKU} onChange={e => setSelectedSKU(e.target.value)}>
+                    {skuList.map(s => <option key={s.sku_id} value={s.sku_id}>{s.sku_id}</option>)}
+                  </select>
+                </div>
+              )}
+              <div className="control-group">
+                <label>Forecast</label>
+                <select value={forecastType} onChange={e => setForecastType(e.target.value)}>
+                  <option value="monthly">Monthly</option>
+                  <option value="quarterly">Quarterly</option>
+                </select>
+              </div>
+              <div className="control-group">
+                <label>Week Ending</label>
+                <select value={selectedWeek} onChange={e => setSelectedWeek(e.target.value)}>
+                  {weeks.map(w => <option key={w} value={w}>{w}</option>)}
+                </select>
+              </div>
+              <div className="control-group">
+                <label>&nbsp;</label>
+                <button 
+                  className="download-btn"
+                  disabled={!!pdfProgress}
+                  onClick={() => generatePDFReport(selectedWeek, forecastType, setPdfProgress)}
+                >
+                  {pdfProgress || '📄 Download PDF Report'}
+                </button>
+              </div>
+            </div>
+
+            <div className="legend-box">
+              <strong>Band Break</strong> = Actual sales outside forecast confidence interval. 
+              <span className="stockout">Upper break (Stockout Risk)</span>: Selling faster than forecast — check inventory. 
+              <span className="overstock">Lower break (Overstock Risk)</span>: Selling slower than forecast — markdown/overstock risk. 
+              <strong>Consecutive breaks</strong> = sustained pattern requiring action.
+            </div>
+
+            {selectedWeek && reportType === 'location' && (
+              <LocationReport week={selectedWeek} forecastType={forecastType} geoLevel={geoLevel} geoId={selectedGeoId}
+                onSelectDepartment={d => { setSelectedDepartment(d); setReportType('department'); }}
+                onSelectCategory={c => { setSelectedCategory(c); setReportType('category'); }} />
+            )}
+            {selectedWeek && reportType === 'department' && selectedDepartment && (
+              <DepartmentReport week={selectedWeek} forecastType={forecastType} geoLevel={geoLevel} geoId={selectedGeoId}
+                departmentId={selectedDepartment}
+                onSelectCategory={c => { setSelectedCategory(c); setReportType('category'); }} />
+            )}
+            {selectedWeek && reportType === 'category' && selectedCategory && (
+              <CategoryReport week={selectedWeek} forecastType={forecastType} geoLevel={geoLevel} geoId={selectedGeoId}
+                categoryId={selectedCategory}
+                onSelectSKU={s => { setSelectedSKU(s); setReportType('sku'); }} />
+            )}
+            {selectedWeek && reportType === 'sku' && selectedSKU && showSKUOption && (
+              <SKUReport week={selectedWeek} forecastType={forecastType} skuId={selectedSKU} />
+            )}
+          </div>
+        </div>
+      );
+    }
+
 
 export default WalmartDashboard;
