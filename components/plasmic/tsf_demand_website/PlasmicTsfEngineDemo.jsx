@@ -143,90 +143,8 @@ function PlasmicTsfEngineDemo__RenderFunc(props) {
                     )}
                   >
                     {
-                      "Pick a forecast, choose a month, and let the gold line (daily forecast) and the green zone (confidence bands) guide your decisions."
+                      "This demo dashboard uses the M5 Walmart Dataset which included more than 60,000 SKUs over approximately a 5 year period, across 10 store locations, 3 departments, and 10 subcategories. \n\nAll forecasts are generated on the last day of the month or the last day of the quarter. Actuals fill in on top of the forecast maps. \n\nA complete demand planning status report can be generated with one click, identifying all current problems (through yesterday\u2019s data) so demand planners can actually do their job and focus on addressing today\u2019s problems instead of defending yesterday\u2019s forecast values. "
                     }
-                  </div>
-                  <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text___4Qcnz
-                    )}
-                  >
-                    <React.Fragment>
-                      <React.Fragment>{""}</React.Fragment>
-                      {
-                        <ul
-                          data-plasmic-name={"ul"}
-                          data-plasmic-override={overrides.ul}
-                          className={classNames(
-                            projectcss.all,
-                            projectcss.ul,
-                            sty.ul
-                          )}
-                        >
-                          <li
-                            className={classNames(
-                              projectcss.all,
-                              projectcss.li,
-                              projectcss.__wab_text,
-                              sty.li__r4DWf
-                            )}
-                          >
-                            {
-                              "AQI Data Sets: Air Quality Index data from the EPA website for selected states.  "
-                            }
-                          </li>
-                          <li
-                            className={classNames(
-                              projectcss.all,
-                              projectcss.li,
-                              projectcss.__wab_text,
-                              sty.li__fyg9B
-                            )}
-                          >
-                            {
-                              "Crash Data Sets: Daily car crash data from selected states and from the U.S. Fatality Analysis Reporting System (FARS)."
-                            }
-                          </li>
-                          <li
-                            className={classNames(
-                              projectcss.all,
-                              projectcss.li,
-                              projectcss.__wab_text,
-                              sty.li__rrHq
-                            )}
-                          >
-                            {
-                              "Dep_Del15 Data Sets: Commercial airline late departures (15 minutes or more) for selected states. "
-                            }
-                          </li>
-                          <li
-                            className={classNames(
-                              projectcss.all,
-                              projectcss.li,
-                              projectcss.__wab_text,
-                              sty.li__kLOnw
-                            )}
-                          >
-                            {
-                              "Max_Temp_F Data Sets: Daily high temperature (\u00b0F) recorded at selected airport stations.\n"
-                            }
-                          </li>
-                          <li
-                            className={classNames(
-                              projectcss.all,
-                              projectcss.li,
-                              projectcss.__wab_text,
-                              sty.li___5MCws
-                            )}
-                          >
-                            {"Stock Data Sets: For illustration only!"}
-                          </li>
-                        </ul>
-                      }
-                      <React.Fragment>{""}</React.Fragment>
-                    </React.Fragment>
                   </div>
                 </div>
                 <div className={classNames(projectcss.all, sty.column__krZzE)}>
@@ -714,7 +632,6 @@ const PlasmicDescendants = {
     "root",
     "tsfDemandMainNavigation",
     "pageBanner",
-    "ul",
     "youTube",
     "walmartDashboard",
     "iframeEmbed",
@@ -732,8 +649,7 @@ const PlasmicDescendants = {
   ],
 
   tsfDemandMainNavigation: ["tsfDemandMainNavigation"],
-  pageBanner: ["pageBanner", "ul", "youTube"],
-  ul: ["ul"],
+  pageBanner: ["pageBanner", "youTube"],
   youTube: ["youTube"],
   walmartDashboard: ["walmartDashboard"],
   iframeEmbed: ["iframeEmbed"],
@@ -784,7 +700,6 @@ export const PlasmicTsfEngineDemo = Object.assign(
     // Helper components rendering sub-elements
     tsfDemandMainNavigation: makeNodeComponent("tsfDemandMainNavigation"),
     pageBanner: makeNodeComponent("pageBanner"),
-    ul: makeNodeComponent("ul"),
     youTube: makeNodeComponent("youTube"),
     walmartDashboard: makeNodeComponent("walmartDashboard"),
     iframeEmbed: makeNodeComponent("iframeEmbed"),
