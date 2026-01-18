@@ -1,64 +1,60 @@
 // components/WalmartDashboard.jsx
-// EXACT copy from dashboard-NEON/frontend/index.html
+// EXACT code from dashboard-NEON/frontend/index.html
 import React, { useState, useEffect, useRef, useLayoutEffect } from 'react';
 
 const API_BASE = 'https://tsf-demand-back.onrender.com';
 
-// Inject styles
-const cssText = `
-* { box-sizing: border-box; }
+// Styles injected at runtime
+const cssText = `* { box-sizing: border-box; }
 .wm-root { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #f5f5f5; min-height: 100vh; }
-.header { background: #1a1a2e; color: white; padding: 20px 30px; margin-bottom: 20px; }
-.header h1 { margin: 0; font-size: 24px; }
-.header-sub { margin: 5px 0 0; font-size: 14px; color: #aaa; }
-.container { max-width: 1400px; margin: 0 auto; padding: 20px; }
-.controls { display: flex; gap: 20px; align-items: flex-end; margin-bottom: 20px; padding: 20px; background: white; border-radius: 8px; box-shadow: 0 1px 3px rgba(0,0,0,0.1); flex-wrap: wrap; }
-.control-group { display: flex; flex-direction: column; gap: 6px; }
-.control-group label { font-size: 12px; font-weight: 600; color: #666; text-transform: uppercase; }
-.control-group select { padding: 8px 12px; font-size: 14px; border: 1px solid #ddd; border-radius: 4px; min-width: 160px; }
-.card { background: white; border-radius: 8px; box-shadow: 0 1px 3px rgba(0,0,0,0.1); margin-bottom: 20px; overflow: hidden; }
-.card-header { padding: 16px 20px; border-bottom: 1px solid #eee; background: #fafafa; }
-.card-header h2 { margin: 0; font-size: 18px; font-weight: 600; }
-.card-header h3 { margin: 0; font-size: 14px; font-weight: 500; color: #666; }
-.card-body { padding: 20px; }
-.charts-row { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
-.wm-root table { width: 100%; border-collapse: collapse; }
-.wm-root th { padding: 10px 12px; text-align: center; border-bottom: 2px solid #eee; font-size: 11px; font-weight: 600; color: #666; text-transform: uppercase; background: #fafafa; }
-.wm-root th.left { text-align: left; }
-.wm-root td { padding: 10px 12px; border-bottom: 1px solid #f0f0f0; font-size: 13px; text-align: center; }
-.wm-root td.left { text-align: left; font-weight: 600; }
-.wm-root tr.clickable { cursor: pointer; }
-.wm-root tr.clickable:hover { background: #f8f9fa; }
-.loading { padding: 40px; text-align: center; color: #666; }
-.chart-title { margin: 0 0 10px; font-size: 14px; font-weight: 600; }
-.legend { display: flex; gap: 20px; justify-content: center; margin-top: 10px; font-size: 12px; }
-.legend-item { display: flex; align-items: center; gap: 6px; }
-.metric-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 15px; margin-bottom: 20px; }
-.metric-card { background: #f8f9fa; padding: 15px; border-radius: 6px; text-align: center; }
-.metric-card.alert { background: #fff0f0; }
-.metric-card.warning { background: #fff8e6; }
-.metric-value { font-size: 24px; font-weight: 700; color: #1a1a2e; }
-.metric-label { font-size: 11px; color: #666; text-transform: uppercase; margin-top: 5px; }
-.break-high { color: #c00; font-weight: 700; }
-.break-med { color: #e65c00; font-weight: 600; }
-.break-low { color: #080; }
-.break-cell { font-variant-numeric: tabular-nums; }
-.consec { font-size: 10px; color: #666; display: block; }
-.sku-note { background: #fff3cd; padding: 10px 15px; border-radius: 6px; margin-bottom: 15px; font-size: 13px; color: #856404; }
-.download-btn { padding: 8px 16px; font-size: 14px; background-color: #1a1a2e; color: white; border: none; border-radius: 4px; cursor: pointer; font-weight: 600; }
-.download-btn:disabled { background-color: #666; cursor: not-allowed; }
-.download-btn:hover:not(:disabled) { background-color: #2a2a4e; }
-.legend-box { background: #f8f9fa; border: 1px solid #e0e0e0; border-radius: 6px; padding: 12px 16px; margin-bottom: 15px; font-size: 12px; color: #555; }
-.legend-box strong { color: #1a1a2e; }
-.legend-box .stockout { color: #c00; font-weight: 600; }
-.legend-box .overstock { color: #e65c00; font-weight: 600; }
-`;
+.wm-root .header { background: #1a1a2e; color: white; padding: 20px 30px; margin-bottom: 20px; }
+.wm-root .header h1 { margin: 0; font-size: 24px; }
+.wm-root .header-sub { margin: 5px 0 0; font-size: 14px; color: #aaa; }
+.wm-root .container { max-width: 1400px; margin: 0 auto; padding: 20px; }
+.wm-root .controls { display: flex; gap: 20px; align-items: flex-end; margin-bottom: 20px; padding: 20px; background: white; border-radius: 8px; box-shadow: 0 1px 3px rgba(0,0,0,0.1); flex-wrap: wrap; }
+.wm-root .control-group { display: flex; flex-direction: column; gap: 6px; }
+.wm-root .control-group label { font-size: 12px; font-weight: 600; color: #666; text-transform: uppercase; }
+.wm-root .control-group select { padding: 8px 12px; font-size: 14px; border: 1px solid #ddd; border-radius: 4px; min-width: 160px; }
+.wm-root .card { background: white; border-radius: 8px; box-shadow: 0 1px 3px rgba(0,0,0,0.1); margin-bottom: 20px; overflow: hidden; }
+.wm-root .card-header { padding: 16px 20px; border-bottom: 1px solid #eee; background: #fafafa; }
+.wm-root .card-header h2 { margin: 0; font-size: 18px; font-weight: 600; }
+.wm-root .card-header h3 { margin: 0; font-size: 14px; font-weight: 500; color: #666; }
+.wm-root .card-body { padding: 20px; }
+.wm-root .charts-row { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+.wm-root table { width: 100% !important; border-collapse: collapse !important; }
+.wm-root table th, .wm-root table td { padding: 10px 12px !important; border-bottom: 1px solid #f0f0f0 !important; font-size: 13px !important; text-align: center !important; vertical-align: middle !important; }
+.wm-root table th { border-bottom: 2px solid #eee !important; font-size: 11px !important; font-weight: 600 !important; color: #666 !important; text-transform: uppercase !important; background: #fafafa !important; }
+.wm-root table th.left, .wm-root table td.left { text-align: left !important; }
+.wm-root table td.left { font-weight: 600 !important; }
+.wm-root table tr.clickable { cursor: pointer !important; }
+.wm-root table tr.clickable:hover { background: #f8f9fa !important; }
+.wm-root table thead th[colspan] { border-bottom: 1px solid #ddd !important; }
+.wm-root .loading { padding: 40px; text-align: center; color: #666; }
+.wm-root .chart-title { margin: 0 0 10px; font-size: 14px; font-weight: 600; }
+.wm-root .legend { display: flex; gap: 20px; justify-content: center; margin-top: 10px; font-size: 12px; }
+.wm-root .legend-item { display: flex; align-items: center; gap: 6px; }
+.wm-root .metric-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 15px; margin-bottom: 20px; }
+.wm-root .metric-card { background: #f8f9fa; padding: 15px; border-radius: 6px; text-align: center; }
+.wm-root .metric-card.alert { background: #fff0f0; }
+.wm-root .metric-card.warning { background: #fff8e6; }
+.wm-root .metric-value { font-size: 24px; font-weight: 700; color: #1a1a2e; }
+.wm-root .metric-label { font-size: 11px; color: #666; text-transform: uppercase; margin-top: 5px; }
+.wm-root .break-high { color: #c00; font-weight: 700; }
+.wm-root .break-med { color: #e65c00; font-weight: 600; }
+.wm-root .break-low { color: #080; }
+.wm-root .break-cell { font-variant-numeric: tabular-nums; }
+.wm-root .consec { font-size: 10px; color: #666; display: block; }
+.wm-root .sku-note { background: #fff3cd; padding: 10px 15px; border-radius: 6px; margin-bottom: 15px; font-size: 13px; color: #856404; }
+.wm-root .download-btn { padding: 8px 16px; font-size: 14px; background-color: #1a1a2e; color: white; border: none; border-radius: 4px; cursor: pointer; font-weight: 600; }
+.wm-root .download-btn:disabled { background-color: #666; cursor: not-allowed; }
+.wm-root .download-btn:hover:not(:disabled) { background-color: #2a2a4e; }
+.wm-root .legend-box { background: #f8f9fa; border: 1px solid #e0e0e0; border-radius: 6px; padding: 12px 16px; margin-bottom: 15px; font-size: 12px; color: #555; }
+.wm-root .legend-box strong { color: #1a1a2e; }
+.wm-root .legend-box .stockout { color: #c00; font-weight: 600; }
+.wm-root .legend-box .overstock { color: #e65c00; font-weight: 600; }`;
 
 if (typeof document !== 'undefined' && !document.getElementById('wm-styles')) {
-  const s = document.createElement('style');
-  s.id = 'wm-styles';
-  s.textContent = cssText;
-  document.head.appendChild(s);
+  const s = document.createElement('style'); s.id = 'wm-styles'; s.textContent = cssText; document.head.appendChild(s);
 }
 
 function loadJsPDF() {
@@ -72,6 +68,9 @@ function loadJsPDF() {
   });
 }
 
+    // =============================================================================
+    // CHART COMPONENT
+    // =============================================================================
     function useContainerWidth() {
       const ref = useRef(null);
       const [w, setW] = useState(0);
@@ -170,19 +169,23 @@ function loadJsPDF() {
     // HELPERS
     // =============================================================================
     const breakClass = (count, total) => {
-      if (!total || count === 0) return 'break-low';
+      if (!total || count === 0) return '#080';
       const pct = count / total;
-      if (pct > 0.15 || count >= 5) return 'break-high';
-      if (pct > 0.05 || count >= 2) return 'break-med';
-      return 'break-low';
+      if (pct > 0.15 || count >= 5) return '#c00';
+      if (pct > 0.05 || count >= 2) return '#e65c00';
+      return '#080';
     };
 
-    const BreakCell = ({ count, consec, total }) => (
-      <td className={`break-cell ${breakClass(count, total)}`}>
-        {count || 0}
-        {consec > 1 && <span className="consec">({consec} consec)</span>}
-      </td>
-    );
+    const BreakCell = ({ count, consec, total }) => {
+      const color = breakClass(count, total);
+      const fontWeight = color === '#c00' ? 700 : color === '#e65c00' ? 600 : 400;
+      return (
+        <td style={{ textAlign: 'center', padding: '10px 12px', borderBottom: '1px solid #f0f0f0', fontSize: '13px', color, fontWeight, fontVariantNumeric: 'tabular-nums' }}>
+          {count || 0}
+          {consec > 1 && <span style={{ fontSize: '10px', color: '#666', display: 'block' }}>({consec} consec)</span>}
+        </td>
+      );
+    };
 
     // =============================================================================
     // PDF GENERATION (CLIENT-SIDE)
@@ -758,27 +761,27 @@ function loadJsPDF() {
           <div className="card">
             <div className="card-header"><h2>Department Band Breaks</h2></div>
             <div className="card-body" style={{ padding: 0 }}>
-              <table>
+              <table style={{ width: '100%', borderCollapse: 'collapse', tableLayout: 'fixed' }}>
                 <thead>
                   <tr>
-                    <th rowSpan={2} className="left">Department</th>
-                    <th colSpan={2} style={{ borderBottom: '1px solid #ddd', background: '#fff0f0' }}>Stockout Risk</th>
-                    <th colSpan={2} style={{ borderBottom: '1px solid #ddd', background: '#fff8e6' }}>Overstock Risk</th>
-                    <th colSpan={2} style={{ borderBottom: '1px solid #ddd', background: '#f0f8ff' }}>Revenue Shortfall</th>
+                    <th rowSpan={2} style={{ width: '20%', textAlign: 'left', padding: '10px 12px', background: '#fafafa', borderBottom: '2px solid #eee', fontSize: '11px', fontWeight: 600, color: '#666', textTransform: 'uppercase' }}>Department</th>
+                    <th colSpan={2} style={{ width: '26.6%', textAlign: 'center', padding: '10px 12px', borderBottom: '1px solid #ddd', background: '#fff0f0', fontSize: '11px', fontWeight: 600, color: '#666', textTransform: 'uppercase' }}>Stockout Risk</th>
+                    <th colSpan={2} style={{ width: '26.6%', textAlign: 'center', padding: '10px 12px', borderBottom: '1px solid #ddd', background: '#fff8e6', fontSize: '11px', fontWeight: 600, color: '#666', textTransform: 'uppercase' }}>Overstock Risk</th>
+                    <th colSpan={2} style={{ width: '26.6%', textAlign: 'center', padding: '10px 12px', borderBottom: '1px solid #ddd', background: '#f0f8ff', fontSize: '11px', fontWeight: 600, color: '#666', textTransform: 'uppercase' }}>Revenue Shortfall</th>
                   </tr>
                   <tr>
-                    <th style={{ background: '#fff0f0' }}>85%</th>
-                    <th style={{ background: '#fff0f0' }}>95%</th>
-                    <th style={{ background: '#fff8e6' }}>85%</th>
-                    <th style={{ background: '#fff8e6' }}>95%</th>
-                    <th style={{ background: '#f0f8ff' }}>85%</th>
-                    <th style={{ background: '#f0f8ff' }}>95%</th>
+                    <th style={{ textAlign: 'center', padding: '10px 12px', background: '#fff0f0', borderBottom: '2px solid #eee', fontSize: '11px', fontWeight: 600, color: '#666' }}>85%</th>
+                    <th style={{ textAlign: 'center', padding: '10px 12px', background: '#fff0f0', borderBottom: '2px solid #eee', fontSize: '11px', fontWeight: 600, color: '#666' }}>95%</th>
+                    <th style={{ textAlign: 'center', padding: '10px 12px', background: '#fff8e6', borderBottom: '2px solid #eee', fontSize: '11px', fontWeight: 600, color: '#666' }}>85%</th>
+                    <th style={{ textAlign: 'center', padding: '10px 12px', background: '#fff8e6', borderBottom: '2px solid #eee', fontSize: '11px', fontWeight: 600, color: '#666' }}>95%</th>
+                    <th style={{ textAlign: 'center', padding: '10px 12px', background: '#f0f8ff', borderBottom: '2px solid #eee', fontSize: '11px', fontWeight: 600, color: '#666' }}>85%</th>
+                    <th style={{ textAlign: 'center', padding: '10px 12px', background: '#f0f8ff', borderBottom: '2px solid #eee', fontSize: '11px', fontWeight: 600, color: '#666' }}>95%</th>
                   </tr>
                 </thead>
                 <tbody>
                   {departments.map(row => (
-                    <tr key={row.department_id} className="clickable" onClick={() => onSelectDepartment(row.department_id)}>
-                      <td className="left">{row.department_id}</td>
+                    <tr key={row.department_id} style={{ cursor: 'pointer' }} onClick={() => onSelectDepartment(row.department_id)}>
+                      <td style={{ textAlign: 'left', padding: '10px 12px', borderBottom: '1px solid #f0f0f0', fontSize: '13px', fontWeight: 600 }}>{row.department_id}</td>
                       <BreakCell count={row.units?.upper_85} consec={row.units?.upper_85_consec} total={row.units?.total_days} />
                       <BreakCell count={row.units?.upper_95} consec={0} total={row.units?.total_days} />
                       <BreakCell count={row.units?.lower_85} consec={row.units?.lower_85_consec} total={row.units?.total_days} />
@@ -795,27 +798,27 @@ function loadJsPDF() {
           <div className="card">
             <div className="card-header"><h2>Category Band Breaks</h2></div>
             <div className="card-body" style={{ padding: 0 }}>
-              <table>
+              <table style={{ width: '100%', borderCollapse: 'collapse', tableLayout: 'fixed' }}>
                 <thead>
                   <tr>
-                    <th rowSpan={2} className="left">Category</th>
-                    <th colSpan={2} style={{ borderBottom: '1px solid #ddd', background: '#fff0f0' }}>Stockout Risk</th>
-                    <th colSpan={2} style={{ borderBottom: '1px solid #ddd', background: '#fff8e6' }}>Overstock Risk</th>
-                    <th colSpan={2} style={{ borderBottom: '1px solid #ddd', background: '#f0f8ff' }}>Revenue Shortfall</th>
+                    <th rowSpan={2} style={{ width: '20%', textAlign: 'left', padding: '10px 12px', background: '#fafafa', borderBottom: '2px solid #eee', fontSize: '11px', fontWeight: 600, color: '#666', textTransform: 'uppercase' }}>Category</th>
+                    <th colSpan={2} style={{ width: '26.6%', textAlign: 'center', padding: '10px 12px', borderBottom: '1px solid #ddd', background: '#fff0f0', fontSize: '11px', fontWeight: 600, color: '#666', textTransform: 'uppercase' }}>Stockout Risk</th>
+                    <th colSpan={2} style={{ width: '26.6%', textAlign: 'center', padding: '10px 12px', borderBottom: '1px solid #ddd', background: '#fff8e6', fontSize: '11px', fontWeight: 600, color: '#666', textTransform: 'uppercase' }}>Overstock Risk</th>
+                    <th colSpan={2} style={{ width: '26.6%', textAlign: 'center', padding: '10px 12px', borderBottom: '1px solid #ddd', background: '#f0f8ff', fontSize: '11px', fontWeight: 600, color: '#666', textTransform: 'uppercase' }}>Revenue Shortfall</th>
                   </tr>
                   <tr>
-                    <th style={{ background: '#fff0f0' }}>85%</th>
-                    <th style={{ background: '#fff0f0' }}>95%</th>
-                    <th style={{ background: '#fff8e6' }}>85%</th>
-                    <th style={{ background: '#fff8e6' }}>95%</th>
-                    <th style={{ background: '#f0f8ff' }}>85%</th>
-                    <th style={{ background: '#f0f8ff' }}>95%</th>
+                    <th style={{ textAlign: 'center', padding: '10px 12px', background: '#fff0f0', borderBottom: '2px solid #eee', fontSize: '11px', fontWeight: 600, color: '#666' }}>85%</th>
+                    <th style={{ textAlign: 'center', padding: '10px 12px', background: '#fff0f0', borderBottom: '2px solid #eee', fontSize: '11px', fontWeight: 600, color: '#666' }}>95%</th>
+                    <th style={{ textAlign: 'center', padding: '10px 12px', background: '#fff8e6', borderBottom: '2px solid #eee', fontSize: '11px', fontWeight: 600, color: '#666' }}>85%</th>
+                    <th style={{ textAlign: 'center', padding: '10px 12px', background: '#fff8e6', borderBottom: '2px solid #eee', fontSize: '11px', fontWeight: 600, color: '#666' }}>95%</th>
+                    <th style={{ textAlign: 'center', padding: '10px 12px', background: '#f0f8ff', borderBottom: '2px solid #eee', fontSize: '11px', fontWeight: 600, color: '#666' }}>85%</th>
+                    <th style={{ textAlign: 'center', padding: '10px 12px', background: '#f0f8ff', borderBottom: '2px solid #eee', fontSize: '11px', fontWeight: 600, color: '#666' }}>95%</th>
                   </tr>
                 </thead>
                 <tbody>
                   {categories.map(row => (
-                    <tr key={row.category_id} className="clickable" onClick={() => onSelectCategory(row.category_id)}>
-                      <td className="left">{row.category_id}</td>
+                    <tr key={row.category_id} style={{ cursor: 'pointer' }} onClick={() => onSelectCategory(row.category_id)}>
+                      <td style={{ textAlign: 'left', padding: '10px 12px', borderBottom: '1px solid #f0f0f0', fontSize: '13px', fontWeight: 600 }}>{row.category_id}</td>
                       <BreakCell count={row.units?.upper_85} consec={row.units?.upper_85_consec} total={row.units?.total_days} />
                       <BreakCell count={row.units?.upper_95} consec={0} total={row.units?.total_days} />
                       <BreakCell count={row.units?.lower_85} consec={row.units?.lower_85_consec} total={row.units?.total_days} />
@@ -880,27 +883,27 @@ function loadJsPDF() {
           <div className="card">
             <div className="card-header"><h2>Category Band Breaks in {departmentId}</h2></div>
             <div className="card-body" style={{ padding: 0 }}>
-              <table>
+              <table style={{ width: '100%', borderCollapse: 'collapse', tableLayout: 'fixed' }}>
                 <thead>
                   <tr>
-                    <th rowSpan={2} className="left">Category</th>
-                    <th colSpan={2} style={{ borderBottom: '1px solid #ddd', background: '#fff0f0' }}>Stockout Risk</th>
-                    <th colSpan={2} style={{ borderBottom: '1px solid #ddd', background: '#fff8e6' }}>Overstock Risk</th>
-                    <th colSpan={2} style={{ borderBottom: '1px solid #ddd', background: '#f0f8ff' }}>Revenue Shortfall</th>
+                    <th rowSpan={2} style={{ width: '20%', textAlign: 'left', padding: '10px 12px', background: '#fafafa', borderBottom: '2px solid #eee', fontSize: '11px', fontWeight: 600, color: '#666', textTransform: 'uppercase' }}>Category</th>
+                    <th colSpan={2} style={{ width: '26.6%', textAlign: 'center', padding: '10px 12px', borderBottom: '1px solid #ddd', background: '#fff0f0', fontSize: '11px', fontWeight: 600, color: '#666', textTransform: 'uppercase' }}>Stockout Risk</th>
+                    <th colSpan={2} style={{ width: '26.6%', textAlign: 'center', padding: '10px 12px', borderBottom: '1px solid #ddd', background: '#fff8e6', fontSize: '11px', fontWeight: 600, color: '#666', textTransform: 'uppercase' }}>Overstock Risk</th>
+                    <th colSpan={2} style={{ width: '26.6%', textAlign: 'center', padding: '10px 12px', borderBottom: '1px solid #ddd', background: '#f0f8ff', fontSize: '11px', fontWeight: 600, color: '#666', textTransform: 'uppercase' }}>Revenue Shortfall</th>
                   </tr>
                   <tr>
-                    <th style={{ background: '#fff0f0' }}>85%</th>
-                    <th style={{ background: '#fff0f0' }}>95%</th>
-                    <th style={{ background: '#fff8e6' }}>85%</th>
-                    <th style={{ background: '#fff8e6' }}>95%</th>
-                    <th style={{ background: '#f0f8ff' }}>85%</th>
-                    <th style={{ background: '#f0f8ff' }}>95%</th>
+                    <th style={{ textAlign: 'center', padding: '10px 12px', background: '#fff0f0', borderBottom: '2px solid #eee', fontSize: '11px', fontWeight: 600, color: '#666' }}>85%</th>
+                    <th style={{ textAlign: 'center', padding: '10px 12px', background: '#fff0f0', borderBottom: '2px solid #eee', fontSize: '11px', fontWeight: 600, color: '#666' }}>95%</th>
+                    <th style={{ textAlign: 'center', padding: '10px 12px', background: '#fff8e6', borderBottom: '2px solid #eee', fontSize: '11px', fontWeight: 600, color: '#666' }}>85%</th>
+                    <th style={{ textAlign: 'center', padding: '10px 12px', background: '#fff8e6', borderBottom: '2px solid #eee', fontSize: '11px', fontWeight: 600, color: '#666' }}>95%</th>
+                    <th style={{ textAlign: 'center', padding: '10px 12px', background: '#f0f8ff', borderBottom: '2px solid #eee', fontSize: '11px', fontWeight: 600, color: '#666' }}>85%</th>
+                    <th style={{ textAlign: 'center', padding: '10px 12px', background: '#f0f8ff', borderBottom: '2px solid #eee', fontSize: '11px', fontWeight: 600, color: '#666' }}>95%</th>
                   </tr>
                 </thead>
                 <tbody>
                   {categories.map(row => (
-                    <tr key={row.category_id} className="clickable" onClick={() => onSelectCategory(row.category_id)}>
-                      <td className="left">{row.category_id}</td>
+                    <tr key={row.category_id} style={{ cursor: 'pointer' }} onClick={() => onSelectCategory(row.category_id)}>
+                      <td style={{ textAlign: 'left', padding: '10px 12px', borderBottom: '1px solid #f0f0f0', fontSize: '13px', fontWeight: 600 }}>{row.category_id}</td>
                       <BreakCell count={row.units?.upper_85} consec={row.units?.upper_85_consec} total={row.units?.total_days} />
                       <BreakCell count={row.units?.upper_95} consec={0} total={row.units?.total_days} />
                       <BreakCell count={row.units?.lower_85} consec={row.units?.lower_85_consec} total={row.units?.total_days} />
@@ -972,27 +975,27 @@ function loadJsPDF() {
             <div className="card">
               <div className="card-header"><h2>SKU Band Breaks (Top 50 by breaks)</h2></div>
               <div className="card-body" style={{ padding: 0 }}>
-                <table>
+                <table style={{ width: '100%', borderCollapse: 'collapse', tableLayout: 'fixed' }}>
                   <thead>
                     <tr>
-                      <th rowSpan={2} className="left">SKU</th>
-                      <th colSpan={2} style={{ borderBottom: '1px solid #ddd', background: '#fff0f0' }}>Stockout</th>
-                      <th colSpan={2} style={{ borderBottom: '1px solid #ddd', background: '#fff8e6' }}>Overstock</th>
-                      <th colSpan={2} style={{ borderBottom: '1px solid #ddd', background: '#f0f8ff' }}>Rev Shortfall</th>
+                      <th rowSpan={2} style={{ width: '20%', textAlign: 'left', padding: '10px 12px', background: '#fafafa', borderBottom: '2px solid #eee', fontSize: '11px', fontWeight: 600, color: '#666', textTransform: 'uppercase' }}>SKU</th>
+                      <th colSpan={2} style={{ width: '26.6%', textAlign: 'center', padding: '10px 12px', borderBottom: '1px solid #ddd', background: '#fff0f0', fontSize: '11px', fontWeight: 600, color: '#666', textTransform: 'uppercase' }}>Stockout</th>
+                      <th colSpan={2} style={{ width: '26.6%', textAlign: 'center', padding: '10px 12px', borderBottom: '1px solid #ddd', background: '#fff8e6', fontSize: '11px', fontWeight: 600, color: '#666', textTransform: 'uppercase' }}>Overstock</th>
+                      <th colSpan={2} style={{ width: '26.6%', textAlign: 'center', padding: '10px 12px', borderBottom: '1px solid #ddd', background: '#f0f8ff', fontSize: '11px', fontWeight: 600, color: '#666', textTransform: 'uppercase' }}>Rev Shortfall</th>
                     </tr>
                     <tr>
-                      <th style={{ background: '#fff0f0' }}>85%</th>
-                      <th style={{ background: '#fff0f0' }}>95%</th>
-                      <th style={{ background: '#fff8e6' }}>85%</th>
-                      <th style={{ background: '#fff8e6' }}>95%</th>
-                      <th style={{ background: '#f0f8ff' }}>85%</th>
-                      <th style={{ background: '#f0f8ff' }}>95%</th>
+                      <th style={{ textAlign: 'center', padding: '10px 12px', background: '#fff0f0', borderBottom: '2px solid #eee', fontSize: '11px', fontWeight: 600, color: '#666' }}>85%</th>
+                      <th style={{ textAlign: 'center', padding: '10px 12px', background: '#fff0f0', borderBottom: '2px solid #eee', fontSize: '11px', fontWeight: 600, color: '#666' }}>95%</th>
+                      <th style={{ textAlign: 'center', padding: '10px 12px', background: '#fff8e6', borderBottom: '2px solid #eee', fontSize: '11px', fontWeight: 600, color: '#666' }}>85%</th>
+                      <th style={{ textAlign: 'center', padding: '10px 12px', background: '#fff8e6', borderBottom: '2px solid #eee', fontSize: '11px', fontWeight: 600, color: '#666' }}>95%</th>
+                      <th style={{ textAlign: 'center', padding: '10px 12px', background: '#f0f8ff', borderBottom: '2px solid #eee', fontSize: '11px', fontWeight: 600, color: '#666' }}>85%</th>
+                      <th style={{ textAlign: 'center', padding: '10px 12px', background: '#f0f8ff', borderBottom: '2px solid #eee', fontSize: '11px', fontWeight: 600, color: '#666' }}>95%</th>
                     </tr>
                   </thead>
                   <tbody>
                     {skus.map(row => (
-                      <tr key={row.sku_id} className="clickable" onClick={() => onSelectSKU(row.sku_id)}>
-                        <td className="left" style={{fontSize:11}}>{row.sku_id}</td>
+                      <tr key={row.sku_id} style={{ cursor: 'pointer' }} onClick={() => onSelectSKU(row.sku_id)}>
+                        <td style={{ textAlign: 'left', padding: '10px 12px', borderBottom: '1px solid #f0f0f0', fontSize: '11px', fontWeight: 600 }}>{row.sku_id}</td>
                         <BreakCell count={row.units?.upper_85} consec={row.units?.upper_85_consec} total={row.units?.total_days} />
                         <BreakCell count={row.units?.upper_95} consec={0} total={row.units?.total_days} />
                         <BreakCell count={row.units?.lower_85} consec={row.units?.lower_85_consec} total={row.units?.total_days} />
@@ -1137,7 +1140,7 @@ function loadJsPDF() {
       const showSKUOption = geoLevel === 'location_id' && selectedGeoId === 'CA_1';
 
       return (
-        <div>
+        <div className="wm-root">
           <div className="header">
             <h1>Walmart Forecast Dashboard</h1>
             <div className="header-sub">Band Break Analysis: Stockouts • Overstocks • Revenue Shortfalls</div>
