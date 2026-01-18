@@ -1,9 +1,9 @@
 // components/WalmartDashboard.jsx
-// Drop this file into your components folder
+// Walmart Forecast Dashboard with PDF Download
 
-import React, { useState, useEffect, useRef, useLayoutEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 
-// UPDATE THIS to your Render backend URL
+// Backend URL
 const API_BASE = 'https://tsf-demand-back.onrender.com/api/walmart';
 
 const styles = {
@@ -33,12 +33,13 @@ const styles = {
   thLeft: { textAlign: 'left' },
   td: { padding: '10px 12px', borderBottom: '1px solid #f0f0f0', fontSize: 13, textAlign: 'center' },
   tdLeft: { textAlign: 'left', fontWeight: 600 },
-  clickableRow: { cursor: 'pointer' },
   loading: { padding: 40, textAlign: 'center', color: '#666' },
   legendBox: { background: '#f8f9fa', border: '1px solid #e0e0e0', borderRadius: 6, padding: '12px 16px', marginBottom: 15, fontSize: 12, color: '#555' },
   chartTitle: { margin: '0 0 10px', fontSize: 14, fontWeight: 600 },
   legend: { display: 'flex', gap: 20, justifyContent: 'center', marginTop: 10, fontSize: 12 },
   legendItem: { display: 'flex', alignItems: 'center', gap: 6 },
+  downloadBtn: { padding: '10px 20px', fontSize: 14, backgroundColor: '#1a1a2e', color: 'white', border: 'none', borderRadius: 4, cursor: 'pointer', fontWeight: 600 },
+  downloadBtnDisabled: { backgroundColor: '#999', cursor: 'not-allowed' },
 };
 
 const breakClass = (count, total) => {
@@ -298,6 +299,21 @@ function LocationReport({ week, forecastType, geoLevel, geoId, apiBase }) {
   );
 }
 
+// Load jsPDF dynamically
+function loadJsPDF() {
+  return new Promise((resolve, reject) => {
+    if (window.jspdf) {
+      resolve(window.jspdf.jsPDF);
+      return;
+    }
+    const script = document.createElement('script');
+    script.src = 'https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js';
+    script.onload = () => resolve(window.jspdf.jsPDF);
+    script.onerror = reject;
+    document.head.appendChild(script);
+  });
+}
+
 export function WalmartDashboard({ apiBase }) {
   const base = apiBase || API_BASE;
   
@@ -307,6 +323,8 @@ export function WalmartDashboard({ apiBase }) {
   const [geoLevel, setGeoLevel] = useState('all_locations');
   const [geoIds, setGeoIds] = useState(['ALL']);
   const [selectedGeoId, setSelectedGeoId] = useState('ALL');
+  const [generating, setGenerating] = useState(false);
+  const [pdfStatus, setPdfStatus] = useState('');
 
   useEffect(() => {
     fetch(`${base}/weeks?forecast_type=${forecastType}`)
@@ -329,6 +347,137 @@ export function WalmartDashboard({ apiBase }) {
       .then(data => { setGeoIds(data); if (data.length) setSelectedGeoId(data[0]); })
       .catch(console.error);
   }, [geoLevel, forecastType, base]);
+
+  async function generatePDF() {
+    setGenerating(true);
+    setPdfStatus('Loading PDF library...');
+    
+    try {
+      const jsPDF = await loadJsPDF();
+      const doc = new jsPDF({ orientation: 'landscape', unit: 'pt', format: 'letter' });
+      const pageW = doc.internal.pageSize.getWidth();
+      const pageH = doc.internal.pageSize.getHeight();
+      const windowDays = forecastType === 'monthly' ? 30 : 90;
+
+      // Cover page
+      doc.setFillColor(26, 26, 46);
+      doc.rect(0, 0, pageW, pageH, 'F');
+      doc.setTextColor(255, 255, 255);
+      doc.setFontSize(36);
+      doc.text('Walmart Forecast Dashboard', pageW / 2, 200, { align: 'center' });
+      doc.setFontSize(18);
+      doc.text('Band Break Exception Report', pageW / 2, 250, { align: 'center' });
+      doc.setTextColor(78, 205, 196);
+      doc.setFontSize(16);
+      doc.text(`Data through: ${selectedWeek}`, pageW / 2, 320, { align: 'center' });
+      doc.setTextColor(200, 200, 200);
+      doc.setFontSize(12);
+      doc.text(`Generated: ${new Date().toLocaleString()}`, pageW / 2, 360, { align: 'center' });
+      doc.text(`Rolling ${windowDays}-day analysis window`, pageW / 2, 380, { align: 'center' });
+
+      // Get all stores
+      setPdfStatus('Fetching store list...');
+      const storesRes = await fetch(`${base}/geo-ids?geo_level=location_id&forecast_type=${forecastType}`);
+      const stores = await storesRes.json();
+
+      // Generate page for each store
+      for (let i = 0; i < stores.length; i++) {
+        const store = stores[i];
+        setPdfStatus(`Generating Store ${store} (${i + 1}/${stores.length})...`);
+
+        const [deptRes, catRes, sumRes] = await Promise.all([
+          fetch(`${base}/departments?week=${selectedWeek}&forecast_type=${forecastType}&geo_level=location_id&geo_id=${store}`),
+          fetch(`${base}/categories?week=${selectedWeek}&forecast_type=${forecastType}&geo_level=location_id&geo_id=${store}`),
+          fetch(`${base}/location-summary?week=${selectedWeek}&forecast_type=${forecastType}&geo_level=location_id&geo_id=${store}`)
+        ]);
+
+        const depts = await deptRes.json();
+        const cats = await catRes.json();
+        const summary = await sumRes.json();
+
+        doc.addPage();
+        doc.setTextColor(0, 0, 0);
+        doc.setFontSize(20);
+        doc.text(`Store: ${store}`, 40, 40);
+        doc.setFontSize(10);
+        doc.text(`Data through: ${selectedWeek} | Rolling ${windowDays}-day window`, 40, 58);
+
+        // Summary metrics
+        const u = summary.units || {};
+        const r = summary.revenue || {};
+        doc.setFontSize(11);
+        doc.text(`Stockout Risk (Upper 85%): ${u.upper_85 || 0}`, 40, 85);
+        doc.text(`Overstock Risk (Lower 85%): ${u.lower_85 || 0}`, 200, 85);
+        doc.text(`Revenue Shortfall: ${r.lower_85 || 0}`, 360, 85);
+
+        // Departments table
+        let y = 115;
+        doc.setFontSize(12);
+        doc.text('Department Band Breaks', 40, y);
+        y += 18;
+        doc.setFontSize(8);
+        doc.setFillColor(240, 240, 240);
+        doc.rect(40, y - 10, pageW - 80, 14, 'F');
+        doc.text('Department', 45, y);
+        doc.text('Stock85', 200, y);
+        doc.text('Stock95', 260, y);
+        doc.text('Over85', 320, y);
+        doc.text('Over95', 380, y);
+        doc.text('Rev85', 440, y);
+        doc.text('Rev95', 500, y);
+        y += 14;
+
+        for (const d of depts.slice(0, 10)) {
+          doc.text(String(d.department_id || ''), 45, y);
+          doc.text(String(d.units?.upper_85 || 0), 200, y);
+          doc.text(String(d.units?.upper_95 || 0), 260, y);
+          doc.text(String(d.units?.lower_85 || 0), 320, y);
+          doc.text(String(d.units?.lower_95 || 0), 380, y);
+          doc.text(String(d.revenue?.lower_85 || 0), 440, y);
+          doc.text(String(d.revenue?.lower_95 || 0), 500, y);
+          y += 12;
+        }
+
+        // Categories table
+        y += 20;
+        doc.setFontSize(12);
+        doc.text('Category Band Breaks', 40, y);
+        y += 18;
+        doc.setFontSize(8);
+        doc.setFillColor(240, 240, 240);
+        doc.rect(40, y - 10, pageW - 80, 14, 'F');
+        doc.text('Category', 45, y);
+        doc.text('Stock85', 200, y);
+        doc.text('Stock95', 260, y);
+        doc.text('Over85', 320, y);
+        doc.text('Over95', 380, y);
+        doc.text('Rev85', 440, y);
+        doc.text('Rev95', 500, y);
+        y += 14;
+
+        for (const c of cats.slice(0, 15)) {
+          if (y > pageH - 40) break;
+          doc.text(String(c.category_id || '').slice(0, 25), 45, y);
+          doc.text(String(c.units?.upper_85 || 0), 200, y);
+          doc.text(String(c.units?.upper_95 || 0), 260, y);
+          doc.text(String(c.units?.lower_85 || 0), 320, y);
+          doc.text(String(c.units?.lower_95 || 0), 380, y);
+          doc.text(String(c.revenue?.lower_85 || 0), 440, y);
+          doc.text(String(c.revenue?.lower_95 || 0), 500, y);
+          y += 12;
+        }
+      }
+
+      setPdfStatus('Saving PDF...');
+      doc.save(`Walmart_BandBreaks_${selectedWeek}.pdf`);
+      setPdfStatus('');
+    } catch (e) {
+      console.error(e);
+      setPdfStatus('Error generating PDF');
+    }
+    
+    setGenerating(false);
+  }
 
   return (
     <div style={styles.container}>
@@ -367,6 +516,16 @@ export function WalmartDashboard({ apiBase }) {
           <select style={styles.select} value={selectedWeek} onChange={e => setSelectedWeek(e.target.value)}>
             {weeks.map(w => <option key={w} value={w}>{w}</option>)}
           </select>
+        </div>
+        <div style={styles.controlGroup}>
+          <label style={styles.label}>&nbsp;</label>
+          <button 
+            style={{ ...styles.downloadBtn, ...(generating ? styles.downloadBtnDisabled : {}) }}
+            onClick={generatePDF}
+            disabled={generating}
+          >
+            {generating ? pdfStatus : 'Download PDF Report'}
+          </button>
         </div>
       </div>
 
