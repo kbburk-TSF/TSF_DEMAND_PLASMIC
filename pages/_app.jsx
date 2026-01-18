@@ -8,6 +8,7 @@ import { WalmartDashboard } from "../components/WalmartDashboard";
 // Register the Walmart Dashboard component for Plasmic
 registerComponent(WalmartDashboard, {
   name: "WalmartDashboard",
+  importPath: "./components/WalmartDashboard",
   props: {
     apiBase: {
       type: "string",
