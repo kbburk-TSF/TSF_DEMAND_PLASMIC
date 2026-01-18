@@ -21,6 +21,7 @@ import {
 import { useDataEnv } from "@plasmicapp/react-web/lib/host";
 import TsfDemandMainNavigation from "../../TsfDemandMainNavigation"; // plasmic-import: RS9jruOWtFtt/component
 import YouTube from "@plasmicpkgs/react-youtube";
+import { WalmartDashboard } from "../../WalmartDashboard"; // plasmic-import: AkKHuFgtd97R/codeComponent
 import IframeEmbed from "../../IframeEmbed"; // plasmic-import: nSE9S-d7qhfH/codeComponent
 import Button from "../../Button"; // plasmic-import: -U7nCsYlsFbS/component
 import Button2 from "../../Button2"; // plasmic-import: IsImc8gJBadG/component
@@ -233,13 +234,20 @@ function PlasmicTsfEngineDemo__RenderFunc(props) {
                     data-plasmic-name={"youTube"}
                     data-plasmic-override={overrides.youTube}
                     className={classNames("__wab_instance", sty.youTube)}
-                    videoId={"sPudzF7p_4I"}
+                    videoId={"0Hwh-bWbi8A"}
                   />
                 </div>
               </div>
             </div>
           </div>
           <div className={classNames(projectcss.all, sty.freeBox__iyJHm)}>
+            <WalmartDashboard
+              data-plasmic-name={"walmartDashboard"}
+              data-plasmic-override={overrides.walmartDashboard}
+              apiBase={"https://tsf-demand-back.onrender.com/api/walmart"}
+              className={classNames("__wab_instance", sty.walmartDashboard)}
+            />
+
             <div className={classNames(projectcss.all, sty.freeBox__mgLkQ)}>
               <IframeEmbed
                 data-plasmic-name={"iframeEmbed"}
@@ -708,6 +716,7 @@ const PlasmicDescendants = {
     "pageBanner",
     "ul",
     "youTube",
+    "walmartDashboard",
     "iframeEmbed",
     "section",
     "foreground",
@@ -726,6 +735,7 @@ const PlasmicDescendants = {
   pageBanner: ["pageBanner", "ul", "youTube"],
   ul: ["ul"],
   youTube: ["youTube"],
+  walmartDashboard: ["walmartDashboard"],
   iframeEmbed: ["iframeEmbed"],
   section: ["section", "foreground"],
   foreground: ["foreground"],
@@ -776,6 +786,7 @@ export const PlasmicTsfEngineDemo = Object.assign(
     pageBanner: makeNodeComponent("pageBanner"),
     ul: makeNodeComponent("ul"),
     youTube: makeNodeComponent("youTube"),
+    walmartDashboard: makeNodeComponent("walmartDashboard"),
     iframeEmbed: makeNodeComponent("iframeEmbed"),
     section: makeNodeComponent("section"),
     foreground: makeNodeComponent("foreground"),

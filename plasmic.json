@@ -3132,6 +3132,12 @@
           "name": "IframeEmbed",
           "displayName": "IframeEmbed",
           "componentImportPath": "./components/IframeEmbed"
+        },
+        {
+          "id": "AkKHuFgtd97R",
+          "name": "WalmartDashboard",
+          "displayName": "WalmartDashboard",
+          "componentImportPath": "./components/WalmartDashboard"
         }
       ],
       "customFunctions": []
@@ -3222,6 +3228,6 @@
   "nextjsConfig": {
     "pagesDir": "../pages"
   },
-  "cliVersion": "0.1.348",
-  "$schema": "https://unpkg.com/@plasmicapp/cli@0.1.348/dist/plasmic.schema.json"
+  "cliVersion": "0.1.352",
+  "$schema": "https://unpkg.com/@plasmicapp/cli@0.1.352/dist/plasmic.schema.json"
 }
