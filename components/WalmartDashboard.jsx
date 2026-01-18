@@ -23,7 +23,7 @@ const cssText = `* { box-sizing: border-box; }
 .wm-root .charts-row { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
 .wm-root table { width: 100% !important; border-collapse: collapse !important; }
 .wm-root table th, .wm-root table td { padding: 10px 12px !important; border-bottom: 1px solid #f0f0f0 !important; font-size: 13px !important; text-align: center !important; vertical-align: middle !important; }
-.wm-root table th { border-bottom: 2px solid #eee !important; font-size: 11px !important; font-weight: 600 !important; color: #666 !important; text-transform: uppercase !important; background: #fafafa !important; }
+.wm-root table th { border-bottom: 2px solid #eee !important; font-size: 11px !important; font-weight: 600 !important; color: #666 !important; text-transform: uppercase !important; }
 .wm-root table th.left, .wm-root table td.left { text-align: left !important; }
 .wm-root table td.left { font-weight: 600 !important; }
 .wm-root table tr.clickable { cursor: pointer !important; }
