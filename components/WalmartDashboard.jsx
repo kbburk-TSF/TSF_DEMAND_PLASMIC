@@ -169,18 +169,18 @@ function loadJsPDF() {
     // HELPERS
     // =============================================================================
     const breakClass = (count, total) => {
-      if (!total || count === 0) return '#080';
+      if (count === 0 || count === null || count === undefined) return { color: '#008800', weight: 400 };
+      if (!total) total = 30;
       const pct = count / total;
-      if (pct > 0.15 || count >= 5) return '#c00';
-      if (pct > 0.05 || count >= 2) return '#e65c00';
-      return '#080';
+      if (pct > 0.15 || count >= 5) return { color: '#cc0000', weight: 700 };
+      if (pct > 0.05 || count >= 2) return { color: '#e65c00', weight: 600 };
+      return { color: '#008800', weight: 400 };
     };
 
     const BreakCell = ({ count, consec, total }) => {
-      const color = breakClass(count, total);
-      const fontWeight = color === '#c00' ? 700 : color === '#e65c00' ? 600 : 400;
+      const { color, weight } = breakClass(count, total);
       return (
-        <td style={{ textAlign: 'center', padding: '10px 12px', borderBottom: '1px solid #f0f0f0', fontSize: '13px', color, fontWeight, fontVariantNumeric: 'tabular-nums' }}>
+        <td style={{ textAlign: 'center', padding: '10px 12px', borderBottom: '1px solid #f0f0f0', fontSize: '13px', color: color, fontWeight: weight, fontVariantNumeric: 'tabular-nums' }}>
           {count || 0}
           {consec > 1 && <span style={{ fontSize: '10px', color: '#666', display: 'block' }}>({consec} consec)</span>}
         </td>
@@ -764,18 +764,18 @@ function loadJsPDF() {
               <table style={{ width: '100%', borderCollapse: 'collapse', tableLayout: 'fixed' }}>
                 <thead>
                   <tr>
-                    <th rowSpan={2} style={{ width: '20%', textAlign: 'left', padding: '10px 12px', background: '#fafafa', borderBottom: '2px solid #eee', fontSize: '11px', fontWeight: 600, color: '#666', textTransform: 'uppercase' }}>Department</th>
-                    <th colSpan={2} style={{ width: '26.6%', textAlign: 'center', padding: '10px 12px', borderBottom: '1px solid #ddd', background: '#fff0f0', fontSize: '11px', fontWeight: 600, color: '#666', textTransform: 'uppercase' }}>Stockout Risk</th>
-                    <th colSpan={2} style={{ width: '26.6%', textAlign: 'center', padding: '10px 12px', borderBottom: '1px solid #ddd', background: '#fff8e6', fontSize: '11px', fontWeight: 600, color: '#666', textTransform: 'uppercase' }}>Overstock Risk</th>
-                    <th colSpan={2} style={{ width: '26.6%', textAlign: 'center', padding: '10px 12px', borderBottom: '1px solid #ddd', background: '#f0f8ff', fontSize: '11px', fontWeight: 600, color: '#666', textTransform: 'uppercase' }}>Revenue Shortfall</th>
+                    <th rowSpan={2} style={{ width: '20%', textAlign: 'left', padding: '10px 12px', backgroundColor: '#fafafa', borderBottom: '2px solid #eee', fontSize: '11px', fontWeight: 600, color: '#666', textTransform: 'uppercase' }}>Department</th>
+                    <th colSpan={2} style={{ width: '26.6%', textAlign: 'center', padding: '10px 12px', borderBottom: '1px solid #ddd', backgroundColor: '#fff0f0', fontSize: '11px', fontWeight: 600, color: '#666', textTransform: 'uppercase' }}>Stockout Risk</th>
+                    <th colSpan={2} style={{ width: '26.6%', textAlign: 'center', padding: '10px 12px', borderBottom: '1px solid #ddd', backgroundColor: '#fff8e6', fontSize: '11px', fontWeight: 600, color: '#666', textTransform: 'uppercase' }}>Overstock Risk</th>
+                    <th colSpan={2} style={{ width: '26.6%', textAlign: 'center', padding: '10px 12px', borderBottom: '1px solid #ddd', backgroundColor: '#f0f8ff', fontSize: '11px', fontWeight: 600, color: '#666', textTransform: 'uppercase' }}>Revenue Shortfall</th>
                   </tr>
                   <tr>
-                    <th style={{ textAlign: 'center', padding: '10px 12px', background: '#fff0f0', borderBottom: '2px solid #eee', fontSize: '11px', fontWeight: 600, color: '#666' }}>85%</th>
-                    <th style={{ textAlign: 'center', padding: '10px 12px', background: '#fff0f0', borderBottom: '2px solid #eee', fontSize: '11px', fontWeight: 600, color: '#666' }}>95%</th>
-                    <th style={{ textAlign: 'center', padding: '10px 12px', background: '#fff8e6', borderBottom: '2px solid #eee', fontSize: '11px', fontWeight: 600, color: '#666' }}>85%</th>
-                    <th style={{ textAlign: 'center', padding: '10px 12px', background: '#fff8e6', borderBottom: '2px solid #eee', fontSize: '11px', fontWeight: 600, color: '#666' }}>95%</th>
-                    <th style={{ textAlign: 'center', padding: '10px 12px', background: '#f0f8ff', borderBottom: '2px solid #eee', fontSize: '11px', fontWeight: 600, color: '#666' }}>85%</th>
-                    <th style={{ textAlign: 'center', padding: '10px 12px', background: '#f0f8ff', borderBottom: '2px solid #eee', fontSize: '11px', fontWeight: 600, color: '#666' }}>95%</th>
+                    <th style={{ textAlign: 'center', padding: '10px 12px', backgroundColor: '#fff0f0', borderBottom: '2px solid #eee', fontSize: '11px', fontWeight: 600, color: '#666' }}>85%</th>
+                    <th style={{ textAlign: 'center', padding: '10px 12px', backgroundColor: '#fff0f0', borderBottom: '2px solid #eee', fontSize: '11px', fontWeight: 600, color: '#666' }}>95%</th>
+                    <th style={{ textAlign: 'center', padding: '10px 12px', backgroundColor: '#fff8e6', borderBottom: '2px solid #eee', fontSize: '11px', fontWeight: 600, color: '#666' }}>85%</th>
+                    <th style={{ textAlign: 'center', padding: '10px 12px', backgroundColor: '#fff8e6', borderBottom: '2px solid #eee', fontSize: '11px', fontWeight: 600, color: '#666' }}>95%</th>
+                    <th style={{ textAlign: 'center', padding: '10px 12px', backgroundColor: '#f0f8ff', borderBottom: '2px solid #eee', fontSize: '11px', fontWeight: 600, color: '#666' }}>85%</th>
+                    <th style={{ textAlign: 'center', padding: '10px 12px', backgroundColor: '#f0f8ff', borderBottom: '2px solid #eee', fontSize: '11px', fontWeight: 600, color: '#666' }}>95%</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -801,18 +801,18 @@ function loadJsPDF() {
               <table style={{ width: '100%', borderCollapse: 'collapse', tableLayout: 'fixed' }}>
                 <thead>
                   <tr>
-                    <th rowSpan={2} style={{ width: '20%', textAlign: 'left', padding: '10px 12px', background: '#fafafa', borderBottom: '2px solid #eee', fontSize: '11px', fontWeight: 600, color: '#666', textTransform: 'uppercase' }}>Category</th>
-                    <th colSpan={2} style={{ width: '26.6%', textAlign: 'center', padding: '10px 12px', borderBottom: '1px solid #ddd', background: '#fff0f0', fontSize: '11px', fontWeight: 600, color: '#666', textTransform: 'uppercase' }}>Stockout Risk</th>
-                    <th colSpan={2} style={{ width: '26.6%', textAlign: 'center', padding: '10px 12px', borderBottom: '1px solid #ddd', background: '#fff8e6', fontSize: '11px', fontWeight: 600, color: '#666', textTransform: 'uppercase' }}>Overstock Risk</th>
-                    <th colSpan={2} style={{ width: '26.6%', textAlign: 'center', padding: '10px 12px', borderBottom: '1px solid #ddd', background: '#f0f8ff', fontSize: '11px', fontWeight: 600, color: '#666', textTransform: 'uppercase' }}>Revenue Shortfall</th>
+                    <th rowSpan={2} style={{ width: '20%', textAlign: 'left', padding: '10px 12px', backgroundColor: '#fafafa', borderBottom: '2px solid #eee', fontSize: '11px', fontWeight: 600, color: '#666', textTransform: 'uppercase' }}>Category</th>
+                    <th colSpan={2} style={{ width: '26.6%', textAlign: 'center', padding: '10px 12px', borderBottom: '1px solid #ddd', backgroundColor: '#fff0f0', fontSize: '11px', fontWeight: 600, color: '#666', textTransform: 'uppercase' }}>Stockout Risk</th>
+                    <th colSpan={2} style={{ width: '26.6%', textAlign: 'center', padding: '10px 12px', borderBottom: '1px solid #ddd', backgroundColor: '#fff8e6', fontSize: '11px', fontWeight: 600, color: '#666', textTransform: 'uppercase' }}>Overstock Risk</th>
+                    <th colSpan={2} style={{ width: '26.6%', textAlign: 'center', padding: '10px 12px', borderBottom: '1px solid #ddd', backgroundColor: '#f0f8ff', fontSize: '11px', fontWeight: 600, color: '#666', textTransform: 'uppercase' }}>Revenue Shortfall</th>
                   </tr>
                   <tr>
-                    <th style={{ textAlign: 'center', padding: '10px 12px', background: '#fff0f0', borderBottom: '2px solid #eee', fontSize: '11px', fontWeight: 600, color: '#666' }}>85%</th>
-                    <th style={{ textAlign: 'center', padding: '10px 12px', background: '#fff0f0', borderBottom: '2px solid #eee', fontSize: '11px', fontWeight: 600, color: '#666' }}>95%</th>
-                    <th style={{ textAlign: 'center', padding: '10px 12px', background: '#fff8e6', borderBottom: '2px solid #eee', fontSize: '11px', fontWeight: 600, color: '#666' }}>85%</th>
-                    <th style={{ textAlign: 'center', padding: '10px 12px', background: '#fff8e6', borderBottom: '2px solid #eee', fontSize: '11px', fontWeight: 600, color: '#666' }}>95%</th>
-                    <th style={{ textAlign: 'center', padding: '10px 12px', background: '#f0f8ff', borderBottom: '2px solid #eee', fontSize: '11px', fontWeight: 600, color: '#666' }}>85%</th>
-                    <th style={{ textAlign: 'center', padding: '10px 12px', background: '#f0f8ff', borderBottom: '2px solid #eee', fontSize: '11px', fontWeight: 600, color: '#666' }}>95%</th>
+                    <th style={{ textAlign: 'center', padding: '10px 12px', backgroundColor: '#fff0f0', borderBottom: '2px solid #eee', fontSize: '11px', fontWeight: 600, color: '#666' }}>85%</th>
+                    <th style={{ textAlign: 'center', padding: '10px 12px', backgroundColor: '#fff0f0', borderBottom: '2px solid #eee', fontSize: '11px', fontWeight: 600, color: '#666' }}>95%</th>
+                    <th style={{ textAlign: 'center', padding: '10px 12px', backgroundColor: '#fff8e6', borderBottom: '2px solid #eee', fontSize: '11px', fontWeight: 600, color: '#666' }}>85%</th>
+                    <th style={{ textAlign: 'center', padding: '10px 12px', backgroundColor: '#fff8e6', borderBottom: '2px solid #eee', fontSize: '11px', fontWeight: 600, color: '#666' }}>95%</th>
+                    <th style={{ textAlign: 'center', padding: '10px 12px', backgroundColor: '#f0f8ff', borderBottom: '2px solid #eee', fontSize: '11px', fontWeight: 600, color: '#666' }}>85%</th>
+                    <th style={{ textAlign: 'center', padding: '10px 12px', backgroundColor: '#f0f8ff', borderBottom: '2px solid #eee', fontSize: '11px', fontWeight: 600, color: '#666' }}>95%</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -886,18 +886,18 @@ function loadJsPDF() {
               <table style={{ width: '100%', borderCollapse: 'collapse', tableLayout: 'fixed' }}>
                 <thead>
                   <tr>
-                    <th rowSpan={2} style={{ width: '20%', textAlign: 'left', padding: '10px 12px', background: '#fafafa', borderBottom: '2px solid #eee', fontSize: '11px', fontWeight: 600, color: '#666', textTransform: 'uppercase' }}>Category</th>
-                    <th colSpan={2} style={{ width: '26.6%', textAlign: 'center', padding: '10px 12px', borderBottom: '1px solid #ddd', background: '#fff0f0', fontSize: '11px', fontWeight: 600, color: '#666', textTransform: 'uppercase' }}>Stockout Risk</th>
-                    <th colSpan={2} style={{ width: '26.6%', textAlign: 'center', padding: '10px 12px', borderBottom: '1px solid #ddd', background: '#fff8e6', fontSize: '11px', fontWeight: 600, color: '#666', textTransform: 'uppercase' }}>Overstock Risk</th>
-                    <th colSpan={2} style={{ width: '26.6%', textAlign: 'center', padding: '10px 12px', borderBottom: '1px solid #ddd', background: '#f0f8ff', fontSize: '11px', fontWeight: 600, color: '#666', textTransform: 'uppercase' }}>Revenue Shortfall</th>
+                    <th rowSpan={2} style={{ width: '20%', textAlign: 'left', padding: '10px 12px', backgroundColor: '#fafafa', borderBottom: '2px solid #eee', fontSize: '11px', fontWeight: 600, color: '#666', textTransform: 'uppercase' }}>Category</th>
+                    <th colSpan={2} style={{ width: '26.6%', textAlign: 'center', padding: '10px 12px', borderBottom: '1px solid #ddd', backgroundColor: '#fff0f0', fontSize: '11px', fontWeight: 600, color: '#666', textTransform: 'uppercase' }}>Stockout Risk</th>
+                    <th colSpan={2} style={{ width: '26.6%', textAlign: 'center', padding: '10px 12px', borderBottom: '1px solid #ddd', backgroundColor: '#fff8e6', fontSize: '11px', fontWeight: 600, color: '#666', textTransform: 'uppercase' }}>Overstock Risk</th>
+                    <th colSpan={2} style={{ width: '26.6%', textAlign: 'center', padding: '10px 12px', borderBottom: '1px solid #ddd', backgroundColor: '#f0f8ff', fontSize: '11px', fontWeight: 600, color: '#666', textTransform: 'uppercase' }}>Revenue Shortfall</th>
                   </tr>
                   <tr>
-                    <th style={{ textAlign: 'center', padding: '10px 12px', background: '#fff0f0', borderBottom: '2px solid #eee', fontSize: '11px', fontWeight: 600, color: '#666' }}>85%</th>
-                    <th style={{ textAlign: 'center', padding: '10px 12px', background: '#fff0f0', borderBottom: '2px solid #eee', fontSize: '11px', fontWeight: 600, color: '#666' }}>95%</th>
-                    <th style={{ textAlign: 'center', padding: '10px 12px', background: '#fff8e6', borderBottom: '2px solid #eee', fontSize: '11px', fontWeight: 600, color: '#666' }}>85%</th>
-                    <th style={{ textAlign: 'center', padding: '10px 12px', background: '#fff8e6', borderBottom: '2px solid #eee', fontSize: '11px', fontWeight: 600, color: '#666' }}>95%</th>
-                    <th style={{ textAlign: 'center', padding: '10px 12px', background: '#f0f8ff', borderBottom: '2px solid #eee', fontSize: '11px', fontWeight: 600, color: '#666' }}>85%</th>
-                    <th style={{ textAlign: 'center', padding: '10px 12px', background: '#f0f8ff', borderBottom: '2px solid #eee', fontSize: '11px', fontWeight: 600, color: '#666' }}>95%</th>
+                    <th style={{ textAlign: 'center', padding: '10px 12px', backgroundColor: '#fff0f0', borderBottom: '2px solid #eee', fontSize: '11px', fontWeight: 600, color: '#666' }}>85%</th>
+                    <th style={{ textAlign: 'center', padding: '10px 12px', backgroundColor: '#fff0f0', borderBottom: '2px solid #eee', fontSize: '11px', fontWeight: 600, color: '#666' }}>95%</th>
+                    <th style={{ textAlign: 'center', padding: '10px 12px', backgroundColor: '#fff8e6', borderBottom: '2px solid #eee', fontSize: '11px', fontWeight: 600, color: '#666' }}>85%</th>
+                    <th style={{ textAlign: 'center', padding: '10px 12px', backgroundColor: '#fff8e6', borderBottom: '2px solid #eee', fontSize: '11px', fontWeight: 600, color: '#666' }}>95%</th>
+                    <th style={{ textAlign: 'center', padding: '10px 12px', backgroundColor: '#f0f8ff', borderBottom: '2px solid #eee', fontSize: '11px', fontWeight: 600, color: '#666' }}>85%</th>
+                    <th style={{ textAlign: 'center', padding: '10px 12px', backgroundColor: '#f0f8ff', borderBottom: '2px solid #eee', fontSize: '11px', fontWeight: 600, color: '#666' }}>95%</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -978,18 +978,18 @@ function loadJsPDF() {
                 <table style={{ width: '100%', borderCollapse: 'collapse', tableLayout: 'fixed' }}>
                   <thead>
                     <tr>
-                      <th rowSpan={2} style={{ width: '20%', textAlign: 'left', padding: '10px 12px', background: '#fafafa', borderBottom: '2px solid #eee', fontSize: '11px', fontWeight: 600, color: '#666', textTransform: 'uppercase' }}>SKU</th>
-                      <th colSpan={2} style={{ width: '26.6%', textAlign: 'center', padding: '10px 12px', borderBottom: '1px solid #ddd', background: '#fff0f0', fontSize: '11px', fontWeight: 600, color: '#666', textTransform: 'uppercase' }}>Stockout</th>
-                      <th colSpan={2} style={{ width: '26.6%', textAlign: 'center', padding: '10px 12px', borderBottom: '1px solid #ddd', background: '#fff8e6', fontSize: '11px', fontWeight: 600, color: '#666', textTransform: 'uppercase' }}>Overstock</th>
-                      <th colSpan={2} style={{ width: '26.6%', textAlign: 'center', padding: '10px 12px', borderBottom: '1px solid #ddd', background: '#f0f8ff', fontSize: '11px', fontWeight: 600, color: '#666', textTransform: 'uppercase' }}>Rev Shortfall</th>
+                      <th rowSpan={2} style={{ width: '20%', textAlign: 'left', padding: '10px 12px', backgroundColor: '#fafafa', borderBottom: '2px solid #eee', fontSize: '11px', fontWeight: 600, color: '#666', textTransform: 'uppercase' }}>SKU</th>
+                      <th colSpan={2} style={{ width: '26.6%', textAlign: 'center', padding: '10px 12px', borderBottom: '1px solid #ddd', backgroundColor: '#fff0f0', fontSize: '11px', fontWeight: 600, color: '#666', textTransform: 'uppercase' }}>Stockout</th>
+                      <th colSpan={2} style={{ width: '26.6%', textAlign: 'center', padding: '10px 12px', borderBottom: '1px solid #ddd', backgroundColor: '#fff8e6', fontSize: '11px', fontWeight: 600, color: '#666', textTransform: 'uppercase' }}>Overstock</th>
+                      <th colSpan={2} style={{ width: '26.6%', textAlign: 'center', padding: '10px 12px', borderBottom: '1px solid #ddd', backgroundColor: '#f0f8ff', fontSize: '11px', fontWeight: 600, color: '#666', textTransform: 'uppercase' }}>Rev Shortfall</th>
                     </tr>
                     <tr>
-                      <th style={{ textAlign: 'center', padding: '10px 12px', background: '#fff0f0', borderBottom: '2px solid #eee', fontSize: '11px', fontWeight: 600, color: '#666' }}>85%</th>
-                      <th style={{ textAlign: 'center', padding: '10px 12px', background: '#fff0f0', borderBottom: '2px solid #eee', fontSize: '11px', fontWeight: 600, color: '#666' }}>95%</th>
-                      <th style={{ textAlign: 'center', padding: '10px 12px', background: '#fff8e6', borderBottom: '2px solid #eee', fontSize: '11px', fontWeight: 600, color: '#666' }}>85%</th>
-                      <th style={{ textAlign: 'center', padding: '10px 12px', background: '#fff8e6', borderBottom: '2px solid #eee', fontSize: '11px', fontWeight: 600, color: '#666' }}>95%</th>
-                      <th style={{ textAlign: 'center', padding: '10px 12px', background: '#f0f8ff', borderBottom: '2px solid #eee', fontSize: '11px', fontWeight: 600, color: '#666' }}>85%</th>
-                      <th style={{ textAlign: 'center', padding: '10px 12px', background: '#f0f8ff', borderBottom: '2px solid #eee', fontSize: '11px', fontWeight: 600, color: '#666' }}>95%</th>
+                      <th style={{ textAlign: 'center', padding: '10px 12px', backgroundColor: '#fff0f0', borderBottom: '2px solid #eee', fontSize: '11px', fontWeight: 600, color: '#666' }}>85%</th>
+                      <th style={{ textAlign: 'center', padding: '10px 12px', backgroundColor: '#fff0f0', borderBottom: '2px solid #eee', fontSize: '11px', fontWeight: 600, color: '#666' }}>95%</th>
+                      <th style={{ textAlign: 'center', padding: '10px 12px', backgroundColor: '#fff8e6', borderBottom: '2px solid #eee', fontSize: '11px', fontWeight: 600, color: '#666' }}>85%</th>
+                      <th style={{ textAlign: 'center', padding: '10px 12px', backgroundColor: '#fff8e6', borderBottom: '2px solid #eee', fontSize: '11px', fontWeight: 600, color: '#666' }}>95%</th>
+                      <th style={{ textAlign: 'center', padding: '10px 12px', backgroundColor: '#f0f8ff', borderBottom: '2px solid #eee', fontSize: '11px', fontWeight: 600, color: '#666' }}>85%</th>
+                      <th style={{ textAlign: 'center', padding: '10px 12px', backgroundColor: '#f0f8ff', borderBottom: '2px solid #eee', fontSize: '11px', fontWeight: 600, color: '#666' }}>95%</th>
                     </tr>
                   </thead>
                   <tbody>
